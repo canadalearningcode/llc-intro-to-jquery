@@ -1,0 +1,98 @@
+body {
+	color: #444444;
+	font-family: Helvetica, Arial, sans-serif;
+}
+h1 {
+	font-size: 48px;
+}
+h2 {
+	font-size: 32px;
+}
+h1, h2, h3 {
+	font-family: 'Oswald', sans-serif;
+}
+p {
+	line-height: 1.4;
+	font-size: 15px;
+}
+img.logo {
+	margin: 0 auto;
+	display: block;
+}
+img.profile {
+	border: 1px solid grey;
+	width: 200px;
+	height: 200px;
+	padding: 5px;
+	float: left;
+	margin-right: 20px;
+}
+img.favourite {
+	border: 1px solid #A8258D;
+	border-radius: 50%;
+	width: 200px;
+	padding: 5px;
+	margin: 10px;
+	vertical-align: middle;
+}
+section.banner {
+	padding-top: 110px;
+	padding-bottom: 100px;
+	background: url('images/background.jpg');
+	background-attachment: fixed;
+	color: #ffffff;
+	text-align: center;
+}
+section.banner p {
+	font-size: 22px;
+}
+section.banner h1 {
+	text-transform: uppercase;
+	margin-bottom: 10px;
+}
+section.about {
+	background: url('images/tile1.png');
+	overflow: hidden;
+}
+section.about h2 {
+	text-align: center;
+}
+section.favourites {
+	text-align: center;
+}
+section.contact {
+	text-align: center;
+	background: url('images/tile2.png');
+}
+section.contact img {
+	margin: 20px;
+}
+section.box {
+	padding: 50px 100px;
+}
+section.box h2, section.box h3 {
+	color: #A8258D;
+}
+.menu {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	border-bottom: 1px solid #434A5C;
+	background: #ffffff;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+.menu li {
+	display: inline-block;
+	padding: 20px 35px;
+}
+.menu a {
+	text-decoration: none;
+	color: #333333;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-family: 'Oswald', sans-serif;
+}
