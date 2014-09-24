@@ -47,35 +47,38 @@
     </header>
 
     <main>
+        <section class="slide centered" data-markdown>
+            ## Today's project
+        </section>
+
+        <section class="slide centered" data-markdown>
+            ## Course Outline
+        </section>
+
         <section class="slide" data-markdown>
-## Checklist for this course
+## Getting Started
 
-You will Need:
+You will need:
 
-1. Your Laptop
-* The [Google Chrome Browser](http://chrome.com) <!-- * *Don't use Firefox, Safari, Opera or Internet Explorer* -->
-* Sublime Text
-    * This is an amazing text editor and you can [download it here](http://www.sublimetext.com/2)
-* A download of the files we will be using
-    * You can get a zip of those here:
-        * [https://github.com/infn8/LLC-Intro-To-jQuery/archive/master.zip](https://github.com/infn8/LLC-Intro-To-jQuery/archive/master.zip)
-        * Download that file and unzip the contents of it to your desktop.
-            * This is where we're going to keep our project and our work during this workshop.
-                * You *can* put this elsewhere on your computer if you like but it's up to you to remember where that is later in the workshop.
-* A **Sense of Adventure**!!!
+1. **[Sublime Text](http://www.sublimetext.com)** - a text editor with colour highlighting and other helpful features. If you are unable to install Sublime Text, try installing: [Notepad++](http://notepad-plus-plus.org/) (Windows), [Atom](https://atom.io/) (Mac) or [Text Wrangler](http://www.barebones.com/products/textwrangler/) (Mac).
+
+1. **[Google Chrome](https://www.google.com/intl/en-CA/chrome/browser/)** - Choose a modern web browser that supports current web standards and has good development tools. To set Chrome as your default browser, follow [these instructions](https://support.google.com/chrome/answer/95417?hl=en). Another good option is Firefox. Visit [browsehappy.com](http://browsehappy.com) for more info about modern browsers.
+
+1. A sense of adventure!!!
     
-##### If you have all of this and the course has not started running yet and you're looking to do something cool you can [go here](https://github.com/infn8/LLC-Intro-To-jQuery/blob/master/sublime-text-setup.md) to add some cool functionality to your Sublime Text install.  (Please, ONLY do this when the workshop is NOT running.)
-
-
+**Bonus:** One of the great things about Sublime Text it that you can add extra functionality to it with *plugins*. [Go here](https://github.com/infn8/LLC-Intro-To-jQuery/blob/master/sublime-text-setup.md) to add some cool functionality to your Sublime Text editor.
         </section>
         
         <section class="slide" data-markdown>
+## HTML overview
 
-### What Is HTML?
+HTML (HyperText Markup Language) is the **content** of your document/web page. Using `&lt;tags>` we can create **elements** that represent items on our page. Below are just a few examples.
 
-HTML (HyperText Markup Language) is the **content** of your document. Using ```&lt;tags>``` we can create **elements** that represent items on our page.  Items like paragraphs.
+Paragraphs
+
 ```xml
-&lt;p>Paragraph Text&lt;/p>
+&lt;p>Paragraph.&lt;/p>
+&lt;p>Another paragraph.&lt;/p>
 ```
 Lists
 
@@ -87,29 +90,52 @@ Lists
 &lt;/ul> 
 ```
 
-and images
+Images
 
 ```xml
 &lt;img src="http://www.fillmurray.com/300/300" alt="Placeholder Image" />
 ```
-
         </section>
-        <section class="slide">
-            <h2> By placing these items together on a page we get something that looks like this: </h2>
 
-            <p>Paragraph Text</p>
+        <section class="slide">
+            <h2>HTML tags & the browser</h2>
+            <p> By placing these items together on a page we get something that looks like this in the browser: </p>
+
+            <p>Paragraph.</p>
+            <p>Another paragraph.</p>
             <ul>
-            <li>List Item</li> 
-            <li>List Item</li> 
-            <li>List Item</li>
+                <li>List Item</li> 
+                <li>List Item</li> 
+                <li>List Item</li>
             </ul> 
             <p><img src="http://www.fillmurray.com/300/300" alt="Placeholder Image" /></p>
-
         </section>
-        <section class="slide" data-markdown>
-### What Is CSS?
 
-CSS (Cascading Style Sheets) are the **style** of your document. They help control the look and feel of the document. You create **selectors** that target **HTML Elements** and then use **CSS Rules** to change the look and feel of your document.
+        <section class="slide" data-markdown>
+            ##CSS overview
+
+            HTML defines *content*, CSS defines the *presentation*.
+
+            **Selectors:** used to determine which element(s) to apply the styles to. Can target an HTML `tag`, `class` or `id` attribute (more on these later).  
+            **Declaration block:** consists of a list of declarations (rules to follow) wrapped in curly braces `{}`.  
+            **Declarations** or rules to follow, are written using `property:value` pairs.
+
+            ```css
+            selector {
+                property: value;
+            }
+            ```
+            **Properties** determine the type of style to be applied to
+            the element (e.g. color).  
+            **Values** are specific to the property. Declarations must end with a semi-colon (`;`) to indicate that the instruction is complete.
+            
+            ![](framework/img/workshop/css.png)
+        </section>
+
+        <!-- <section class="slide" data-markdown>
+## What Is CSS?
+
+CSS (Cascading Style Sheets) are the **styles** of your document and control the look and feel of the page. You create **selectors** that target **HTML elements** and then use **CSS rules** to add styles to the page.
 
 Selectors like:
 
@@ -123,19 +149,39 @@ Which targets *any* element with class="rotator-slide", or:
 
     #rotator { /* CSS Rules Here */ } 
 
-Which targets *any* element with id="rotator".
-                    
-        </section>
+Which targets *any* element with id="rotator".            
+        </section> -->
         
         <section class="slide">
-            <p><strong>CSS Rules</strong> go inside the {curly braces} that follow the <strong>CSS Selector</strong> and they look like this:</p>
+            <h2>CSS selectors: HTML tag, class & id</h2>
+            
+            <p>Let's look at the different ways to select an element. To select an HTML tag, just use the HTML tag name minus the angled brackets.</p>
 
-<pre><code> p {
-    font-size: 2em;
+<pre class="xml"><code>&lt;div>Select all div elements.&lt;/div></code></pre>
+            <textarea class="snippet" data-subject="#element">div {
     color: red;
-} </code></pre>
-            <p> Which will apply the font size of <strong>2em</strong> and color of <strong>red</strong> to all paragraphs.</p>
-            <p style="font-size: 2em; color: red;">This is a paragraph with the styles above applied to it.</p>
+}</textarea>
+            <div class="example" id="#element">
+                <div>Select all div elements.</div>
+            </div>
+            
+            <p>For classes, the attribute must be added to the HTML and denoted by a leading period in the CSS.</p>
+            <pre class="xml"><code>&lt;div class="special">Select ANY element with this class.&lt;/div></code></pre>
+            <textarea class="snippet" data-subject="#class">.special {
+    color: blue;
+}</textarea>
+            <div class="example" id="#class">
+                <div class="special">Select ANY element with this class.</div>
+            </div>
+            
+            <p>For an id, the attribute is also added to the HTML but is denoted by a leading number symbol. Note that ids can only be used <strong>once</strong> per page.</p>
+            <pre class="xml"><code>&lt;div id="special">Select ANY element with this id.&lt;/div></code></pre>
+            <textarea class="snippet" data-subject="#id">#special {
+    color: green;
+}</textarea>
+            <div class="example" id="#id">
+                <div id="special">Select ANY element with this id.</div>
+            </div>
         </section>
 
         <section class="slide" data-markdown>
