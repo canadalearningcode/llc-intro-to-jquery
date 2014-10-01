@@ -54,6 +54,12 @@ h3 {
   h3 + p {
     margin-top: 0; }
 
+h4 {
+  margin-bottom: 6px;
+  letter-spacing: 0; }
+  h4 + pre {
+    margin-top: 6px; }
+
 a {
   color: #444444; }
   a:hover {
@@ -159,6 +165,8 @@ table img {
   padding: 0 15px; }
   .example p {
     margin: 10px 0; }
+  .example:last-child {
+    margin-bottom: 50px; }
 
 /* Incremental slides */
 .delayed.displayed,

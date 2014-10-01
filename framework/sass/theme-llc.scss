@@ -67,6 +67,14 @@ h3 {
 		margin-top: 0;
 	}
 }
+h4 {
+	margin-bottom: 6px;
+	letter-spacing: 0;
+
+	+ pre {
+		margin-top: 6px;
+	}
+}
 
 a {
 	color: $gray;
@@ -214,6 +222,10 @@ table {
 
 	p {
 		margin: 10px 0;
+	}
+
+	&:last-child {
+		margin-bottom: 50px;
 	}
 }
 

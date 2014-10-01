@@ -74,13 +74,14 @@ You will need:
 
 HTML (HyperText Markup Language) is the **content** of your document/web page. Using `&lt;tags>` we can create **elements** that represent items on our page. Below are just a few examples.
 
-Paragraphs
+####Paragraphs
 
 ```xml
 &lt;p>Paragraph.&lt;/p>
 &lt;p>Another paragraph.&lt;/p>
 ```
-Lists
+
+####Lists
 
 ```xml
 &lt;ul>
@@ -90,7 +91,7 @@ Lists
 &lt;/ul> 
 ```
 
-Images
+####Images
 
 ```xml
 &lt;img src="http://www.fillmurray.com/300/300" alt="Placeholder Image" />
@@ -112,24 +113,23 @@ Images
         </section>
 
         <section class="slide" data-markdown>
-            ##CSS overview
+##CSS overview
 
-            HTML defines *content*, CSS defines the *presentation*.
+HTML defines *content*, CSS defines the *presentation*.
 
-            **Selectors:** used to determine which element(s) to apply the styles to. Can target an HTML `tag`, `class` or `id` attribute (more on these later).  
-            **Declaration block:** consists of a list of declarations (rules to follow) wrapped in curly braces `{}`.  
-            **Declarations** or rules to follow, are written using `property:value` pairs.
+**Selectors:** used to determine which element(s) to apply the styles to.  
+**Declarations** or rules to follow, are written using `property:value` pairs, wrapped in curly braces `{}`.
 
-            ```css
-            selector {
-                property: value;
-            }
-            ```
-            **Properties** determine the type of style to be applied to
-            the element (e.g. color).  
-            **Values** are specific to the property. Declarations must end with a semi-colon (`;`) to indicate that the instruction is complete.
-            
-            ![](framework/img/workshop/css.png)
+```css
+selector {
+    property: value;
+}
+```
+**Properties** determine the type of style to be applied to
+the element (e.g. color).  
+**Values** are specific to the property. Declarations must end with a semi-colon (`;`) to indicate that the instruction is complete.
+
+![](framework/img/workshop/css.png)
         </section>
 
         <!-- <section class="slide" data-markdown>
@@ -155,7 +155,7 @@ Which targets *any* element with id="rotator".
         <section class="slide">
             <h2>CSS selectors: HTML tag, class & id</h2>
             
-            <p>Let's look at the different ways to select an element. To select an HTML tag, just use the HTML tag name minus the angled brackets.</p>
+            <p>Let's look at the different ways to select an element. To select an HTML tag, just use the HTML tag name without the angled brackets.</p>
 
 <pre class="xml"><code>&lt;div>Select all div elements.&lt;/div></code></pre>
             <textarea class="snippet" data-subject="#element">div {
@@ -185,7 +185,7 @@ Which targets *any* element with id="rotator".
         </section>
 
         <section class="slide" data-markdown>
-### What Is JS?
+## What Is JS?
 
 JS (JavaScript) controls the **behavior** of your document. It allows you to do things such as animate items, hide or show items, react to user input and even process data and perform other general programming tasks.
 
