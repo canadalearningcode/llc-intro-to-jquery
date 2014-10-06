@@ -19,6 +19,7 @@
 
     <!-- Takes care of CSS3 prefixes! -->
     <script src="framework/scripts/prefixfree.min.js"></script>
+    <script src="framework/scripts/jquery-1.11.1.min.js"></script>
 </head>
 
 <!-- Timer/progress bar: Define the presentation duration using "data-duration" in minutes. -->
@@ -60,7 +61,7 @@ You will need:
 
 1. **[Sublime Text](http://www.sublimetext.com)** - a text editor with colour highlighting and other helpful features. If you are unable to install Sublime Text, try installing: [Notepad++](http://notepad-plus-plus.org/) (Windows), [Atom](https://atom.io/) (Mac) or [Text Wrangler](http://www.barebones.com/products/textwrangler/) (Mac).
 
-1. **[Google Chrome](https://www.google.com/intl/en-CA/chrome/browser/)** - Choose a modern web browser that supports current web standards and has good development tools. To set Chrome as your default browser, follow [these instructions](https://support.google.com/chrome/answer/95417?hl=en). Another good option is Firefox. Visit [browsehappy.com](http://browsehappy.com) for more info about modern browsers.
+1. **[Google Chrome](https://www.google.com/intl/en-CA/chrome/browser/)** - Choose a modern web browser that supports current web standards and has good development tools. To set Chrome as your default browser, follow [these instructions](https://support.google.com/chrome/answer/95417?hl=en). Visit [browsehappy.com](http://browsehappy.com) for more info about modern browsers.
 
 1. A sense of adventure!!!
     
@@ -110,19 +111,14 @@ HTML (HyperText Markup Language) is the **content** of your document/web page. U
         <section class="slide" data-markdown>
 ##CSS overview
 
-HTML defines *content*, CSS defines the *presentation*.
-
-**Selectors:** used to determine which element(s) to apply the styles to.  
-**Declarations** or rules to follow, are written using `property:value` pairs, wrapped in curly braces `{}`.
+CSS (Cascading Style Sheets) defines the *style* and controls the look and feel of the HTML document. **Selectors** are used to determine which **HTML elements** to apply the style to and then use rules (aka **declarations**) in the form of `property: value` pairs, wrapped in curly braces `{}`.
 
 ```css
 selector {
     property: value;
 }
 ```
-**Properties** determine the type of style to be applied to
-the element (e.g. color).  
-**Values** are specific to the property. Declarations must end with a semi-colon (`;`) to indicate that the instruction is complete.
+**Properties** determine the *type* of style to be applied to the element (e.g. color).  **Values** are specific to the property. Declarations must end with a semi-colon (`;`) to indicate that the instruction is complete.
 
 ![](framework/img/workshop/css.png)
         </section>        
@@ -163,26 +159,70 @@ the element (e.g. color).
         <section class="slide" data-markdown>
 ## What Is JavaScript?
 
-JS (JavaScript) controls the **behavior** of your document. It allows you to do things such as animate items, hide or show items, react to user input and even process data.
-
-JS can look like this:
+JavaScript controls the **behavior** of your document. It allows you to do things such as animate items, hide or show items, react to user input and even process data. Here's what JavaScript looks like:
 
     var myVariable = "Hello World";
+    function sayHello(){
+        alert(myVariable);
+    }
+    sayHello();
 
-That line will create a `variable` called **myVariable** and assign it a value of **Hello World** (without the quotes).
-
-The structure and syntax of the language of JavaScript is much more complex than either HTML or CSS.  
-
-This is because neither HTML nor CSS are full fledged programming languages.  Neither of them have **variables**, **functions**, **objects** or **control structures** such as **if** statements or **loops**.  JavaScript has *all* of these.
+The structure and syntax of JavaScript is more complex than either HTML or CSS because neither HTML nor CSS are full fledged programming languages.  They do not have **variables**, **functions**, **objects** or **control structures** such as **if** statements or **loops**, which are the basic building blocks of programming.
+ 
+JavaScript has *all* of these.
         </section>
         <section class="slide" data-markdown>
-## So what *are* **variables**, **functions**, **objects** and **control structures** such as **if** statements or **loops**?
+##What is jQuery?
 
-They are the basic building blocks of programming!
+**jQuery *is* JavaScript.** 
 
-We can use these things to give sets of instructions to the browsers that visit our web pages. 
+jQuery is a cross-browser JavaScript *library* designed to simplify your program. Though it has its own syntax, it is still JavaScript at its core so its important to have an understanding of traditional JavaScript principles.
 
-#### Let's look at some of these things now.
+Before we get into the nitty-gritty details of these JavaScript principles, let's take a quick look at a tool called the console.
+        </section>
+        <section class="slide" data-markdown>
+## The Console
+The console is an interactive tool, built into the browser. We can use this tool to enter commands and interact directly with a web page, log diagnostic information and check for errors. We'll be using it today to practice writing some JavaScript code. The console in Chrome looks like this:
+
+![The Console](framework/img/workshop/the_console_x.jpg)
+
+Note the ```>``` symbol. It is used by the console to represent a space for you to enter your input but you don't have to actually type it.
+        </section>
+        <section class="slide" data-markdown>
+## Accessing the Console
+
+In Chrome, there are a couple ways to open the Console tab.
+
+Use the keyboard shortcut:  
+```&LT;COMMAND> + &LT;OPTION> + &LT;J>``` (MAC)  
+```&LT;CONTROL> + &LT;SHIFT> + &LT;J>``` (WINDOWS/LINUX).
+
+OR
+
+Select: ```View > Developer > JavaScript Console```.
+
+You can open the console when viewing any HTML page but let's use [**this blank HTML page**](framework/console.html) so we can have a blank slate to practice with throughout the day. 
+
+Open the HTML page in the link above now and take a moment to practice opening and closing the console until you're comfortable with it.
+        </section>
+        <section class="slide" data-markdown>
+## Mini-exercise
+
+Let's experiment with typing some input into the console. Open the console and after the `>` symbol, type your favorite number and press the enter/return key. 
+
+Did you see something like this?
+
+![console number](framework/img/workshop/console-number.gif)
+
+The ```>``` symbol is used by the console to represent a space for your input.    
+The ```&lt;``` symbol is used by the console to represent the **returned value** of your input.  
+
+**You don't have to type either ```>``` or ```&lt;``` into the console.**
+
+You can also input some text BUT when using text, make sure you put it in quotes (more on this soon).
+
+![console string](framework/img/workshop/console-string.gif)
+
         </section>
         <section class="slide title" data-markdown>
             #Variables
@@ -192,15 +232,24 @@ We can use these things to give sets of instructions to the browsers that visit 
 
 A variable is a named memory location which contains some known or unknown quantity or information.
 
-#### In *English*, professor.
+**In *English*, please.**
 
-At its most basic, we make a variable when we give a **name** to a **value**.  So when we say:
+Variables are like containers or a box. They are used to store values that can be used at any time, whenever you need them. At its most basic, we make a variable when we give a **name** to a **value**.  
 
-    var myVariable = "Hello World";
+When creating or *declaring* a variable, you must use the keyword `var` but you can name the variable anything you want. Let's look at the below example.
+
+```javascript
+   var myVariable = "Hello World";
+/*  ^       ^            ^
+    |       |            |
+   keyword  |           value given to variable
+            |
+           variable name created by you                    
+*/
+```
 
 We are taking the value ```Hello World``` and giving it the name ```myVariable```.  
 
-When *declaring* a variable, you must use the keyword `var` but you can name the value anything you want.
         </section>
         <section class="slide" data-markdown>
 ## Variable Types: Numbers
@@ -209,15 +258,14 @@ Variable **values** can be one of several different **types**.  The most basic i
 
     var meaningOfLife = 42; // Whole numbers are called 'integers'
 
-Javascript can do math with numbers.
+JavaScript can also do math. Use `+` for addition, `-` for subtraction, `*` for multiplication and `/` for division.
 
 ```javascript
 var endingValue = 5 * 2;
-// the asterisk '*' is the symbol for multiplication.
-// This will set the value of 'endingValue' to 10.
+// This will return the value of 10.
 ```
 
-The calculations work the same whether the values are either numbers, or values stored in a variable:
+The calculations work the same whether the values are numbers, or values stored in a variable:
 
 ```javascript
  var startingValue = 5;
@@ -229,7 +277,7 @@ The calculations work the same whether the values are either numbers, or values 
         <section class="slide" data-markdown>
 ## Variable Types: Strings
 
-When you store any amount of text, like words or sentences, the variable type is a **string** value.
+When you store any amount of text, like words or sentences, the variable type is a **string** value and must be contained in quotes.
 
 ```javascript
 var myVariable = "Hello World";
@@ -243,47 +291,47 @@ var second = "World";
 var wholePhrase = first + " " + second;
 ```
 
-The javascript above adds **three** items together:
+The JavaScript above adds **three** items together:
 
 1. the variable `first` with the value `"Hello"`
 * the **anonymous** string value `" "` to add a space.
 * the variable `second` with the value `"World"`
 
-"Hello" + " " + "World" = "Hello World"
+So the results of the variable `wholePhrase` is:
+
+var wholePhrase = first + " " + second;  
+= "Hello" + " " + "World"  
+= "Hello World"
 
         </section>
         <section class="slide" data-markdown>
 ## Variable Types: Strings and Quotes
 
-Javascript understands stings as values that are wrapped in either 'single quotes'  or "double quotes".  You can use either style of quotation mark but you must both start and end the string with the same mark you began with:
+JavaScript understands strings as values that are wrapped in either 'single quotes'  or "double quotes."  You can use either style but you must start and end the string with the same mark.
 
 ```javascript
 var works = "This string value's the bomb!!!";
-```
-```javascript
 var fails = 'This string value's the bomb!!!'; 
 ```
 ```javascript
 /*          ^                 ^
-            |                 | 
             |_________________| 
             |
             Javascript thinks the string ends with the second apostrophe.
             It is then expecting the command to end with a semicolon (;) 
-            This doesn't happen and the following error is thrown:
-
-            "SyntaxError: missing ; before statement" 
+            and will return an error.
 */
 ```
 ```
 var alsoWorks = "Then I said: 'That string value was the bomb!!!' ";
 var alsoFails = "Then I said: "That string value was the bomb!!!" ";                                   
 ```
+Try copying each line and putting it into your console.  Note that if it returns "undefined", that just means.....  
         </section>
         <section class="slide" data-markdown>
 ## Variable Types: Strings and Quotes
 
-To get around the issue shown in the previous slide, you can put a backslash (`\`) in front of the quote to **delimit** the string.
+To get around the issue shown in the previous slide, you can put a backslash (`\`) in front of the quote to *delimit* the string.
 
 ```javascript
 var totallyWorks = "Then I said, \"No way you can do that!!!\" ";
@@ -293,7 +341,6 @@ var totallyWorks = "Then I said, \"No way you can do that!!!\" ";
                    |
                    JavaScript now sees a string starting and ending with the same symbol.
                    The variable 'totallyWorks' is assigned a string value of:
-
                         Then I said, "No way you can do that!!!"
 */
 ```
@@ -303,84 +350,24 @@ Another option is to use single quotes to enclose the entire string.
 var alsoWorks = 'Then I said, "Yes you can!!!" ';
 ```
         </section>
+        
         <section class="slide" data-markdown>
-## Exercise 1
+## Variable Types: Booleans
 
-### The Console:
+Variables that only contain a `true` or `false` value are called **booleans**
 
-The console is an interactive tool that a browser has for users and developers to interact with web pages. It looks like this:
-
-![The Console](img/the_console.jpg)
-
+    var isJavaScriptCool = true;
+    var isJavaScriptLame = false;
         </section>
+
         <section class="slide" data-markdown>
-## Exercise 1
+## Class Exercise
 
-### The Console:
-In Chrome, to open the Console tab, do any of the following:
-
-* Use the keyboard shortcut: 
-    * ```&LT;COMMAND> + &LT;OPTION> + &LT;J>``` (MAC)
-    * ```&LT;CONTROL> + &LT;SHIFT> + &LT;J>``` (WINDOWS/LINUX).
-* Or Select: ```View > Developer > JavaScript Console```.
-
-        </section>
-        <section class="slide" data-markdown>
-## Exercise 1
-
-### The Console:
-
-Let's do that now.  Open your console by one of the those methods.  You will know you're at the right place when your screen's bottom half is now the console and this top part of the screen is much smaller.  When you're done you can close the console with the (x) button in the top right of it: 
-
-![The Console](img/the_console_x.jpg)
-        </section>
-        <section class="slide" data-markdown>
-## Exercise 1
-
-### The Console:
-
-Practice opening and closing the console in a way you're confortable with.  My personal favorite is the keyboard shortcut.  It's quick and clean. 
-
-#### Now let's try typing some input into the console:
-
-Let's type a number.  How about we try ```30```.  ```30```'s a nice round number.  
-
-Open your console and type a ```3``` followed by a ```0``` and hit ```&lt;ENTER>```.  You'll likely see something that looks like this:
+Let's practice making a variable.  Type the below command in the console. (Remember that the ```>``` symbol is already there, you don't need to type it.) 
 
 ```javascript
-> 30
-< 30
+> var myFirstVariable = "Hello World!";
 ```
-        </section>
-        <section class="slide" data-markdown>
-## Exercise 1
-
-### The Console:
-
-The ```>``` symbol is used by the console to represent a space for your input.  
-
-The ```&lt;``` symbol is used by the console to represent the **returned value** of your input.  
-
-#### You don't have to type either ```>``` or ```&lt;``` into the console.
-
-Your input was the integer value of ```30``` and the **returned value** was also ```30```.
-```javascript
-> 30
-< 30
-```
-
-        </section>
-        <section class="slide" data-markdown>
-## Exercise 1
-
-### The Console:
-
-Let's try making a variable.  Type this command: 
-
-```bash
-> myFirstVariable = "Hello World!";
-```
-#### Remember that the ```>``` symbol is already there and you don't need to type it.
 
 The **returned value** you should get is:
 
@@ -391,11 +378,6 @@ The **returned value** you should get is:
 This tells you that javascript got your message and assigned that value to ```myFirstVariable```.
 
 Now let's use that variable:
-        </section>
-        <section class="slide" data-markdown>
-## Exercise 1
-
-### The Console:
 
 Try executing this command:
 ```bash
@@ -412,11 +394,9 @@ This is because we told the console to give us the value of the variable ```myFi
 That value was the one we gave it of ```Hello World!```
 
 
-        </section>
-        <section class="slide" data-markdown>
-## Exercise 1
-
-### The Console:
+                </section>
+                <section class="slide" data-markdown>
+## Class Exercise
 
 Consider the following series of commands:
 
@@ -432,37 +412,38 @@ Consider the following series of commands:
 ```
 
 This not only gives us 4 new **variables**, all with **integer values**, but it also gives us the knowledge that there are indeed eighty six thousand four hundred seconds in a day.
-        </section>
+                </section>
         <section class="slide" data-markdown>
-## Variable Types
+## More Variable Types: Arrays
 
-Variables that contain true / false values are called **booleans**
+Variables can also hold a collection of values (the values themselves being **types** like strings or booleans) in what is called an **array**. Note the syntax; the entire array value needs to be enclosed in square brackets `[ ]` with each value separated by a comma *except* the last value.
 
-    var isJavaScriptCool = true;
-    var isJavaScriptLame = false;
-        </section>
-        <section class="slide" data-markdown>
-## Variable Types
-
-Variables can even hold lists of values (the list values themselves being **types** like strings or booleans) in what is called an **array**
 ```javascript
+// Declaring the array and assigning values.
 var myFavoriteThings = [
     "Raindrops On Roses",
-    "Whiskers On Kittens",
+    "Whiskers On Kittens"
 ];
 ```
-The values in an array can then be accessed by their **numerical index**, a number that stars at ```0``` and rises by ```1``` with each entry.  
+
+The values in an array can then be accessed by their **numerical index**, which starts at ```0```.  
 
 The same end result as the code above could also be written like this:
 ```javascript
+// Declaring an empty array.
+var myFavoriteThings = [];
+// Assigning values to the array.
 myFavoriteThings[0] = "Raindrops On Roses";
 myFavoriteThings[1] = "Whiskers On Kittens";
 ```
-
+Think of arrays as egg cartons. All the eggs are in one carton but each egg has its own slot.
 
         </section>
         <section class="slide" data-markdown>
-## Variable Types
+            add array console exercise
+        </section>
+        <section class="slide" data-markdown>
+## Variable Types: Objects
 
 Another type of variable that can hold other variable inside it is caled an **object**. Like arrays, objects can hold other values inside of them.
 ```javascript
@@ -1200,7 +1181,7 @@ $(document).ready(function(){
 
 On the example page we have a section at the bottom where there are 4 pictures of my dog Phoenix.
 
-![She is a Nova Scotia Duck Tolling Retreiver](img/Screen-Shot-1.png)
+![She is a Nova Scotia Duck Tolling Retreiver](framework/img/workshop/Screen-Shot-1.png)
 
 Let's have some fun with those!
         </section>
@@ -1250,7 +1231,7 @@ $(document).ready(function(){
 ```
 Then save the file with sublime, go to chrome and refresh the page.  If you've done it right it should look like this:
 
-![That's a Tiny Toller](img/Screen-Shot-2.png)
+![That's a Tiny Toller](framework/img/workshop/Screen-Shot-2.png)
 
         </section>
         <section class="slide" data-markdown>
@@ -1268,7 +1249,7 @@ Again, save the file with sublime, go to chrome and refresh the page.
 
 If you've done it right it should look like this:
 
-![That's a HUGE Toller](img/Screen-Shot-3.png)
+![That's a HUGE Toller](framework/img/workshop/Screen-Shot-3.png)
 
         </section>
         <section class="slide" data-markdown>
@@ -1828,7 +1809,7 @@ Slidedecks created with [Lea Verou's CSS-based SlideShow System](https://github.
         <p class="instructions">Use the left <i class="fa fa-arrow-left"></i> and right <i class="fa fa-arrow-right"></i> arrow keys to navigate</p>
     </footer>
     
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!script src="framework/scripts/jquery-1.11.1.min.js"></script>
     <script src="framework/scripts/slideshow.js"></script>
 
     <!-- Uncomment the plugins you need -->
@@ -1840,12 +1821,7 @@ Slidedecks created with [Lea Verou's CSS-based SlideShow System](https://github.
     <script src="framework/scripts/plugins/markdown/marked.js"></script>
     <script src="framework/scripts/plugins/markdown/markdown.js"></script>
     <script src="framework/scripts/plugins/highlight/highlight.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-
-    <!-- Prettify -->
-    <script src="framework/scripts/plugins/prettify.js"></script>
-    <script src="framework/scripts/plugins/lang-css.js"></script>
-    <script src="framework/scripts/plugins/prism.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>    
 
     <script>
         var slideshow = new SlideShow();
@@ -1861,5 +1837,6 @@ Slidedecks created with [Lea Verou's CSS-based SlideShow System](https://github.
             jQuery(".snippet").before("<span class=\"edit\">edit me</span>");
         });
     </script>
+    <script async data-id="ClassGauge" data-token="-JYaEPN4Pk3flpXty5_2" src="https://class-gauge.firebaseapp.com/assets/voting_client.js"></script>
 </body>
 </html>
