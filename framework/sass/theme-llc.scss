@@ -85,8 +85,12 @@ a {
 	}
 }
 
-pre code {
-	overflow-y: auto;
+pre {
+	margin: 8px 0;
+
+	code {
+		overflow-y: auto;
+	}
 }
 code {
 	font-family: Monaco, Andale Mono, monospace;
@@ -130,7 +134,15 @@ footer {
 .slide {
 	padding: 45px 5%;
 	height: 96%;
-
+	
+	// Adds extra space to the bottom of the slides to allow 
+	// presenters to scroll the page up so people in the back
+	// of the room can see the bottom of the slides.
+	&:after {
+		content: " ";
+		display: block;
+		height: 200px;
+	}
 	img {
 		max-width: 100%;
 	}

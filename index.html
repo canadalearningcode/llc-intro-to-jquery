@@ -19,12 +19,11 @@
 
     <!-- Takes care of CSS3 prefixes! -->
     <script src="framework/scripts/prefixfree.min.js"></script>
-    <script src="framework/scripts/jquery-1.11.1.min.js"></script>
 </head>
 
 <!-- Timer/progress bar: Define the presentation duration using "data-duration" in minutes. -->
 <body data-duration="360">
-        
+    
     <!-- opens all links in a new window -->
     <base target="_blank">
 
@@ -51,9 +50,6 @@
         <section class="slide centered" data-markdown>
             ## Today's project
         </section>
-        <section class="slide centered" data-markdown>
-            ## Course Outline
-        </section>
         <section class="slide" data-markdown>
 ## Getting Started
 
@@ -65,8 +61,31 @@ You will need:
 
 1. A sense of adventure!!!
     
-**Bonus:** One of the great things about Sublime Text it that you can add extra functionality to it with *plugins*. [Go here](https://github.com/infn8/LLC-Intro-To-jQuery/blob/master/sublime-text-setup.md) to add some cool functionality to your Sublime Text editor.
-        </section>   
+**Bonus:** One of the great things about Sublime Text it that you can add extra functionality to it with *plugins*. [Go here](https://github.com/infn8/LLC-Intro-To-jQuery/blob/master/sublime-text-setup.md) to learn more about adding some cool functionality to your Sublime Text editor.
+        </section>
+        <section class="slide basic-web-page">
+            <h2>HTML, CSS & JavaScript</h2>
+
+            <p>JavaScript was meant to manipulate web pages written in HTML and works in tandem with CSS.</p>
+
+            <p><strong>HTML (Hypertext Markup Language)</strong> is used to define the content.</p>
+            
+            <div class="example">
+            <p>I'm just a paragraph.</p>
+            </div>
+            
+            <p><strong>CSS (Cascading Style Sheets)</strong> is used to create the presentation and look of a site.</p>
+
+            <div class="example" style="color:green;font-weight:bold;">
+            <p>I'm a paragraph with <span>style</span>.</p>
+            </div>
+
+            <p><strong>JavaScript</strong> is a <em>programming</em> language used to define the behavior and add functionality to a website.</p>
+
+            <div class="example">
+            <p onclick="alert('clicked!');">I'm a paragraph that can be clicked. Try it!</p>
+            </div>
+        </section>
         <section class="slide" data-markdown>
 ## HTML overview
 
@@ -92,7 +111,7 @@ HTML (HyperText Markup Language) is the **content** of your document/web page. U
 ####Images
 
 ```xml
-&lt;img src="http://www.fillmurray.com/300/300" alt="Placeholder Image" />
+&lt;img src="http://www.fillmurray.com/300/300" alt="Placeholder Image">
 ```
         </section>
         <section class="slide">
@@ -186,7 +205,7 @@ The console is an interactive tool, built into the browser. We can use this tool
 
 ![The Console](framework/img/workshop/the_console_x.jpg)
 
-Note the ```>``` symbol. It is used by the console to represent a space for you to enter your input but you don't have to actually type it.
+**Note the ```>``` symbol.** It is used by the console to represent a space for you to enter your input but you don't have to actually type it.
         </section>
         <section class="slide" data-markdown>
 ## Accessing the Console
@@ -201,14 +220,14 @@ OR
 
 Select: ```View > Developer > JavaScript Console```.
 
-You can open the console when viewing any HTML page but let's use [**this blank HTML page**](framework/console.html) so we can have a blank slate to practice with throughout the day. 
+You can open the console when viewing *any* HTML page but let's use this blank HTML page, [console.html](framework/console.html) so we can have a blank slate to practice with throughout the day. 
 
-Open the HTML page in the link above now and take a moment to practice opening and closing the console until you're comfortable with it.
+Open [console.html](framework/console.html) now and take a moment to practice opening and closing the console until you're comfortable with it.
         </section>
         <section class="slide" data-markdown>
 ## Mini-exercise
 
-Let's experiment with typing some input into the console. Open the console and after the `>` symbol, type your favorite number and press the enter/return key. 
+Let's experiment with typing some input into the console. Return to **console.html** and open the console. After the `>` symbol, type your favorite number and press the enter/return key. 
 
 Did you see something like this?
 
@@ -217,9 +236,7 @@ Did you see something like this?
 The ```>``` symbol is used by the console to represent a space for your input.    
 The ```&lt;``` symbol is used by the console to represent the **returned value** of your input.  
 
-**You don't have to type either ```>``` or ```&lt;``` into the console.**
-
-You can also input some text BUT when using text, make sure you put it in quotes (more on this soon).
+You can also input text BUT when using text, make sure you put it in quotes (more on this soon).
 
 ![console string](framework/img/workshop/console-string.gif)
 
@@ -240,7 +257,7 @@ When creating or *declaring* a variable, you must use the keyword `var` but you 
 
 ```javascript
    var myVariable = "Hello World";
-/*  ^       ^            ^
+/*  |       |            |
     |       |            |
    keyword  |           value given to variable
             |
@@ -303,6 +320,11 @@ var wholePhrase = first + " " + second;
 = "Hello" + " " + "World"  
 = "Hello World"
 
+        </section>
+        <section class="slide" data-markdown>
+            ##Class exercise: Creating Variables
+
+            Let's go back to our practice creating some variables in the console.
         </section>
         <section class="slide" data-markdown>
 ## Variable Types: Strings and Quotes
@@ -816,7 +838,7 @@ We can use jQuery to:
 <p>Here are several different examples in one section.  Each button below has been given instructions to follow when clicked.</p>
 
 <p data-height="200" data-theme-id="0" data-slug-hash="aKnJm" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/infn8/pen/aKnJm/'>jQuery Event and Method Examples</a> by Arron Gibson (<a href='http://codepen.io/infn8'>@infn8</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-<script async src="//codepen.io/assets/embed/ei.js"></script>
+<!-- <script async src="//codepen.io/assets/embed/ei.js"></script> -->
 
 <p>Have a look at the HTML, CSS, &amp; JS tabs as well as the Result tab.</p>
 <p>The <strong>HTML</strong> consists of several <code>&lt;button></code> elements, a <code>&lt;div class="stage">&lt;/div></code> and inside that a <code>&lt;div class="player">&lt;/div></code> </p>
@@ -828,9 +850,9 @@ We can use jQuery to:
                 </section>
                 <section class="slide">
 <h2>jQuery Examples:</h2>
-<div data-height="427" data-theme-id="7768" data-slug-hash="aKnJm" data-default-tab="js" class='codepen'>
+<!-- <div data-height="427" data-theme-id="7768" data-slug-hash="aKnJm" data-default-tab="js" class='codepen'>
 <p>See the Pen <a href='http://codepen.io/infn8/pen/aKnJm/'>jQuery Event and Method Examples</a> by Arron Gibson (<a href='http://codepen.io/infn8'>@infn8</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-</div><script async src="//codepen.io/assets/embed/ei.js"></script>
+</div><script async src="//codepen.io/assets/embed/ei.js"></script> -->
 <p>We start by selecting the first button with a css style selector that will target it. <code>.example-1</code></p>
 <p>We pass that <strong>string value</strong> as a <strong>parameter</strong> to the <strong>jQuery Function</strong>.
 
@@ -1783,6 +1805,7 @@ We've talked about how javascript has variables and functions.  We even mentione
 ## Title
                 </section>
                  -->
+        <!-- Last slide -->
         <section class="slide" data-markdown>
 ## Thank You.
 
@@ -1792,16 +1815,6 @@ We will take the rest of the time to work with you on your projects and make sur
         
 Slidedecks created with [Lea Verou's CSS-based SlideShow System](https://github.com/LeaVerou/csss) and [reveal.js](http://lab.hakim.se/reveal-js/).
         </section>
-
-        <!-- pulse check -->
-        <!-- <p class="instructions">
-            Use the left <i class="fa fa-arrow-left"></i> and right <i class="fa fa-arrow-right"></i> arrow keys to navigate
-            <span class="controls" style="float:right">
-                <button class="minus-button" title="Use this button to indicate that you're not clear on what's covered in this section" disabled><span class="fa fa-thumbs-o-up fa-rotate-180"></span></button>
-                <button class="watch-button" data-watching="false" title="Not Following. There is no connection to an instructor.  Observation Mode Disabled" disabled><span class="fa fa-eye-slash"></span></button>
-                <button class="plus-button" title="Use this button to indicate that you understand this section" disabled><span class="fa fa-thumbs-o-up"></span></button>
-            </span>
-        </p> -->
     </main><!-- cls main section -->
 
     <footer>
@@ -1809,7 +1822,8 @@ Slidedecks created with [Lea Verou's CSS-based SlideShow System](https://github.
         <p class="instructions">Use the left <i class="fa fa-arrow-left"></i> and right <i class="fa fa-arrow-right"></i> arrow keys to navigate</p>
     </footer>
     
-    <!script src="framework/scripts/jquery-1.11.1.min.js"></script>
+    <!-- <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>-->
+    <script src="framework/scripts/jquery-1.11.1.min.js"></script>
     <script src="framework/scripts/slideshow.js"></script>
 
     <!-- Uncomment the plugins you need -->
@@ -1821,7 +1835,7 @@ Slidedecks created with [Lea Verou's CSS-based SlideShow System](https://github.
     <script src="framework/scripts/plugins/markdown/marked.js"></script>
     <script src="framework/scripts/plugins/markdown/markdown.js"></script>
     <script src="framework/scripts/plugins/highlight/highlight.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>    
+    <script>hljs.initHighlightingOnLoad();</script>
 
     <script>
         var slideshow = new SlideShow();
@@ -1837,6 +1851,6 @@ Slidedecks created with [Lea Verou's CSS-based SlideShow System](https://github.
             jQuery(".snippet").before("<span class=\"edit\">edit me</span>");
         });
     </script>
-    <script async data-id="ClassGauge" data-token="-JYaEPN4Pk3flpXty5_2" src="https://class-gauge.firebaseapp.com/assets/voting_client.js"></script>
+    <!-- <script async data-id="ClassGauge" data-token="-JYaEPN4Pk3flpXty5_2" src="https://class-gauge.firebaseapp.com/assets/voting_client.js"></script> -->
 </body>
 </html>

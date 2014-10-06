@@ -66,8 +66,10 @@ a {
     text-decoration: none;
     color: #b109aa; }
 
-pre code {
-  overflow-y: auto; }
+pre {
+  margin: 8px 0; }
+  pre code {
+    overflow-y: auto; }
 
 code {
   font-family: Monaco, Andale Mono, monospace;
@@ -101,6 +103,10 @@ footer {
 .slide {
   padding: 45px 5%;
   height: 96%; }
+  .slide:after {
+    content: " ";
+    display: block;
+    height: 200px; }
   .slide img {
     max-width: 100%; }
   .slide:target {
