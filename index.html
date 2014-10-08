@@ -627,111 +627,26 @@ var vonTrappFamily = {
         <section class="slide" data-markdown>
 ## Variable Types
 
-There are *many* different types of variable types in javascript and many rules about how to write them.
+As you've just seen, there are *many* different variable types in JavaScript and many rules about how to write them.
 
-We will not go into an exhaustive list here but it is important that you understand that variables hold values and the values themselves have types.
-
+It will take practice getting use to all different rules but it is important to understand that variables are used to hold values and the values themselves have different types.
         </section>
         <section class="slide" data-markdown>
-## Ok now what?
+## Ok, now what?
 
 Now... we write code.
 
 ### What code?
 
-That depends on what you want to do.  
+That depends. What you want your **program** to do?  We have been practicing writing lines of JavaScript.  These lines of JavaScript can now be use to write software which are just a series of commands for a computer to follow.  
 
-What do you want your **program** to do?  Because now we are at the point where we're writing lines of javascript.  We are writing software.  Software is just a series of commands for a computer.  Using javascript, we could tell a browser to do the following things:
+Let's look at [this menu example](framework/example-menu.html). Using JavaScript, we could tell a browser to do the following things:
 
-* Pay attention to the links in the main menu of our page.
-* Whevener someone hovers over one of those menu items, move a line to highlight the hovered item.
-* When the mouse leaves, move the line back where it was.
+* Pay attention to the links in the main menu of a page.
+* Whenever someone hovers over one of those menu items, move a line to highlight the hovered item.
+* When the mouse leaves, move the line back to where it was.
 
-
-                </section>
-                <section class="slide" >
- <p>Something like that might look like this:</p>
-
-
-<div class="example example-1">
-<ul>
-    <li><a href="#">Home</a></li>
-    <li class="active"><a href="#">About Us</a></li>
-    <li><a href="#">Media</a></li>
-    <li><a href="#">Advertise</a></li>
-    <li><a href="#">Contact Us</a></li>
-</ul>
-<div class="layline"></div>
-</div>
-<style>
-    
-    .example-1{
-        position: relative;
-    }
-    .example-1 li{
-        display: inline-block;
-    }
-    .example-1 li a{
-        padding: 10px;
-    }
-    .example-1 li a:hover{
-        padding: 10px;
-        color:#b109aa;
-    }
-    .example-1 ul{
-        margin: 0;
-    }
-    .example-1 .layline{
-        position: absolute;
-        bottom: 0;
-        height: 5px;
-        background: #b1009a;
-        width: 0%;
-        left: 0;
-
-
-        -webkit-transition: all 800ms ease-in-out;
-        -moz-transition: all 800ms ease-in-out;
-        -ms-transition: all 800ms ease-in-out;
-        -o-transition: all 800ms ease-in-out;
-        transition: all 800ms ease-in-out;
-    }
-</style>
-<script>
-    
-    $(function() {
-        $ex = $('.example-1');
-        $ll = $ex.find('.layline');
-        $items = $ex.find('li');
-
-        moveLine = function(target){
-            if($ex.is(':target .example')){
-                $active = $items.filter('.active');
-                $ll.width($active.width() ).css('left', $active.position().left );
-            }
-        }
-        window.onhashchange = moveLine;
-        $(window).bind('load', moveLine);
-        $items.hover(function(){
-            // Hover Over
-            $active = $(this);
-            $ll.width($active.width() ).css('left', $active.position().left );
-        }, function(){
-            // Hover Out
-            $active = $items.filter('.active');
-            $ll.width($active.width() ).css('left', $active.position().left );
-        }).find('a').click(function(event) {
-            event.preventDefault();
-            $items.removeClass('active');
-            $(this).parent().addClass('active');
-            return false;
-        });
-    });
-</script>
-<p></p>
-<p>The example above illustrates what a short series of commands can do.</p>
-<p>Sometimes, when we have a series of commands that we run often, rather that writing out the same line, or lines, of code many times through out our program, we will create something called a <strong> function </strong> </p>
-
+This example illustrates a short series of commands. When these series of commands are repetitive, rather than writing the same line(s) of code many times throughout our program, we can create a `function`.
         </section>
         <section class="slide" data-markdown>
 

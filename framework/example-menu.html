@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Example menu</title>
+	<style>
+		a {
+				font-family: sans-serif;
+				color: #222222;
+				text-decoration: none;
+				font-size: 20px;
+				display: inline-block;
+				margin: 0 10px;
+		}
+    .example-1{
+        position: relative;
+        padding: 20px 0 5px;
+    }
+    .example-1 li{
+        display: inline-block;
+    }
+    .example-1 li a{
+        padding: 10px;
+    }
+    .example-1 li a:hover{
+        padding: 10px;
+        color:#b109aa;
+    }
+    .example-1 ul{
+        margin: 0;
+    }
+    .example-1 .layline{
+        position: absolute;
+        bottom: 0;
+        height: 5px;
+        background: #b1009a;
+        width: 0%;
+        left: 0;
+        -webkit-transition: all 800ms ease-in-out;
+        transition: all 800ms ease-in-out;
+    }
+</style>
+</head>
+<body>
+
+	<div class="example example-1">
+		<ul>
+		    <li><a href="#">Home</a></li>
+		    <li class="active"><a href="#">About Us</a></li>
+		    <li><a href="#">Media</a></li>
+		    <li><a href="#">Advertise</a></li>
+		    <li><a href="#">Contact Us</a></li>
+		</ul>
+		<div class="layline"></div>
+	</div>
+
+	<script src="scripts/jquery-1.11.1.min.js"></script>
+	<script>
+    $(function() {
+        $ex = $('.example-1');
+        $ll = $ex.find('.layline');
+        $items = $ex.find('li');
+
+        moveLine = function(target){
+            if($ex.is(':target .example')){
+                $active = $items.filter('.active');
+                $ll.width($active.width() ).css('left', $active.position().left );
+            }
+        }
+        window.onhashchange = moveLine;
+        $(window).bind('load', moveLine);
+        $items.hover(function(){
+            // Hover Over
+            $active = $(this);
+            $ll.width($active.width() ).css('left', $active.position().left );
+        }, function(){
+            // Hover Out
+            $active = $items.filter('.active');
+            $ll.width($active.width() ).css('left', $active.position().left );
+        }).find('a').click(function(event) {
+            event.preventDefault();
+            $items.removeClass('active');
+            $(this).parent().addClass('active');
+            return false;
+        });
+    });
+	</script>
+</body>
+</html>
