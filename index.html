@@ -66,7 +66,7 @@ You will need:
         <section class="slide basic-web-page">
             <h2>HTML, CSS & JavaScript</h2>
 
-            <p>JavaScript was meant to manipulate web pages written in HTML and works in tandem with CSS.</p>
+            <p>JavaScript was meant to manipulate web pages written in HTML and also works with CSS.</p>
 
             <p><strong>HTML (Hypertext Markup Language)</strong> is used to define the content.</p>
             
@@ -207,22 +207,26 @@ The console is an interactive tool, built into the browser. We can use this tool
 
 **Note the ```>``` symbol.** It is used by the console to represent a space for you to enter your input but you don't have to actually type it.
         </section>
-        <section class="slide" data-markdown>
-## Accessing the Console
+        <section class="slide">
+            <h2>Accessing the Console</h2>
 
-In Chrome, there are a couple ways to open the Console tab.
+            <p>In Chrome, there are a couple ways to open the Console tab.</p>
 
-Use the keyboard shortcut:  
-```&LT;COMMAND> + &LT;OPTION> + &LT;J>``` (MAC)  
-```&LT;CONTROL> + &LT;SHIFT> + &LT;J>``` (WINDOWS/LINUX).
+            <p>Use the keyboard shortcut: <br>
+            <code>&amp;LT;COMMAND&gt; + &amp;LT;OPTION&gt; + &amp;LT;J&gt;</code> (MAC) <br>
+            <code>&amp;LT;CONTROL&gt; + &amp;LT;SHIFT&gt; + &amp;LT;J&gt;</code> (WINDOWS/LINUX).</p>
 
-OR
+            <p>OR</p>
 
-Select: ```View > Developer > JavaScript Console```.
+            <p>Select: <code>View &gt; Developer &gt; JavaScript Console</code>.</p>
 
-You can open the console when viewing *any* HTML page but let's use this blank HTML page, [console.html](framework/console.html) so we can have a blank slate to practice with throughout the day. 
+            <p>You can open the console when viewing <em>any</em> HTML page but let’s use this blank HTML page, <a href="framework/console.html">console.html</a> so we can have a blank slate to practice with throughout the day. </p>
 
-Open [console.html](framework/console.html) now and take a moment to practice opening and closing the console until you're comfortable with it.
+            <p>Open <a href="framework/console.html">console.html</a> now and take a moment to practice opening and closing the console until you’re comfortable with it.</p>
+
+            <div class="presenter-notes">
+                <p>Re-iterate to the class to keep console.html open in a tab to refer back to for the console exercises.  A blank document was created rather than opening the console in the slide deck so any errors showing won't confuse the learners and take away from the lesson explaining things not needed for the task at hand.</p>
+            </div>
         </section>
         <section class="slide" data-markdown>
 ## Mini-exercise
@@ -242,7 +246,8 @@ You can also input text BUT when using text, make sure you put it in quotes (mor
 
         </section>
         <section class="slide title" data-markdown>
-            #Variables
+            #JavaScript Overview
+            ##Variables
         </section>
         <section class="slide" data-markdown>
 ## What *is* a variable?
@@ -260,15 +265,29 @@ Let's look at the below example.
 ```javascript
    var myVariable = "Hello World";
 /*  |       |            |
-    |       |            |
    keyword  |           value given to variable
             |
-           variable name created by you                    
+           variable name created by you          
 */
 ```
 
-We are taking the value ```Hello World``` and giving it the name ```myVariable```.  
+We are taking the value ```Hello World``` and giving it the name ```myVariable```. 
 
+This is referred to as *assigning* a value to the *variable*. Evaluate everything to the right of the equals sign, then assign this value to the variable on the left side.
+
+        </section>
+        <section class="slide" data-markdown>
+##Naming a Variable
+
+Variables can't contain spaces so a convention called camel case is generally used. Every new word is capitalized and the result looks `likeCamelHumps`. 
+
+JavaScript is case sensitive (uppercase and lowercase letters are treated differently) so variable names are also case sensitive.
+
+Use a descriptive name to make it easier to see, what kind of value that variable is going to hold.
+
+`var firstName;` ← Clear that first name will go here.   
+`var fn;`        ← Not as obvious as firstName.   
+`var x; `        ← Not clear at all.
         </section>
         <section class="slide" data-markdown>
 ## Variable Types: Strings
@@ -307,7 +326,7 @@ var wholePhrase = first + " " + second;
 
             <pre class="delayed"><code>var favFood = "pizza";</code></pre>
 
-            <p class="delayed">Try adding the above code into the console. What value gets returned? <code class="delayed">undefined</code></p>
+            <p class="delayed">Try adding the above code into the console on <strong>console.html</strong>. What value gets returned? <code class="delayed">undefined</code></p>
 
             <div class="delayed">
                 <p>That is perfectly fine. Remember, variables are used to <strong>store</strong> values until you're ready to use them.  <code>favFood</code> is still holding on to the value so it returns nothing (undefined). But now, JavaScript now knows that you've assigned a value to a variable.  To actually <strong>use</strong> the variable, just type <code>favFood</code> into the console. It will now <strong>return</strong> the value that it was storing.</p>
@@ -324,7 +343,7 @@ var wholePhrase = first + " " + second;
 
             <p><img src="framework/img/workshop/console-concatenate.gif" alt="concatenate example" title=""></p>
 
-            <p>Note that when we execute a command without <code>var</code>, the value of the command gets returned instead of <code>undefined</code>. Remember, <code>var</code> is used to a declare a variable, to hold onto the value to be used later on.</p>
+            <p>Note that when we execute a command without <code>var</code>, the assigned value of the variable gets return instead of <code>undefined</code>. Reminder, <code>var</code> is used to a <em>declare</em> and create a variable will hold the value, until used.</p>
 
             <p><strong>Challenge!</strong> How would you add a period to the end of the sentence?</p>
 
@@ -403,23 +422,55 @@ The calculations work the same whether the values are numbers, or values stored 
         </section>
 
         <section class="slide" data-markdown>
-## Class Exercise
+            ## Class Exercise
 
-Consider the following series of commands:
+            Let's practice using numbers & arithmetic operators.   
+            `+` for addition, `-` for subtraction, `*` for multiplication and `/` for division.
 
-```bash
-> secondsPerMinute = 60;
-&lt; 60
-> minutesPerHour = 60;
-&lt; 60
-> hoursPerDay = 24;
-&lt; 24
-> secondsPerDay = secondsPerMinute * minutesPerHour * hoursPerDay;
-&lt; 86400
+            ![doing math in the console](framework/img/workshop/console-math.gif)
+            
+            Now, try using these operators with variables.  Let's create a program for finding a person's age. Create two variables, one for `currentYear` and one for `birthYear` and subtract the values.
+
+            ![doing math with variables in the console](framework/img/workshop/console-math-variables.gif)
+        </section>
+
+        <section class="slide" data-markdown>
+## Exercise #1 (10 mins)
+
+Create a program using the concepts covered so far: variables & arithmetic operators.
+
+How many seconds are there per day? 
+
+* Create variables for `secondsPerMinute`, `minutesPerHour` and `hoursPerDay`.  
+* Use those values to calculate `secondsPerDay`.
+
+Feel free to use your own variable names or abbreviations. Just make sure to adhere to best practices for naming variables.
+
+**Extra Challenge!**   
+Use concatenation to output "There are x seconds per day."
+
+(Advance to the next slide to see the solution.)
+        </section>
+        <section class="slide" data-markdown>
+## Exercise #1 Solution
+
+![exercise 1 solution](framework/img/workshop/console-exercise-1.gif)
+```javascript
+var secondsPerMinute = 60;
+var minutesPerHour = 60;
+var hoursPerDay = 24;
+var secondsPerDay = secondsPerMinute * minutesPerHour * hoursPerDay;
+
+// This command will output the value of secondsPerDay
+secondsPerDay;
+
+// Concatenating a string to the secondsPerDay variable.
+var sentence = "There are " + secondsPerDay + " seconds per day.";
+
+// This command will output the value of sentence.
+sentence;
 ```
-
-This not only gives us 4 new **variables**, all with **integer values**, but it also gives us the knowledge that there are indeed eighty six thousand four hundred seconds in a day.
-                </section>
+        </section>
         
         <section class="slide" data-markdown>
 ## Variable Types: Booleans
