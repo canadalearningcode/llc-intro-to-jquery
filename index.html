@@ -251,7 +251,7 @@ You can also input text BUT when using text, make sure you put it in quotes (mor
         </section>
         <section class="slide title" data-markdown>
             #JavaScript Overview
-            ##Variables
+            ##Variables & Functions
         </section>
         <section class="slide" data-markdown>
 ## What *is* a variable?
@@ -649,112 +649,127 @@ Let's look at [this menu example](framework/example-menu.html). Using JavaScript
 This example illustrates a short series of commands. When these series of commands are repetitive, rather than writing the same line(s) of code many times throughout our program, we can create a `function`.
         </section>
         <section class="slide" data-markdown>
+## Functions
 
-## JavaScript Functions
+If a `variable` is a name for a value, then a `function` is a name for a set of commands or instructions. When we invoke a variable, it just returns the value.  When we invoke a function, it executes all the commands contained within, making it easier to make the code "do things."  
 
-if a variable is a **name** for a **value**, then a function is a **name** for a set of commands or instructions.  For example:
+Let's look at two functions, `alert()` and `prompt()`.  These come built into JavaScript, for free!
+
+Go back to the console and type both functions in, one at a time, and see what happens. Note the syntax for using functions, the parenthesis `()` must be included.
+
+        </section>
+        <section class="slide" data-markdown>
+##Functions and Arguments
+
+We've seen now that the `alert()` and `prompt()` functions create a pop-up in the browser but the pop-ups are blank.  We can use to pass an **argument** *into* these functions by adding a value within the parenthesis.  Try this in the console:
+
 ```javascript
-function sayHello(){
-    /*
-    There can be many commands here in between the two {curly braces}
-    Let's make the first command an alert to the user.
-    */ 
+alert("Hello!");
+```
+```javascript
+prompt("What day is it today?");
+```
+
+Whatever value you put within the parenthesis will get passed into the function.
+
+![console function example](framework/img/workshop/console-alert-prompt.gif)
+        </section>
+
+        <section class="slide" data-markdown>
+## Make your own functions!
+
+You can create your own functions that can contain any number of instructions that you need, including other functions. Use the `function` keyword to declare a new function.
+
+Let's look at this example: 
+
+```javascript
+function sayAnything(){
     alert("Hello World");
 }
 ```
-This creates a new **function** called "sayHello" which, when invoked, will execute the **alert** function that comes built into javascipt.
+The above example creates a new **function** called `sayHello` but similar to variables, nothing will happen until the function is **called**.  
 
-The **alert** function is a **Built In Function** and the **sayHello** function is a **User Defined Function**.  The only difference between them is that you don't have to write a built in function, it comes for free as a part of JavaScript.
+We've already had practice calling a function.  Remember `alert();` and `prompt();`?  Simply **call** the function by using the function name. Let's add the above function declaration into the console and then execute it by calling it.
+
+![console function example](framework/img/workshop/console-function.gif)
+
         </section>
         <section class="slide" data-markdown>
-
-## JavaScript Functions
+##Functions, Arguments & Parameters
 
 Functions can be used to make your life a LOT easier once you get used to how to write them.  A function should be used when you have something you need to do time and again in your project.
 
-### Function Parameters
+Just like with the built-in functions, you can also pass *arguments* into your own functions too.
 
-Using the code from our previous slide:
+Let's take another look at the function from the previous example.
 
 ```javascript
-function sayHello(){
+function sayAnything(){
     alert("Hello World");
 }
 ```
-We notice that the ```sayHello()``` function has empty parenthesis () while the ```alert()``` function has the **string** value "Hello World" in the parenthesis ().
+Notice that the ```sayAnything()``` function has an empty parenthesis () while the ```alert()``` function has the **string** value "Hello World" in the parenthesis (). 
 
+We can create a **parameter** to pass an argument into the function.
 
-This introduces an important concept with functions called **parameters**.
-
- 
         </section>
         <section class="slide" data-markdown>
-## JavaScript Functions
-### Function Parameters
+## Creating Functions with Parameters
+**Parameters** are data that are passed into a function as a variable.
 
-**Parameters** are data that you pass to a function that becomes available for use IN that function as a variable.  Let's say that rather than simply saying "Hello World", you might want to say something else, or many other things.  Let's see what that might look like:
+Instead of saying "Hello World" every time you call a function, you might want to say something different each time it is called.  Let's see what that might look like:
 
 ```javascript
+// Declaring the function with a parameter of 'message'
 function sayAnything(message){
     alert(message);
 }
-```
 
-Now if we wanted to use that code we could do this:
-
-```javascript
+// Calling the function
 sayAnything("Check out my cool new boombox!");
 ```
-Which would cause the browser to pop up that message. [Or any other message we wanted to say](#example_2).
+Now, when we call the function, we can pass an argument in the parenthesis (`Check out my cool new boombox!`). That argument now becomes the value of `message` which will now populate the `message` in `alert(message)`.
 
+Let's try it out in the console. First add the function, then call it. You can call the function as many times as you want with different arguments.
+
+![console function example](framework/img/workshop/console-function-param.gif)
         </section>
         <section class="slide" data-markdown>
-## JavaScript Functions
+##Multiple Parameters
                     
-The general pattern looks like this:
+JavaScript allows for multiple parameters. When you call the function, add the values in the same order as the parameters declared in the function.
 
 ```javascript
+function myCustomFunction(parameter1, parameter2, parameterN) {
+/*             |              |           |          |
+               |              |           |          └ You can have as many parameters as you need.
+               |              |           └ The second parameter of the function.            
+               |              └ The first parameter of the function.          
+               └ The name of your function.                          
+*/  
+}
+
+// Call the function with arguments in the same order
 myCustomFunction(parameter1, parameter2, parameterN);
-/*     |              |           |          |
-       |              |           |          └ You can have as many 
-       |              |           |            parameters as you need.
-       |              |           └ The second parameter of the function.
-       |              └ The first parameter of the function.
-       └ The name of your function.
-
-*/
-
 
 ```
-
         </section>
-        <section class="slide" data-markdown>
-## JavaScript Functions
+        <section class="slide">
+            <h2>JavaScript Functions &amp; jQuery</h2>
 
-A function is one of the most powerful tools in JavaScript and one of the most powerful functions you will ever use is this one:
+            <p>A function is one of the most powerful tools in JavaScript and one of the most powerful functions you will ever use is this one:</p>
 
-```javascript
-jQuery();
-```
+            <pre class="delayed"><code>jQuery();</code></pre>
+            
+            <div class="delayed">
+                <p>Remember, jQuery is a <strong>JavaScript library</strong>. Meaning that it is a set of pre written coded instructions, tools, functions and helpers that you can download and use in your projects. </p>
+
+                <p>Think of it this way.  If JavaScript is a language like English, then jQuery is like a dictionary.  It makes working with the language easier. </p>
+            </div>
         </section>
-        <section class="slide" data-markdown>
-## JavaScript Functions
 
-A function is one of the most powerful tools in JavaScript and one of the most powerful functions you will ever use is this one:
-
-```javascript
-jQuery();
-```
-### So *what is* **jQuery** anyways?
-
-jQuery is a JavaScript **library**. Meaning that it is a set of pre written coded instructions, tools, functions and helpers that you can download and then use in your projects. 
-
-Think of it this way.  If JavaScript is a language like english, then jQuery is like a dictionary.  It makes working with the language easier. 
-
-        </section>
-        <section class="slide" data-markdown> 
+        <section class="slide title" data-markdown> 
 # You Already Know How To Use jQuery
-
         </section>
         <section class="slide" data-markdown>
 ## jQuery
