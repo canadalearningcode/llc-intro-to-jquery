@@ -190,14 +190,18 @@ The structure and syntax of JavaScript is more complex than either HTML or CSS b
  
 JavaScript has *all* of these.
         </section>
-        <section class="slide" data-markdown>
-##What is jQuery?
+        <section class="slide">
+            <h2>What is jQuery?</h2>
 
-**jQuery *is* JavaScript.** 
+            <p><strong>jQuery <em>is</em> JavaScript.</strong> </p>
 
-jQuery is a cross-browser JavaScript *library* designed to simplify your program. Though it has its own syntax, it is still JavaScript at its core so its important to have an understanding of traditional JavaScript principles.
+            <p>jQuery is a cross-browser JavaScript <em>library</em> designed to simplify your program. Though it has its own syntax, it is still JavaScript at its core so its important to have an understanding of traditional JavaScript principles.</p>
 
-Before we get into the nitty-gritty details of these JavaScript principles, let's take a quick look at a tool called the console.
+            <p>Before we get into the nitty-gritty details of these JavaScript principles, let’s take a quick look at a tool called the console.</p>
+
+            <div class="presenter-notes">
+                <p>It might be a good idea to explain that unlike HTML & CSS, it takes a lot more to see results in JS. Though it might be hard to see the bigger picture at first, it's important to learn how all the different pieces work and learn the syntax. A lot of the upcoming exercises will be focused on getting used to writing programs in general and getting used to the syntax.</p>
+            </div>
         </section>
         <section class="slide" data-markdown>
 ## The Console
@@ -213,8 +217,8 @@ The console is an interactive tool, built into the browser. We can use this tool
             <p>In Chrome, there are a couple ways to open the Console tab.</p>
 
             <p>Use the keyboard shortcut: <br>
-            <code>&amp;LT;COMMAND&gt; + &amp;LT;OPTION&gt; + &amp;LT;J&gt;</code> (MAC) <br>
-            <code>&amp;LT;CONTROL&gt; + &amp;LT;SHIFT&gt; + &amp;LT;J&gt;</code> (WINDOWS/LINUX).</p>
+            <code>COMMAND + OPTION + J</code> (MAC) <br>
+            <code>CONTROL + SHIFT + J</code> (WINDOWS/LINUX).</p>
 
             <p>OR</p>
 
@@ -482,21 +486,30 @@ Variables that only contain a `true` or `false` value are called **booleans**
         </section>
 
         <section class="slide" data-markdown>
-## More Variable Types: Arrays
+## Variable Types: Arrays
 
-Variables can also hold a collection of values (the values themselves being **types** like strings or booleans) in what is called an **array**. Note the syntax; the entire array value needs to be enclosed in square brackets `[ ]` with each value separated by a comma *except* the last value.
+Variables can also hold a *list* of values (the values themselves being **types** like strings, numbers or booleans) in what is called an **array**. Note the syntax; the entire array value needs to be enclosed in square brackets `[ ]`, with each value separated by a comma *except* the last value.
 
 ```javascript
 // Declaring the array and assigning values.
-var myFavoriteThings = [
-    "Raindrops On Roses",
-    "Whiskers On Kittens"
-];
+var myFavoriteThings = [ "Raindrops On Roses", "Whiskers On Kittens" ];
 ```
 
-The values in an array can then be accessed by their **numerical index**, which starts at ```0```.  
+You can also write each value on its own line for readability.  JavaScript will ignore the line break.
+```javascript
+// Declaring the array and assigning values.
+var myFavoriteThings = [ 
+    "Raindrops On Roses", 
+    "Whiskers On Kittens" 
+];
+```
+The values in an array can then be accessed by their **numerical index**, also contained in square brackets, which always **starts at ```0```**.  
 
-The same end result as the code above could also be written like this:
+![array vs variables](framework/img/workshop/console-var-array.gif)
+
+Think of arrays as egg cartons. All the eggs are in one carton but each egg has its own slot.
+
+An alternative way to declare and assign values to an array is to use the square bracket notation with the index number. This will give the same results as the example above.
 ```javascript
 // Declaring an empty array.
 var myFavoriteThings = [];
@@ -504,16 +517,22 @@ var myFavoriteThings = [];
 myFavoriteThings[0] = "Raindrops On Roses";
 myFavoriteThings[1] = "Whiskers On Kittens";
 ```
-Think of arrays as egg cartons. All the eggs are in one carton but each egg has its own slot.
+        </section>
 
-        </section>
-        <section class="slide" data-markdown>
-            add array console exercise
-        </section>
         <section class="slide" data-markdown>
 ## Variable Types: Objects
 
-Another type of variable that can hold other variable inside it is caled an **object**. Like arrays, objects can hold other values inside of them.
+Another type of variable that can hold multiple values and types is an **object**. To *declare* an object, use the curly brackets `{}`. The values are written in property name and value pairs like this:
+
+```javascript
+var myObject = {
+    propertyName: propertyValue,
+    anotherPropertyName: anotherPropertyValue
+}
+```
+
+You can even use an array as a property value.
+
 ```javascript
 var vonTrappFamily = {
     father : "Captain Georg von Trapp",
@@ -524,26 +543,33 @@ var vonTrappFamily = {
         "Louisa von Trapp",
         "Brigitta von Trapp",
         "Marta von Trapp",
-        "Gretl von Trapp",
+        "Gretl von Trapp"
     ]
 };
 ```
+In the example above the object has 3 **properties**: ```father, stepmother & children```.
 Notice how we use the curly braces ```{ }``` to denote an object and the square braces ```[ ]``` for an array.
-
-In the example above the object has 3 **properties** ```father, stepmother & children``` 
 
 
         </section>
         <section class="slide" data-markdown>
-## Variable Types
+## Variable Types: Objects (continued)
 
-The value of the property ```father``` is a **string** of text.
-
-The value of the property ```stepmother``` is a **string** of text.
-
-The value of the property ```children``` is a **array** of items, each of which is a **string** of text.
-
-The patern of an object is like this:
+```javascript
+var vonTrappFamily = {
+    father : "Captain Georg von Trapp", //The value of the property 'father' is a string of text.
+    stepmother : "Maria von Trapp", //The value of the property 'stepmother' is a string of text.
+    children : [ //The value of the property 'children' is an array of items.
+        "Liesl von Trapp", //Each array item is a string of text.
+        "Friedrich von Trapp",
+        "Louisa von Trapp",
+        "Brigitta von Trapp",
+        "Marta von Trapp",
+        "Gretl von Trapp"
+    ]
+};
+```
+The pattern of an object is like this:
 
 ```javascript
 var variableName = { propertyName : propertyValue, anotherPropertyName : another Value };
@@ -562,22 +588,41 @@ var variableName = { propertyName : propertyValue, anotherPropertyName : another
 
         </section>
         <section class="slide" data-markdown>
-## Variable Types
+## Variable Types: Accessing an Object
 
-Object values are accessed or set via a syntax called **dot notation**.  This means that we could say something like.
+Object values are accessed or set via a syntax called **dot notation**.  To access the value for the `father` property, it would look like this:
+
 ```javascript
 vonTrappFamily.father = "Captain Georg von Trapp";
 ```
-Or we could get the value of one of the children by accessing an array value inside an object property:
+To get the value of one of the children, by accessing an array value *inside* of the object property, it would look like this:
 ```javascript
 var notAllowedChampagne = vonTrappFamily.children[0];
 ```
-This would set the value of the variable ```notAllowedChampagne``` to the string ```Liesl von Trapp```.
+This would set the value of the variable ```notAllowedChampagne``` to the string value of the first child in the array, ```Liesl von Trapp```. (Remember, array indexes always start at 0!)
 
-### The variables that live inside objects are called ```properties```
+**The variables that live inside objects are called ```properties```.** They are still variables, but when they are contained within and object, they are then referred to as **properties**.
 
-They are still variables they are just called **properties**.
+        </section>
+        <section class="slide" data-markdown>
+##Class exercise: Objects
 
+Using the object below, let's add this code into our console and practice accessing various property values.
+
+```javascript
+var vonTrappFamily = {
+    father : "Captain Georg von Trapp",
+    stepmother : "Maria von Trapp",
+    children : [
+        "Liesl von Trapp",
+        "Friedrich von Trapp",
+        "Louisa von Trapp",
+        "Brigitta von Trapp",
+        "Marta von Trapp",
+        "Gretl von Trapp"
+    ]
+};
+```
         </section>
         <section class="slide" data-markdown>
 ## Variable Types
