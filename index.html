@@ -777,7 +777,7 @@ Pretty much everything in JavaScript is an object.  Here's another example:
 var fruits = ["apples", "oranges", "pears"];
 
 // applying the 'length' method to the object to find out how many there are.
-var typesOfFruits =  fruits.length;
+var typesOfFruits = fruits.length;
 
 // Output into the console the number of items and concatenated into a sentence. 
 console.log("There are " + typesOfFruits + " types of fruit."); 
@@ -794,7 +794,7 @@ Try it out in the console.
             <pre class="delayed"><code>jQuery();</code></pre>
             
             <div class="delayed">
-                <p>Remember, jQuery is a <strong>JavaScript library</strong>. It is a library of functions built on top of JavaScript to simplify your program. You can download it and use in your projects. </p>
+                <p>Remember, jQuery is a <strong>JavaScript library</strong>. It is a library of functions/methods built on top of JavaScript to simplify your program. You can download it and use in your projects. </p>
 
                 <p>Think of it this way.  If JavaScript is a language like English, then jQuery is like a dictionary.  It makes working with the language easier. </p>
             </div>
@@ -808,7 +808,7 @@ Try it out in the console.
         </section>
 
         <section class="slide title">
-            <h1>You Already Know<br> How To Use jQuery</h1>
+            <h1>Guess what? You already know how to use jQuery.</h1>
         </section>
 
         <section class="slide" data-markdown>
@@ -834,10 +834,10 @@ jQuery('.menu-item').css('color', 'blue');
    |         |        |     |   
    |         |        |     └ The first parameter sets the css property.
    |         |        |     
-   |         |        └ The jQuery function 'css' is called.  This will
-   |         |          change the css of the matched html elements.
+   |         |        └ The jQuery 'css' method is called and will change  
+   |         |          the css of the element selected in the previous step.
    |         |
-   |         └ The parameter sent to the jQuery function is a 'string' value
+   |         └ The argument sent to the jQuery function is a 'string' value
    |           that takes the form of a css selector.
    | 
    └ The jQuery function. This is super important because this makes everything else work.
@@ -850,7 +850,7 @@ jQuery('.menu-item').css('color', 'blue');
 ```javascript
 var $ = jQuery;
 ```
-Anytime you want to write ```jQuery``` you can just write ```$``` instead.  It saves a lot of time and is the convention in most cases.
+Anytime you want to write ```jQuery```, just use ```$``` instead.  It saves time and is the convention in most cases.
 
 ```javascript
 jQuery('.myClass');
@@ -875,12 +875,14 @@ That's what we'll be doing going forward.
 * Create an 'infinite scroll' effect by loading more items when a user reaches the bottom of the page
 * Create complex layouts that are not possible with CSS alone.
 * Detect the capabilities of a browser before serving up functionality like CSS Animations.
+
+The library contains many, many built-in functions and methods. View the documentation here: [http://api.jquery.com](http://api.jquery.com).
         </section>
 
         <section class="slide">
             <h2>jQuery Examples:</h2>
 
-            <p>Here is an example of some a single animation and a <em>chained</em> animation (they run one after another).</p>
+            <p>Here is an example of a single animation and a <em>chained</em> animation (they run one after another).</p>
 
             <p data-height="268" data-theme-id="0" data-slug-hash="dcmxw" data-default-tab="result" data-user="learningcode" class='codepen'>See the Pen <a href='http://codepen.io/learningcode/pen/dcmxw/'>jQuery Animation Example</a> by Ladies Learning Code (<a href='http://codepen.io/learningcode'>@learningcode</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
             <script async src="http://codepen.io/assets/embed/ei.js"></script>
@@ -919,126 +921,66 @@ That's what we'll be doing going forward.
 
             <img src="framework/img/workshop/codepen.png">
         </section>
+        
+        <section class="slide"> 
+            <h2>Using jQuery</h2>
+            <p>To use jQuery on your HTML page, you'll have to link to the jQuery file.  There are two ways to do that.</p>
 
-        <section class="slide" data-markdown>
-##JavaScript & jQuery Functions
+            <p>1. <strong>Include the jQuery with your project files:</strong></p>
 
-We just saw that jQuery is really just one giant function. See how the syntax is the same?
-``` javascript
-alert();
-```
-```
-jQuery();  
-$(); // jQuery shortcut
-```
+            <ul>
+                <li><a href="http://jquery.com/download/">Download the latest version of the jQuery</a> and use the latest, compressed version. </li>
+                <li>Save it within your projects files.  It’s common to create a separate <strong>js</strong> folder for all JavaScript files for organization (similar to how there’s a separate images and css folder.)</li>
+                <li>Link it to your HTML document using a script tag.  The <code>src</code> should point to the path to where the file is saved in your project’s folder structure.<br>
+                
+                </li>
+            </ul>
 
-Example of passing in additional information.
-```javascript
-alert("hello");
-```
-```
-$("p");
-```
+            <pre><code class="xml">&lt;script src="js/jquery-1.11.1.js">&lt;/script></code></pre>
+
+            <p><strong>Important</strong>:  Unlike CSS, which always has to be included within the <code>&lt;head&gt;</code> tags, JavaScript can be included pretty much anywhere on the page, in the <code>&lt;head&gt;</code> or the <code>&lt;body&gt;</code>.  Many prefer to include it just before the closing <code>&lt;/body&gt;</code> to allow the page document to load first.</p>
+
+            <p>2. <strong>Use a CDN:</strong></p>
+            <p>CDNs can offer a performance benefit by hosting jQuery on servers spread across the globe.</p>
+
+            <p>To use the jQuery CDN (also listed on the download page), reference the file directly from the hosted file, rather than pointed to a file in your directory. Be sure to include the "http://" when viewing the site locally (on your computer).</p>
+            <pre><code class="xml">&lt;script src="http://code.jquery.com/jquery-1.11.0.min.js">&lt;/script></code></pre>
         </section>
         
-<!--
-                <section class="slide" data-markdown> 
-## jQuery
-### Downloading and using jQuery.
-
-We can download the latest version of jQuery from their website at [jQuery.com](http://jquery.com).
-
-![jQuery download page](./img/example_jquery_1.jpg)
-
-Click the big "Download jQuery" button.
+        <section class="slide title" data-markdown>
+            #Project Time!
         </section>
-        <section class="slide" data-markdown> 
-## jQuery
-### Downloading and using jQuery.
 
-This will take you to [http://jquery.com/download/](http://jquery.com/download/) where you will see links to several different versions of jQuery.  There is a lot of information on this page but we want to focus on the dowloads for [jQuery 1.x](http://jquery.com/download/#jquery-1-x) and [jQuery 2.x](http://jquery.com/download/#jquery-2-x).
+        <section class="slide" data-markdown>
+##Setting up our work flow
 
-The newest version of jQuery (Version 2.1.1) is arguably the best vesion yet.  It is lean and fast and very powerful.  In order to achieve that power the jQuery team had to make a difficult choice. They had to drop support for Internet Explorer 6, 7 &amp; 8.  
+For the rest of the day, you'll be working on your final project files.  Let's take a moment to set up the work flow.
+Inside of the folder you downloaded today (**llc-intro-to-jquery-master**), there are many folders and files that contain different content.
 
-Version 2 doesn't do anything that version 1 doesn't do, it just does it all **much faster**. Unless you are *certain* no IE 6/7/8 users are visiting your site, you should use the Version 1 of jQuery.
-
+    llc-intro-to-jquery-master
+        |-- framework // Contains files needed for slide presentation. Do not edit!
+        |-- project // Contains files for today's workshop.
+            |-- css // Only CSS files here.
+            |-- images // Images for your project. You can also add your images here.
+            |-- js // All your js files go here.
+            |-- index.html // The homepage of your site.
+        |-- index.html // This is the file you're viewing right now (slides)!
         </section>
-        <section class="slide" data-markdown> 
-## jQuery
-### Downloading and using jQuery.
 
-To download jQuery find the link that says [Download the compressed, production jQuery 1.11.1](http://code.jquery.com/jquery-1.11.1.min.js)
+        <section class="slide" data-markdown>
+##Setting up our work flow
 
-![jQuery download page](./img/example_jquery_2.jpg)
+Let's open the project files in the browser and text editor.
 
-Right click that link and choose **Save Link As...** and choose the location on your computer where you are storing your project.  
+* Open Sublime Text, then go to **File > Open**.
+* Navigate to the **project** folder (inside the folder you downloaded with today's slides).
+* With the entire folder selected, select **Open**.
+* The folder will appear in the side bar. Double click on **index.html** in the sidebar to open it in the editor.
 
+You should see this:
 
+![open project](framework/img/workshop/open-project.png)
         </section>
-        <section class="slide" data-markdown> 
-## jQuery
-### Downloading and using jQuery.
-
-After saving it to your computer, open up the folder where you are storing your Hackapalooza project. (Windows users will use Windows Explorer and Mac Users will use Finder)  Create a new folder in the project and call it 'js', This is where we will store all our javascript files. 
-
-It is always a good idea to keep your project organized so keeping your files in folders like 'js', 'css', and 'img' is a good practice to follow.
-
-Drag the file **jquery-1.11.1.min.js** into that new **js** folder.
-
-You have now downloaded jQuery.  The next step is to put it to use.
-
-
-        </section>
-        <section class="slide" data-markdown> 
-## Take A Breather.
-
-Take a moment to work with your mentors to ensure that you have the **jquery-1.11.1.min.js** file saved to your computer in the '**js**' folder in your **hackapalooza project folder**.
-
-We will continue once everyone has had a chance to make sure that they are this far and to have asked their mentors any questions they may have.
-
-If you are having trouble [Right click this link to the jQuery library file and press **Save Link As...** and choose the location on your computer where you are storing your Hackapalooza project](http://code.jquery.com/jquery-1.11.1.min.js).  Save the file in the subdirectory **js** in that location.
-                </section>
--->
-                <section class="slide" data-markdown> 
-## Let's Review
-
-We have covered a lot so far, let's make sure we have a handle on all of this up to now.
-
-* **HTML** is what makes the content of a webpage.
-* **CSS** is what makes the look and feel of a webpage.
-* **JS** is ```JavaScript``` and it is what makes the behavior of a webpage.
-* **jQuery** is a library, written in JS, designed to make adding behavior to webpages easier than writing regular javascript.
-        </section>
-        <section class="slide" data-markdown> 
-## Let's Review
-
-
-* JS has **variables**, which are named values that you can use to store things like numbers, strings of text and other JavaScript data types.
-* JS also has **functions**, which are named collections of commands that you can use to execute similar commands over and over again without having to write out all the commands in the function each time you use it.
-* The power of the jQuery library comes from the **jQuery()** function.
-
-Ok enough review let's start using jQuery!
-                </section>
-                <section class="slide">
-                <h2> Using jQuery. </h2>
-<p> You can include jQuery in your pages with one single line of HTML. </p>
-
-
-
-
-<pre><code class="xml"> &lt;script src="js/jquery-1.11.1.js">&lt;/script></code></pre>
-
-<p>In this code, there is a <code>&lt;script></code> tag, with a single <strong> attribute </strong> called <code>src</code> which tells the browser where to find the script.</p>
-<p>In our case, the script is named '<code>jquery-1.11.1.js</code>' and it is located in a subdirectory called '<code>js</code>'. </p>
-<p>
-Once the jQuery library is included on our page, we can start to make use of the magic of jQuery.
-</p>
-<!-- <p>In order for that to do what we want the jQuery file must be where we say it is.  
-</p>
-<h4>
-    To get the file on your computer we use the same process we would for ANY file... We download it.
-</h4>
- -->        </section>
         <section class="slide" data-markdown> 
 ## Using jQuery
 ### Step 1, include the jQuery file on your HTML page using a new tag called:
