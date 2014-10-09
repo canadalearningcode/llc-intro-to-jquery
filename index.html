@@ -634,13 +634,11 @@ It will take practice getting use to all different rules but it is important to 
         <section class="slide" data-markdown>
 ## Ok, now what?
 
-Now... we write code.
+We have been practicing writing lines of JavaScript.  These lines of JavaScript can now be use to write software which are just a series of commands for a computer to follow. Now... we write code.
 
 ### What code?
 
-That depends. What you want your **program** to do?  We have been practicing writing lines of JavaScript.  These lines of JavaScript can now be use to write software which are just a series of commands for a computer to follow.  
-
-Let's look at [this menu example](framework/example-menu.html). Using JavaScript, we could tell a browser to do the following things:
+That depends. What do you want your **program** to do? Let's look at [this menu example](framework/example-menu.html). Using JavaScript, we write out step by step instructions on how to do the following things:
 
 * Pay attention to the links in the main menu of a page.
 * Whenever someone hovers over one of those menu items, move a line to highlight the hovered item.
@@ -655,13 +653,13 @@ If a `variable` is a name for a value, then a `function` is a name for a set of 
 
 Let's look at two functions, `alert()` and `prompt()`.  These come built into JavaScript, for free!
 
-Go back to the console and type both functions in, one at a time, and see what happens. Note the syntax for using functions, the parenthesis `()` must be included.
+Go back to the console and type both functions in, one at a time, and see what happens. Note the syntax for using functions, the parenthesis `()`, must be included.
 
         </section>
         <section class="slide" data-markdown>
 ##Functions and Arguments
 
-We've seen now that the `alert()` and `prompt()` functions create a pop-up in the browser but the pop-ups are blank.  We can use to pass an **argument** *into* these functions by adding a value within the parenthesis.  Try this in the console:
+We've seen now that the `alert()` and `prompt()` functions create a pop-up in the browser but the pop-ups are blank.  We can also *pass* an **argument** *into* these functions by adding a value within the parenthesis.  Try this in the console:
 
 ```javascript
 alert("Hello!");
@@ -754,92 +752,121 @@ myCustomFunction(parameter1, parameter2, parameterN);
 
 ```
         </section>
+        <section class="slide" data-markdown>
+##Objects, Functions and Methods
+
+What's the difference between these two?  The second one kind of looks like a function right?
+``` javascript
+alert();
+console.log();
+```
+
+`alert()` is a **function**, it works on it's own.
+
+`log()` is a **method** because it's attached to an **object**, `console`. It will log a message (the argument passed into `log()`) and will only show in the console tool. 
+
+This is much easier for testing and debugging than using `alert()`. No more pesky pop-ups!
+        </section>
+        <section class="slide" data-markdown>
+##Objects & Methods
+
+Pretty much everything in JavaScript is an object.  Here's another example:
+
+```javascript
+// array object
+var fruits = ["apples", "oranges", "pears"];
+
+// applying the 'length' method to the object to find out how many there are.
+var typesOfFruits =  fruits.length;
+
+// Output into the console the number of items and concatenated into a sentence. 
+console.log("There are " + typesOfFruits + " types of fruit."); 
+```
+
+Try it out in the console.
+        </section>
+
         <section class="slide">
-            <h2>JavaScript Functions &amp; jQuery</h2>
+            <h2>Functions &amp; jQuery</h2>
 
             <p>A function is one of the most powerful tools in JavaScript and one of the most powerful functions you will ever use is this one:</p>
 
             <pre class="delayed"><code>jQuery();</code></pre>
             
             <div class="delayed">
-                <p>Remember, jQuery is a <strong>JavaScript library</strong>. Meaning that it is a set of pre written coded instructions, tools, functions and helpers that you can download and use in your projects. </p>
+                <p>Remember, jQuery is a <strong>JavaScript library</strong>. It is a library of functions built on top of JavaScript to simplify your program. You can download it and use in your projects. </p>
 
                 <p>Think of it this way.  If JavaScript is a language like English, then jQuery is like a dictionary.  It makes working with the language easier. </p>
             </div>
         </section>
 
-        <section class="slide title" data-markdown> 
-# You Already Know How To Use jQuery
+        <section class="slide centered">
+            <h2>Phew!</h2>
+            <br>
+            <img style="max-width:500px" src="http://33.media.tumblr.com/2466ab981143fb18653f8f09bce061c7/tumblr_n982qbvyFQ1s5lf2ro1_400.gif">
+            <p class="delayed">And that is JavaScript in a nutshell.</p>
         </section>
+
+        <section class="slide title">
+            <h1>You Already Know<br> How To Use jQuery</h1>
+        </section>
+
         <section class="slide" data-markdown>
-## jQuery
-### Using jQuery
+## Using jQuery
                     
-Because you already know how to select **HTML Elements** with **CSS Selectors**.
+You know how to use jQuery because you know how to select **HTML elements** with **CSS selectors**.
 
 ```css
-    .menu-item { color : blue; } 
-/*       ^        ^       ^
-         |        |       └ The value of the CSS property is set to blue
-         |        └ The CSS property we're setting is color
-         └ HTML Elements with a class of 'menu-item' are selected
+.menu-item { color: blue; }
+/*   |        |      |
+     |        |      └ The value of the CSS property.
+     |        └ The CSS property. 
+     └ HTML elements with a class of 'menu-item' are selected.   
 */
 ```
-        </section>
-        <section class="slide" data-markdown>
-## jQuery
-### Using jQuery
-                    
-Because you already know how to select **HTML Elements** with **CSS Selectors**.
 
-```css
-    .menu-item { color : blue; }
-/*       ^        ^       ^
-         |        |       └ The value of the CSS property is set to blue
-         |        └ The CSS property we're setting is color
-         └ HTML Elements with a class of 'menu-item' are selected
-*/
-```
-That same code in jquery is done like this:
-```javascript
-    jQuery('.menu-item').css('color', 'blue');
-```
-        </section>
-        <section class="slide" data-markdown>
-## jQuery
-### Using jQuery
-                    
-Let's look at what is going on here:
+That same code in jQuery is done like this:
 
 ```javascript
 jQuery('.menu-item').css('color', 'blue');
 /* ^         ^        ^     ^        ^
-   |         |        |     |        └ The second css function parameter sets the css value
-   |         |        |     |        
-   |         |        |     └ The first css function parameter sets the css property
+   |         |        |     |        └ The second parameter sets the css value.  
+   |         |        |     |   
+   |         |        |     └ The first parameter sets the css property.
    |         |        |     
-   |         |        └ The jquery function 'css' is called.  This lets us 
-   |         |          effect the css of the matched html elements
+   |         |        └ The jQuery function 'css' is called.  This will
+   |         |          change the css of the matched html elements.
    |         |
-   |         └ The parameter sent to the jquery function is a 'string' value
-   |           that takes the form of a css selector
+   |         └ The parameter sent to the jQuery function is a 'string' value
+   |           that takes the form of a css selector.
    | 
-   └ The jquery function. This is the super important part.  
-     this makes everything else here work.
+   └ The jQuery function. This is super important because this makes everything else work.
 */
 ```
         </section>
         <section class="slide" data-markdown> 
+## An Amazing Shortcut: The Dollar Sign
 
-## What can we do with jQuery?
+```javascript
+var $ = jQuery;
+```
+Anytime you want to write ```jQuery``` you can just write ```$``` instead.  It saves a lot of time and is the convention in most cases.
 
-jQuery is a general purpose library.  That means that is is designed to be as helpful as possible over a large number of situations.  
+```javascript
+jQuery('.myClass');
+```
+is the same as:
+```
+$('.myClass');
+```
+That's what we'll be doing going forward.
+        </section>
+        <section class="slide" data-markdown>
+## What else can jQuery do?
 
-We can use jQuery to:
-
-* Animate Items
-* Perform both simple and complex interactions with your users
-* Create rich user experiences with components like: 
+* Animate items
+* Perform interactions with your users
+* Create rich user experiences with components like:
     * Tabs
     * Accordians
     * Draggable & droppable items
@@ -848,65 +875,72 @@ We can use jQuery to:
 * Create an 'infinite scroll' effect by loading more items when a user reaches the bottom of the page
 * Create complex layouts that are not possible with CSS alone.
 * Detect the capabilities of a browser before serving up functionality like CSS Animations.
+        </section>
 
+        <section class="slide">
+            <h2>jQuery Examples:</h2>
 
+            <p>Here is an example of some a single animation and a <em>chained</em> animation (they run one after another).</p>
 
+            <p data-height="268" data-theme-id="0" data-slug-hash="dcmxw" data-default-tab="result" data-user="learningcode" class='codepen'>See the Pen <a href='http://codepen.io/learningcode/pen/dcmxw/'>jQuery Animation Example</a> by Ladies Learning Code (<a href='http://codepen.io/learningcode'>@learningcode</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+            <script async src="http://codepen.io/assets/embed/ei.js"></script>
 
-                </section>
-                <section class="slide">
-<h2>jQuery Examples:</h2>
+            <p>Have a look at the HTML, CSS, &amp; JS tabs as well as the Result tab.</p>
+            <p>You can rerun the animations, when in the Results tab, by hovering over the example and clicking the &quot;RERUN&quot; button in the bottom right corner.</p>
 
-<p>Here are several different examples in one section.  Each button below has been given instructions to follow when clicked.</p>
+            <div class="presenter-notes">
+                <p>Get the learners to change a couple values so they can see how things change but just give a high level overview about the concepts. They will be discussed in more detail in the next few slides.</p>
+            </div>
+        </section>
+        
+        <section class="slide">
+            <h2>jQuery Examples</h2>
 
-<p data-height="200" data-theme-id="0" data-slug-hash="aKnJm" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/infn8/pen/aKnJm/'>jQuery Event and Method Examples</a> by Arron Gibson (<a href='http://codepen.io/infn8'>@infn8</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-<!-- <script async src="//codepen.io/assets/embed/ei.js"></script> -->
+            <p>Each button below has been given different instructions to follow when clicked.</p>
 
-<p>Have a look at the HTML, CSS, &amp; JS tabs as well as the Result tab.</p>
-<p>The <strong>HTML</strong> consists of several <code>&lt;button></code> elements, a <code>&lt;div class="stage">&lt;/div></code> and inside that a <code>&lt;div class="player">&lt;/div></code> </p>
-<p>The <strong>CSS</strong> exists only to add a little form to the example.  Make the squares red and 50px across.  Float them left so that they sit side by side.
-</p>
-<p>The jQuery is where all the cool stuff is happening.</p>
+            <p data-height="425" data-theme-id="0" data-slug-hash="sgaEh" data-default-tab="result" data-user="learningcode" class='codepen'>See the Pen <a href='http://codepen.io/learningcode/pen/sgaEh/'>jQuery Event and Method Examples</a> by Ladies Learning Code (<a href='http://codepen.io/learningcode'>@learningcode</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+            <script async src="http://codepen.io/assets/embed/ei.js"></script>
 
+            <p>The <strong>HTML</strong> consists of several <code>&lt;button></code> elements, to click and add the jQuery action to.  The <code>&lt;div class="stage">&lt;/div></code> is being used as the <em>selector</em>. The <code>&lt;div class="player">&lt;/div></code> is the square.</p>
+            <p>The <strong>CSS</strong> sets the colour and size of the squares and floats them so they sit side by side.
+            </p>
+            <p>The jQuery is where all the cool stuff is happening.</p>
+        </section>
+    
+        <section class="slide">
+            <h2>jQuery Examples</h2>
 
-                </section>
-                <section class="slide">
-<h2>jQuery Examples:</h2>
-<!-- <div data-height="427" data-theme-id="7768" data-slug-hash="aKnJm" data-default-tab="js" class='codepen'>
-<p>See the Pen <a href='http://codepen.io/infn8/pen/aKnJm/'>jQuery Event and Method Examples</a> by Arron Gibson (<a href='http://codepen.io/infn8'>@infn8</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-</div><script async src="//codepen.io/assets/embed/ei.js"></script> -->
-<p>We start by selecting the first button with a css style selector that will target it. <code>.example-1</code></p>
-<p>We pass that <strong>string value</strong> as a <strong>parameter</strong> to the <strong>jQuery Function</strong>.
+            <p>You can even <em>extend</em> the capabilities of jQuery with <strong>plugins</strong> like the jQuery UI plugin used below. You can drag and re-order the items using the jQuery UI sortable plugin.</p>
+            
+            <p data-height="268" data-theme-id="0" data-slug-hash="fAmbJ" data-default-tab="result" data-user="learningcode" class='codepen'>See the Pen <a href='http://codepen.io/learningcode/pen/fAmbJ/'>jQuery UI Draggable Sortable Example</a> by Ladies Learning Code (<a href='http://codepen.io/learningcode'>@learningcode</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+            <script async src="http://codepen.io/assets/embed/ei.js"></script>
 
+            <p>When editing a Codepen, you can select the gear icon in the JS box and it will show you if/what library it's using.  In the example above, you can see it's using jQuery & jQuery UI.</p>
 
+            <img src="framework/img/workshop/codepen.png">
+        </section>
 
-</p>
+        <section class="slide" data-markdown>
+##JavaScript & jQuery Functions
 
+We just saw that jQuery is really just one giant function. See how the syntax is the same?
+``` javascript
+alert();
+```
+```
+jQuery();  
+$(); // jQuery shortcut
+```
 
-                </section>
-                <section class="slide">
-<h2>jQuery Examples:</h2>
-
-<p>You can even extend the capabilities of jQuery with <strong>plugins</strong> like the jQuery UI plugin used below</p>
-
-<p data-height="268" data-theme-id="0" data-slug-hash="Ducem" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/infn8/pen/Ducem/'>Ducem</a> by Arron Gibson (<a href='http://codepen.io/infn8'>@infn8</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-<script async src="//codepen.io/assets/embed/ei.js"></script>
-
-<p>You can drag and Re-order the items above as you desire using the jQuery UI sortable plugin.</p>
-<p>Again, Have a look at the HTML, &amp; JS tabs as well as the Result tab. </p>
-
-                </section>
-                <section class="slide">
-<h2>jQuery Examples:</h2>
-
-<p>Here is an example of some chained animations.  (Chained means they run one after another)</p>
-
-<p data-height="364" data-theme-id="0" data-slug-hash="spaGc" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/infn8/pen/spaGc/'>spaGc</a> by Arron Gibson (<a href='http://codepen.io/infn8'>@infn8</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-<script async src="//codepen.io/assets/embed/ei.js"></script>
-
-<p>Have a look at the HTML, CSS, &amp; JS tabs as well as the Result tab.</p>
-<p>You can rerun the animations by hovering over the example and clicking the &quot;RERUN&quot; button in the bottom right corner.</p>
-
-                </section>
+Example of passing in additional information.
+```javascript
+alert("hello");
+```
+```
+$("p");
+```
+        </section>
+        
 <!--
                 <section class="slide" data-markdown> 
 ## jQuery
@@ -1133,24 +1167,7 @@ Will take elements with a class of alert and make the text in them red.
 
 This by no means an exhaustive list, we will take notice when we intruduce new methods as we go on.
         </section>
-        <section class="slide" data-markdown> 
-## An Amazing Shortcut
-### The Dollar Sign
-```javascript
-var $ = jQuery;
-```
-Anytime you want to write ```jQuery``` you can just write ```$``` instead.  It saves a lot of time.  Writing:
-```javascript
-$('.myClass');
-```
-is the same as writing:
-```javascript
-jQuery('.myClass');
-```
-and that's just what we'll be doing going forward.
-
-
-        </section>
+       
         <section class="slide"> 
             <h2> Let's DO something already!!!</h2>
             <h3>Ok let's get into it.</h3>
