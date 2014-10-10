@@ -1,0 +1,10 @@
+  <script src="js/jquery-1.11.1.min.js"></script>
+  <script>
+    jQuery(document).ready(function() {
+      jQuery('#favourites img').hover(function(){
+        $(this).attr('src', 'images/puppy_hover.jpg');
+      },function(){
+        $(this).attr('src', 'images/puppy_rest.jpg');
+      });
+    });
+  </script>

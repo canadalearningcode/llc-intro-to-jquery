@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+  <title>Ladies Learning Code HTML and CSS</title>
+  <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="normalize.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="js/jquery-1.11.1.min.js"></script>
+  <script src="js/flexslider/jquery.flexslider-min.js"></script>
+  <link rel="stylesheet" href="js/flexslider/flexslider.css" />
+  <script>
+    $(document).ready(function(){
+      // Add all jQuery code here.
+      $('.flexslider').flexslider();
+    });
+  </script>
+</head>
+<body>
+  <ul class="menu">
+    <li><a href="#about">About</a></li>
+    <li><a href="#favourites">Favourites</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <section class="banner">
+    <img class="logo" src="images/logo.png">
+    <h1>Phoenix Gibson</h1>
+    <p>Life of a Puppy</p>
+  </section>
+  <section id="about" class="about box">
+    <h2>About Me</h2>
+    <img class="profile" src="images/rotator-2.jpg" width="250">
+    <p>What's up internet?  My name is Phoenix Gibson.  I am a <a href="http://en.wikipedia.org/wiki/Nova_Scotia_Duck_Tolling_Retriever" target="_blank">Nova Scotia Duck Tolling Retriever</a> and I live in toronto with my Dad Arron and my Mom Kelley.</p>
+    <p>That's pretty much all i want to say so here's some random word i like.  Bird Food Snowball Fido pet supplies stick throw furry. Sit head teeth dinnertime fluffy vaccination feathers vaccine Spike fish parakeet nap collar licks wet nose. Stay crate good boy gimme five dog mouse cage tabby food vitamins. Tail cage vitamins Fido water aquatic mouse catch Tigger vitamins hamster water brush run. Puppy Snowball stick drool cage swimming feathers grooming mouse Tigger meow field. Dog licks sit maine coon cat feeder teeth vitamins slobber. Maine Coon Cat feathers dog house canary foot critters smooshy warm fluffy ball feathers cage play dead heel. Walk small animals vaccine purr groom shake catch fish teeth chow lazy cat throw furry water harness bed turtle feathers stripes. </p>
+  </section>
+
+<section id="rotator" class="rotator box">
+  <div class="flexslider">
+  <ul class="slides">
+    <li>
+      <img src="images/rotator-1.jpg" alt="Rotator Image 1">
+      <div class="flex-caption"><p>Oh Hai Thar!!!</p></div>
+    </li>
+    <li>
+      <img src="images/rotator-2.jpg" alt="Rotator Image 2">
+      <div class="flex-caption"><p>I'm Too Cool for Drool</p></div>
+    </li>
+    <li>
+      <img src="images/rotator-3.jpg" alt="Rotator Image 3">
+      <div class="flex-caption"><p>Oh this? Oh I just <em>found</em> this frisbee.  Do you want to throw it or something?</p></div>
+    </li>
+    <li>
+      <img src="images/rotator-4.jpg" alt="Rotator Image 4">
+      <div class="flex-caption"><p>This is my World Cup Press Photo</p></div>
+    </li>
+    <li>
+      <img src="images/rotator-5.jpg" alt="Rotator Image 5">
+      <div class="flex-caption"><p>I enjoy long walks on the beach and backlit photography</p></div>
+    </li>
+  </ul>
+  </div>
+</section>
+
+
+  <section id="contact" class="contact box">
+    <h2>Contact Me</h2>
+    <a href="http://twitter.com/llcodedotcom"><img src="images/twitter.png"></a>
+    <a href="http://www.facebook.com/ladieslearningcode"><img src="images/facebook.png"></a>
+    <a href="http://www.linkedin.com/company/ladies-learning-code"><img src="images/linkedin.png"></a>
+  </section>
+</body>
+</html>
