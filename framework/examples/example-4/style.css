@@ -53,11 +53,13 @@ section.banner h1 {
 section.about {
 	background: url('images/tile1.png');
 	overflow: hidden;
+	max-width: 800px;
+	margin: 0 auto;
 }
 section.about h2 {
 	text-align: center;
 }
-section.favourites {
+section.favourites h2 {
 	text-align: center;
 }
 section.contact {
@@ -71,7 +73,7 @@ section.box {
 	padding: 50px 100px;
 }
 section.rotator {
-	padding: 50px 300px;
+	padding: 50px 450px;
 }
 section.box h2, section.box h3 {
 	color: #A8258D;

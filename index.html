@@ -49,6 +49,10 @@
     <main>
         <section class="slide centered" data-markdown>
             ## Today's project
+
+            ![Today's project](framework/img/workshop/final-project.gif)
+
+            [View the page here](framework/examples/example-4/index.html).
         </section>
         <section class="slide" data-markdown>
 ## Getting Started
@@ -1477,7 +1481,16 @@ $(document).ready(function(){
     $('.flexslider').flexslider();
 });
 ```  
-Yep, that's it.
+Yep, that's it. Let's break that down.
+
+```javascript
+   $('.flexslider').flexslider();
+/* |      |          |        └ Parenthesis indicate a function call
+   |      |          └ The Flexslider method 
+   |      └ The selector will add any items with the class 'flexslider' to the jQuery wrapped set 
+   └ The jQuery function            
+*/
+```
 
 Save and refresh the browser.
         </section>
@@ -1562,44 +1575,23 @@ Another option is to just move the font folder inside the css folder.  The sourc
         </section>
         
         <section class="slide" data-markdown>
-## Making it work
+## Customizations
 
-In your **Document Ready Function** add the following code to tell flexslider to run:
+Though this is a pre-written plugin, there are various options for adding further customizations the slider. 
 
-```javascript
-$('.flexslider').flexslider();
-```  
-Yep,  that's it.  You should now be able to load your page in your browser now and see your slider in action.
+A couple of Flexslider's available options are:
 
-### Let's break that down
-```javascript
-    $('.flexslider').flexslider();
-//  |      |             |     └ Parenthesis indicate a Function Call
-//  |      |             └ The Flexslider Method 
-//  |      └ The CSS selector '.flexslider' will add any items
-//  |          with the class 'flexslider' to the jQuery wrapped set 
-//  └ The jQuery Function
-```
-        </section>
-        <section class="slide" data-markdown>
-## Making it work
-### The way you want it to.
+* Animation Type: **fade** or **slide**
+* Animation Speed: Set the speed of animations, in milliseconds.
 
-Some of Flexslider's available options:
+There are many more options, you can [see a complete list on this page](http://www.woothemes.com/flexslider/#gist9481310).
 
-* Animation Type
-    * **fade** or **slide**
-* Slideshow Speed
-    * The Amount of time, in milliseconds, between slides.
-* Animation Loop
-    * When you get to the last slide should you go back to the start?
-
-There are many more options, [see a complete list on this page](http://www.woothemes.com/flexslider/#gist9481310), but let's look at how to set them. 
+Let's look at how to set these two options. 
         </section>
         <section class="slide" data-markdown>
 ## Using A Configuration Object with Flexslider
 
-find the line in your code that says:
+Find the line in your code that says:
 ```javascript
 $('.flexslider').flexslider();
 ```  
@@ -1609,160 +1601,34 @@ $('.flexslider').flexslider({ animation : "slide" });
 ```  
 Then reload your page.  Notice how your flexslider will now animate new slides in from the right to the left instead of disolving between the two images.  Now change it to say this:
 ```javascript
-$('.flexslider').flexslider({ slideshowSpeed : 2000 });
+$('.flexslider').flexslider({ animationSpeed : 2000 });
 ```  
 Reload that.  Do you notice a difference?
 
-        </section>
-        <section class="slide" data-markdown>
-### Let's break that down
+If you want to use multiple options, you can just separate them with a comma like this:
 ```javascript
-    $('.flexslider').flexslider({ slideshowSpeed : 2000 });
-//  |      |             |     ||       |            |  |└ End Parenthesis
-//  |      |             |     ||       |            |  |
-//  |      |             |     ||       |            |  └ End Curly Braces
-//  |      |             |     ||       |            |
-//  |      |             |     ||       |            └ The property has
-//  |      |             |     ||       |               a VALUE of 2000
-//  |      |             |     ||       |
-//  |      |             |     ||       └ Set the object PROPERTY
-//  |      |             |     ||         'slideshowSpeed'
-//  |      |             |     ||
-//  |      |             |     |└ Curly braces indicate a JavaScript OBJECT
-//  |      |             |     |
-//  |      |             |     └ Parenthesis indicate a Function Call
-//  |      |             | 
-//  |      |             └ The Flexslider Method 
-//  |      |
-//  |      └ The CSS selector '.flexslider' will add any items
-//  |          with the class 'flexslider' to the jQuery wrapped set 
-//  |
-//  └ The jQuery Function
+$('.flexslider').flexslider({ 
+    animation : "slide",
+    animationSpeed : 2000 
+});
 ```
-
-We pass an **object** as a **parameter** to the flexslider **method** of jQuery.  
-
-The **object** has **properties** and **values** that flexslider will use to override its defaults.
-        </section>
-        <section class="slide" data-markdown>
-## I Can Haz Responsive?
-
-Flexslider comes out of the box with the ability to be responsive.  Try it now.  resize your browser and watch your images scale as needed.
-
-#### Pro Tip:
-
-Make your images only as wide as they NEED to be.  That is, the largest size that you will need in your design.  They will automatically scale down as needed, but if you make them larger then they need to be the file size will be larger and your page will download slower.
-        </section>
-        <section class="slide" data-markdown>
-## Working Demo
-
-[Have a look here to see my page I made for my dog Phoenix.](examples/example-4/index.html) 
-        </section>
-        <section class="slide" data-markdown>
-## Ok we are done now!
-
-**Exciting** You now have a responsive image rotator on your project page full of the images that you want to show to people.  But why stop there right?  we can do better.  
-
-Let's try a few more cool things.
-        </section>
-        <section class="slide" data-markdown>
-## The Thumbnail Slider
-
-What if you wanted to have all your images to have a small row of thumbnails along the bottom to help with navigation for the user?
-
-You can [see an example of this here](http://flexslider.woothemes.com/thumbnail-slider.html)
-
-The steps for this are to create 2 seperate flexsliders. 1 is the **carousel**, the thumbnails at the bottom, and the other is the main rotator.
-
-We create both of them and then give the JS the right commands to work for both of them and keep them in sync.
+Does that syntax look familiar? [Remember objects](#slide28)?
 
         </section>
-        <section class="slide" data-markdown>
-## The Randomness
-
-What if we are showing a bunch of slides from different artists and we don't want to show preference to one artist over another?
-
-```javascript
-$('.flexslider').flexslider({ randomize: true });
-```  
-Boom!  impartial.
+        <section class="slide title" data-markdown>
+            #Questions?
         </section>
         <section class="slide" data-markdown>
-## Clickable Slides
+## Next steps
 
-It is super simple to make your slides able to link to another page, or even another section on the same page.  Let's look at the HTML we are using now:
-```xml
-&lt;div id="rotator">
-    &lt;ul class="slides">
-        &lt;li>&lt;img src="img/rotator/image1.jpg" alt="First Slide">&lt;/li>
-        &lt;li>&lt;img src="img/rotator/image2.jpg" alt="Second Slide">&lt;/li>
-        &lt;li>&lt;img src="img/rotator/image3.jpg" alt="Third Slide">&lt;/li>
-    &lt;/ul>
-&lt;/div>
-```
-Now let's just wrap those images in links using the ```&lt;a>``` tag in **HTML**
+**Exciting!** You now have a responsive image rotator on your project page full of the images that you want to show to people.  But why stop there right?  
 
-```xml
-&lt;div id="rotator">
-    &lt;ul class="slides">
-        &lt;li>&lt;a href="#section1">&lt;img src="img/rotator/image1.jpg" alt="First Slide">&lt;/a>&lt;/li>
-        &lt;li>&lt;a href="#section2">&lt;img src="img/rotator/image2.jpg" alt="Second Slide">&lt;/a>&lt;/li>
-        &lt;li>&lt;a href="#section3">&lt;img src="img/rotator/image3.jpg" alt="Third Slide">&lt;/a>&lt;/li>
-    &lt;/ul>
-&lt;/div>
-```
-
-
+Check out the [these bonus lessons](framework/bonus-flexslider.html) for further customization of the Flexslider.
         </section>
-        <section class="slide" data-markdown>
-## Something that's not an image?
-
-Flexslider works by rotating between slides *regardless of their content*. So you could easily do something like this:
-```xml
-&lt;div id="rotator">
-    &lt;ul class="slides">
-        &lt;li>&lt;p>Lorem ipsum dolor sit amet&lt;/p>&lt;/li>
-        &lt;li>&lt;p>consectetur adipisicing elit.&lt;/p>&lt;/li>
-        &lt;li>&lt;p>Impedit, ullam iste pariatur enim consequuntur.&lt;/p>&lt;/li>
-    &lt;/ul>
-&lt;/div>
-```
-                </section>
-                <!-- 
-                <section class="slide" data-markdown>
-## What ELSE can we do?
-
-jQuery is an amazing javascript library.  It is however still just javascript.  This means that we can write any javascript we like is and around all of your jquery code. Let's take a minute an talk about javascript on it's own.  
-
-We've talked about how javascript has variables and functions.  We even mentioned briefly that it has **control structures** such as **if statements** and **loops**.
-
-        </section>
-        <section class="slide" data-markdown>
-## Title
-        </section>
-        <section class="slide" data-markdown>
-## Title
-        </section>
-        <section class="slide" data-markdown>
-## Title
-        </section>
-        <section class="slide" data-markdown>
-## Title
-        </section>
-        <section class="slide" data-markdown>
-## Title
-        </section>
-        <section class="slide" data-markdown>
-## Title
-                </section>
-                 -->
+        
         <!-- Last slide -->
         <section class="slide" data-markdown>
 ## Thank You.
-
-for your time and attention.  We have covered a lot here in our exercise of the mind.  If you have any questions or comments feel free to [hit me up on twitter](http://twitter.com/arrongibson), or [email me](mailto:Arron@InfinityMedia.ca?subject=Hackapalooza+Help).
-
-We will take the rest of the time to work with you on your projects and make sure that we are all comfortable with what we have just learned.
         
 Slidedecks created with [Lea Verou's CSS-based SlideShow System](https://github.com/LeaVerou/csss) and [reveal.js](http://lab.hakim.se/reveal-js/).
         </section>

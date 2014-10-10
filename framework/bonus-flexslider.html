@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Ladies Learning Code</title>
+    <!-- Don't alter slideshow.css, CSSS slide deck needs it to work -->
+    <link rel="stylesheet" href="css/slideshow.css">
+
+    <!-- Theme-specific styles -->
+    <link href='http://fonts.googleapis.com/css?family=Quicksand|Pacifico|Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/highlightjs-themes/monokai.css">
+    <link rel="stylesheet" href="css/theme-llc.css">
+    <link rel="shortcut icon" href="img/favicon.ico"> 
+
+    <!-- Workshop-specific styles -->
+    <link rel="stylesheet" href="css/workshop.css">
+
+    <!-- Takes care of CSS3 prefixes! -->
+    <script src="scripts/prefixfree.min.js"></script>
+</head>
+
+<!-- Timer/progress bar: Define the presentation duration using "data-duration" in minutes. -->
+<body data-duration="360">
+    
+    <!-- opens all links in a new window -->
+    <base target="_blank">
+
+    <section class="slide" data-markdown>
+## The Thumbnail Slider
+
+What if you wanted to have all your images to have a small row of thumbnails along the bottom to help with navigation for the user?
+
+You can [see an example of this here](http://flexslider.woothemes.com/thumbnail-slider.html).
+
+The steps for this are to create 2 seperate flexsliders. 1 is the **carousel**, the thumbnails at the bottom, and the other is the main rotator.
+
+We create both of them and then give the JS the right commands to work for both of them and keep them in sync.
+
+        </section>
+        <section class="slide" data-markdown>
+## The Randomness
+
+What if we are showing a bunch of slides from different artists and we don't want to show preference to one artist over another?
+
+```javascript
+$('.flexslider').flexslider({ randomize: true });
+```  
+Boom!  impartial.
+        </section>
+        <section class="slide" data-markdown>
+## Clickable Slides
+
+It is super simple to make your slides able to link to another page, or even another section on the same page.  Let's look at the HTML we are using now:
+```xml
+&lt;div id="rotator">
+    &lt;ul class="slides">
+        &lt;li>&lt;img src="img/rotator/image1.jpg" alt="First Slide">&lt;/li>
+        &lt;li>&lt;img src="img/rotator/image2.jpg" alt="Second Slide">&lt;/li>
+        &lt;li>&lt;img src="img/rotator/image3.jpg" alt="Third Slide">&lt;/li>
+    &lt;/ul>
+&lt;/div>
+```
+Now let's just wrap those images in links using the ```&lt;a>``` tag in **HTML**
+
+```xml
+&lt;div id="rotator">
+    &lt;ul class="slides">
+        &lt;li>&lt;a href="#section1">&lt;img src="img/rotator/image1.jpg" alt="First Slide">&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#section2">&lt;img src="img/rotator/image2.jpg" alt="Second Slide">&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#section3">&lt;img src="img/rotator/image3.jpg" alt="Third Slide">&lt;/a>&lt;/li>
+    &lt;/ul>
+&lt;/div>
+```
+
+
+        </section>
+        <section class="slide" data-markdown>
+## Something that's not an image?
+
+Flexslider works by rotating between slides *regardless of their content*. So you could easily do something like this:
+```xml
+&lt;div id="rotator">
+    &lt;ul class="slides">
+        &lt;li>&lt;p>Lorem ipsum dolor sit amet&lt;/p>&lt;/li>
+        &lt;li>&lt;p>consectetur adipisicing elit.&lt;/p>&lt;/li>
+        &lt;li>&lt;p>Impedit, ullam iste pariatur enim consequuntur.&lt;/p>&lt;/li>
+    &lt;/ul>
+&lt;/div>
+```
+        </section>
+    </main><!-- cls main section -->
+
+    <footer>
+        <p class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="img/cc-by-nc.svg" /></a> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
+        <p class="instructions">Use the left <i class="fa fa-arrow-left"></i> and right <i class="fa fa-arrow-right"></i> arrow keys to navigate</p>
+    </footer>
+    
+    <!-- <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>-->
+    <script src="scripts/jquery-1.11.1.min.js"></script>
+    <script src="scripts/slideshow.js"></script>
+
+    <!-- Uncomment the plugins you need -->
+    <script src="scripts/plugins/css-edit.js"></script>
+    <script src="scripts/plugins/css-snippets.js"></script>
+    <script src="scripts/plugins/css-controls.js"></script>
+    <!-- <script src="plugins/code-highlight.js"></script>-->
+
+    <script src="scripts/plugins/markdown/marked.js"></script>
+    <script src="scripts/plugins/markdown/markdown.js"></script>
+    <script src="scripts/plugins/highlight/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <script>
+        var slideshow = new SlideShow();
+
+        // Grabs all the .snippet elements
+        var snippets = document.querySelectorAll('.snippet');
+        for(var i=0; i<snippets.length; i++) {
+            new CSSSnippet(snippets[i]);
+        }
+    </script>
+</body>
+</html>
