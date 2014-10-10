@@ -1311,6 +1311,94 @@ The ```this``` variable is always equal to the specific *HTML element* that has 
         </section>
 
         <section class="slide" data-markdown>
+##Exercise: Active Menu
+
+Let's use the jQuery `click()`, `addClass()` and `removeClass()` methods to create an `.active` class to style for the menu item differently when clicked.  Here's are the instructions  we'll create with jQuery:
+
+1. Select the elements to be clicked.
+1. Add a class of "active" to invoke a new style.
+1. Add the "active" class style to the CSS file.
+1. When the user clicks on another menu item, add the "active" class to the new item and remove the active class from non-active items.
+
+Let's get started.
+        </section>
+
+        <section class="slide">
+            <h2>Exercise: Active Menu - Click Event</h2>
+
+            <p>Select the elements to be clicked.  Here’s what the menu markup looks like:</p>
+
+<pre class="xml"><code>&lt;ul class="menu"&gt;
+    &lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#favourites"&gt;Favourites&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+            <p>Which selector should we use?</p>
+<pre class="delayed"><code>$(".menu a")
+</code></pre>
+
+            <p class="delayed">Then apply the .click() method.</p>
+<pre class="delayed"><code>$(".menu a").click();
+</code></pre>
+
+            <p class="delayed">Then pass a single parameter to the click() method. Remember, that parameter is itself a function. Add <code>function(){}</code> into the parenthesis.</p>
+<pre class="delayed"><code>$(".menu a").click(function(){});
+</code></pre>
+            <div class="delayed">
+            <p>Test the click action.  Do we have the right element? Check if you see the message in your console.</p>
+
+<pre><code>$(".menu a").click(function(){
+    console.log("It works!");
+});
+</code></pre>
+            </div>
+        </section>
+        <section class="slide">
+            <h2>Exercise: Active Menu - <code>addClass()</code> method</h2>
+
+            <p>Great! It works! Now, add the <code>addClass</code> method.</p>
+
+<pre><code>$(".menu a").click(function(){
+    console.log("It works!");
+    $(this).addClass("active");
+});
+</code></pre>
+            <div class="delayed">
+                <p>Wait? Nothing happened?</p>
+
+                <p>That’s because we haven’t added the style in the CSS file yet.  You can still check if it’s been added to the HTML.  If your console is still open, just click on the “Elements” tab.</p>
+
+                <p><img src="framework/img/workshop/console-menu-active.gif" alt="" title=""> </p>
+
+                <p>Now go to <strong>style.css</strong> to create a new CSS style for the active state. This will change the color (but you can apply whatever style you like).</p>
+
+<pre><code>.menu .active {
+    color: #A8258D;
+}
+</code></pre>
+                <p>Now test your page again.</p> 
+            </div>     
+        </section>
+
+        <section class="slide" data-markdown>
+##Exercise: Active Menu - `removeClass()` method
+
+Almost there.  We were able to add the class to the clicked item but now we need to remove the class from the non-active items.  Remember, JavaScript/jQuery executes commands from top to bottom.  One way to fix this issue is to remove the class **first**, *then* add the class to the clicked item.
+
+Since we don't know which item the user will click, we can remove the class from **all* of the menu items.  So in this case, we won't use the `$(this)` selector.  Instead, we want all the menu links.
+
+    $(".menu a").click(function(){
+        //console.log("It works!");
+        $(".menu a").removeClass("active");
+        $(this).addClass("active");
+    });
+
+Now try it!
+</section>
+
+        <section class="slide" data-markdown>
             ##Exercise: Personalize Your Page (20mins)
 
             Now that you've had a chance to get some JavaScript & jQuery practice, take some time to personalize your page. Here are some suggestions to get you started: 
