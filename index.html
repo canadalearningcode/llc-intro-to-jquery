@@ -1129,10 +1129,10 @@ Multi-line comments are great for "hiding" large blocks of code so you can try s
 <pre class="xml"><code>&lt;section id="favourites" class="favourites container"&gt;
     &lt;h2&gt;My Favourite Things&lt;/h2&gt;
     &lt;h3&gt;Here are a few things I really love&lt;/h3&gt;
-    &lt;img src="images/puppy_rest.jpg"&gt;
-    &lt;img src="images/puppy_rest.jpg"&gt;
-    &lt;img src="images/puppy_rest.jpg"&gt;
-    &lt;img src="images/puppy_rest.jpg"&gt;
+    &lt;img class="favourite-img" src="images/puppy_rest.jpg"&gt;
+    &lt;img class="favourite-img" src="images/puppy_rest.jpg"&gt;
+    &lt;img class="favourite-img" src="images/puppy_rest.jpg"&gt;
+    &lt;img class="favourite-img" src="images/puppy_rest.jpg"&gt;
 &lt;/section&gt;
 </code></pre>
 
@@ -1374,11 +1374,8 @@ Some examples of jQuery plugins are
 * [FlexSlider](http://flexslider.woothemes.com/)
     * The best responsive slider. Period.
     * We are going to use this Plugin to add a slider of images to our project
-
-
-
         </section>
-<!-- CURSOR -->
+
         <section class="slide" data-markdown>
 ## So, What IS an image rotator?
 
@@ -1396,139 +1393,174 @@ At it's most basic, a rotator is a list of images that uses javascript to show o
 
 The javascript would show the first and hide the rest. Then, after a couple of seconds,  show the second and hide the rest.  Then keep going until all of the slides have been shown.  Then start again at the beginning. 
         </section>
-        <section class="slide" data-markdown> 
-## Enter Flexslider
 
-Flexslider is a very capable, well maintained and responsive jQuery rotator.  Best of all it's free and easy to use.
+        <section class="slide"> 
+            <h2>Enter Flexslider</h2>
 
-### Downloading Flexslider
+            <p>Flexslider is a capable, well maintained and responsive jQuery rotator. Best of all it’s free and easy to use.</p>
 
-Head on over to [http://www.woothemes.com/flexslider/](http://www.woothemes.com/flexslider/)
+            <p>Head on over to <a href="http://www.woothemes.com/flexslider/">http://www.woothemes.com/flexslider/</a> to download the files.</p>
 
-Click the big green download button and download the zip file.  Expand that zip file and then take the entire folder that comes out of it and drop it into the 'js' folder in your project.  Rename that folder to 'flexslider' (all lowercase) and then we're good.  It should look like this:
+            <p>Click the big green download button to download the zip file. There are files that we'll need to make the plugin work and there are other files that are for demo purposes. You will see something like this:</p>
 
-![Flexslider in the project directory](./img/example_flexslider_1.jpg)
+            <p><img src="framework/img/workshop/flexslider-contents.png" alt="Flexslider in the project directory" title=""></p>
 
+            <p>These are the files you will need to <strong>copy</strong> into your project folder, into the appropriate directory.</p>
+            <ul>
+                <li>entire <strong>fonts</strong> folder</li>
+                <li>flexslider.css</li>
+                <li>images > bg_play_pause.png</li>
+                <li>jquery.flexslider-min.js</li>
+            </ul>
 
+            <p>Your project folder should now look like this:</p>
+            <img src="framework/img/workshop/folders-with-flexslider.png" alt="">
+            <p>Your images files my vary but just ensure that <strong>bg_play_pause.png</strong> is included.</p>
+
+            <div class="presenter-notes">
+                <p>Make sure all the learners are complete this step before moving on.</p>
+            </div>
         </section>
         <section class="slide">
-            <h2>Add Flexslider to our project</h2>
+            <h2>Add Flexslider to Your project: Step 1</h2>
+            <p>Now that the plugin files are saved within your directory, attach these files to your HTML page.</p>
 
-            <p>Go to your <strong> index.html </strong> file on your project in <strong> sublime text</strong> and find where we put the script linking to the jQuery library:</p>
-
-<pre><code class="xml">&lt;script src="js/jquery-1.11.1.min.js"&gt;&lt;&#47;&#115;cript&gt; </code></pre>
-
-            <p>and we are going to put some new code after that so that it looks like this instead:</p>
+            <p>Go to back to your <strong> index.html </strong> file and add the Flexslider js file <em>after</em> the jQuery library file.  Also delete or comment out all of our test jQuery code from the previous exercise and leave just the <code>$(document).ready()</code>.</p>
 <pre><code class="xml">&lt;script src="js/jquery-1.11.1.min.js"&gt;&lt;&#47;&#115;cript&gt;
-&lt;script src="js/flexslider/jquery.flexslider-min.js"&gt;&lt;&#47;&#115;cript&gt;
-&lt;link rel="stylesheet" href="js/flexslider/flexslider.css" />
+&lt;script src="js/jquery.flexslider-min.js"&gt;&lt;&#47;&#115;cript&gt;
 &lt;script&gt;
 $(document).ready(function(){
     // Add all jQuery code here.
 });
 &lt;&#47;&#115;cript&gt;
 </code></pre>
-            </section>
-            <section class="slide"> 
-<p>notice the addition of the lines:</p>
-<pre><code class="xml">&lt;script src="js/flexslider/jquery.flexslider-min.js"&gt;&lt;&#47;&#115;cript&gt;
-&lt;link rel="stylesheet" href="js/flexslider/flexslider.css" />
+            <p>Flexslider also comes with its own CSS file, so be sure to put that in the <code>&lt;head></code> section <em>before</em> style.css.</p>
+<pre><code>&lt;head&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+    &lt;link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/normalize.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/flexslider.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&gt;
+&lt;/head&gt;
 </code></pre>
-<p> in between: </p>
-<pre><code class="xml">&lt;script src="js/flexslider/jquery.flexslider-min.js"&gt;&lt;&#47;&#115;cript&gt;</code></pre>
-
-<p> and: </p>
-
-<pre><code class="xml">&lt;script&gt;
-$(document).ready(function(){
-    // Add all jQuery code here.
-});
-&lt;&#47;&#115;cript&gt;
-</code></pre>
-</section><section class="slide">
-<p> It should look like this: </p>
-<pre><code class="xml">&lt;script src="js/jquery-1.11.1.min.js"&gt;&lt;&#47;&#115;cript&gt;
-&lt;script src="js/flexslider/jquery.flexslider-min.js"&gt;&lt;&#47;&#115;cript&gt;
-&lt;link rel="stylesheet" href="js/flexslider/flexslider.css" />
-&lt;script&gt;
-$(document).ready(function(){
-    // Add all jQuery code here.
-});
-&lt;&#47;&#115;cript&gt;
-</code></pre>
-
-<p> and it should be in the <code>&lt;head></code> of your project page. </p>
-<p>If you are having trouble you can just use the code in the <code>example-3</code> folder from the project zip.</p>
-
         </section>
-        <section class="slide" data-markdown> 
-## Ok Breathe...
 
-You now have averything in place to make your slider. All we have to do after this is:
-
-1. Figure out where on your page you want to put the rotator.
-* Figure out what images you want to use in the rotator
-* Figure out if you want to have captions (Text to accompany each slide in the rotator)
-* Add the **HTML** needed for the rotator
-* Trigger flexslider to add new **behavior** to that HTML.
-        </section>
-        <section class="slide" data-markdown> 
-
-#### From this point forward...
-
-we will be writing code on our projects that will be individualized to our own needs.
-
-I will give example **HTML**, **CSS**, **JavaScript** and **jQuery** code but you will need to adapt that code to do *what you want to do for your project*.
-        </section>
-        <section class="slide"> 
-            <h2> Next Steps </h2>
-
-            <p> The <strong> HTML </strong> </p>
-
-<pre><code class="xml">&lt;section id="rotator" class="rotator box">
-  &lt;div class="flexslider">
-    &lt;ul class="slides">
-      &lt;li>
-        &lt;img src="images/rotator-1.jpg" alt="Rotator Image 1">
-        &lt;div class="flex-caption">&lt;p>Slide Caption 1&lt;/p>&lt;/div>
-      &lt;/li>
-      &lt;li>
-        &lt;img src="images/rotator-2.jpg" alt="Rotator Image 2">
-        &lt;div class="flex-caption">&lt;p>Slide Caption 2&lt;/p>&lt;/div>
-      &lt;/li>
-      &lt;li>
-        &lt;img src="images/rotator-3.jpg" alt="Rotator Image 3">
-        &lt;div class="flex-caption">&lt;p>Slide Caption 3&lt;/p>&lt;/div>
-      &lt;/li>
-    &lt;/ul>
-  &lt;/div>
-&lt;/section> </code></pre>
-<p>This is the starter code that you should paste into your page where you want your rotator to go.</p>
-        </section>
         <section class="slide" data-markdown>
-## Making it your own.
+##Add Flexslider to Your project: Step 2
 
-* Edit the **amount** of list items in the slides list to match the amount of images you will be using.
-* Edit the image **filenames** to point to the images you want to use
-* Edit the **alt** attribute of each image to write a description of that image
-* Edit the captions as you like
-    * If you do not want captions delete the line 
+Now, let's write the HTML markup for creating the structure of the slider. In the documentation, the markup is provided. It's important to use the same structure and class and/or id names as listed because most times, plugins are created to match that specific chunk of code.  
+
+You can of course update the src file for the images to point to your own.  If you do not have any images at this time, there are some placeholders in your project folder under **images > rotator**.
+
 ```xml
-&lt;div class="flex-caption">&lt;p>Slide Caption 1&lt;/p>&lt;/div>
-``` 
-from each slide you don't want captions on.
+&lt;div class=&quot;flexslider&quot;&gt;
+  &lt;ul class=&quot;slides&quot;&gt;
+    &lt;li&gt;&lt;img src=&quot;images/rotator/image1.jpg&quot; /&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;images/rotator/image2.jpg&quot; /&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;images/rotator/image3.jpg&quot; /&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+```
 
+You can put this code anywhere you want it to show on the page. Save the file and check your page.  You probably won't see anything right?  That's because we still have to active the plugin with a little jQuery.
         </section>
-        <section class="slide" data-markdown>
-## Making it work
 
-In your **Document Ready Function** add the following code to tell flexslider to run:
+        <section class="slide" data-markdown>
+            
+##Add Flexslider to Your project: Step 3
+
+Lastly, **initialize** the plugin by adding this bit of code into your `$(document).ready()` function:
 
 ```javascript
-$('.flexslider').flexslider();
+$(document).ready(function(){
+    // Add all jQuery code here.
+    $('.flexslider').flexslider();
+});
 ```  
-Yep,  that's it.
+Yep, that's it.
+
+Save and refresh the browser.
         </section>
+        <section class="slide" data-markdown>
+##It works! Sort of...
+
+Depending how you want your slider to look, it may be too big or too small for your page.  By default, it will be as wide as it's containing element.
+
+Also, it looks like the left & right arrow is missing.  If yours looks something like the below screen shot, it's okay.  We can customize it.
+
+![flexslider default](framework/img/workshop/flexslider-default.png)
+        </section>
+        <section class="slide" data-markdown>
+## I Can Haz Responsive?
+
+Flexslider comes out of the box with the ability to be responsive. That's why, by default, it's stretching to 100% width of it's container. Try resize your browser and watch your images scale as needed. 
+
+We can fix this with a little HTML & CSS and still maintain its responsive nature. Let's put a new containing element around the Flexslider HTML like this:
+
+```
+&lt;div class=&quot;flexslider-wrap&quot;&gt;&lt;!-- new container--&gt;
+
+    &lt;div class=&quot;flexslider&quot;&gt;
+        &lt;ul class=&quot;slides&quot;&gt;
+            &lt;li&gt;&lt;img src=&quot;images/rotator/image1.jpg&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;images/rotator/image2.jpg&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;images/rotator/image3.jpg&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;&lt;!-- closing new container --&gt;
+```
+Then add the css to change the size of the whole container.
+
+    .flexslider-wrap {
+        width: 50%; /* makes the slider 50% of its container */
+        margin: 0 auto; /* center aligns the slider */
+    }
+
+Check your page, much better right?
+
+**Pro Tip:**
+Make your images only as wide as they NEED to be.  That is, the largest size that you will need in your design.  They will automatically scale down as needed, but if you make them larger then they need to be the file size will be larger and your page will download slower.
+        </section>
+
+        <section class="slide" data-markdown>
+##One more fix
+
+Now let's fix those missing arrows.  Usually, when you see a broken image or something is not working properly, the first thing to check for is "Are all my files where they need to be?"
+
+In **flexslider.css**, the source location for the fonts look like this:
+
+    @font-face {
+        font-family: 'flexslider-icon';
+        src:url('fonts/flexslider-icon.eot');
+        src:url('fonts/flexslider-icon.eot?#iefix') format('embedded-opentype'),
+            url('fonts/flexslider-icon.woff') format('woff'),
+            url('fonts/flexslider-icon.ttf') format('truetype'),
+            url('fonts/flexslider-icon.svg#flexslider-icon') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+For organization, we put our **fonts** folder *outside* of the **css** folder.  This CSS source needs to be updated to point to where the font files are.
+
+Update this to:
+
+    @font-face {
+        font-family: 'flexslider-icon';
+        src:url('../fonts/flexslider-icon.eot');
+        src:url('../fonts/flexslider-icon.eot?#iefix') format('embedded-opentype'),
+            url('../fonts/flexslider-icon.woff') format('woff'),
+            url('../fonts/flexslider-icon.ttf') format('truetype'),
+            url('../fonts/flexslider-icon.svg#flexslider-icon') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+You're starting point is **flexslider.css**.  The `../` means "Go up and out of a folder", then go into the **fonts** folder.  Go ahead and make that change.
+
+Another option is to just move the font folder inside the css folder.  The source in the CSS file just needs to match the directory location.
+        </section>
+        
         <section class="slide" data-markdown>
 ## Making it work
 

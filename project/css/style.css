@@ -1,3 +1,10 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 body {
 	color: #444444;
 	font-family: Helvetica, Arial, sans-serif;
@@ -37,6 +44,7 @@ p {
 	top: 0;
 	left: 0;
 	width: 100%;
+	z-index: 5;
 }
 .menu li {
 	display: inline-block;
@@ -97,7 +105,7 @@ img.profile {
 
 /* FAVOURITES 
 -----------------------------------------*/
-.favourites img {
+.favourite-img {
 	border: 1px solid #A8258D;
 	border-radius: 50%;
 	width: 200px;
