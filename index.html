@@ -52,7 +52,7 @@
 
             ![Today's project](framework/img/workshop/final-project.gif)
 
-            [View the page here](framework/examples/example-4/index.html).
+            Follow this [link](project/final/index.html) to see the project in action!
         </section>
         <section class="slide" data-markdown>
 ## Getting Started
@@ -241,7 +241,7 @@ The console is an interactive tool, built into the browser. We can use this tool
 
 Let's experiment with typing some input into the console. Return to **console.html** and open the console. After the `>` symbol, type your favorite number and press the enter/return key. 
 
-Did you see something like this?
+You will see something like this:
 
 ![console number](framework/img/workshop/console-number.gif)
 
@@ -252,10 +252,14 @@ You can also input text BUT when using text, make sure you put it in quotes (mor
 
 ![console string](framework/img/workshop/console-string.gif)
 
+The command you input into the console gets *evaluated* and a value is returned back to you.
         </section>
-        <section class="slide title" data-markdown>
-            #JavaScript Overview
-            ##Variables & Functions
+        <section class="slide title">
+            <h1>JavaScript Overview</h1>
+            <h2>Variables & Functions</h2>
+            <div class="presenter-notes">
+                <p>Let the learners know that these concepts are the building blocks of the language and it's important to understand the syntax, how each concept works and together all of this will be needed to create interactions with JS/jQuery.  It may be hard to see the bigger picture at first, we just have to go through the fundamental concepts to understand how to build a program to create different types of interactions.</p>
+            </div>
         </section>
         <section class="slide" data-markdown>
 ## What *is* a variable?
@@ -287,7 +291,7 @@ This is referred to as *assigning* a value to the *variable*. Evaluate everythin
         <section class="slide" data-markdown>
 ##Naming a Variable
 
-Variables can't contain spaces so a convention called camel case is generally used. Every new word is capitalized and the result looks `likeCamelHumps`. 
+Variables can't contain spaces so a convention called camel case is generally used. Every new word is capitalized and the result looks kind of `likeCamelHumps`. 
 
 JavaScript is case sensitive (uppercase and lowercase letters are treated differently) so variable names are also case sensitive.
 
@@ -314,7 +318,7 @@ var second = "World";
 var wholePhrase = first + " " + second;
 ```
 
-The JavaScript above adds **three** items together:
+The JavaScript above **concatenates** the three items together:
 
 1. the variable `first` with the value `"Hello"`
 * the **anonymous** string value `" "` to add a space.
@@ -351,7 +355,7 @@ var wholePhrase = first + " " + second;
 
             <p><img src="framework/img/workshop/console-concatenate.gif" alt="concatenate example" title=""></p>
 
-            <p>Note that when we execute a command without <code>var</code>, the assigned value of the variable gets return instead of <code>undefined</code>. Reminder, <code>var</code> is used to a <em>declare</em> and create a variable will hold the value, until used.</p>
+            <p>Note that when we execute a command without <code>var</code>, the assigned value of the variable gets return instead of <code>undefined</code>. Reminder, <code>var</code> is used to a <em>declare</em> and create a variable and will hold the value, until used.</p>
 
             <p><strong>Challenge!</strong> How would you add a period to the end of the sentence?</p>
 
@@ -611,7 +615,7 @@ This would set the value of the variable ```notAllowedChampagne``` to the string
         <section class="slide" data-markdown>
 ##Class exercise: Objects
 
-Using the object below, let's add this code into our console and practice accessing various property values.
+Using the object below, let's add this entire code block into our console and practice accessing various property values.
 
 ```javascript
 var vonTrappFamily = {
@@ -653,17 +657,17 @@ This example illustrates a short series of commands. When these series of comman
         <section class="slide" data-markdown>
 ## Functions
 
-If a `variable` is a name for a value, then a `function` is a name for a set of commands or instructions. When we invoke a variable, it just returns the value.  When we invoke a function, it executes all the commands contained within, making it easier to make the code "do things."  
+If a `variable` is a name for a value, then a `function` is a name for a **set** of commands or instructions. When we invoke a variable, it just returns the value.  When we invoke a function, it executes all the commands contained within, making it easier to make the code "do things."  
 
 Let's look at two functions, `alert()` and `prompt()`.  These come built into JavaScript, for free!
 
-Go back to the console and type both functions in, one at a time, and see what happens. Note the syntax for using functions, the parenthesis `()`, must be included.
+Go back to the console and type both functions in, one at a time, and see what happens. Note the syntax for functions, the parenthesis `()`, must be included.
 
         </section>
         <section class="slide" data-markdown>
 ##Functions and Arguments
 
-We've seen now that the `alert()` and `prompt()` functions create a pop-up in the browser but the pop-ups are blank.  We can also *pass* an **argument** *into* these functions by adding a value within the parenthesis.  Try this in the console:
+We've seen now that the `alert()` and `prompt()` functions create a pop-up in the browser but the pop-ups are blank.  We can also *pass* an **argument** *into* these functions by adding a value within the parenthesis `()`.  Try this in the console:
 
 ```javascript
 alert("Hello!");
@@ -710,7 +714,7 @@ function sayAnything(){
     alert("Hello World");
 }
 ```
-Notice that the ```sayAnything()``` function has an empty parenthesis () while the ```alert()``` function has the **string** value "Hello World" in the parenthesis (). 
+Notice that the ```sayAnything()``` function has an empty parenthesis `()` while the ```alert()``` function has the **string** value "Hello World" in the parenthesis `()`. 
 
 We can create a **parameter** to pass an argument into the function.
 
@@ -728,9 +732,9 @@ function sayAnything(message){
 }
 
 // Calling the function
-sayAnything("Check out my cool new boombox!");
+sayAnything("Welcome to the LLC jQuery workshop!");
 ```
-Now, when we call the function, we can pass an argument in the parenthesis (`Check out my cool new boombox!`). That argument now becomes the value of `message` which will now populate the `message` in `alert(message)`.
+Now, when we call the function, we can pass an argument in the parenthesis (`Welcome to the LLC jQuery workshop!`). That argument now becomes the value of `message` which will now populate the `message` in `alert(message)`.
 
 Let's try it out in the console. First add the function, then call it. You can call the function as many times as you want with different arguments.
 
@@ -798,7 +802,7 @@ Try it out in the console.
             <pre class="delayed"><code>jQuery();</code></pre>
             
             <div class="delayed">
-                <p>Remember, jQuery is a <strong>JavaScript library</strong>. It is a library of functions/methods built on top of JavaScript to simplify your program. You can download it and use in your projects. </p>
+                <p>Remember, jQuery is a <strong>JavaScript library</strong>. It is a library of functions/methods used to simplify your program. You can download it and use in your projects. </p>
 
                 <p>Think of it this way.  If JavaScript is a language like English, then jQuery is like a dictionary.  It makes working with the language easier. </p>
             </div>
@@ -849,7 +853,7 @@ jQuery('.menu-item').css('color', 'blue');
 ```
         </section>
         <section class="slide" data-markdown> 
-## An Amazing Shortcut: The Dollar Sign
+## Shortcut: The Dollar Sign
 
 ```javascript
 var $ = jQuery;
@@ -956,6 +960,7 @@ Let's open the project files in the browser and text editor.
 * With the entire folder selected, select **Open**.
 * The folder will appear in the side bar. Double click on **index.html** in the sidebar to open it in the editor.
 * Right click or two finger tap in Sublime and select Open in Browser. This will open the HTML file in your default browser.
+    * If Chrome is not your default browser, go to your Window/Finder and navigate to the **project** folder, right-click/two-finger tap on **index.html** and choose **Open With > Chrome**
 
 You should see this in Sublime Text:
 
@@ -965,10 +970,10 @@ You should see this in Sublime Text:
             <h2>Using jQuery</h2>
             <p>To use jQuery on your HTML page, you'll have to link to the jQuery file.  There are two ways to do that.</p>
 
-            <p>1. <strong>Include the jQuery with your project files:</strong></p>
+            <p>1. <strong>Include the jQuery files with your project files:</strong></p>
 
             <ul>
-                <li><a href="http://jquery.com/download/">Download the latest version of the jQuery</a> and use the latest, compressed version. </li>
+                <li><a href="http://jquery.com/download/">Download the latest version of jQuery</a> and use the latest, compressed version. </li>
                 <li>Save it within your projects files.  It’s common to create a separate <strong>js</strong> folder for all JavaScript files for organization (similar to how there’s a separate images and css folder.)</li>
                 <li>Link it to your HTML document using a script tag.  The <code>src</code> should point to the path to where the file is saved in your project’s folder structure.<br>
                 Your project folder already has the jQuery file included so no need to download anything today.
@@ -977,7 +982,7 @@ You should see this in Sublime Text:
 
             <pre><code class="xml">&lt;script src="js/jquery-1.11.1.js">&lt;/script></code></pre>
 
-            <p><strong>Important</strong>:  Unlike CSS, which always has to be included within the <code>&lt;head&gt;</code> tags, JavaScript can be included pretty much anywhere on the page, in the <code>&lt;head&gt;</code> or the <code>&lt;body&gt;</code>.  Many people prefer to include it just before the closing <code>&lt;/body&gt;</code> to allow the page document to load first.</p>
+            <p><strong>Important</strong>:  Unlike CSS, which always has to be included within the <code>&lt;head&gt;</code> tags, JavaScript can be included pretty much anywhere on the page, in the <code>&lt;head&gt;</code> or the <code>&lt;body&gt;</code>.  Often, it is included just before the closing <code>&lt;/body&gt;</code> to allow the page document to load first.</p>
 
             <p>2. <strong>Use a CDN:</strong></p>
             <p>CDNs can offer a performance benefit by hosting jQuery on servers spread across the globe.</p>
@@ -986,6 +991,10 @@ You should see this in Sublime Text:
             <pre><code class="xml">&lt;script src="http://code.jquery.com/jquery-1.11.0.min.js">&lt;/script></code></pre>
 
             <p>Insert it into your <strong>index.html</strong> page now.</p>
+
+            <div class="presenter-notes">
+                <p>The examples in jQuery's Learning Center uses the script at the bottom so use it this way to be consistent.</p>
+            </div> 
         </section>
     
         <section class="slide">
@@ -1001,7 +1010,7 @@ You should see this in Sublime Text:
    └ The 'script' tag.  In HTML this tells the document that it's about to get JS commands.
 */
 </code></pre>
-            <p>That that we've linked the jQuery file, we can access all the commands written in that document and be able to access all of the features available.</p>
+            <p>Now that we've linked the jQuery file, we can access all the commands written in that document and be able to access all of the features available.</p>
 
             <p>Great! Now, open <strong>index.html</strong> in Chrome, or refresh the page if you have it open already and see what jQuery does when you include it in an HTML file.</p>
         </section>
@@ -1037,49 +1046,49 @@ When you run a jQuery **method**, only the items in the **wrapped set** will be 
 
         <section class="slide"> 
             <h2> jQuery Methods </h2>
-            <p> the jQuery library comes with many many MANY different methods.  We won't discuss all of them here but if you want to see them all, and how to use them, you can go to <a href="http://api.jquery.com">api.jquery.com</a>.</p>
+            <p> The jQuery library comes with many many MANY different methods.  We won't be able to discuss all of them today but to see what methods are available, and how to use them, go to <a href="http://api.jquery.com">api.jquery.com</a>.</p>
             <p>We will discuss a few methods here and a few more once we start making our image rotator.</p>
             <ul>
-                <li>the <strong>.hide();</strong> method will hide all elements in the wrapped set.</li>
-                <li>the <strong>.show();</strong> method will show all elements in the wrapped set.</li>
-                <li>the <strong>.css();</strong> method alters the look of the elements in the wrapped set by passing two parameters.
+                <li>the <code>.hide();</code> method will hide all elements in the wrapped set.</li>
+                <li>the <code>.show();</code> method will show all elements in the wrapped set.</li>
+                <li>the <code>.css();</code> method alters the look of the elements in the wrapped set by passing two parameters.
                     <ul>
                         <li>The CSS property you want to edit</li>
                         <li>and the new value of that property</li>
                     </ul>
                 </li>
-                <li>the <strong>.addClass();</strong> method allows you to add a CSS class to the elements in the wrapped set.</li>
+                <li>the <code>.addClass();</code> method allows you to add a CSS class to the elements in the wrapped set.</li>
             </ul>
         </section>
        
         <section class="slide" data-markdown> 
 ## Timing
 
-All web pages are downloaded by the browser.  The browser downloads the page from top to bottom and when it see any javascript, it runs it.  Right then and there.  So if you add this:
+The browser downloads all web pages from top to bottom and when it see any JavaScript, it runs it.  Right then and there.  So if you add this:
+
 ```javascript 
 $("p.highlight").css("background-color", "yellow");
 ```
-and then later in the page you put
+before you add this:
 
 ```xml
 &lt;p class="highlight">This is an important highlighted paragraph&lt;/p>
 ```
-The javascript code will run BEFORE the browser will even see the paragraph tag.  That means that jQuery won't match the element and won't make it's background color yellow!
-
+The JavaScript code will run BEFORE the browser sees the paragraph tag.  jQuery won't be able to match the element and won't change the background colour to yellow!
         </section>
 
         <section class="slide"> 
             <h2>Enter Document Ready</h2>
 
             <p><code>$( document ).ready()</code> is an <strong>event</strong>.  It’s a <em>point in time</em> when the browser has downloaded enough of the web page to see all the tags and will able to match the elements selected in your jQuery code.</p>
-            <p>Running that same code on the <strong>document ready</strong> event looks like this:</p>
+            <p>Running that same code in the <strong>document ready</strong> event looks like this:</p>
 
 <pre><code>$(document).ready(function(){
     $("p.highlight").css("background-color", "yellow");
 });
 </code></pre>
 
-            <p>Document Ready is a little bit of a complex idea and has a lot of syntax to get used to. Just trust me, you need it if you want your jQuery code to work. Read more about it <a href="http://learn.jquery.com/using-jquery-core/document-ready/">here</a>.</p>
+            <p>Document Ready is a little bit of a complex idea and has a lot of syntax to get used to. Just know that it's <strong>required</strong> to make jQuery code work. Read more about it <a href="http://learn.jquery.com/using-jquery-core/document-ready/">here</a>.</p>
         </section>
         
         <section class="slide" data-markdown>
@@ -1105,8 +1114,7 @@ Multi-line comments are great for "hiding" large blocks of code so you can try s
         </section>
         <section class="slide"> 
             <h2> Let's DO something already!!!</h2>
-            <h3>Ok let's get into it.</h3>
-            <p>Go back to Sublime and index.html. Under the jQuery script tag, add another script tag to actually write you own jQuery code.</p>
+            <p>Go back to Sublime and <strong>index.html</strong>. Under the jQuery script tag, add another script tag to actually write your own jQuery code.</p>
 <pre><code class="xml">&lt;script src="js/jquery-1.11.1.min.js"&gt;&lt;&#47;&#115;cript&gt;
 &lt;script&gt;
     
@@ -1133,28 +1141,26 @@ Multi-line comments are great for "hiding" large blocks of code so you can try s
 <pre class="xml"><code>&lt;section id="favourites" class="favourites container"&gt;
     &lt;h2&gt;My Favourite Things&lt;/h2&gt;
     &lt;h3&gt;Here are a few things I really love&lt;/h3&gt;
-    &lt;img class="favourite-img" src="images/puppy_rest.jpg"&gt;
-    &lt;img class="favourite-img" src="images/puppy_rest.jpg"&gt;
-    &lt;img class="favourite-img" src="images/puppy_rest.jpg"&gt;
-    &lt;img class="favourite-img" src="images/puppy_rest.jpg"&gt;
+    &lt;img class="fav-img" src="images/puppy_rest.jpg"&gt;
+    &lt;img class="fav-img" src="images/puppy_rest.jpg"&gt;
+    &lt;img class="fav-img" src="images/puppy_rest.jpg"&gt;
+    &lt;img class="fav-img" src="images/puppy_rest.jpg"&gt;
 &lt;/section&gt;
 </code></pre>
 
-            <p>So how would we select those images with jQuery?</p>
+            <p>How would we select those images with jQuery?</p>
             <div class="delayed">
-<pre><code>$("#favourites img");</code></pre>
-
-                <p>Yep that would do it.</p>
+<pre><code>$(".fav-img");</code></pre>
             </div>
         </section>
         <section class="slide" data-markdown>
 ## Class Exercise
 
-Let's change the size of the image using the `.width()` jQuery method. You can pass a size argument into the parenthesis. Update  your **document ready** event to look like this:
+Let's change the size of the image using the `.width()` jQuery method. You can pass a size argument into the parenthesis. Update your `.fav-img` object by using **dot notation** to apply the `.width()` method.
 
 ```javascript
 $(document).ready(function(){
-    $("#favourites img").width(100);
+    $(".fav-img").width(100);
 });
 ```
 Save the file in Sublime, go to Chrome and refresh the page.  If you've done it right it should look like this:
@@ -1167,7 +1173,7 @@ Save the file in Sublime, go to Chrome and refresh the page.  If you've done it 
 What about BIGGER?  Pass in a new argument and choose a larger number.
 ```javascript
 $(document).ready(function(){
-    $("#favourites img").width(400);
+    $(".fav-img").width(400);
 });
 ```
 Your page should look something like this:
@@ -1178,33 +1184,33 @@ Your page should look something like this:
         <section class="slide" data-markdown>
 ##Click Events
 
-Setting the width of something is pretty cool but we could use CSS to do that.  Let's try something only JavaScript could help us with. Let's add a **click event**.
+Now you've seen that you can set the width of an element with jQuery but we could use CSS to do that.  Let's try something only JavaScript could help us with. Let's add a **click event**.
 
-Like the document ready **event**, a click event is a moment in time when we want to trigger some code to run.  But instead of the browser running the document ready event right away, it only runs a click event when an item is actually clicked by the user.
+Like the document ready **event**, a click event is a moment in time when we want to trigger some code to run.  But instead of the browser running the event right away, it only runs a click event when an item is actually clicked by the user.
 
-When we add a function to a **user triggered event** like this we call it an **event listener**.  Our code just sits around waiting and listening for the event to happen.  When someone finally clicks the item it triggers our function to run. 
+Adding a function to a **user triggered event** is called an **event listener**.  The code just sits around waiting and listening for the event to happen.  When someone finally clicks the item, it triggers the function to run. 
 
-We'll be going through it together but you can also view the documentation here: [http://api.jquery.com/click/](http://api.jquery.com/click/)
+We'll be going through an example together but you can also view the documentation here: [http://api.jquery.com/click/](http://api.jquery.com/click/)
         </section>
 
         <section class="slide">
             <h2>Click Events</h2>
-            <p>To add an event listener to our items, we need to select them just like anything else with jQuery.</p>
-<pre><code>$("#favourites img");
+            <p>To add an event listener, select the target item just like anything else with jQuery.</p>
+<pre><code>$(".fav-img");
 </code></pre>
 
             <p class="delayed">Then add the <code>.click()</code> method.</p>
 
-<pre class="delayed"><code>$("#favourites img").click();
+<pre class="delayed"><code>$(".fav-img").click();
 </code></pre>
 
             <p class="delayed">Then pass a single parameter to the <code>click()</code> method. That parameter is itself a function. Add <code>function(){}</code> into the parenthesis.</p>
 
-<pre class="delayed"><code>$("#favourites img").click(function(){});
+<pre class="delayed"><code>$(".fav-img").click(function(){});
 </code></pre>
 
             <p class="delayed">Inside of that function, in between the curly braces <code>{}</code>, this is where we'll add the instructions for what to do when the image is clicked.</p>
-<pre class="delayed"><code>$("#favourites img").click(function(){
+<pre class="delayed"><code>$(".fav-img").click(function(){
     // The changes that occur when object is clicked.
 });
 </code></pre>
@@ -1213,12 +1219,12 @@ We'll be going through it together but you can also view the documentation here:
         <section class="slide" data-markdown>
 ##Testing with `console.log();`
 
-Let's test the click event and made sure we've selected the correct object.  Remember `console.log()`?  
+Let's test the click event and make sure we've selected the correct object.  Remember `console.log()`?  This method if very handy for testing and debugging. 
 
-This method if very handy for testing and debugging. Then you know this step is working before you move onto the next step.
+Testing the click even will let you know this step is working before you move onto the next step.
 
 ```javascript
-$("#favourites img").click(function(){ 
+$(".fav-img").click(function(){ 
     console.log("It works!");
 });
 ```
@@ -1236,7 +1242,7 @@ Now that we know the click event works, you can delete the `console.log` test or
 Now, let's make the click event hide the picture. Use `$(this)` as the selector (more on this soon).  
 Then add the `.hide()` method.
 ```javascript
-$("#favourites img").click(function(){ 
+$(".fav-img").click(function(){ 
     //console.log("It works!");
     $(this).hide();
 });
@@ -1248,7 +1254,7 @@ The code above will take the clicked image and *dynamically* add inline CSS to t
 The `hide()` **method** also accepts a **parameter** for how long it should take for this effect to to occur.  Add a number, in milliseconds, in the parenthesis.
 
 ```javascript
-$("#favourites img").click(function(){ 
+$(".fav-img").click(function(){ 
     $(this).hide(1000);
 });
 ```
@@ -1264,15 +1270,15 @@ This will make the act of hiding the image take 1000 milliseconds, or 1 second.
 What if we just want to hide it for a bit, then show it again?  We can by **chaining** our methods. [View here](framework/examples/example-2/index.hide.show.html#favourites).
 
 ```javascript
-$("#favourites img").click(function(){ 
+$(".fav-img").click(function(){ 
     $(this).hide(1000).show('fast');
 });
 ```
 
-All jQuery methods can chain together with a dot (.) in between them.  That means that [this silliness](framework/examples/example-2/index.hide.show.silly.html#favourites) is perfectly valid and will work just fine.
+jQuery methods are chainedtogether with a dot (.) in between them.  That means that [this silliness](framework/examples/example-2/index.hide.show.silly.html#favourites) is perfectly valid and will work just fine.
 
 ```javascript
-$("#favourites img").click(function(){ 
+$(".fav-img").click(function(){ 
     $(this).hide(1000).show('fast').fadeOut('slow').fadeIn(5000).slideUp(800).slideDown(10000);
 });
 ```
@@ -1291,18 +1297,18 @@ jQuery gives us a special variable called ```this``` as a helper.  Though we wan
 This example below would make all the matched images hide on click.
 
 ```javascript
-$("#favourites img").click(function(){ 
-    $("#favourites img").hide(1000);
+$(".fav-img").click(function(){ 
+    $(".fav-img").hide(1000);
 });
 ```
 
-`$("#favourites img").click()` will watch for *any* image being clicked.   
-`$("#favourites img").hide(1000);` will add the hide effect to **all** the matched elements, meaning all the images will be hidden.
+`$(".fav-img").click()` will watch for *any* image being clicked.   
+`$(".fav-img").hide(1000);` will add the hide effect to **all** the matched elements, meaning all the images will be hidden.
 
 The below code, will ensure that only the image being clicked will have the effect applied to it.
 
 ```javascript
-$("#favourites img").click(function(){ 
+$(".fav-img").click(function(){ 
     $(this).hide(1000);
 });
 ```
@@ -1360,8 +1366,8 @@ Let's get started.
 
             <p>Great! It works! Now, add the <code>addClass</code> method.</p>
 
-<pre><code>$(".menu a").click(function(){
-    console.log("It works!");
+<pre class="javascript"><code>$(".menu a").click(function(){
+    //console.log("It works!");
     $(this).addClass("active");
 });
 </code></pre>
@@ -1387,19 +1393,21 @@ Let's get started.
 
 Almost there.  We were able to add the class to the clicked item but now we need to remove the class from the non-active items.  Remember, JavaScript/jQuery executes commands from top to bottom.  One way to fix this issue is to remove the class **first**, *then* add the class to the clicked item.
 
-Since we don't know which item the user will click, we can remove the class from **all* of the menu items.  So in this case, we won't use the `$(this)` selector.  Instead, we want all the menu links.
-
-    $(".menu a").click(function(){
-        //console.log("It works!");
-        $(".menu a").removeClass("active");
-        $(this).addClass("active");
-    });
+Since we don't know which item the user will click, we can remove the class from **all** of the menu items.  So in this case, we won't use the `$(this)` selector.  Instead, we want all the menu links.
+    
+```javascript  
+$(".menu a").click(function(){
+    //console.log("It works!");
+    $(".menu a").removeClass("active");
+    $(this).addClass("active");
+});
+```
 
 Now try it!
 </section>
 
         <section class="slide" data-markdown>
-            ##Exercise: Personalize Your Page (20mins)
+            ##Exercise: Personalize Your Page (15mins)
 
             Now that you've had a chance to get some JavaScript & jQuery practice, take some time to personalize your page. Here are some suggestions to get you started: 
 
@@ -1460,12 +1468,13 @@ Some examples of jQuery plugins are
 * [ToolTipster](http://iamceege.github.io/tooltipster/#demos)
     * Custom pretty Tool Tips
 * [jQuery UI](http://jqueryui.com/themeroller/)
-    * A collection of UI widgets designed to make adding complex user interactions easier and very themeable. 
+    * A collection of UI widgets designed to make adding complex user interactions easier and very themeable
         * This plugin is developed by the jQuery team itself
         * **UI = User Interface**
 * [FlexSlider](http://flexslider.woothemes.com/)
-    * The best responsive slider. Period.
-    * We are going to use this Plugin to add a slider of images to our project
+    * A responsive photo slider
+ 
+We are going to use the FlexSlider plugin today to add a slider of images to our project.
         </section>
 
         <section class="slide" data-markdown>
@@ -1493,16 +1502,16 @@ The javascript would show the first and hide the rest. Then, after a couple of s
 
             <p>Head on over to <a href="http://www.woothemes.com/flexslider/">http://www.woothemes.com/flexslider/</a> to download the files.</p>
 
-            <p>Click the big green download button to download the zip file. There are files that we'll need to make the plugin work and there are other files that are for demo purposes. You will see something like this:</p>
+            <p>Click the big green download button to download the zip file. Included in a the down are many files that we'll need to make the plugin work and there are other files that are for just for demo purposes. You will see something like this:</p>
 
             <p><img src="framework/img/workshop/flexslider-contents.png" alt="Flexslider in the project directory" title=""></p>
 
             <p>These are the files you will need to <strong>copy</strong> into your project folder, into the appropriate directory.</p>
             <ul>
-                <li>entire <strong>fonts</strong> folder</li>
-                <li>flexslider.css</li>
-                <li>images > bg_play_pause.png</li>
-                <li>jquery.flexslider-min.js</li>
+                <li>entire <strong>fonts</strong> folder into the <strong>project</strong> folder</li>
+                <li>flexslider.css into the <strong>css</strong> folder</li>
+                <li>images > bg_play_pause.png into your <strong>project > images</strong> folder</li>
+                <li>jquery.flexslider-min.js into your <strong>project > js</strong> folder</li>
             </ul>
 
             <p>Your project folder should now look like this:</p>
@@ -1510,15 +1519,17 @@ The javascript would show the first and hide the rest. Then, after a couple of s
             <p>Your images files my vary but just ensure that <strong>bg_play_pause.png</strong> is included.</p>
 
             <div class="presenter-notes">
-                <p>Make sure all the learners are complete this step before moving on.</p>
+                <p>As you start this slide, tell the mentors to help to make sure all the learners are complete this step before moving on. Explain that people may vary on how they create their folder structures but that it's import to understand how to link to the proper directory folders.</p>
             </div>
         </section>
         <section class="slide">
             <h2>Add Flexslider to Your project: Step 1</h2>
             <p>Now that the plugin files are saved within your directory, attach these files to your HTML page.</p>
 
-            <p>Go to back to your <strong> index.html </strong> file and add the Flexslider js file <em>after</em> the jQuery library file.  Also delete or comment out all of our test jQuery code from the previous exercise and leave just the <code>$(document).ready()</code>.</p>
-<pre><code class="xml">&lt;script src="js/jquery-1.11.1.min.js"&gt;&lt;&#47;&#115;cript&gt;
+            <p>Go to back to your <strong> index.html </strong> file and add the Flexslider js file <em>after</em> the jQuery library file.</p>
+<pre><code class="xml"><!-- jQuery library file -->
+&lt;script src="js/jquery-1.11.1.min.js"&gt;&lt;&#47;&#115;cript&gt;
+<!-- Flexslider file -->
 &lt;script src="js/jquery.flexslider-min.js"&gt;&lt;&#47;&#115;cript&gt;
 &lt;script&gt;
 $(document).ready(function(){
@@ -1540,7 +1551,7 @@ $(document).ready(function(){
         <section class="slide" data-markdown>
 ##Add Flexslider to Your project: Step 2
 
-Now, let's write the HTML markup for creating the structure of the slider. In the documentation, the markup is provided. It's important to use the same structure and class and/or id names as listed because most times, plugins are created to match that specific chunk of code.  
+Now, let's write the HTML markup for creating the structure of the slider. In the Flexslider documentation, the markup is provided. It's important to use the same structure and class and/or id names as listed because most times, plugins are created to match that specific chunk of code.  
 
 You can of course update the src file for the images to point to your own.  If you do not have any images at this time, there are some placeholders in your project folder under **images > rotator**.
 
@@ -1561,7 +1572,7 @@ You can put this code anywhere you want it to show on the page. Save the file an
             
 ##Add Flexslider to Your project: Step 3
 
-Lastly, **initialize** the plugin by adding this bit of code into your `$(document).ready()` function:
+**Initialize** the plugin by adding this bit of code into your `$(document).ready()` function:
 
 ```javascript
 $(document).ready(function(){
@@ -1611,7 +1622,7 @@ We can fix this with a little HTML & CSS and still maintain its responsive natur
 
 &lt;/div&gt;&lt;!-- closing new container --&gt;
 ```
-Then add the css to change the size of the whole container.
+Then add the css to **styles.css** to change the size of the whole container.
 
     .flexslider-wrap {
         width: 50%; /* makes the slider 50% of its container */
@@ -1642,7 +1653,7 @@ In **flexslider.css**, the source location for the fonts look like this:
         font-style: normal;
     }
 
-For organization, we put our **fonts** folder *outside* of the **css** folder.  This CSS source needs to be updated to point to where the font files are.
+In the previous step, we put our **fonts** folder *outside* of the **css** folder.  This CSS source needs to be updated to point to where the font files are.
 
 Update this to:
 
@@ -1665,7 +1676,7 @@ Another option is to just move the font folder inside the css folder.  The sourc
         <section class="slide" data-markdown>
 ## Customizations
 
-Though this is a pre-written plugin, there are various options for adding further customizations the slider. 
+Though this is a pre-written plugin, many plugin authors will provide ways to add various options for further customizations of the plugin. 
 
 A couple of Flexslider's available options are:
 
@@ -1679,11 +1690,11 @@ Let's look at how to set these two options.
         <section class="slide" data-markdown>
 ## Using A Configuration Object with Flexslider
 
-Find the line in your code that says:
+Go to this line of code in your document: 
 ```javascript
 $('.flexslider').flexslider();
 ```  
-And change it to say this:
+And change it to the below example. Does that syntax look familiar? [Remember objects](#slide28)?
 ```javascript
 $('.flexslider').flexslider({ animation : "slide" });
 ```  
@@ -1700,8 +1711,31 @@ $('.flexslider').flexslider({
     animationSpeed : 2000 
 });
 ```
-Does that syntax look familiar? [Remember objects](#slide28)?
+        </section>
+        <section class="slide" data-markdown>
+##Searching for what you need
 
+Luckily we have wonderful community of developers that create code snippets and share it with the rest of the world.  The main goal is to be able to right our own code from scratch, by why not use tried to true methods that have already been created by the experts?
+
+One of the many small effects one can add to your site to give it that little extra sumthin' sumthin' is a smooth scroll.  There are many plugins that can do some fancy tricks but to add a simple smooth scroll to our one page site, we can use this little snippet created by [Chris Coyier of css-tricks.com](http://css-tricks.com/snippets/jquery/smooth-scrolling/).
+
+Let's look at this snippet, then add it to our project.
+
+```javascript
+$('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+
+        if (target.length) {
+            $('html,body').animate({
+              scrollTop: target.offset().top
+            }, 1000);
+            return false;
+        }
+    }
+});
+```
         </section>
         <section class="slide title" data-markdown>
             #Questions?
@@ -1712,6 +1746,7 @@ Does that syntax look familiar? [Remember objects](#slide28)?
 **Exciting!** You now have a responsive image rotator on your project page full of the images that you want to show to people.  But why stop there right?  
 
 Check out the [these bonus lessons](framework/bonus-flexslider.html) for further customization of the Flexslider.
+Here's a [link to the slide](index.html#slide79) with other available plugins to try as well.
 
 Here are a couple of online resources to try out: 
 
@@ -1763,6 +1798,5 @@ Slidedecks created with [Lea Verou's CSS-based SlideShow System](https://github.
             jQuery(".snippet").before("<span class=\"edit\">edit me</span>");
         });
     </script>
-    <!-- <script async data-id="ClassGauge" data-token="-JYaEPN4Pk3flpXty5_2" src="https://class-gauge.firebaseapp.com/assets/voting_client.js"></script> -->
 </body>
 </html>
