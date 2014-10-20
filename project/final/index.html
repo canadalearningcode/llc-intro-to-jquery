@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+	<title>Page Title</title>
+	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/flexslider.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<ul class="menu">
+		<li><a href="#about">About</a></li>
+		<li><a href="#favourites">Favourites</a></li>
+		<li><a href="#contact">Contact</a></li>
+	</ul>
+
+	<section class="banner">
+		<img class="logo" src="images/logo.png">
+		<h1>Phoenix Gibson</h1>
+    <p>Life of a Puppy</p>
+	</section>
+
+	<section id="about" class="about container">
+		<h2>About Me</h2>
+		<img class="profile" src="images/rotator/dog1.jpg">
+		<p>What's up internet?  My name is Phoenix Gibson.  I am a <a href="http://en.wikipedia.org/wiki/Nova_Scotia_Duck_Tolling_Retriever" target="_blank">Nova Scotia Duck Tolling Retriever</a> and I live in toronto with my Dad Arron and my Mom Kelley.</p>
+    <p>That's pretty much all i want to say so here's some random word i like.  Bird Food Snowball Fido pet supplies stick throw furry. Sit head teeth dinnertime fluffy vaccination feathers vaccine Spike fish parakeet nap collar licks wet nose. Stay crate good boy gimme five dog mouse cage tabby food vitamins. Tail cage vitamins Fido water aquatic mouse catch Tigger vitamins hamster water brush run. Puppy Snowball stick drool cage swimming feathers grooming mouse Tigger meow field. Dog licks sit maine coon cat feeder teeth vitamins slobber.</p>
+	</section>
+
+	<section id="favourites" class="favourites container">
+		<h2>My Favourite Things</h2>
+		<h3>Here are a few things I really love</h3>
+		<img class="fav-img" src="images/puppy_rest.jpg">
+		<img class="fav-img" src="images/puppy_rest.jpg">
+		<img class="fav-img" src="images/puppy_rest.jpg">
+		<img class="fav-img" src="images/puppy_rest.jpg">
+
+		
+		<div class="flexslider-wrap"><!-- new container-->
+			<div class="flexslider">
+			  <ul class="slides">
+			    <li>
+			    	<img src="images/rotator/dog1.jpg" />
+			    	<div class="flex-caption">
+			    		<p>Oh Hai Thar!!!</p>
+			    	</div>
+			    </li>
+			    <li>
+			    	<img src="images/rotator/dog2.jpg" />
+			    	<div class="flex-caption">
+			    		<p>I'm Too Cool for Drool</p>
+			    	</div>
+			    </li>
+			    <li>
+			    	<img src="images/rotator/dog3.jpg" />
+			    	<div class="flex-caption">
+			    		<p>Oh this? Oh I just <em>found</em> this frisbee.  Do you want to throw it or something?</p>
+			    	</div>
+			    </li>
+			    <li>
+			    	<img src="images/rotator/dog4.jpg" />
+			    	<div class="flex-caption">
+			    		<p>This is my World Cup Press Photo</p>
+			    	</div>
+			    </li>
+			    <li>
+			    	<img src="images/rotator/dog5.jpg" />
+			    	<div class="flex-caption">
+			    		<p>I enjoy long walks on the beach and backlit photography</p>
+			    	</div>
+			    </li>
+			  </ul>
+			</div>
+		</div>
+	</section>
+
+	<section id="contact" class="contact container">
+		<h2>Contact Me</h2>
+		<a href="http://twitter.com/llcodedotcom"><img src="images/twitter.png"></a>
+		<a href="http://www.facebook.com/ladieslearningcode"><img src="images/facebook.png"></a>
+		<a href="http://www.linkedin.com/company/ladies-learning-code"><img src="images/linkedin.png"></a>
+	</section>
+
+	<!-- jQuery starts here -->
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.flexslider-min.js"></script>
+	<script>
+	    $(document).ready(function(){
+
+	        // Active class for page navigation
+	        $(".menu a").click(function(){
+				    //console.log("It works!");
+				    $(".menu a").removeClass("active");
+				    $(this).addClass("active");
+					});
+
+	        // Flexslider
+					$('.flexslider').flexslider({ 
+					    animation : "slide",
+					    animationSpeed : 1000 
+					});
+
+					// Smooth Scroll snippet by Chris Coyier
+					// http://css-tricks.com/snippets/jquery/smooth-scrolling/
+					$('a[href*=#]:not([href=#])').click(function() {
+				    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+				      var target = $(this.hash);
+				      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+				      if (target.length) {
+				        $('html,body').animate({
+				          scrollTop: target.offset().top
+				        }, 1000);
+				        return false;
+				      }
+				    }
+				  });
+	    });
+	</script>
+</body>
+</html>

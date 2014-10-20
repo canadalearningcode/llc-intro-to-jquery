@@ -22,12 +22,18 @@ p {
 	line-height: 1.4;
 	font-size: 15px;
 }
+a {
+	color: #A8258D;
+}
 .container {
 	padding: 50px 100px;
 }
 .container h2, 
 .container h3 {
 	color: #A8258D;
+}
+.menu .active {
+    color: #A8258D;
 }
 
 
@@ -112,6 +118,11 @@ img.profile {
 	padding: 5px;
 	margin: 10px;
 	vertical-align: middle;
+}
+/* Flexslider */
+.flexslider-wrap {
+    width: 50%; /* makes the slider 50% of its container */
+    margin: 50px auto; /* center aligns the slider */
 }
 
 
