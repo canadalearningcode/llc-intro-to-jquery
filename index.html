@@ -35,13 +35,12 @@
                 <span class="title-bg">Introduction</span><br>
                 <span class="title-bg">to jQuery</span>
             </h1>
-            <h2><span>with</span> Arron Gibson</h2>
-            <img class="instructor-img" src="framework/img/workshop/arron-gibson.jpg" alt="arron gibson">
+            <h2><span>with</span> Instructor Name</h2>
+            <img class="instructor-img" src="framework/img/workshop/" alt="Your Name">
             <ul>
-                <li><i class="fa fa-envelope"></i><a href="mailto:arron@vivaandco.com">arron@vivaandco.com</li>
-                <li><i class="fa fa-desktop"></i><a href="http://arrongibson.com" target="_blank">arrongibson.com</a></li>
-                <li><i class="fa fa-twitter"></i><a href="http://twitter.com/arrongibson" target="_blank">@arrongibson</a></li>
-                <li><i class="fa fa-github"></i><a href="https://github.com/infn8/" target="_blank">@infn8</a></li>
+                <li><i class="fa fa-envelope"></i> <a href="">youremail@domain.com</li>
+                <li><i class="fa fa-desktop"></i> <a href="">your-site.com</a></li>
+                <li><i class="fa fa-twitter"></i> <a href="http://twitter.com/">@your-twitter</a></li>
             </ul>
         </div>
     </header>
@@ -447,7 +446,7 @@ The calculations work the same whether the values are numbers, or values stored 
         </section>
 
         <section class="slide" data-markdown>
-## Exercise (10 mins)
+## Exercise (5-10 mins)
 
 Create a program using the concepts covered so far: variables & arithmetic operators.
 
@@ -510,8 +509,16 @@ var myFavoriteThings = [
     "Raindrops On Roses", 
     "Whiskers On Kittens" 
 ];
+``` 
+        </section> 
+        <section class="slide" data-markdown>
+##Array values
+
+To access the value of a variable, use the variable name. For **arrays**, the values are accessed by their array name and **numerical index**, also contained in square brackets, which always **starts at ```0```**.  To get the value of the first item in an array, the syntax will look like this:
+
+```javascript
+myFavoriteThings[0];
 ```
-The values in an array can then be accessed by their **numerical index**, also contained in square brackets, which always **starts at ```0```**.  
 
 ![array vs variables](framework/img/workshop/console-var-array.gif)
 
@@ -981,7 +988,7 @@ You should see this in Sublime Text:
                 </li>
             </ul>
 
-            <pre><code class="xml">&lt;script src="js/jquery-1.11.1.js">&lt;/script></code></pre>
+            <pre><code class="xml">&lt;script src="js/jquery-1.11.1.min.js">&lt;/script></code></pre>
 
             <p><strong>Important</strong>:  Unlike CSS, which always has to be included within the <code>&lt;head&gt;</code> tags, JavaScript can be included pretty much anywhere on the page, in the <code>&lt;head&gt;</code> or the <code>&lt;body&gt;</code>.  Often, it is included just before the closing <code>&lt;/body&gt;</code> to allow the page document to load first.</p>
 
@@ -1185,9 +1192,11 @@ Your page should look something like this:
         <section class="slide" data-markdown>
 ##Click Events
 
-Now you've seen that you can set the width of an element with jQuery but we could use CSS to do that.  Let's try something only JavaScript could help us with. Let's add a **click event**.
+Now you've seen that you can set the width of an element with jQuery but we could use CSS to do that.  
 
-Like the document ready **event**, a click event is a moment in time when we want to trigger some code to run.  But instead of the browser running the event right away, it only runs a click event when an item is actually clicked by the user.
+Let's try something only JavaScript could help us with, the **click event**.
+
+Like the document ready **event**, a click event is a moment in time when we want to trigger some code to run.  But instead of the browser running the event right away, it only runs when an item is actually clicked by the user.
 
 Adding a function to a **user triggered event** is called an **event listener**.  The code just sits around waiting and listening for the event to happen.  When someone finally clicks the item, it triggers the function to run. 
 
@@ -1379,9 +1388,9 @@ Let's get started.
 
                 <p><img src="framework/img/workshop/console-menu-active.gif" alt="" title=""> </p>
 
-                <p>Now go to <strong>style.css</strong> to create a new CSS style for the active state. This will change the color (but you can apply whatever style you like).</p>
+                <p>Now go to <strong>style.css</strong> to create a new CSS style for the active state. This will change the color (but you can apply whatever style you like). Since the color has been added to <code>.menu a</code>, create a selector using the new <code>active</code> class</p>
 
-<pre><code>.menu .active {
+<pre><code>.menu a.active {
     color: #A8258D;
 }
 </code></pre>
@@ -1394,21 +1403,23 @@ Let's get started.
 
 Almost there.  We were able to add the class to the clicked item but now we need to remove the class from the non-active items.  Remember, JavaScript/jQuery executes commands from top to bottom.  One way to fix this issue is to remove the class **first**, *then* add the class to the clicked item.
 
-Since we don't know which item the user will click, we can remove the class from **all** of the menu items.  So in this case, we won't use the `$(this)` selector.  Instead, we want all the menu links.
+In this case, we won't use the `$(this)` selector since we are looking for any element with the `active` class to remove it. That means `.active` will be our selector.
     
 ```javascript  
 $(".menu a").click(function(){
     //console.log("It works!");
-    $(".menu a").removeClass("active");
+    $(".active").removeClass("active");
     $(this).addClass("active");
 });
 ```
 
 Now try it!
+
+**Note**: if the class of `active` is used anywhere else on the page, it will be affected as well.  Another option is to use a selector more specific to the menu such as `$(".menu a.active")`.
 </section>
 
         <section class="slide" data-markdown>
-            ##Exercise: Personalize Your Page (15mins)
+            ##Exercise: Personalize Your Page (15-20mins)
 
             Now that you've had a chance to get some JavaScript & jQuery practice, take some time to personalize your page. Here are some suggestions to get you started: 
 
@@ -1547,6 +1558,7 @@ $(document).ready(function(){
     &lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&gt;
 &lt;/head&gt;
 </code></pre>
+            <p><strong>Note:</strong> This is just one way to organize your folder structure. Some people like to create a <strong>plugins</strong> folder for example for these types of files.  Just make sure that your file paths match when linking to the js, image and css files.</p>
         </section>
 
         <section class="slide" data-markdown>
@@ -1559,14 +1571,28 @@ You can of course update the src file for the images to point to your own.  If y
 ```xml
 &lt;div class=&quot;flexslider&quot;&gt;
   &lt;ul class=&quot;slides&quot;&gt;
-    &lt;li&gt;&lt;img src=&quot;images/rotator/image1.jpg&quot; /&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;img src=&quot;images/rotator/image2.jpg&quot; /&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;img src=&quot;images/rotator/image3.jpg&quot; /&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;images/rotator/image1.jpg&quot;&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;images/rotator/image2.jpg&quot;&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;images/rotator/image3.jpg&quot;&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/div&gt;
 ```
 
 You can put this code anywhere you want it to show on the page. Save the file and check your page.  You probably won't see anything right?  That's because we still have to active the plugin with a little jQuery.
+
+**Note!** You will see the example image tag code in the Flexslider documentation with an extra forward slash at the end of the image tag.  This is the XHTML syntax (previous version).  HTML5 doesn't require it.
+
+
+```xml
+&lt;!-- XHTML -->
+&lt;img src=&quot;path/to/file.jpg&quot; /&gt;
+
+&lt;!-- HTML5 -->
+&lt;img src=&quot;path/to/file.jpg&quot;&gt;
+
+```
+`
+
         </section>
 
         <section class="slide" data-markdown>
@@ -1615,9 +1641,9 @@ We can fix this with a little HTML & CSS and still maintain its responsive natur
 
     &lt;div class=&quot;flexslider&quot;&gt;
         &lt;ul class=&quot;slides&quot;&gt;
-            &lt;li&gt;&lt;img src=&quot;images/rotator/image1.jpg&quot; /&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;img src=&quot;images/rotator/image2.jpg&quot; /&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;img src=&quot;images/rotator/image3.jpg&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;images/rotator/image1.jpg&quot;&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;images/rotator/image2.jpg&quot;&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;images/rotator/image3.jpg&quot;&gt;&lt;/li&gt;
         &lt;/ul&gt;
     &lt;/div&gt;
 
@@ -1758,10 +1784,22 @@ Also check out this great book: http://javascriptbook.com/
         </section>
         
         <!-- Last slide -->
-        <section class="slide" data-markdown>
-## Thank You.
+        <section class="slide last">
+            <h2>Thank You!</h2>
         
-Slidedecks created with [Lea Verou's CSS-based SlideShow System](https://github.com/LeaVerou/csss) and [reveal.js](http://lab.hakim.se/reveal-js/).
+            <h2 class="title">
+                <span class="title-bg">Intro to jQuery</span>
+            </h2>
+            <h3><span>with</span> Instructor Name</h3>
+
+            <img class="instructor-img" src="framework/img/" alt="">
+            <ul>
+                <li><i class="fa fa-envelope"></i> <a href="">youremail@domain.com</li>
+                <li><i class="fa fa-desktop"></i> <a href="">your-site.com</a></li>
+                <li><i class="fa fa-twitter"></i> <a href="http://twitter.com/">@your-twitter</a></li>
+            </ul>
+
+            <p class="attribution">Slidedecks created with <a href="https://github.com/LeaVerou/csss">Lea Verou's CSS-based SlideShow System</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
         </section>
     </main><!-- cls main section -->
 
