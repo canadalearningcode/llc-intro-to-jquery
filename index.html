@@ -5,27 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Ladies Learning Code</title>
     <!-- Don't alter slideshow.css, CSSS slide deck needs it to work -->
-    <link rel="stylesheet" href="framework/css/slideshow.css">
+    <link rel="stylesheet" href="framework/css/slideshow.css" data-noprefix>
 
     <!-- Theme-specific styles -->
-    <link href='http://fonts.googleapis.com/css?family=Quicksand|Pacifico|Open+Sans:400,300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="framework/css/font-awesome.css">
-    <link rel="stylesheet" href="framework/css/highlightjs-themes/monokai.css">
-    <link rel="stylesheet" href="framework/css/theme-llc.css">
+    <link href='http://fonts.googleapis.com/css?family=Quicksand%7CPacifico%7COpen+Sans:400italic,400,300' rel='stylesheet' type='text/css' data-noprefix>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="framework/css/highlightjs-themes/monokai.css"  data-noprefix>
+
+    <link rel="stylesheet" href="framework/css/theme-llc.css" data-noprefix>
     <link rel="shortcut icon" href="framework/img/favicon.ico"> 
 
     <!-- Workshop-specific styles -->
-    <link rel="stylesheet" href="framework/css/workshop.css">
+    <link rel="stylesheet" href="framework/css/workshop.css" data-noprefix>
 
     <!-- Takes care of CSS3 prefixes! -->
     <script src="framework/scripts/prefixfree.min.js"></script>
+
+    <!-- opens all links in a new window -->
+    <base target="_blank">
 </head>
 
 <!-- Timer/progress bar: Define the presentation duration using "data-duration" in minutes. -->
 <body data-duration="360">
-    
-    <!-- opens all links in a new window -->
-    <base target="_blank">
 
     <!-- First/Intro slide -->
     <header class="intro slide">
@@ -1820,7 +1821,7 @@ Also check out this great book: http://javascriptbook.com/
     </main><!-- cls main section -->
 
     <footer>
-        <p class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.svg" /></a> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
+        <p class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.svg" /></a> by <a prefix="cc: http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
         <p class="instructions">Use the left <i class="fa fa-arrow-left"></i> and right <i class="fa fa-arrow-right"></i> arrow keys to navigate</p>
     </footer>
     
