@@ -133,7 +133,7 @@ HTML (HyperText Markup Language) is the **content** of your document/web page. U
         <section class="slide" data-markdown>
 ##CSS overview
 
-CSS (Cascading Style Sheets) defines the *style* and controls the look and feel of the HTML document. **Selectors** are used to determine which **HTML elements** to apply the style to and then use rules (aka **declarations**) in the form of `property: value` pairs, wrapped in curly braces `{}`.
+CSS (Cascading Style Sheets) defines the *style* and controls the look and feel of the HTML document. **Selectors** are used to determine which **HTML elements** to apply the style to and then rules (aka **declarations**) are specified in the form of `property: value` pairs, wrapped in curly braces `{}`.
 
 ```css
 selector {
@@ -198,7 +198,7 @@ JavaScript has *all* of these.
 
             <p><strong>jQuery <em>is</em> JavaScript.</strong> </p>
 
-            <p>jQuery is a cross-browser JavaScript <em>library</em> designed to simplify your program. Though it has its own syntax, it is still JavaScript at its core so its important to have an understanding of traditional JavaScript principles.</p>
+            <p>jQuery is a cross-browser JavaScript <em>library</em> designed to simplify your program. Though it has its own syntax, it is still JavaScript at its core so it's important to have an understanding of traditional JavaScript principles.</p>
 
             <p>Before we get into the nitty-gritty details of these JavaScript principles, let’s take a quick look at a tool called the console.</p>
 
@@ -354,7 +354,7 @@ var wholePhrase = first + " " + second;
 
             <p><img src="framework/img/workshop/console-concatenate.gif" alt="concatenate example" title=""></p>
 
-            <p>Note that when we execute a command without <code>var</code>, the assigned value of the variable gets return instead of <code>undefined</code>. Reminder, <code>var</code> is used to a <em>declare</em> and create a variable and will hold the value, until used.</p>
+            <p>Note that when we execute a command without <code>var</code>, the assigned value of the variable gets returned instead of <code>undefined</code>. Reminder, <code>var</code> is used to a <em>declare</em> and create a variable and will hold the value, until used.</p>
 
             <p><strong>Challenge!</strong> How would you add a period to the end of the sentence?</p>
 
@@ -389,7 +389,7 @@ Try copying each line and putting it into your console to check for errors.
         <section class="slide" data-markdown>
 ## Variable Types: Strings and Quotes
 
-To get around the issue shown in the previous slide, you can put a backslash (`\`) in front of the quote to *delimit* the string.
+To get around the issue shown in the previous slide, you can put a backslash (`\`) in front of the quote to *escape* the quote so it does not end the string.
 
 ```javascript
 var totallyWorks = "Then I said, \"No way you can do that!!!\" ";
@@ -475,7 +475,7 @@ var secondsPerDay = secondsPerMinute * minutesPerHour * hoursPerDay;
 // This command will output the value of secondsPerDay
 secondsPerDay;
 
-// Concatenating a string to the secondsPerDay variable.
+// Concatenating strings with the secondsPerDay variable.
 var sentence = "There are " + secondsPerDay + " seconds per day.";
 
 // This command will output the value of sentence.
@@ -489,7 +489,7 @@ sentence;
 Variables that only contain a `true` or `false` value are called **booleans**
 
     var isJavaScriptCool = true;
-    var isJavaScriptLame = false;
+    var isJavaScriptScary = false;
         </section>
 
         <section class="slide" data-markdown>
@@ -593,11 +593,11 @@ var variableName = { propertyName : propertyValue, anotherPropertyName : another
                    |     |        |      |       |                           |   closes object
                    |     |        |      |       |          This can repeat for
                    |     |        |      |       |          as many properties as you like.
-                   |     |        |      |       └ A comma (,) seperates properties
+                   |     |        |      |       └ A comma (,) separates properties
                    |     |        |      └ The property value follows the colon.
-                   |     |        └ A colon (:) is used to seperate name from value
+                   |     |        └ A colon (:) is used to separate name from value
                    |     └  The property name must start with a letter and contain no spaces
-                   └ The Curly brace starts the object.
+                   └ The curly brace starts the object.
 */
 ```
 
@@ -616,7 +616,7 @@ var notAllowedChampagne = vonTrappFamily.children[0];
 ```
 This would set the value of the variable ```notAllowedChampagne``` to the string value of the first child in the array, ```Liesl von Trapp```. (Remember, array indexes always start at 0!)
 
-**The variables that live inside objects are called ```properties```.** They are still variables, but when they are contained within and object, they are then referred to as **properties**.
+**The variables that live inside objects are called ```properties```.** They are still variables, but when they are contained within an object, they are then referred to as **properties**.
 
         </section>
         <section class="slide" data-markdown>
@@ -644,7 +644,7 @@ var vonTrappFamily = {
 
 As you've just seen, there are *many* different variable types in JavaScript and many rules about how to write them.
 
-It will take practice getting use to all different rules but it is important to understand that variables are used to hold values and the values themselves have different types.
+It will take practice getting used to all different rules but it is important to understand that variables are used to hold values and the values themselves have different types.
         </section>
         <section class="slide" data-markdown>
 ## Ok, now what?
@@ -668,13 +668,13 @@ If a `variable` is a name for a value, then a `function` is a name for a **set**
 
 Let's look at two functions, `alert()` and `prompt()`.  These come built into JavaScript, for free!
 
-Go back to the console and type both functions in, one at a time, and see what happens. Note the syntax for functions, the parenthesis `()`, must be included.
+Go back to the console and type both functions in, one at a time, and see what happens. Note the syntax for functions, the parentheses `()`, must be included.
 
         </section>
         <section class="slide" data-markdown>
 ##Functions and Arguments
 
-We've seen now that the `alert()` and `prompt()` functions create a pop-up in the browser but the pop-ups are blank.  We can also *pass* an **argument** *into* these functions by adding a value within the parenthesis `()`.  Try this in the console:
+We've seen now that the `alert()` and `prompt()` functions create a pop-up in the browser but the pop-ups are blank.  We can also *pass* an **argument** *into* these functions by adding a value within the parentheses `()`.  Try this in the console:
 
 ```javascript
 alert("Hello!");
@@ -683,7 +683,7 @@ alert("Hello!");
 prompt("What day is it today?");
 ```
 
-Whatever value you put within the parenthesis will get passed into the function.
+Whatever value you put within the parentheses will get passed into the function.
 
 ![console function example](framework/img/workshop/console-alert-prompt.gif)
         </section>
@@ -702,7 +702,7 @@ function sayAnything(){
 ```
 The above example creates a new **function** called `sayHello` but similar to variables, nothing will happen until the function is **called**.  
 
-We've already had practice calling a function.  Remember `alert();` and `prompt();`?  Simply **call** the function by using the function name. Let's add the above function declaration into the console and then execute it by calling it.
+We've already had practice calling a function.  Remember `alert();` and `prompt();`?  Simply **call** the function by using the function name plus parentheses `()`. Let's add the above function declaration into the console and then execute it by calling it.
 
 ![console function example](framework/img/workshop/console-function.gif)
 
@@ -721,14 +721,14 @@ function sayAnything(){
     alert("Hello World");
 }
 ```
-Notice that the ```sayAnything()``` function has an empty parenthesis `()` while the ```alert()``` function has the **string** value "Hello World" in the parenthesis `()`. 
+Notice that the ```sayAnything()``` function has empty parentheses `()` while the ```alert()``` function has the **string** value "Hello World" in the parentheses `()`.
 
 We can create a **parameter** to pass an argument into the function.
 
         </section>
         <section class="slide" data-markdown>
 ## Creating Functions with Parameters
-**Parameters** are data that are passed into a function as a variable.
+**Parameters** are data that are passed into a function as variables.
 
 Instead of saying "Hello World" every time you call a function, you might want to say something different each time it is called.  Let's see what that might look like:
 
@@ -741,7 +741,7 @@ function sayAnything(message){
 // Calling the function
 sayAnything("Welcome to the LLC jQuery workshop!");
 ```
-Now, when we call the function, we can pass an argument in the parenthesis (`Welcome to the LLC jQuery workshop!`). That argument now becomes the value of `message` which will now populate the `message` in `alert(message)`.
+Now, when we call the function, we can pass an argument in the parentheses (`"Welcome to the LLC jQuery workshop!"`). That argument now becomes the value of `message` which will now populate the `message` in `alert(message)`.
 
 Let's try it out in the console. First add the function, then call it. You can call the function as many times as you want with different arguments.
 
@@ -776,7 +776,7 @@ alert();
 console.log();
 ```
 
-`alert()` is a **function**, it works on it's own.
+`alert()` is a **function**, it works on its own.
 
 `log()` is a **method** because it's attached to an **object**, `console`. It will log a message (the argument passed into `log()`) and will only show in the console tool. 
 
@@ -791,7 +791,7 @@ Pretty much everything in JavaScript is an object.  Here's another example:
 // array object
 var fruits = ["apples", "oranges", "pears"];
 
-// applying the 'length' method to the object to find out how many there are.
+// accessing the 'length' property of the array object to find out how many there are.
 var typesOfFruits = fruits.length;
 
 // Output into the console the number of items and concatenated into a sentence. 
@@ -883,7 +883,7 @@ That's what we'll be doing going forward.
 * Perform interactions with your users
 * Create rich user experiences with components like:
     * Tabs
-    * Accordians
+    * Accordions
     * Draggable & droppable items
     * Image Rotators
 * Serve a random background image each time a page loads.
@@ -982,7 +982,7 @@ You should see this in Sublime Text:
 
             <ul>
                 <li><a href="http://jquery.com/download/">Download the latest version of jQuery</a> and use the latest, compressed version. </li>
-                <li>Save it within your projects files.  It’s common to create a separate <strong>js</strong> folder for all JavaScript files for organization (similar to how there’s a separate images and css folder.)</li>
+                <li>Save it within your projects files.  It’s common to create a separate <strong>js</strong> folder for all JavaScript files for organization (similar to how there are separate images and css folders.)</li>
                 <li>Link it to your HTML document using a script tag.  The <code>src</code> should point to the path to where the file is saved in your project’s folder structure.<br>
                 Your project folder already has the jQuery file included so no need to download anything today.
                 </li>
@@ -1164,7 +1164,7 @@ Multi-line comments are great for "hiding" large blocks of code so you can try s
         <section class="slide" data-markdown>
 ## Class Exercise
 
-Let's change the size of the image using the `.width()` jQuery method. You can pass a size argument into the parenthesis. Update your `.fav-img` object by using **dot notation** to apply the `.width()` method.
+Let's change the size of the image using the `.width()` jQuery method. You can pass a size argument into the parentheses. Update your `.fav-img` object by using **dot notation** to apply the `.width()` method.
 
 ```javascript
 $(document).ready(function(){
@@ -1214,7 +1214,7 @@ We'll be going through an example together but you can also view the documentati
 <pre class="delayed"><code>$(".fav-img").click();
 </code></pre>
 
-            <p class="delayed">Then pass a single parameter to the <code>click()</code> method. That parameter is itself a function. Add <code>function(){}</code> into the parenthesis.</p>
+            <p class="delayed">Then pass a single parameter to the <code>click()</code> method. That parameter is itself a function. Add <code>function(){}</code> into the parentheses.</p>
 
 <pre class="delayed"><code>$(".fav-img").click(function(){});
 </code></pre>
@@ -1261,7 +1261,7 @@ The code above will take the clicked image and *dynamically* add inline CSS to t
 
 [Let's look at an example of this in action](framework/examples/example-2/index.hide.html#favourites) and **inspect the element** to see how jQuery adds these changes.
 
-The `hide()` **method** also accepts a **parameter** for how long it should take for this effect to to occur.  Add a number, in milliseconds, in the parenthesis.
+The `hide()` **method** also accepts a **parameter** for how long it should take for this effect to to occur.  Add a number, in milliseconds, in the parentheses.
 
 ```javascript
 $(".fav-img").click(function(){ 
@@ -1293,7 +1293,7 @@ $(".fav-img").click(function(){
 });
 ```
 
-All of these **methods** accept a **parameter** to set the duration of the effect. In jQuery, any time you can provide a duration to an animation, you can either use a **number** in milliseconds, or a **string** value of either "```fast```" or "```slow```" which mean 400 and 600 milliseconds respectively.
+All of these **methods** accept a **parameter** to set the duration of the effect. In jQuery, any time you can provide a duration to an animation, you can either use a **number** in milliseconds, or a **string** value of either "```fast```" or "```slow```" which mean 200 and 600 milliseconds respectively. If you do not supply a value, jQuery will use the *default* value of 400 milliseconds.
         </section>
         <section class="slide" data-markdown>
 ## What the heck is ```$(this)```?!?!
@@ -1329,7 +1329,7 @@ The ```this``` variable is always equal to the specific *HTML element* that has 
         <section class="slide" data-markdown>
 ##Exercise: Active Menu
 
-Let's use the jQuery `click()`, `addClass()` and `removeClass()` methods to create an `.active` class to style for the menu item differently when clicked.  Here's are the instructions  we'll create with jQuery:
+Let's use the jQuery `click()`, `addClass()` and `removeClass()` methods to create an `.active` class to style the menu item differently when clicked.  Here are the instructions  we'll create with jQuery:
 
 1. Select the elements to be clicked.
 1. Add a class of "active" to invoke a new style.
@@ -1359,7 +1359,7 @@ Let's get started.
 <pre class="delayed"><code>$(".menu a").click();
 </code></pre>
 
-            <p class="delayed">Then pass a single parameter to the click() method. Remember, that parameter is itself a function. Add <code>function(){}</code> into the parenthesis.</p>
+            <p class="delayed">Then pass a single parameter to the click() method. Remember, that parameter is itself a function. Add <code>function(){}</code> into the parentheses.</p>
 <pre class="delayed"><code>$(".menu a").click(function(){});
 </code></pre>
             <div class="delayed">
@@ -1459,7 +1459,7 @@ Now try it!
         <section class="slide" data-markdown>
 ## jQuery Plugins
 
-jQuery is an extremely capable library on its own.  It comes with hundreds of **methods**, many other helper **properties** and the ability to select items for the wraped set based on **CSS Syntax**.  
+jQuery is an extremely capable library on its own.  It comes with hundreds of **methods**, many other helper **properties** and the ability to select items for the wrapped set based on **CSS Syntax**.
 
 ### But jQuery doesn't & can't do everything.  
 
@@ -1476,7 +1476,7 @@ A jQuery plugin is some code that *someone else* has written, that you can use, 
 Some examples of jQuery plugins are 
 
 * [Scroll Magic](http://janpaepke.github.io/ScrollMagic/)
-    * A plugin to make it easy for adding effects based on the users scroll position on the page
+    * A plugin to make it easy to add effects based on the user's scroll position on the page
 * [ToolTipster](http://iamceege.github.io/tooltipster/#demos)
     * Custom pretty Tool Tips
 * [jQuery UI](http://jqueryui.com/themeroller/)
@@ -1492,7 +1492,7 @@ We are going to use the FlexSlider plugin today to add a slider of images to our
         <section class="slide" data-markdown>
 ## So, What IS an image rotator?
 
-At it's most basic, a rotator is a list of images that uses javascript to show one image on its own, then another, then another...  SO if we used HTML like this:
+At its most basic, a rotator is a list of images that uses javascript to show one image on its own, then another, then another...  SO if we used HTML like this:
 
 ```xml
 &lt;div id="rotator">
@@ -1514,7 +1514,7 @@ The javascript would show the first and hide the rest. Then, after a couple of s
 
             <p>Head on over to <a href="http://www.woothemes.com/flexslider/">http://www.woothemes.com/flexslider/</a> to download the files.</p>
 
-            <p>Click the big green download button to download the zip file. Included in a the down are many files that we'll need to make the plugin work and there are other files that are for just for demo purposes. You will see something like this:</p>
+            <p>Click the big green download button to download the zip file. Included in the download are many files that we'll need to make the plugin work and there are other files that are just for demo purposes. You will see something like this:</p>
 
             <p><img src="framework/img/workshop/flexslider-contents.png" alt="Flexslider in the project directory" title=""></p>
 
@@ -1528,7 +1528,7 @@ The javascript would show the first and hide the rest. Then, after a couple of s
 
             <p>Your project folder should now look like this:</p>
             <img src="framework/img/workshop/folders-with-flexslider.png" alt="">
-            <p>Your images files my vary but just ensure that <strong>bg_play_pause.png</strong> is included.</p>
+            <p>Your images files may vary but just ensure that <strong>bg_play_pause.png</strong> is included.</p>
 
             <div class="presenter-notes">
                 <p>As you start this slide, tell the mentors to help to make sure all the learners are complete this step before moving on. Explain that people may vary on how they create their folder structures but that it's import to understand how to link to the proper directory folders.</p>
@@ -1578,7 +1578,7 @@ You can of course update the src file for the images to point to your own.  If y
 &lt;/div&gt;
 ```
 
-You can put this code anywhere you want it to show on the page. Save the file and check your page.  You probably won't see anything right?  That's because we still have to active the plugin with a little jQuery.
+You can put this code anywhere you want it to show on the page. Save the file and check your page.  You probably won't see anything right?  That's because we still have to activate the plugin with a little jQuery.
 
 **Note!** You will see the example image tag code in the Flexslider documentation with an extra forward slash at the end of the image tag.  This is the XHTML syntax (previous version).  HTML5 doesn't require it.
 
@@ -1591,7 +1591,6 @@ You can put this code anywhere you want it to show on the page. Save the file an
 &lt;img src=&quot;path/to/file.jpg&quot;&gt;
 
 ```
-`
 
         </section>
 
@@ -1611,7 +1610,7 @@ Yep, that's it. Let's break that down.
 
 ```javascript
    $('.flexslider').flexslider();
-/* |      |          |        └ Parenthesis indicate a function call
+/* |      |          |        └ Parentheses indicate a function call
    |      |          └ The Flexslider method 
    |      └ The selector will add any items with the class 'flexslider' to the jQuery wrapped set 
    └ The jQuery function            
@@ -1623,7 +1622,7 @@ Save and refresh the browser.
         <section class="slide" data-markdown>
 ##It works! Sort of...
 
-Depending how you want your slider to look, it may be too big or too small for your page.  By default, it will be as wide as it's containing element.
+Depending how you want your slider to look, it may be too big or too small for your page.  By default, it will be as wide as its containing element.
 
 Also, it looks like the left & right arrow is missing.  If yours looks something like the below screen shot, it's okay.  We can customize it.
 
@@ -1632,7 +1631,7 @@ Also, it looks like the left & right arrow is missing.  If yours looks something
         <section class="slide" data-markdown>
 ## I Can Haz Responsive?
 
-Flexslider comes out of the box with the ability to be responsive. That's why, by default, it's stretching to 100% width of it's container. Try resize your browser and watch your images scale as needed. 
+Flexslider comes out of the box with the ability to be responsive. That's why, by default, it's stretching to 100% width of it's container. Try resizing your browser and watch your images scale as needed.
 
 We can fix this with a little HTML & CSS and still maintain its responsive nature. Let's put a new containing element around the Flexslider HTML like this:
 
@@ -1695,7 +1694,7 @@ Update this to:
         font-style: normal;
     }
 
-You're starting point is **flexslider.css**.  The `../` means "Go up and out of a folder", then go into the **fonts** folder.  Go ahead and make that change.
+Your starting point is **flexslider.css**.  The `../` means "Go up and out of a folder", then go into the **fonts** folder.  Go ahead and make that change.
 
 Another option is to just move the font folder inside the css folder.  The source in the CSS file just needs to match the directory location.
         </section>
@@ -1742,7 +1741,7 @@ $('.flexslider').flexslider({
         <section class="slide" data-markdown>
 ##Searching for what you need
 
-Luckily we have wonderful community of developers that create code snippets and share it with the rest of the world. The main goal is to be able to write our own code from scratch, by why not use tried–and–true methods that have already been created by the experts?
+Luckily we have wonderful community of developers that create code snippets and share them with the rest of the world. The main goal is to be able to write our own code from scratch, but why not use tried–and–true methods that have already been created by the experts?
 
 One of the many small effects one can add to a site to give it that little extra sumthin' sumthin' is a smooth scroll. There are many plugins that can do some fancy tricks but to add a simple smooth scroll to our one page site, we can use this little snippet created by [Chris Coyier of css-tricks.com](http://css-tricks.com/snippets/jquery/smooth-scrolling/).
 
@@ -1791,7 +1790,7 @@ Also check out this great book: http://javascriptbook.com/
             * [hover.com](http://hover.com/ladiescode)
             * [dreamhost.com](http://www.dreamhost.com/r.cgi?205190)  
 
-            To get your files online, you will need upload your files to your newly purchased hosting server. The folder containing the HTML documents and related files (images, css, javascript files, etc) must be moved to a *server* that *hosts* websites using an FTP program like [Filezilla](https://filezilla-project.org) or [CyberDuck](https://cyberduck.io) must be used.
+            To get your files online, you will need upload your files to your newly purchased hosting server. The folder containing the HTML documents and related files (images, css, javascript files, etc) must be moved to a *server* that *hosts* websites using an FTP program like [Filezilla](https://filezilla-project.org) or [CyberDuck](https://cyberduck.io).
 
             There are a few pieces of information you will need and are usually provided to you by your hosting service provider.
 
