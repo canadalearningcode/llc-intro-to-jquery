@@ -10,7 +10,7 @@
     <!-- Theme-specific styles -->
     <link href='http://fonts.googleapis.com/css?family=Quicksand%7CPacifico%7COpen+Sans:400italic,400,300' rel='stylesheet' type='text/css' data-noprefix>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="framework/css/highlightjs-themes/github.css" data-noprefix>
+    <link rel="stylesheet" href="framework/css/highlightjs-themes/vs.css" data-noprefix>
     <link rel="stylesheet" href="framework/css/theme-llc.css" data-noprefix>
     <link rel="shortcut icon" href="framework/img/favicon.ico"> 
 
@@ -1265,9 +1265,7 @@ Refresh your page, open the console on your page and click an image.  You should
         <section class="slide" data-markdown>
 ##Click & Hide
 
-Now that we know the click event works, you can delete the `console.log` test or comment it out.
-
-Now, let's make the click event hide the picture. Use `$(this)` as the selector (more on this soon).  
+Now that we know the click event works, you can delete the `console.log` test or comment it out. Next, let's make the click event hide the picture. Use `$(this)` as the selector (more on this soon).  
 Then add the `.hide()` method.
 ```javascript
 $(".fav-img").click(function(){ 
@@ -1275,9 +1273,15 @@ $(".fav-img").click(function(){
     $(this).hide();
 });
 ```
-The code above will take the clicked image and *dynamically* add inline CSS to the HTML element.  It will set the `display: block` so that it's hidden, though the item is still there in the HTML. 
+The code above will take the clicked image and *dynamically* add inline CSS to the HTML element.  It will add  `style="display:none;"` to the element to hide it, though the item is still in the HTML. 
 
-[Let's look at an example of this in action](framework/examples/example-2/index.hide.html#favourites) and **inspect the element** to see how jQuery adds these changes.
+Let's add this to our project and **inspect the element** to see how jQuery adds these changes. You should see something like the below screen shot in your console.
+
+![show hide console example](framework/img/workshop/console-show-hide.png)
+        </section>
+
+        <section class="slide" data-markdown>
+##Click & Hide: Adding parameters
 
 The `hide()` **method** also accepts a **parameter** for how long it should take for this effect to to occur.  Add a number, in milliseconds, in the parentheses.
 
@@ -1289,13 +1293,14 @@ $(".fav-img").click(function(){
 
 This will make the act of hiding the image take 1000 milliseconds, or 1 second.
 
-[You can see that in action here](framework/examples/example-2/index.hide.1000.html#favourites).
+In jQuery, any time you can provide a duration to an animation, you can either use a number in milliseconds, or a string value of either "fast" or "slow" which mean 200 and 600 milliseconds respectively. If you do not supply a value, jQuery will use the default value of 400 milliseconds.
 
+Add it to your project to see it in action.  Try experimenting with different numbers or use the keywords.
         </section>
         <section class="slide" data-markdown>
 ##Click & Chain events
 
-What if we just want to hide it for a bit, then show it again?  We can by **chaining** our methods. [View here](framework/examples/example-2/index.hide.show.html#favourites).
+What if we just want to hide it for a bit, then show it again?  We can by **chaining** our methods.
 
 ```javascript
 $(".fav-img").click(function(){ 
@@ -1303,15 +1308,14 @@ $(".fav-img").click(function(){
 });
 ```
 
-jQuery methods are chainedtogether with a dot (.) in between them.  That means that [this silliness](framework/examples/example-2/index.hide.show.silly.html#favourites) is perfectly valid and will work just fine.
+jQuery methods are chained together with a dot (.) in between them.  That means that the below example is perfectly valid and will work just fine. Though this example is kinda silly, it's fun to just experiment sometimes! 
 
 ```javascript
 $(".fav-img").click(function(){ 
     $(this).hide(1000).show('fast').fadeOut('slow').fadeIn(5000).slideUp(800).slideDown(10000);
 });
 ```
-
-All of these **methods** accept a **parameter** to set the duration of the effect. In jQuery, any time you can provide a duration to an animation, you can either use a **number** in milliseconds, or a **string** value of either "```fast```" or "```slow```" which mean 200 and 600 milliseconds respectively. If you do not supply a value, jQuery will use the *default* value of 400 milliseconds.
+Let's add it to our project and see what happens.
         </section>
         <section class="slide" data-markdown>
 ## What the heck is ```$(this)```?!?!
@@ -1320,9 +1324,7 @@ Why have we been using `$(this)` as a selector for the previous exercises? What 
 
 ### Good question!
 
-jQuery gives us a special variable called ```this``` as a helper.  Though we want to select the image, we want to select **only the specific image** that is being clicked at that moment.
-
-This example below would make all the matched images hide on click.
+jQuery gives us a special variable called ```this``` as a helper.  Though we want to select the image, we want to select **only the specific image** that is being clicked at that moment. The below example would make all the matched images hide on click.
 
 ```javascript
 $(".fav-img").click(function(){ 
@@ -1331,17 +1333,18 @@ $(".fav-img").click(function(){
 ```
 
 `$(".fav-img").click()` will watch for *any* image being clicked.   
-`$(".fav-img").hide(1000);` will add the hide effect to **all** the matched elements, meaning all the images will be hidden.
+`$(".fav-img").hide(1000);` will add the hide effect to **all** the matched elements.
 
-The below code, will ensure that only the image being clicked will have the effect applied to it.
+The below code, will ensure that only the clicked item will have the hide action applied to it.
 
 ```javascript
 $(".fav-img").click(function(){ 
     $(this).hide(1000);
 });
 ```
- 
-The ```this``` variable is always equal to the specific *HTML element* that has been clicked and that our **event listener** is acting upon.
+
+`$(".fav-img").click()` will watch for *any* image being clicked.   
+`$(this).hide(1000);` will add the hide effect to only the matched element that was clicked, so only the clicked image will be hidden.
         </section>
 
         <section class="slide" data-markdown>
