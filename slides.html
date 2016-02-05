@@ -82,7 +82,7 @@
       </script>
     </section>
     
-    <section class="slide" data-markdown>
+    <!-- <section class="slide" data-markdown>
       <script type="text/template">
         # Getting Started
 
@@ -96,219 +96,162 @@
             
         **Bonus:** One of the great things about Sublime Text it that you can add extra functionality to it with *plugins*. [Go here](https://github.com/infn8/LLC-Intro-To-jQuery/blob/master/sublime-text-setup.md) to learn more about adding some cool functionality to your Sublime Text editor.
       </script>
+    </section> -->
+    
+    
+    <section class="slide basic-web-page" data-markdown>
+      <script type="text/template">
+        #HTML + CSS + JavaScript = Basic web page
+
+        **HTML (Hypertext Markup Language)** is a _markup_ language used to define the content.
+
+        <p class="example">I'm just a paragraph.</p>
+
+        **CSS (Cascading Style Sheets)** is a _style sheet_ language used to create the presentation and look of a site.
+
+        <p class="example css">I'm a paragraph with <span>style</span>.</p>
+
+        **JavaScript** is a _programming_ language used to define the behavior and used to add functionality to a website.
+
+        <p class="example" onclick="alert('Clicked!');">I'm a paragraph that can be clicked. Try it!</p>
+      </script>
     </section>
     
-        <section class="slide basic-web-page">
-          <script type="text/template">
-            <h1>HTML, CSS & JavaScript</h1>
-
-            <p>JavaScript was meant to manipulate web pages written in HTML and also works with CSS.</p>
-
-            <p><strong>HTML (Hypertext Markup Language)</strong> is used to define the content.</p>
-            
-            <div class="example">
-            <p>I'm just a paragraph.</p>
-            </div>
-            
-            <p><strong>CSS (Cascading Style Sheets)</strong> is used to create the presentation and look of a site.</p>
-
-            <div class="example" style="color:green;font-weight:bold;">
-            <p>I'm a paragraph with <span>style</span>.</p>
-            </div>
-
-            <p><strong>JavaScript</strong> is a <em>programming</em> language used to define the behavior and add functionality to a website.</p>
-
-            <div class="example">
-            <p onclick="alert('clicked!');">I'm a paragraph that can be clicked. Try it!</p>
-            </div>
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #JavaScript vs jQuery
       </script>
     </section>
-        <section class="slide" data-markdown>
-  <script type="text/template">
-# HTML overview
-
-HTML (HyperText Markup Language) is the **content** of your document/web page. Using `&lt;tags>` we can create **elements** that represent items on our page. Below are just a few examples.
-
-##Paragraphs
-
-```xml
-&lt;p>Paragraph.&lt;/p>
-&lt;p>Another paragraph.&lt;/p>
-```
-
-##Lists
-
-```xml
-&lt;ul>
-    &lt;li>List Item&lt;/li> 
-    &lt;li>List Item&lt;/li> 
-    &lt;li>List Item&lt;/li>
-&lt;/ul> 
-```
-
-##Images
-
-```xml
-&lt;img src="http://www.fillmurray.com/300/300" alt="Placeholder Image">
-```
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # What Is JavaScript?
+        
+        * controls the *behavior* of HTML documents
+        * used to animate, hide or show items
+        * react to user input
+        * process data and more! 
+        
+        Here's what JavaScript looks like:
+        
+        ```
+        var myVariable = "Hello World";
+        function sayHello(){
+          alert(myVariable);
+        }
+        sayHello();
+        ```
       </script>
     </section>
-        <section class="slide">
-            <h1>HTML tags & the browser</h1>
-            <p> By placing these items together on a page we get something that looks like this in the browser: </p>
 
-            <p>Paragraph.</p>
-            <p>Another paragraph.</p>
-            <ul>
-                <li>List Item</li> 
-                <li>List Item</li> 
-                <li>List Item</li>
-            </ul> 
-            <p><img src="http://www.fillmurray.com/300/300" alt="Placeholder Image" /></p>
+    <section class="slide highlight" data-markdown>
+      <script type="text/template">
+        # JavaScript is a Programming Language
+        
+        Because JavaScript is a programming language, the structure and syntax includes more complexities than HTML or CSS.  
+        
+        The basic building blocks of programming includes features such as *variables*, *functions*, *objects* or control structures such as *if* statements or *loops*.
       </script>
     </section>
-        <section class="slide" data-markdown>
-  <script type="text/template">
-#CSS overview
-
-CSS (Cascading Style Sheets) defines the *style* and controls the look and feel of the HTML document. **Selectors** are used to determine which **HTML elements** to apply the style to and then rules (aka **declarations**) are specified in the form of `property: value` pairs, wrapped in curly braces `{}`.
-
-```css
-selector {
-    property: value;
-}
-```
-**Properties** determine the *type* of style to be applied to the element (e.g. color).  **Values** are specific to the property. Declarations must end with a semi-colon (`;`) to indicate that the instruction is complete.
-
-![](framework/img/workshop/css.png)
+      
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #What is jQuery?
+        
+        * it is a cross-browser JavaScript *library*
+        * designed to simplify your program
+        * has its own syntax
+        * is still JavaScript at its core 
+        
+        jQuery ***is*** JavaScript so it's important to have an understanding of some basic JavaScript principles first.
+        
+        Also, note that programming languages often require a little bit more code than HTML & CSS to see results in the browser.
       </script>
-    </section>        
-        <section class="slide">
-            <h1>CSS selectors: HTML tag, class & id</h1>
-            
-            <p>Let's look at the different ways to select an element. To select an HTML tag, just use the HTML tag name without the angled brackets.</p>
+    </section>
 
-<pre class="xml"><code>&lt;div>Select all div elements.&lt;/div></code></pre>
-            <textarea class="snippet" data-subject="#element">div {
-    color: red;
-}</textarea>
-            <div class="example" id="#element">
-                <div>Select all div elements.</div>
-            </div>
-            
-            <p>For classes, the attribute must be added to the HTML and denoted by a leading period in the CSS.</p>
-            <pre class="xml"><code>&lt;div class="special">Select ANY element with this class.&lt;/div></code></pre>
-            <textarea class="snippet" data-subject="#class">.special {
-    color: blue;
-}</textarea>
-            <div class="example" id="#class">
-                <div class="special">Select ANY element with this class.</div>
-            </div>
-            
-            <p>For an id, the attribute is also added to the HTML but is denoted by a leading number symbol. Note that ids can only be used <strong>once</strong> per page.</p>
-            <pre class="xml"><code>&lt;div id="special">Select ANY element with this id.&lt;/div></code></pre>
-            <textarea class="snippet" data-subject="#id">#special {
-    color: green;
-}</textarea>
-            <div class="example" id="#id">
-                <div id="special">Select ANY element with this id.</div>
-            </div>
-            <div class="presenter-notes">
-                <p>Change the values with the students to give them a small hands-on exercise.</p>
-            </div>
-        </script>
-</section>
-        <section class="slide" data-markdown>
-  <script type="text/template">
-# What Is JavaScript?
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #The Console
+        
+        Before we get into the nitty-gritty details of these JavaScript principles, let’s take a look at a tool called the console.
+        
+        We'll be using this tool in the upcoming exercises to focus on getting used to the programing syntax. 
+        
+        This way, we can write programs without relying on HTML & CSS and learn some of the fundamental programming concepts first.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # The Console
+        
+        * interactive browser tool
+        * enter commands and interact directly with a web page
+        * can also log diagnostic information and check for errors
+        
+        The console in Chrome looks like this:
+        ![The Console](framework/img/workshop/the_console_x.jpg)
 
-JavaScript controls the **behavior** of your document. It allows you to do things such as animate items, hide or show items, react to user input and even process data. Here's what JavaScript looks like:
+        **Important!** The blue `>` symbol represents a space to enter your input but you don't have to actually type the symbol.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Accessing the Console
 
-    var myVariable = "Hello World";
-    function sayHello(){
-        alert(myVariable);
-    }
-    sayHello();
+        You can open the console when viewing _any_ HTML page. In Chrome, there are different ways to open the Console tab.
 
-The structure and syntax of JavaScript is more complex than either HTML or CSS because neither HTML nor CSS are full fledged programming languages.  They do not have **variables**, **functions**, **objects** or **control structures** such as **if** statements or **loops**, which are the basic building blocks of programming.
- 
-JavaScript has *all* of these.
-        </script>
-</section>
-        <section class="slide">
-            <h1>What is jQuery?</h1>
+        Keyboard shortcut:  
+        `COMMAND + OPTION + J` (MAC)  / `CONTROL + SHIFT + J` (WINDOWS)
 
-            <p><strong>jQuery <em>is</em> JavaScript.</strong> </p>
+        OR
 
-            <p>jQuery is a cross-browser JavaScript <em>library</em> designed to simplify your program. Though it has its own syntax, it is still JavaScript at its core so it's important to have an understanding of traditional JavaScript principles.</p>
+        Select: `View > Developer > JavaScript Console`.
 
-            <p>Before we get into the nitty-gritty details of these JavaScript principles, let’s take a quick look at a tool called the console.</p>
+        Open the console in this slide presentation. Take a moment to practice opening and closing the console until you’re comfortable with it.
+        
+        ---
+        ###Pro tip! 
+        The console also shows any errors on the page so if you open the console on any web page other than this slide deck, you *might* see some error messages.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class exercise: Inputting numbers
 
-            <div class="presenter-notes">
-                <p>It might be a good idea to explain that unlike HTML & CSS, it takes a lot more to see results in JS. Though it might be hard to see the bigger picture at first, it's important to learn how all the different pieces work and learn the syntax. A lot of the upcoming exercises will be focused on getting used to writing programs in general and getting used to the syntax.</p>
-            </div>
-        </script>
-</section>
-        <section class="slide" data-markdown>
-  <script type="text/template">
-# The Console
-The console is an interactive tool, built into the browser. We can use this tool to enter commands and interact directly with a web page, log diagnostic information and check for errors. We'll be using it today to practice writing some JavaScript code. The console in Chrome looks like this:
+        Let's experiment with adding input. Make sure the console is open. 
+        
+        After the `>` symbol, type your favorite number.  Then, press the enter/return key. You will see something like this:
 
-![The Console](framework/img/workshop/the_console_x.jpg)
+        ![console number](framework/img/workshop/console-number.gif) <!-- .element: width="85%" -->
 
-**Note the ```>``` symbol.** It is used by the console to represent a space for you to enter your input but you don't have to actually type it.
-        </script>
-</section>
-        <section class="slide">
-            <h1>Accessing the Console</h1>
+        The ```>``` symbol represents a space for your input.    
+        The ```<``` symbol represents the **returned value** of your input.  
+        
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class exercise: Inputting text
+        
+        You can also input text BUT when using text, make sure you include it between quotes (more on this soon).
 
-            <p>In Chrome, there are a couple ways to open the Console tab.</p>
+        ![console string](framework/img/workshop/console-string.gif)<!-- .element: width="85%" -->
 
-            <p>Use the keyboard shortcut: <br>
-            <code>COMMAND + OPTION + J</code> (MAC) <br>
-            <code>CONTROL + SHIFT + J</code> (WINDOWS/LINUX).</p>
-
-            <p>OR</p>
-
-            <p>Select: <code>View &gt; Developer &gt; JavaScript Console</code>.</p>
-
-            <p>You can open the console when viewing <em>any</em> HTML page but let’s use this blank HTML page, <a href="framework/console.html">console.html</a> so we can have a blank slate to practice with throughout the day. </p>
-
-            <p>Open <a href="framework/console.html">console.html</a> now and take a moment to practice opening and closing the console until you’re comfortable with it.</p>
-
-            <div class="presenter-notes">
-                <p>Re-iterate to the class to keep console.html open in a tab to refer back to for the console exercises.  A blank document was created rather than opening the console in the slide deck so any errors showing won't confuse the learners and take away from the lesson explaining things not needed for the task at hand.</p>
-            </div>
-        </script>
-</section>
-        <section class="slide" data-markdown>
-  <script type="text/template">
-# Mini-exercise
-
-Let's experiment with typing some input into the console. Return to **console.html** and open the console. After the `>` symbol, type your favorite number and press the enter/return key. 
-
-You will see something like this:
-
-![console number](framework/img/workshop/console-number.gif)
-
-The ```>``` symbol is used by the console to represent a space for your input.    
-The ```&lt;``` symbol is used by the console to represent the **returned value** of your input.  
-
-You can also input text BUT when using text, make sure you put it in quotes (more on this soon).
-
-![console string](framework/img/workshop/console-string.gif)
-
-The command you input into the console gets *evaluated* and a value is returned back to you.
-        </script>
-</section>
-        <section class="slide title">
-            <h1>JavaScript Overview</h1>
-            <h1>Variables & Functions</h1>
-            <div class="presenter-notes">
-                <p>Let the learners know that these concepts are the building blocks of the language and it's important to understand the syntax, how each concept works and together all of this will be needed to create interactions with JS/jQuery.  It may be hard to see the bigger picture at first, we just have to go through the fundamental concepts to understand how to build a program to create different types of interactions.</p>
-            </div>
-        </script>
-</section>
+        The command you input into the console gets *evaluated* and a value is returned back to you.
+      </script>
+    </section>
+    
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #The Building Blocks
+        ##JavaScript Variables & Functions
+      </script>
+    </section>
+    
         <section class="slide" data-markdown>
   <script type="text/template">
 # What *is* a variable?
@@ -1027,7 +970,7 @@ The library contains many, many built-in functions and methods. View the documen
             <p data-height="425" data-theme-id="0" data-slug-hash="sgaEh" data-default-tab="result" data-user="learningcode" class='codepen'>See the Pen <a href='http://codepen.io/learningcode/pen/sgaEh/'>jQuery Event and Method Examples</a> by Ladies Learning Code (<a href='http://codepen.io/learningcode'>@learningcode</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
             <script async src="http://codepen.io/assets/embed/ei.js"></script>
 
-            <p>The <strong>HTML</strong> consists of several <code>&lt;button></code> elements, to click and add the jQuery action to.  The <code>&lt;div class="stage">&lt;/div></code> is being used as the <em>selector</em>. The <code>&lt;div class="player">&lt;/div></code> is the square.</p>
+            <p>The <strong>HTML</strong> consists of several <code><button></code> elements, to click and add the jQuery action to.  The <code><div class="stage"></div></code> is being used as the <em>selector</em>. The <code><div class="player"></div></code> is the square.</p>
             <p>The <strong>CSS</strong> sets the colour and size of the squares and floats them so they sit side by side.
             </p>
             <p>The jQuery is where all the cool stuff is happening.</p>
@@ -1104,15 +1047,15 @@ You should see this in Sublime Text:
                 </li>
             </ul>
 
-            <pre><code class="xml">&lt;script src="js/jquery-1.11.1.min.js">&lt;/script></code></pre>
+            <!-- <pre><code class="xml"><script src="js/jquery-1.11.1.min.js"></script></code></pre> -->
 
-            <p><strong>Important</strong>:  Unlike CSS, which always has to be included within the <code>&lt;head&gt;</code> tags, JavaScript can be included pretty much anywhere on the page, in the <code>&lt;head&gt;</code> or the <code>&lt;body&gt;</code>.  Often, it is included just before the closing <code>&lt;/body&gt;</code> to allow the page document to load first.</p>
+            <p><strong>Important</strong>:  Unlike CSS, which always has to be included within the <code><head&gt;</code> tags, JavaScript can be included pretty much anywhere on the page, in the <code><head&gt;</code> or the <code><body&gt;</code>.  Often, it is included just before the closing <code></body&gt;</code> to allow the page document to load first.</p>
 
             <p>2. <strong>Use a CDN:</strong></p>
             <p>CDNs can offer a performance benefit by hosting jQuery on servers spread across the globe.</p>
 
             <p>To use the jQuery CDN (also listed on the download page), reference the file directly from the hosted file, rather than pointed to a file in your directory. Be sure to include the "http://" when viewing the site locally (on your computer).</p>
-            <pre><code class="xml">&lt;script src="http://code.jquery.com/jquery-1.11.0.min.js">&lt;/script></code></pre>
+            <pre><code class="xml"><script src="http://code.jquery.com/jquery-1.11.0.min.js"></script></code></pre>
 
             <p>Insert it into your <strong>index.html</strong> page now.</p>
 
@@ -1126,7 +1069,7 @@ You should see this in Sublime Text:
             <h1>What did we just do?</h1>
 
             <p>Let's have a look.</p>
-<pre><code class="javascript">&lt;script src="js/jquery-1.11.1.min.js"&gt;&lt;&#47;&#115;cript&gt;
+<!-- <pre><code class="javascript"><script src="js/jquery-1.11.1.min.js"&gt;<&#47;&#115;cript&gt; -->
 </code></pre>
 <pre><code class="javascript">/* |    |                 |              └ The closing 'script' tag.
    |    |                 └ The location of the JS file.
@@ -1204,7 +1147,7 @@ $("p.highlight").css("background-color", "yellow");
 before you add this:
 
 ```xml
-&lt;p class="highlight">This is an important highlighted paragraph&lt;/p>
+<p class="highlight">This is an important highlighted paragraph</p>
 ```
 The JavaScript code will run BEFORE the browser sees the paragraph tag.  jQuery won't be able to match the element and won't change the background colour to yellow!
         </script>
@@ -1251,18 +1194,18 @@ Multi-line comments are great for "hiding" large blocks of code so you can try s
         <section class="slide"> 
             <h1> Let's DO something already!!!</h1>
             <p>Go back to Sublime and <strong>index.html</strong>. Under the jQuery script tag, add another script tag to actually write your own jQuery code.</p>
-<pre><code class="xml">&lt;script src="js/jquery-1.11.1.min.js"&gt;&lt;&#47;&#115;cript&gt;
-&lt;script&gt;
+<!-- <pre><code class="xml"><script src="js/jquery-1.11.1.min.js"&gt;<&#47;&#115;cript&gt; -->
+<script&gt;
     
-&lt;&#47;&#115;cript&gt;
+<&#47;&#115;cript&gt;
 </code></pre>
             <p> Then add the <code>$( document ).ready()</code> like this:</p>
-<pre><code class="xml">&lt;script src="js/jquery-1.11.1.min.js"&gt;&lt;&#47;&#115;cript&gt;
-&lt;script&gt;
+<<pre><code class="xml"><scrip src="js/jquery-1.11.1.min.js"&gt;<&#47;&#115;cript&gt;
+<script&gt;
     $(document).ready(function(){
         // Add all jQuery code here.
     });
-&lt;&#47;&#115;cript&gt;
+<&#47;&#115;cript&gt;
 </code></pre>
             
             <p>In the favorites section, there are 4 pictures of an adorable dog.</p>
@@ -1275,14 +1218,14 @@ Multi-line comments are great for "hiding" large blocks of code so you can try s
 
             <p>The HTML for the favorites section looks like this:</p>
 
-<pre class="xml"><code>&lt;section id="favourites" class="favourites container"&gt;
-    &lt;h2&gt;My Favourite Things&lt;/h2&gt;
-    &lt;h3&gt;Here are a few things I really love&lt;/h3&gt;
-    &lt;img class="fav-img" src="images/puppy_rest.jpg"&gt;
-    &lt;img class="fav-img" src="images/puppy_rest.jpg"&gt;
-    &lt;img class="fav-img" src="images/puppy_rest.jpg"&gt;
-    &lt;img class="fav-img" src="images/puppy_rest.jpg"&gt;
-&lt;/section&gt;
+<pre class="xml"><code><section id="favourites" class="favourites container"&gt;
+    <h2&gt;My Favourite Things</h2&gt;
+    <h3&gt;Here are a few things I really love</h3&gt;
+    <img class="fav-img" src="images/puppy_rest.jpg"&gt;
+    <img class="fav-img" src="images/puppy_rest.jpg"&gt;
+    <img class="fav-img" src="images/puppy_rest.jpg"&gt;
+    <img class="fav-img" src="images/puppy_rest.jpg"&gt;
+</section&gt;
 </code></pre>
 
             <p>How would we select those images with jQuery?</p>
@@ -1496,11 +1439,11 @@ Let's get started.
 
             <p>Select the elements to be clicked.  Here’s what the menu markup looks like:</p>
 
-<pre class="xml"><code>&lt;ul class="menu"&gt;
-    &lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href="#favourites"&gt;Favourites&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+<pre class="xml"><code><ul class="menu"&gt;
+    <li&gt;<a href="#about"&gt;About</a&gt;</li&gt;
+    <li&gt;<a href="#favourites"&gt;Favourites</a&gt;</li&gt;
+    <li&gt;<a href="#contact"&gt;Contact</a&gt;</li&gt;
+</ul&gt;
 </code></pre>
 
             <p>Which selector should we use?</p>
@@ -1659,13 +1602,13 @@ We are going to use the FlexSlider plugin today to add a slider of images to our
 At its most basic, a rotator is a list of images that uses javascript to show one image on its own, then another, then another...  SO if we used HTML like this:
 
 ```xml
-&lt;div id="rotator">
-    &lt;ul class="slides">
-        &lt;li>&lt;img src="img/rotator/image1.jpg" alt="First Slide">&lt;/li>
-        &lt;li>&lt;img src="img/rotator/image2.jpg" alt="Second Slide">&lt;/li>
-        &lt;li>&lt;img src="img/rotator/image3.jpg" alt="Third Slide">&lt;/li>
-    &lt;/ul>
-&lt;/div>
+<div id="rotator">
+    <ul class="slides">
+        <li><img src="img/rotator/image1.jpg" alt="First Slide"></li>
+        <li><img src="img/rotator/image2.jpg" alt="Second Slide"></li>
+        <li><img src="img/rotator/image3.jpg" alt="Third Slide"></li>
+    </ul>
+</div>
 ```
 
 The javascript would show the first and hide the rest. Then, after a couple of seconds,  show the second and hide the rest.  Then keep going until all of the slides have been shown.  Then start again at the beginning. 
@@ -1688,7 +1631,7 @@ The javascript would show the first and hide the rest. Then, after a couple of s
                 <li>entire <strong>fonts</strong> folder into the <strong>project</strong> folder</li>
                 <li>flexslider.css into the <strong>css</strong> folder</li>
                 <li>images > bg_play_pause.png into your <strong>project > images</strong> folder</li>
-                <li>jquery.flexslider-min.js into your <strong>project > js</strong> folder</li>
+                <!-- <li>jquery.flexslider-min.js into your <strong>project > js</strong> folder</li> -->
             </ul>
 
             <p>Your project folder should now look like this:</p>
@@ -1704,23 +1647,23 @@ The javascript would show the first and hide the rest. Then, after a couple of s
             <h1>Add Flexslider to Your project: Step 1</h1>
             <p>Now that the plugin files are saved within your directory, attach these files to your HTML page.</p>
 
-            <p>Go to back to your <strong> index.html </strong> file and add the Flexslider file (<strong>jquery.flexslider-min.js</strong>) <em>after</em> the jQuery library file <nobr>(<strong>jquery-1.11.1.min.js</strong>).</nobr></p>
-<pre><code class="html">&lt;script src="js/jquery-1.11.1.min.js"&gt;&lt;&#47;&#115;cript&gt;
-&lt;script src="js/jquery.flexslider-min.js"&gt;&lt;&#47;&#115;cript&gt;
-&lt;script&gt;
+            <!-- <p>Go to back to your <strong> index.html </strong> file and add the Flexslider file (<strong>jquery.flexslider-min.js</strong>) <em>after</em> the jQuery library file <nobr>(<strong>jquery-1.11.1.min.js</strong>).</nobr></p> -->
+<!-- <pre><code class="html"><script src="js/jquery-1.11.1.min.js"&gt;<&#47;&#115;cript&gt; -->
+<!-- <script src="js/jquery.flexslider-min.js"&gt;<&#47;&#115;cript&gt; -->
+<script&gt;
 $(document).ready(function(){
     // Add all jQuery code here.
 });
-&lt;&#47;&#115;cript&gt;
+<&#47;&#115;cript&gt;
 </code></pre>
-            <p>Flexslider also comes with its own CSS file, so be sure to put that in the <code>&lt;head></code> section <em>before</em> style.css.</p>
-<pre><code>&lt;head&gt;
-    &lt;title&gt;Page Title&lt;/title&gt;
-    &lt;link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/normalize.css&quot;&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/flexslider.css&quot;&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&gt;
-&lt;/head&gt;
+            <p>Flexslider also comes with its own CSS file, so be sure to put that in the <code><head></code> section <em>before</em> style.css.</p>
+<pre><code><head&gt;
+    <title&gt;Page Title</title&gt;
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'&gt;
+    <link rel=&quot;stylesheet&quot; href=&quot;css/normalize.css&quot;&gt;
+    <link rel=&quot;stylesheet&quot; href=&quot;css/flexslider.css&quot;&gt;
+    <link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&gt;
+</head&gt;
 </code></pre>
             <p><strong>Note:</strong> This is just one way to organize your folder structure. Some people like to create a <strong>plugins</strong> folder for example for these types of files.  Just make sure that your file paths match when linking to the js, image and css files.</p>
         </script>
@@ -1735,13 +1678,13 @@ Now, let's write the HTML markup for creating the structure of the slider. In th
 You can of course update the src file for the images to point to your own.  If you do not have any images at this time, there are some placeholders in your project folder under **images > rotator**.
 
 ```xml
-&lt;div class=&quot;flexslider&quot;&gt;
-  &lt;ul class=&quot;slides&quot;&gt;
-    &lt;li&gt;&lt;img src=&quot;images/rotator/image1.jpg&quot;&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;img src=&quot;images/rotator/image2.jpg&quot;&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;img src=&quot;images/rotator/image3.jpg&quot;&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;
+<div class=&quot;flexslider&quot;&gt;
+  <ul class=&quot;slides&quot;&gt;
+    <li&gt;<img src=&quot;images/rotator/image1.jpg&quot;&gt;</li&gt;
+    <li&gt;<img src=&quot;images/rotator/image2.jpg&quot;&gt;</li&gt;
+    <li&gt;<img src=&quot;images/rotator/image3.jpg&quot;&gt;</li&gt;
+  </ul&gt;
+</div&gt;
 ```
 
 You can put this code anywhere you want it to show on the page. Save the file and check your page.  You probably won't see anything right?  That's because we still have to activate the plugin with a little jQuery.
@@ -1750,11 +1693,11 @@ You can put this code anywhere you want it to show on the page. Save the file an
 
 
 ```xml
-&lt;!-- XHTML -->
-&lt;img src=&quot;path/to/file.jpg&quot; /&gt;
+<!-- XHTML -->
+<img src=&quot;path/to/file.jpg&quot; /&gt;
 
-&lt;!-- HTML5 -->
-&lt;img src=&quot;path/to/file.jpg&quot;&gt;
+<!-- HTML5 -->
+<img src=&quot;path/to/file.jpg&quot;&gt;
 
 ```
 
@@ -1808,17 +1751,17 @@ Flexslider comes out of the box with the ability to be responsive. That's why, b
 We can fix this with a little HTML & CSS and still maintain its responsive nature. Let's put a new containing element around the Flexslider HTML like this:
 
 ```
-&lt;div class=&quot;flexslider-wrap&quot;&gt;&lt;!-- new container--&gt;
+<div class=&quot;flexslider-wrap&quot;&gt;<!-- new container--&gt;
 
-    &lt;div class=&quot;flexslider&quot;&gt;
-        &lt;ul class=&quot;slides&quot;&gt;
-            &lt;li&gt;&lt;img src=&quot;images/rotator/image1.jpg&quot;&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;img src=&quot;images/rotator/image2.jpg&quot;&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;img src=&quot;images/rotator/image3.jpg&quot;&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/div&gt;
+    <div class=&quot;flexslider&quot;&gt;
+        <ul class=&quot;slides&quot;&gt;
+            <li&gt;<img src=&quot;images/rotator/image1.jpg&quot;&gt;</li&gt;
+            <li&gt;<img src=&quot;images/rotator/image2.jpg&quot;&gt;</li&gt;
+            <li&gt;<img src=&quot;images/rotator/image3.jpg&quot;&gt;</li&gt;
+        </ul&gt;
+    </div&gt;
 
-&lt;/div&gt;&lt;!-- closing new container --&gt;
+</div&gt;<!-- closing new container --&gt;
 ```
 Then add the css to **styles.css** to change the size of the whole container.
 
