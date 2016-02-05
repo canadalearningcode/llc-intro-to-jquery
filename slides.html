@@ -221,15 +221,17 @@
       <script type="text/template">
         # Class exercise: Inputting numbers
 
-        Let's experiment with adding input. Make sure the console is open. 
-        
-        After the `>` symbol, type your favorite number.  Then, press the enter/return key. You will see something like this:
+        In the console, after the `>` symbol, type your favorite number and press the enter/return key. You will see something like this:
 
         ![console number](framework/img/workshop/console-number.gif) <!-- .element: width="85%" -->
 
         The ```>``` symbol represents a space for your input.    
         The ```<``` symbol represents the **returned value** of your input.  
         
+        ---
+        ###Pro tip!
+        To increase the font size of the console, use `Command/Control +`.  
+        Use  `Command/Control 0` to return it back to the default size.
       </script>
     </section>
     
@@ -252,248 +254,322 @@
       </script>
     </section>
     
-        <section class="slide" data-markdown>
-  <script type="text/template">
-# What *is* a variable?
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # What *is* a variable?
 
-A variable is a named memory location which contains some known or unknown quantity or information.
+        Variables are like containers or a box. 
+        
+        * used to *store* values 
+        * can be used any time, whenever you need them
+        * gives a *name* to a *value*. 
+        
+        A variable is a named memory location which contains information, to be used at a later time.
+        
+        For example, a variable could be used to store a customer's email address.  Then, the variable can be used to send a confirmation email.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Declaring (creating) a variable
+        
+        * use the keyword `var`
+        * name the variable anything you want*
+        * end the command with a semi-colon (`;`)
 
-**In *English*, please.**
+        ```javascript
+        var myVariable = "Hello!";
+        ```
 
-Variables are like containers or a box. They are used to **store** values that can be used at any time, whenever you need them. At its most basic, we make a variable when we give a **name** to a **value**.  
+        The value `Hello` is given to the name `myVariable` and is declared using the keyword `var`. This is *assigning* a value to the *variable*. 
+        
+        Evaluate everything to the right of the equals sign, then assign the value to the variable on the left of the equals sign.
+        
+        *See next slide for info about naming conventions <!-- .element: class="note" -->
+      </script>
+    </section>
+    
+    <section class="slide nested-list" data-markdown>
+      <script type="text/template">
+        #Variables: Naming conventions
 
-When creating or *declaring* a variable, you must use the keyword `var` but you can name the variable anything you want. End the command with a semi-colon (`;`) so JavaScript knows you're done.
+        * Cannot contain spaces:
+          * use camelCase for names with multiple words. 
+          * every new word is capitalized
+          * the result looks kind of like `camelHumps` 
+        * JavaScript is case sensitive
+          * so variable names are also case sensitive
+        * Use a descriptive names:  
+        `var firstName;` ← Clear that first name will go here.   
+        `var fn;`        ← Not as obvious as firstName.   
+        `var x; `        ← Not clear at all.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Variable Types: Strings
 
-Let's look at the below example.
+        When storing text values, like words or sentences, the variable type is a *string* value.
+        
+        Strings must be contained in quotes.
 
-```javascript
-   var myVariable = "Hello World";
-/*  |       |            |
-   keyword  |           value given to variable
-            |
-           variable name created by you          
-*/
-```
+        ```javascript
+        var greeting = "Hello!";
+        ```
+        
+        ```javascript
+        var greeting = "Good morning!";
+        ```
+        
+        ```javascript
+        var greeting = "Good evening!";
+        ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Variable Types: Strings & Concatenation
+        
+        You can *add* strings together to join multiple values. This is called **concatenation**.
 
-We are taking the value ```Hello World``` and giving it the name ```myVariable```. 
+        ```javascript
+        var greeting = "Good";
+        var greetingTime = "morning";
+        var greetingFull = greeting + " " + greetingTime + "!";
+        ```
 
-This is referred to as *assigning* a value to the *variable*. Evaluate everything to the right of the equals sign, then assign this value to the variable on the left side.
+        The JavaScript above **concatenates** the three items together like so:
+        
+        ```
+        var greetingFull = greeting + " " + greetingTime + "!";
+        var greetingFull = Good + space + morning + exclamation mark
+        var greetingFull = Good morning!
+        ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class exercise: Declare a Variable
 
-        </script>
-</section>
-        <section class="slide" data-markdown>
-  <script type="text/template">
-#Naming a Variable
+        Let's create a variable called `favFood` and give it a value. 
+        
+        >What is the syntax for creating a variable and assigning a string value?
 
-Variables can't contain spaces so a convention called camel case is generally used. Every new word is capitalized and the result looks kind of `likeCamelHumps`. 
+        <pre class="delayed"><code>var favFood = "pizza";</code></pre>
 
-JavaScript is case sensitive (uppercase and lowercase letters are treated differently) so variable names are also case sensitive.
+        <blockquote class="delayed"><p>Add the above code into the console. What value gets returned?<p></blockquote>
+        
+        <pre class="delayed"><code>undefined</code></pre>
 
-Use a descriptive name to make it easier to see, what kind of value that variable is going to hold.
+        <p class="delayed">That is perfectly fine. Remember, variables are used to <em>store</em> values until you're ready to use them. Let's break it down in the next slide.</p>
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class exercise: Using Variables
+        
+        When using the console tool, it will automatically return a value when you input an instruction. Declaring a variable just *stores* the value until you're ready to use it. 
+        
+        `var favFood` is just holding on to the value, so it returns nothing (undefined). But now, JavaScript knows it exists. 
+        
+        To actually **use** the variable, just type `favFood` into the console. It will now **return** the value that it was storing and look something like this:
+        
+        ```javascript
+        > var favFood = "pizza";
+        < undefined
+        > favFood;
+        < "pizza"
+        ```
+        <!-- ![](framework/img/workshop/console-fav-food.gif) -->
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class exercise: Concatenate
 
-`var firstName;` ← Clear that first name will go here.   
-`var fn;`        ← Not as obvious as firstName.   
-`var x; `        ← Not clear at all.
-        </script>
-</section>
-        <section class="slide" data-markdown>
-  <script type="text/template">
-# Variable Types: Strings
+        Let’s try **concatenating** some strings with the `favFood` variable. In the console, try typing this command:
+        
+        ```
+        "My favorite food is " + favFood;
+        ```
 
-When you store any amount of text, like words or sentences, the variable type is a **string** value and must be contained in quotes.
+        ![concatenate example](framework/img/workshop/console-concatenate.gif)
 
-```javascript
-var myVariable = "Hello World";
-```
-
-You can *add* strings together to make longer strings. This is called `concatenation`.
-
-```javascript
-var first = "Hello";
-var second = "World";
-var wholePhrase = first + " " + second;
-```
-
-The JavaScript above **concatenates** the three items together:
-
-1. the variable `first` with the value `"Hello"`
-* the **anonymous** string value `" "` to add a space.
-* the variable `second` with the value `"World"`
-
-So the results of the variable `wholePhrase` is:
-
-var wholePhrase = first + " " + second;  
-= "Hello" + " " + "World"  
-= "Hello World"
-
-        </script>
-</section>
-        <section class="slide">
-            <h1>Class exercise</h1>
-
-            <p>Create a variable called <code>favFood</code> and give it a value. What is the syntax for creating a variable and assigning a string value?</p>
-
-            <pre class="delayed"><code>var favFood = "pizza";</code></pre>
-
-            <p class="delayed">Try adding the above code into the console on <strong>console.html</strong>. What value gets returned? <code class="delayed">undefined</code></p>
-
-            <div class="delayed">
-                <p>That is perfectly fine. Remember, variables are used to <strong>store</strong> values until you're ready to use them.  <code>favFood</code> is still holding on to the value so it returns nothing (undefined). But now, JavaScript now knows that you've assigned a value to a variable.  To actually <strong>use</strong> the variable, just type <code>favFood</code> into the console. It will now <strong>return</strong> the value that it was storing.</p>
-
-                <img src="framework/img/workshop/console-fav-food.gif" alt="">
-            </div>
-        </script>
-</section>
-        <section class="slide">
-            <h1>Class exercise (continued)</h1>
-
-            <p>Let’s try <strong>concatenating</strong> some strings with the <code>favFood</code> variable. In the console, try typing this command:</p>
-
-            <pre><code>"My favorite food is " + favFood;</code></pre>
-
-            <p><img src="framework/img/workshop/console-concatenate.gif" alt="concatenate example" title=""></p>
-
-            <p>Note that when we execute a command without <code>var</code>, the assigned value of the variable gets returned instead of <code>undefined</code>. Reminder, <code>var</code> is used to a <em>declare</em> and create a variable and will hold the value, until used.</p>
-
-            <p><strong>Challenge!</strong> How would you add a period to the end of the sentence?</p>
-
-            <div class="presenter-notes">
-                <p>Give some real world of examples of why or how variables can be used. Ex. form values can be used to create shipping labels.</p>
-            </div>
-        </script>
-</section>
-        <section class="slide" data-markdown>
-  <script type="text/template">
+        > **Challenge!** How would you add a period to the end of the sentence?
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
 # Variable Types: Strings and Quotes
 
-JavaScript understands strings as values that are wrapped in either 'single quotes'  or "double quotes."  You can use either style but you must start and end the string with the same mark.
+Strings values can be wrapped in either 'single quotes'  or "double quotes."  You can use either style but you must start and end the string with the same mark.
+
+But be careful! In the example below, this will cause an error.
 
 ```javascript
-var works = "This string value's the bomb!!!";
-var fails = 'This string value's the bomb!!!'; 
-```
-```javascript
-/*          ^                 ^
-            |_________________| 
+var fails = 'This string's value is not going to work!'; 
+/*          ^           ^
+            |___________| 
             |
-            Javascript thinks the string ends with the second apostrophe.
-            It is then expecting the command to end with a semicolon (;) 
-            and will return an error.
+            Javascript thinks the second apostrophe closes the first.
+            It then expects the command to end with a semicolon (;) 
+            right after and returns an error.
 */
 ```
-```
-var alsoWorks = "Then I said: 'That string value was the bomb!!!' ";
-var alsoFails = "Then I said: "That string value was the bomb!!!" ";                                   
-```
-Try copying each line and putting it into your console to check for errors.
-        </script>
-</section>
-        <section class="slide" data-markdown>
-  <script type="text/template">
-# Variable Types: Strings and Quotes
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Variable Types: Strings and Quotes
 
-To get around the issue shown in the previous slide, you can put a backslash (`\`) in front of the quote to *escape* the quote so it does not end the string.
+        There's two ways to fix it.  
 
-```javascript
-var totallyWorks = "Then I said, \"No way you can do that!!!\" ";
-/*                 ^                                           ^
-                   |                                           | 
-                   |___________________________________________| 
-                   |
-                   JavaScript now sees a string starting and ending with the same symbol.
-                   The variable 'totallyWorks' is assigned a string value of:
-                        Then I said, "No way you can do that!!!"
-*/
-```
-Another option is to use single quotes to enclose the entire string.
+        Use double quotes!
+        ```javascript
+        var works = "This string's value is going to work!";                                 
+        ```
 
-```javascript
-var alsoWorks = 'Then I said, "Yes you can!!!" ';
-```
-        </script>
-</section>
-        <section class="slide" data-markdown>
-  <script type="text/template">
-# Variable Types: Numbers
+        Or *escape* it by using a backslash.
 
-Variable **values** can be one of several different **types**.  The most basic is a **number**.
+        ```javascript
+        var alsoWorks = 'This string\'s value is not going to work!'; 
+        ```
 
-    var meaningOfLife = 42; // Whole numbers are called 'integers'
+        > Try adding each line into your console to check for errors.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Variable Types: Numbers
 
-JavaScript can also do math. Use `+` for addition, `-` for subtraction, `*` for multiplication and `/` for division.
+        Variable **values** can also be numbers.
+        
+        ```
+        var meaningOfLife = 42;
+        ```
 
-```javascript
-var endingValue = 5 * 2;
-// This will return the value of 10.
-```
+        JavaScript can also do math.  
+        
+        `+` addition, `-` subtraction, `*` multiplication, `/` division
 
-The calculations work the same whether the values are numbers, or values stored in a variable:
+        ```javascript
+        var addition = 5 + 2;
+        // This will return the value of 7.
+        ```
+      </script>
+    </section>
 
-```javascript
- var startingValue = 5;
- var multiplier = 2;
- var endingValue = startingValue * multiplier;
- // 'endingValue' is still 10.
- ```
-        </script>
-</section>
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Variable Types: Numbers
+        
+        These operations work whether the values are numbers, or the values are stored in a variable.
 
-        <section class="slide" data-markdown>
-  <script type="text/template">
-            # Class Exercise
+        ```javascript
+         var startingValue = 5;
+         var multiplier = 2;
+         var endingValue = startingValue * multiplier;
+        ```
+         
+        This will return a value of 10.
+      </script>
+    </section>
 
-            Let's practice using numbers & arithmetic operators.   
-            `+` for addition, `-` for subtraction, `*` for multiplication and `/` for division.
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise: numbers & operators
 
-            ![doing math in the console](framework/img/workshop/console-math.gif)
-            
-            Now, try using these operators with variables.  Let's create a program for finding a person's age. Create two variables, one for `currentYear` and one for `birthYear` and subtract the values.
+        Let's practice using numbers & arithmetic operators.  In the console, let's try using the various math operations.
+        
+        `+` addition, `-` subtraction, `*` multiplication and `/` division.
+        
+        Examples:
+        ```javascript
+        > 2 + 2;
+        > 199 * 42;
+        ```
+        
+        Remember BEDMAS? (Brackets, Exponents, Division, Multiplication, Addition, Subtraction) This also applies in JavaScript.
+        
+        ```javascript
+        > 2 + 2 * 4;
+        > (2 + 2) * 4;
+        ```
+      </script>
+    </section>
 
-            ![doing math with variables in the console](framework/img/workshop/console-math-variables.gif)
-        </script>
-</section>
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise: numbers & operators
+        
+        Let's create a program for finding a person's age. 
+        
+        1. Create two variables, one for `currentYear` and one for `birthYear`.
+        1. Subtract the two values.
+        
+        It will look something like this:
+        
+        ```javascript
+        var currentYear = "2016";
+        var birthYear = "1979";
+        var age = currentYear - birthYear;
+        
+        ```
+        
+        <!-- ![doing math with variables in the console](framework/img/workshop/console-math-variables.gif) -->
+      </script>
+    </section>
 
-        <section class="slide" data-markdown>
-  <script type="text/template">
-# Exercise (5-10 mins)
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Exercise: Create a JavaScript Program! (10-15 mins)
 
-Create a program using the concepts covered so far: variables & arithmetic operators.
+        Using variables & arithmetic operators, calculate how many seconds there are in a day.
 
-How many seconds are there per day? 
+        1. Declare variables for: `secondsPerMinute`, `minutesPerHour` and `hoursPerDay`.  
+        1. Declare a `secondsPerDay` variable and use arithmetic operators to calculate the value.
 
-* Create variables for `secondsPerMinute`, `minutesPerHour` and `hoursPerDay`.  
-* Use those values to calculate `secondsPerDay`.
+        Feel free to use your own variable names. Just make sure to adhere to best practices.
 
-Feel free to use your own variable names or abbreviations. Just make sure to adhere to best practices for naming variables.
+        **Bonus!** Use concatenation to output "There are x seconds per day."
 
-**Extra Challenge!**   
-Use concatenation to output "There are x seconds per day."
+        (Advance to the next slide to see the solution but only if you're stuck! Talk to your mentors and neighbors first.)<!-- .element: class="note" -->
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Exercise Solution
 
-(Advance to the next slide to see the solution.)
-        </script>
-</section>
-        <section class="slide" data-markdown>
-  <script type="text/template">
-# Exercise Solution
+        <!-- ![exercise 1 solution](framework/img/workshop/console-exercise-1.gif) -->
+        
+        ```javascript
+        var secondsPerMinute = 60;
+        var minutesPerHour = 60;
+        var hoursPerDay = 24;
+        var secondsPerDay = secondsPerMinute * minutesPerHour * hoursPerDay;
 
-![exercise 1 solution](framework/img/workshop/console-exercise-1.gif)
-```javascript
-var secondsPerMinute = 60;
-var minutesPerHour = 60;
-var hoursPerDay = 24;
-var secondsPerDay = secondsPerMinute * minutesPerHour * hoursPerDay;
+        // This command will output the value of secondsPerDay
+        secondsPerDay;
 
-// This command will output the value of secondsPerDay
-secondsPerDay;
+        // Concatenating strings with the secondsPerDay variable.
+        var sentence = "There are " + secondsPerDay + " seconds per day.";
 
-// Concatenating strings with the secondsPerDay variable.
-var sentence = "There are " + secondsPerDay + " seconds per day.";
+        // This command will output the value of sentence.
+        sentence;
+        ```
+      </script>
+    </section>
 
-// This command will output the value of sentence.
-sentence;
-```
-        </script>
-</section>
         
         <section class="slide" data-markdown>
   <script type="text/template">
