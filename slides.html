@@ -29,7 +29,7 @@
         
         <h2>Download<br> & Install</h2>
         <ol class="downloads">
-          <li>Learner files (zip file): <a href="https://github.com/ladieslearningcode/llc-html-css-valentines/archive/master.zip">http://bit.ly/llc-valentines</a>
+          <li>Learner files (zip file): <a href="https://github.com/ladieslearningcode/llc-intro-to-jquery/archive/master.zip">http://bit.ly/llc-jquery-intro</a>
             <ul>
               <li>unzip the learner file (<em>extract all</em> if you’re on a PC)</li>
               <li>open <em>slides.html</em> in the browser to view the slides</li>
@@ -175,7 +175,7 @@
         
         Before we get into the nitty-gritty details of these JavaScript principles, let’s take a look at a tool called the console.
         
-        We'll be using this tool in the upcoming exercises to focus on getting used to the programing syntax. 
+        We'll be using this tool in the upcoming exercises to focus on getting used to the programming syntax. 
         
         This way, we can write programs without relying on HTML & CSS and learn some of the fundamental programming concepts first.
       </script>
@@ -213,13 +213,13 @@
         
         ---
         ###Pro tip! 
-        The console also shows any errors on the page so if you open the console on any web page other than this slide deck, you *might* see some error messages.
+        The console also shows any errors on the page so if you open the console on any web page other than this slide deck, you *may* see some error messages.
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        # Class exercise: Inputting numbers
+        # Class Exercise: Working with Numbers
 
         In the console, after the `>` symbol, type your favorite number and press the enter/return key. You will see something like this:
 
@@ -237,7 +237,7 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        # Class exercise: Inputting text
+        # Class Exercise: Working with Text
         
         You can also input text BUT when using text, make sure you include it between quotes (more on this soon).
 
@@ -304,6 +304,13 @@
         `var firstName;` ← Clear that first name will go here.   
         `var fn;`        ← Not as obvious as firstName.   
         `var x; `        ← Not clear at all.
+      </script>
+    </section>
+    
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #Variable Types
+        ##Strings, Numbers, Booleans
       </script>
     </section>
     
@@ -463,8 +470,9 @@ var fails = 'This string's value is not going to work!';
 
         ```javascript
         var addition = 5 + 2;
-        // This will return the value of 7.
         ```
+        
+        This will return the value of 7.
       </script>
     </section>
 
@@ -486,9 +494,9 @@ var fails = 'This string's value is not going to work!';
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        # Class Exercise: numbers & operators
+        # Class Exercise: Numbers & operators
 
-        Let's practice using numbers & arithmetic operators.  In the console, let's try using the various math operations.
+        In the console, let's try using the various math operations.
         
         `+` addition, `-` subtraction, `*` multiplication and `/` division.
         
@@ -567,388 +575,435 @@ var fails = 'This string's value is not going to work!';
         // This command will output the value of sentence.
         sentence;
         ```
+        
+        ```
+        // This is a JavaScript comment by the way :) Use it to leave notes.
+        ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Variable Types: Booleans
+
+        Variables that only contain a `true` or `false` value are called **booleans**
+        
+        ```javascript
+        var isTenGreaterThanZero = true;
+        var isTwoLessThanOne = false;
+        ```
+      </script>
+    </section>
+    
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #Variable Types
+        ##Objects
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Variable Types: Objects
+
+        **Objects** can be thought of as a variable that can hold *multiple* values. To *declare* an object, use the curly brackets `{}`. 
+        
+        The values are written in `property: value` pairs. Each pair is separated by a comma, except for the last one.
+
+        ```javascript
+        var myObject = {
+          propertyName: propertyValue,
+          anotherPropertyName: anotherPropertyValue
+        }
+        ```
+
+        ```javascript
+        var coffeeOrder = {
+          drinkType: "latte",
+          milk: "almond",
+          flavor: "caramel"
+        }
+        ```
+        
+        Let's take a closer look at the syntax.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Declare the Object
+
+        ```javascript
+        var coffeeOrder = { }
+        ```
+
+        * Declare the object with `var`.  
+        * The object name is `coffeeOrder`. 
+        * The curly bracket starts and ends the object.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Add the Properties to the Object
+        
+        ```javascript
+        drinkType: "latte",
+        milk: "almond",
+        flavor: "caramel"
+        ```
+
+        * the property name must start with a letter and contain no spaces
+        * a colon (:) is used to separate name from value
+        * a comma (,) separates properties
+        * can be repeated for as many properties as you like
+        * the last pair of `property:value` does not end with a comma
       </script>
     </section>
 
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Objects: Putting it all together!
         
-        <section class="slide" data-markdown>
-  <script type="text/template">
-# Variable Types: Booleans
-
-Variables that only contain a `true` or `false` value are called **booleans**
-
-    var isTenGreaterThanZero = true;
-    var isTwoLessThanOne = false;
-        </script>
-</section>
-
-        <section class="slide" data-markdown>
-  <script type="text/template">
-# Variable Types: Arrays
-
-Variables can also hold a *list* of values (the values themselves being **types** like strings, numbers or booleans) in what is called an **array**. Note the syntax; the entire array value needs to be enclosed in square brackets `[ ]`, with each value separated by a comma *except* the last value.
-
-```javascript
-// Declaring the array and assigning values.
-var myFavoriteThings = [ "Raindrops On Roses", "Whiskers On Kittens" ];
-```
-
-You can also write each value on its own line for readability.  JavaScript will ignore the line break.
-```javascript
-// Declaring the array and assigning values.
-var myFavoriteThings = [ 
-    "Raindrops On Roses", 
-    "Whiskers On Kittens" 
-];
-``` 
-        </script>
-</section> 
-        <section class="slide" data-markdown>
-  <script type="text/template">
-#Array values
-
-To access the value of a variable, use the variable name. For **arrays**, the values are accessed by their array name and **numerical index**, also contained in square brackets, which always **starts at ```0```**.  To get the value of the first item in an array, the syntax will look like this:
-
-```javascript
-myFavoriteThings[0];
-```
-
-![array vs variables](framework/img/workshop/console-var-array.gif)
-
-Think of arrays as egg cartons. All the eggs are in one carton but each egg has its own slot.
-
-An alternative way to declare and assign values to an array is to use the square bracket notation with the index number. This will give the same results as the example above.
-```javascript
-// Declaring an empty array.
-var myFavoriteThings = [];
-// Assigning values to the array.
-myFavoriteThings[0] = "Raindrops On Roses";
-myFavoriteThings[1] = "Whiskers On Kittens";
-```
-        </script>
-</section>
-
-        <section class="slide" data-markdown>
-  <script type="text/template">
-# Variable Types: Objects
-
-Another type of variable that can hold multiple values and types is an **object**. To *declare* an object, use the curly brackets `{}`. The values are written in property name and value pairs like this:
-
-```javascript
-var myObject = {
-    propertyName: propertyValue,
-    anotherPropertyName: anotherPropertyValue
-}
-```
-
-You can even use an array as a property value.
-
-```javascript
-var vonTrappFamily = {
-    father : "Captain Georg von Trapp",
-    stepmother : "Maria von Trapp",
-    children : [
-        "Liesl von Trapp",
-        "Friedrich von Trapp",
-        "Louisa von Trapp",
-        "Brigitta von Trapp",
-        "Marta von Trapp",
-        "Gretl von Trapp"
-    ]
-};
-```
-In the example above the object has 3 **properties**: ```father, stepmother & children```.
-Notice how we use the curly braces ```{ }``` to denote an object and the square braces ```[ ]``` for an array.
-
-
-        </script>
-</section>
-        <section class="slide" data-markdown>
-  <script type="text/template">
-# Variable Types: Objects (continued)
-
-```javascript
-var vonTrappFamily = {
-    father : "Captain Georg von Trapp", //The value of the property 'father' is a string of text.
-    stepmother : "Maria von Trapp", //The value of the property 'stepmother' is a string of text.
-    children : [ //The value of the property 'children' is an array of items.
-        "Liesl von Trapp", //Each array item is a string of text.
-        "Friedrich von Trapp",
-        "Louisa von Trapp",
-        "Brigitta von Trapp",
-        "Marta von Trapp",
-        "Gretl von Trapp"
-    ]
-};
-```
-The pattern of an object is like this:
-
-```javascript
-var variableName = { propertyName : propertyValue, anotherPropertyName : another Value };
-/*                 |     |        |      |       |         |                 |         |
-                   |     |        |      |       |         |_________________|   curly brace 
-                   |     |        |      |       |                           |   closes object
-                   |     |        |      |       |          This can repeat for
-                   |     |        |      |       |          as many properties as you like.
-                   |     |        |      |       └ A comma (,) separates properties
-                   |     |        |      └ The property value follows the colon.
-                   |     |        └ A colon (:) is used to separate name from value
-                   |     └  The property name must start with a letter and contain no spaces
-                   └ The curly brace starts the object.
-*/
-```
-
-        </script>
-</section>
-        <section class="slide" data-markdown>
-  <script type="text/template">
-# Variable Types: Accessing an Object
-
-Object values are accessed or set via a syntax called **dot notation**.  To access the value for the `father` property, it would look like this:
-
-```javascript
-vonTrappFamily.father = "Captain Georg von Trapp";
-```
-To get the value of one of the children, by accessing an array value *inside* of the object property, it would look like this:
-```javascript
-var notAllowedChampagne = vonTrappFamily.children[0];
-```
-This would set the value of the variable ```notAllowedChampagne``` to the string value of the first child in the array, ```Liesl von Trapp```. (Remember, array indexes always start at 0!)
-
-**The variables that live inside objects are called ```properties```.** They are still variables, but when they are contained within an object, they are then referred to as **properties**.
-
-        </script>
-</section>
-        <section class="slide" data-markdown>
-  <script type="text/template">
-#Class exercise: Objects
-
-Using the object below, let's add this entire code block into our console and practice accessing various property values.
-
-```javascript
-var vonTrappFamily = {
-    father : "Captain Georg von Trapp",
-    stepmother : "Maria von Trapp",
-    children : [
-        "Liesl von Trapp",
-        "Friedrich von Trapp",
-        "Louisa von Trapp",
-        "Brigitta von Trapp",
-        "Marta von Trapp",
-        "Gretl von Trapp"
-    ]
-};
-```
-        </script>
-</section>
-        <section class="slide" data-markdown>
-  <script type="text/template">
-# Variable Types
-
-As you've just seen, there are *many* different variable types in JavaScript and many rules about how to write them.
-
-It will take practice getting used to all different rules but it is important to understand that variables are used to hold values and the values themselves have different types.
-        </script>
-</section>
-        <section class="slide" data-markdown>
-  <script type="text/template">
-# Ok, now what?
-
-We have been practicing writing lines of JavaScript.  These lines of JavaScript can now be used to write software which are just a series of commands for a computer to follow. Now... we write code.
-
-## What code?
-
-That depends. What do you want your **program** to do? Let's look at [this menu example](framework/example-menu.html). Using JavaScript, we write out step by step instructions on how to do the following things:
-
-* Pay attention to the links in the main menu of a page.
-* Whenever someone hovers over one of those menu items, move a line to highlight the hovered item.
-* When the mouse leaves, move the line back to where it was.
-
-This example illustrates a short series of commands. When these series of commands are repetitive, rather than writing the same line(s) of code many times throughout our program, we can create a `function`.
-        </script>
-</section>
-        <section class="slide" data-markdown>
-  <script type="text/template">
-# Functions
-
-If a `variable` is a name for a value, then a `function` is a name for a **set** of commands or instructions. When we invoke a variable, it just returns the value.  When we invoke a function, it executes all the commands contained within, making it easier to make the code "do things."  
-
-Let's look at two functions, `alert()` and `prompt()`.  These come built into JavaScript, for free!
-
-Go back to the console and type both functions in, one at a time, and see what happens. Note the syntax for functions, the parentheses `()`, must be included.
-
-        </script>
-</section>
-        <section class="slide" data-markdown>
-  <script type="text/template">
-#Functions and Arguments
-
-We've seen now that the `alert()` and `prompt()` functions create a pop-up in the browser but the pop-ups are blank.  We can also *pass* an **argument** *into* these functions by adding a value within the parentheses `()`.  Try this in the console:
-
-```javascript
-alert("Hello!");
-```
-```javascript
-prompt("What day is it today?");
-```
-
-Whatever value you put within the parentheses will get passed into the function.
-
-![console function example](framework/img/workshop/console-alert-prompt.gif)
-        </script>
-</section>
-
-        <section class="slide" data-markdown>
-  <script type="text/template">
-# Make your own functions!
-
-You can create your own functions that can contain any number of instructions that you need, including other functions. Use the `function` keyword to declare a new function.
-
-Let's look at this example: 
-
-```javascript
-function sayAnything(){
-    alert("Hello World");
-}
-```
-The above example creates a new **function** called `sayHello` but similar to variables, nothing will happen until the function is **called**.  
-
-We've already had practice calling a function.  Remember `alert();` and `prompt();`?  Simply **call** the function by using the function name plus parentheses `()`. Let's add the above function declaration into the console and then execute it by calling it.
-
-![console function example](framework/img/workshop/console-function.gif)
-
-        </script>
-</section>
-        <section class="slide" data-markdown>
-  <script type="text/template">
-#Functions, Arguments & Parameters
-
-Functions can be used to make your life a LOT easier once you get used to how to write them.  A function should be used when you have something you need to do time and again in your project.
-
-Just like with the built-in functions, you can also pass *arguments* into your own functions too.
-
-Let's take another look at the function from the previous example.
-
-```javascript
-function sayAnything(){
-    alert("Hello World");
-}
-```
-Notice that the ```sayAnything()``` function has empty parentheses `()` while the ```alert()``` function has the **string** value "Hello World" in the parentheses `()`.
-
-We can create a **parameter** to pass an argument into the function.
-
-        </script>
-</section>
-        <section class="slide" data-markdown>
-  <script type="text/template">
-# Creating Functions with Parameters
-**Parameters** are data that are passed into a function as variables.
-
-Instead of saying "Hello World" every time you call a function, you might want to say something different each time it is called.  Let's see what that might look like:
-
-```javascript
-// Declaring the function with a parameter of 'message'
-function sayAnything(message){
-    alert(message);
-}
-
-// Calling the function
-sayAnything("Welcome to the LLC jQuery workshop!");
-```
-Now, when we call the function, we can pass an argument in the parentheses (`"Welcome to the LLC jQuery workshop!"`). That argument now becomes the value of `message` which will now populate the `message` in `alert(message)`.
-
-Let's try it out in the console. First add the function, then call it. You can call the function as many times as you want with different arguments.
-
-![console function example](framework/img/workshop/console-function-param.gif)
-        </script>
-</section>
-        <section class="slide" data-markdown>
-  <script type="text/template">
-#Multiple Parameters
-                    
-JavaScript allows for multiple parameters. When you call the function, add the values in the same order as the parameters declared in the function.
-
-```javascript
-function myCustomFunction(parameter1, parameter2, parameterN) {
-/*             |              |           |          |
-               |              |           |          └ You can have as many parameters as you need.
-               |              |           └ The second parameter of the function.            
-               |              └ The first parameter of the function.          
-               └ The name of your function.                          
-*/  
-}
-
-// Call the function with arguments in the same order
-myCustomFunction(parameter1, parameter2, parameterN);
-
-```
-        </script>
-</section>
-        <section class="slide" data-markdown>
-  <script type="text/template">
-#Objects, Functions and Methods
-
-What's the difference between these two?  The second one kind of looks like a function right?
-``` javascript
-alert();
-console.log();
-```
-
-`alert()` is a **function**, it works on its own.
-
-`log()` is a **method** because it's attached to an **object**, `console`. It will log a message (the argument passed into `log()`) and will only show in the console tool. 
-
-This is much easier for testing and debugging than using `alert()`. No more pesky pop-ups!
-        </script>
-</section>
-        <section class="slide" data-markdown>
-  <script type="text/template">
-#Objects & Methods
-
-Pretty much everything in JavaScript is an object.  Here's another example:
-
-```javascript
-// array object
-var fruits = ["apples", "oranges", "pears"];
-
-// accessing the 'length' property of the array object to find out how many there are.
-var typesOfFruits = fruits.length;
-
-// Output into the console the number of items and concatenated into a sentence. 
-console.log("There are " + typesOfFruits + " types of fruit."); 
-```
-
-Try it out in the console.
-        </script>
-</section>
-
-        <section class="slide">
-            <h1>Functions &amp; jQuery</h1>
-            <p>A function is one of the most powerful tools in JavaScript and one of the most powerful functions you will ever use is this one:</p>
-            <pre class="delayed"><code>jQuery();</code></pre>
-            
-            <div class="delayed">
-                <p>Remember, jQuery is a <strong>JavaScript library</strong>. It is a library of functions/methods used to simplify your program. You can download it and use in your projects. </p>
-            </div>
-        </script>
-</section>
-
-        <section class="slide centered">
-            <h1>Phew!</h1>
-            <br>
-            <img style="max-width:500px" src="http://33.media.tumblr.com/2466ab981143fb18653f8f09bce061c7/tumblr_n982qbvyFQ1s5lf2ro1_400.gif">
-            <p>And that is JavaScript in a nutshell.</p>
-        </script>
-</section>
-
-        <section class="slide title">
-            <h1>Guess what? You already know how to use jQuery.</h1>
-        </script>
-</section>
-
-        <section class="slide" data-markdown>
-  <script type="text/template">
+        
+        ```javascript
+        var coffeeOrder = {
+          drinkType: "latte",
+          milk: "almond",
+          flavor: "caramel"
+        }
+        ```
+        
+        Reminder, objects are similar to variables because it can be used to hold values. But it can hold *multiple* values!
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Accessing an Object
+        
+        Since objects hold multiple values, it can't be accessed just by using the variable name. Object values are accessed using **dot notation**. 
+        
+        To access the value for the `drinkType` property, it would look like this:
+
+        ```javascript
+        var coffeeOrder = {
+          drinkType: "latte",
+          milk: "almond",
+          flavor: "caramel"
+        }
+        coffeeOrder.drinkType
+        ```
+        
+        > What value would `coffeeOrder.drinkType` return?
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class exercise: Objects
+
+        Using the object below, let's add this entire code block into our console and practice accessing various property values.
+
+        ```javascript
+        var coffeeOrder = {
+          drinkType: "latte",
+          milk: "almond",
+          flavor: "caramel"
+        }
+        ```
+        
+        > How would you access the value for `milk` and `flavor`?
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Variable Types
+
+        As you've just seen, there are *many* different variable types in JavaScript and many rules about how to write them. 
+        
+        There are actually a few more. You can read all about them [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures).
+
+        It will take practice getting used to the different rules. But, in a nutshell, *variables* are used to hold values and the values themselves have different *types*.
+      </script>
+    </section>
+      
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #Functions
+        ## Repeating instructions
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Functions
+
+        A `function` is a name for a **set** of commands or instructions.  
+        
+        When using a function, it executes all the commands contained within, making it easier to make the code repeat repetitive steps.  
+
+        Let's look at two functions, `alert()` and `prompt()`.  These come built into JavaScript, for free! Note the syntax, the parentheses `()`, must be included.
+
+        > Go back to the console and type both functions in, one at a time, and see what happens. 
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Functions and Arguments
+
+        We've seen now that `alert()` and `prompt()` create a pop-ups in the browser but the pop-ups are blank.  An *argument* can be *passed* into the functions by adding a value within the parentheses `()`.  
+        
+        Try this in the console:
+
+        ```javascript
+        alert("Hello!");
+        ```
+        ```javascript
+        prompt("What day is it today?");
+        ```
+
+        It will look similar to this:
+
+        ![console function example](framework/img/workshop/console-alert-prompt.gif)
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Make your own functions!
+
+        You can create your own functions that can contain any number of instructions that you need, including other functions. Use the `function` keyword to declare a new function.
+
+        Let's look at this example: 
+
+        ```javascript
+        function sayAnything(){
+          alert("Hello!");
+          prompt("What day is it today?");
+        }
+        ```
+        The above example creates a new **function** called `sayAnything` but similar to variables, nothing will happen until the function is **called**.  
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Calling a function
+        
+        To **call** a function, use the function name plus parentheses `()`.  Remember `alert();` and `prompt();`?  
+        
+        Let's add this whole function declaration into the console and then execute it by *calling* it.
+        
+        ```javascript
+        function sayAnything(){
+          alert("Hello!");
+          prompt("What day is it today?");
+        }
+        ```
+        ```
+        sayAnything();
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Objects, Functions and Methods
+
+        What's the difference between these two?  The second one kind of looks like a function right?
+        ``` javascript
+        alert();
+        console.log();
+        ```
+
+        `alert()` is a **function**, it works on its own.
+
+        `log()` is a **method** because it's attached to an **object**, `console`. It will log a message only into the console tool. 
+
+        This is much easier for testing and debugging than using `alert()`. No more pesky pop-ups!
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Functions & jQuery
+
+        A function is one of the most powerful tools in JavaScript and one of the most powerful functions you will ever use is this one:
+        
+        ```
+        jQuery();
+        ```
+
+        Remember, jQuery is a <!-- .element: class="delayed" -->**JavaScript library**. 
+        
+        It's library of functions/methods used to simplify your program. You can download it and use in your projects.  There's a lot more to JavaScript but this intro will help to get up and running with jQuery!<!-- .element: class="delayed" -->
+      </script>
+    </section>
+
+    <section class="slide centered">
+      <img src="http://33.media.tumblr.com/2466ab981143fb18653f8f09bce061c7/tumblr_n982qbvyFQ1s5lf2ro1_400.gif" alt="">     
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #HTML, CSS & JavaScript/jQuery
+        
+        So far we've been using the console tool to run the JavaScript commands but in web projects, browsers need HTML & CSS to display the *content* and *style*.
+
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #HTML & CSS
+        ##Overview
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # HTML overview
+
+        HTML (HyperText Markup Language) is use to define the **content** on a document/web page. Use `<tags>` to create HTML **elements** that represent items on the page. Let's look at some common tags.
+
+        ##Paragraphs
+        ```xml
+        <p>Paragraph.</p>
+        <p>Another paragraph.</p>
+        ```
+        <div class="example">
+          <p>Paragraph.</p>
+          <p>Another paragraph.</p>
+        </div>
+        
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # HTML overview
+        
+        ##Links
+        ```xml
+        <a href="http://ladieslearningcode.com">ladieslearningcode.com</a>
+        ```
+        <div class="example">
+            <a href="http://ladieslearningcode.com">ladieslearningcode.com</a> 
+        </div>
+        
+        ##Images
+        ```xml
+        <img src="http://www.fillmurray.com/300/300" alt="Placeholder Image">
+        ```
+        <img src="http://www.fillmurray.com/300/300" alt="Placeholder Image">
+      </script>
+    </section>
+
+    <!-- <section class="slide" data-markdown>
+      <script type="text/template">
+        # HTML tags & the browser
+        
+        By placing these items together on a page we get something that looks like this in the browser:
+        
+        <div class="example">
+          <p>Paragraph.</p>
+          <p>Another paragraph.</p>
+          <a href="http://ladieslearningcode.com">ladieslearningcode.com</a> 
+          <p><img src="http://www.fillmurray.com/300/300" alt="Placeholder Image"></p>
+        </div>
+      </script>
+    </section> -->
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #CSS overview
+
+        CSS (Cascading Style Sheets) defines the *style* and controls the look and feel of the HTML document. 
+        
+        **Selectors** are used to determine which *HTML elements* to apply the style to.
+        
+        **Declarations** are style rules specified in the form of `property: value;` pairs and wrapped in curly braces `{}`.
+
+        ```css
+        selector {
+          property: value;
+        }
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #CSS overview
+        
+        **Properties** determine the *type* of style to be applied to the element (e.g. color). 
+        
+        **Values** are specific to the property. 
+        
+        Declarations must end with a semi-colon (`;`) to indicate that the instruction is complete.
+
+        ![](framework/img/workshop/css.png)
+      </script>
+    </section> 
+
+    <section class="slide">
+      <h1>CSS selectors: Element selector</h1>
+      
+      <p>There are many different ways to select HTML elements.</p> 
+      <p>To select <em>any</em> HTML tag, use just the tag <em>name</em>, without the angled brackets.</p>
+      
+    <textarea class="snippet" data-subject="#element">div {
+    color: red;
+    }</textarea>
+        <aside class="example" id="#element">
+          <div>Selects all div elements.</div>
+          <div>Another div.</div>
+          <p>Paragraph element.</p>
+        </aside>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+      <h1>CSS selectors: class selector</h1>
+      <p>For classes, an <em>attribute</em> must be added to the HTML and denoted by a leading period in the CSS.</p>
+      
+      ```xml
+      <div class="special">Select ANY element with the "special" class.</div>
+      ```
+      <textarea class="snippet" data-subject="#class">.special {
+    color: blue;
+    }</textarea>
+      <div class="example" id="#class">
+        <div class="special">Select ANY element with the "special" class.</div>
+      </div>
+      
+      <p>For an id, the attribute is also added to the HTML but is denoted by a leading number symbol. Note that ids can only be used <strong>once</strong> per page.</p>
+      <pre class="xml"><code><div id="special">Select ANY element with this id.</div></code></pre>
+      <textarea class="snippet" data-subject="#id">#special {
+    color: green;
+    }</textarea>
+      <div class="example" id="#id">
+          <div id="special">Select ANY element with this id.</div>
+      </div>
+      <div class="presenter-notes">
+          <p>Change the values with the students to give them a small hands-on exercise.</p>
+      </div>
+    </script>
+    </section>
+
+    
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #Guess what? 
+        ##You already know how to use jQuery.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
 # Using jQuery
                     
 You know how to use jQuery because you know how to select **HTML elements** with **CSS selectors**.
@@ -980,10 +1035,10 @@ jQuery('.menu-item').css('color', 'blue');
    └ The jQuery function. This is super important because this makes everything else work.
 */
 ```
-        </script>
-</section>
-        <section class="slide" data-markdown>
-  <script type="text/template"> 
+      </script>
+    </section>
+    <section class="slide" data-markdown>
+      <script type="text/template"> 
 # Shortcut: The Dollar Sign
 
 ```javascript
@@ -999,10 +1054,10 @@ is the same as:
 $('.myClass');
 ```
 That's what we'll be doing going forward.
-        </script>
-</section>
-        <section class="slide" data-markdown>
-  <script type="text/template">
+      </script>
+    </section>
+    <section class="slide" data-markdown>
+      <script type="text/template">
 # What else can jQuery do?
 
 * Animate items
@@ -1018,8 +1073,8 @@ That's what we'll be doing going forward.
 * Detect the capabilities of a browser before serving up functionality like CSS Animations.
 
 The library contains many, many built-in functions and methods. View the documentation here: [http://api.jquery.com](http://api.jquery.com).
-        </script>
-</section>
+      </script>
+    </section>
 
         <section class="slide">
             <h1>jQuery Examples:</h1>
@@ -1035,8 +1090,8 @@ The library contains many, many built-in functions and methods. View the documen
             <div class="presenter-notes">
                 <p>Get the learners to change a couple values so they can see how things change but just give a high level overview about the concepts. They will be discussed in more detail in the next few slides.</p>
             </div>
-        </script>
-</section>
+      </script>
+    </section>
         
         <section class="slide">
             <h1>jQuery Examples</h1>
@@ -1050,8 +1105,8 @@ The library contains many, many built-in functions and methods. View the documen
             <p>The <strong>CSS</strong> sets the colour and size of the squares and floats them so they sit side by side.
             </p>
             <p>The jQuery is where all the cool stuff is happening.</p>
-        </script>
-</section>
+      </script>
+    </section>
     
         <section class="slide">
             <h1>jQuery Examples</h1>
@@ -1064,16 +1119,16 @@ The library contains many, many built-in functions and methods. View the documen
             <p>When editing a Codepen, you can select the gear icon in the JS box and it will show you if/what library it's using.  In the example above, you can see it's using jQuery & jQuery UI.</p>
 
             <img src="framework/img/workshop/codepen.png">
-        </script>
-</section>
+      </script>
+    </section>
         
         <section class="slide title" data-markdown>
             #Let's write some jQuery!
-        </script>
-</section>
+      </script>
+    </section>
 
-        <section class="slide" data-markdown>
-  <script type="text/template">
+    <section class="slide" data-markdown>
+      <script type="text/template">
 #Setting up our work flow
 
 For the rest of the day, you'll be working with the files included in the <strong>project</strong> folder.  Let's take a moment to set up the work flow.
@@ -1088,11 +1143,11 @@ Inside of the folder you downloaded today (**llc-intro-to-jquery-master**), ther
             |-- js // All your js files go here.
             |-- index.html // The homepage of your site.
         |-- index.html // This is the file you're viewing right now (slides)!
-        </script>
-</section>
+      </script>
+    </section>
 
-        <section class="slide" data-markdown>
-  <script type="text/template">
+    <section class="slide" data-markdown>
+      <script type="text/template">
 #Setting up our work flow
 
 Let's open the project files in the browser and text editor.
@@ -1107,9 +1162,11 @@ Let's open the project files in the browser and text editor.
 You should see this in Sublime Text:
 
 ![open project](framework/img/workshop/open-project.png)
-        </script>
-</section>
-        <section class="slide"> 
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
             <h1>Using jQuery</h1>
             <p>To use jQuery on your HTML page, you'll have to link to the jQuery file.  There are two ways to do that.</p>
 
@@ -1123,7 +1180,7 @@ You should see this in Sublime Text:
                 </li>
             </ul>
 
-            <!-- <pre><code class="xml"><script src="js/jquery-1.11.1.min.js"></script></code></pre> -->
+            <!-- <pre><code class="xml">< cript src="js/jquery-1.11.1.min.js"></script></code></pre> -->
 
             <p><strong>Important</strong>:  Unlike CSS, which always has to be included within the <code><head&gt;</code> tags, JavaScript can be included pretty much anywhere on the page, in the <code><head&gt;</code> or the <code><body&gt;</code>.  Often, it is included just before the closing <code></body&gt;</code> to allow the page document to load first.</p>
 
@@ -1138,14 +1195,15 @@ You should see this in Sublime Text:
             <div class="presenter-notes">
                 <p>The examples in jQuery's Learning Center uses the script at the bottom so use it this way to be consistent.</p>
             </div> 
-        </script>
-</section>
+      </script>
+    </section>
     
-        <section class="slide">
+    <section class="slide" data-markdown>
+      <!-- <script type="text/template">  -->
             <h1>What did we just do?</h1>
 
             <p>Let's have a look.</p>
-<!-- <pre><code class="javascript"><script src="js/jquery-1.11.1.min.js"&gt;<&#47;&#115;cript&gt; -->
+<!-- <pre><code class="javascript"><s cript src="js/jquery-1.11.1.min.js"&gt;<&#47;&#115;cript&gt; -->
 </code></pre>
 <pre><code class="javascript">/* |    |                 |              └ The closing 'script' tag.
    |    |                 └ The location of the JS file.
@@ -1157,22 +1215,22 @@ You should see this in Sublime Text:
             <p>Now that we've linked the jQuery file, we can access all the commands written in that document and be able to access all of the features available.</p>
 
             <p>Great! Now, open <strong>index.html</strong> in Chrome, or refresh the page if you have it open already and see what jQuery does when you include it in an HTML file.</p>
-        </script>
-</section>
-        <section class="slide" data-markdown>
-  <script type="text/template"> 
-# Notice any difference in your project?
-## No?
+      <!-- </script> -->
+    </section>
+    <section class="slide" data-markdown>
+      <script type="text/template"> 
+        # Notice any difference in your project?
+        ## No?
 
-That's because the jQuery library on its own doesn't DO anything, it simply gives you the tools to do something. What we do is up to us.
+        That's because the jQuery library on its own doesn't DO anything, it simply gives you the tools to do something. What we do is up to us.
 
-Now that jQuery is on the page we can use the `$();` function which is the real magic of jQuery.
+        Now that jQuery is on the page we can use the `$();` function which is the real magic of jQuery.
 
-A popular use for jQuery is to target an item on the page and add or change the behavior of that item.
-        </script>
-</section>
-        <section class="slide" data-markdown>
-  <script type="text/template"> 
+        A popular use for jQuery is to target an item on the page and add or change the behavior of that item.
+      </script>
+    </section>
+    <section class="slide" data-markdown>
+      <script type="text/template"> 
 # How to select an item with $(); 
 
 The ```$();``` function takes a single parameter:  A string containing either a CSS selector or HTML element indicating what item(s) on the page to select.
@@ -1190,8 +1248,8 @@ $("#rotator .slide:first");
 The HTML items that match the selector are added into something called the **wrapped set**.  This is a special grouping of items that jQuery uses to know what items to alter or add behavior to.
 
 When you run a jQuery **method**, only the items in the **wrapped set** will be altered or affected.
-        </script>
-</section>
+      </script>
+    </section>
 
         <section class="slide"> 
             <h1> jQuery Methods </h1>
@@ -1208,11 +1266,11 @@ When you run a jQuery **method**, only the items in the **wrapped set** will be 
                 </li>
                 <li>the <code>.addClass();</code> method allows you to add a CSS class to the elements in the wrapped set.</li>
             </ul>
-        </script>
-</section>
+      </script>
+    </section>
        
-        <section class="slide" data-markdown>
-  <script type="text/template"> 
+    <section class="slide" data-markdown>
+      <script type="text/template"> 
 # Timing
 
 The browser downloads all web pages from top to bottom and when it see any JavaScript, it runs it.  Right then and there.  So if you add this:
@@ -1226,8 +1284,8 @@ before you add this:
 <p class="highlight">This is an important highlighted paragraph</p>
 ```
 The JavaScript code will run BEFORE the browser sees the paragraph tag.  jQuery won't be able to match the element and won't change the background colour to yellow!
-        </script>
-</section>
+      </script>
+    </section>
 
         <section class="slide"> 
             <h1>Enter Document Ready</h1>
@@ -1241,11 +1299,11 @@ The JavaScript code will run BEFORE the browser sees the paragraph tag.  jQuery 
 </code></pre>
 
             <p>Document Ready is a little bit of a complex idea and has a lot of syntax to get used to. Just know that it's <strong>required</strong> to make jQuery code work. Read more about it <a href="http://learn.jquery.com/using-jquery-core/document-ready/">here</a>.</p>
-        </script>
-</section>
+      </script>
+    </section>
         
-        <section class="slide" data-markdown>
-  <script type="text/template">
+    <section class="slide" data-markdown>
+      <script type="text/template">
 #Comments!
 
 Just like HTML and CSS, you can also leave comments in JavaScript/jQuery.  You've already seen them throughout this presentation.  You may want to write notes to yourself (or others) to organize blocks of code or leave explanations. JavaScript will ignore comments and not execute them.
@@ -1265,8 +1323,8 @@ want to write a longer message */
 ```
 
 Multi-line comments are great for "hiding" large blocks of code so you can try something new without erasing your old code.
-        </script>
-</section>
+      </script>
+    </section>
         <section class="slide"> 
             <h1> Let's DO something already!!!</h1>
             <p>Go back to Sublime and <strong>index.html</strong>. Under the jQuery script tag, add another script tag to actually write your own jQuery code.</p>
@@ -1287,8 +1345,8 @@ Multi-line comments are great for "hiding" large blocks of code so you can try s
             <p>In the favorites section, there are 4 pictures of an adorable dog.</p>
             <img src="framework/img/workshop/Screen-Shot-1.png" alt="">
             <p>Let's have some fun with those!</p>
-        </script>
-</section>
+      </script>
+    </section>
         <section class="slide">
             <h1>CLASS EXERCISE</h1>
 
@@ -1308,10 +1366,10 @@ Multi-line comments are great for "hiding" large blocks of code so you can try s
             <div class="delayed">
 <pre><code>$(".fav-img");</code></pre>
             </div>
-        </script>
-</section>
-        <section class="slide" data-markdown>
-  <script type="text/template">
+      </script>
+    </section>
+    <section class="slide" data-markdown>
+      <script type="text/template">
 # Class Exercise
 
 Let's change the size of the image using the `.width()` jQuery method. You can pass a size argument into the parentheses. Update your `.fav-img` object by using **dot notation** to apply the `.width()` method.
@@ -1327,8 +1385,8 @@ Save the file in Sublime, go to Chrome and refresh the page.  If you've done it 
 
         </script>
 </section>
-        <section class="slide" data-markdown>
-  <script type="text/template">
+    <section class="slide" data-markdown>
+      <script type="text/template">
 # Class Exercise
 What about BIGGER?  Pass in a new argument and choose a larger number.
 ```javascript
@@ -1342,8 +1400,8 @@ Your page should look something like this:
 
         </script>
 </section>
-        <section class="slide" data-markdown>
-  <script type="text/template">
+    <section class="slide" data-markdown>
+      <script type="text/template">
 #Click Events
 
 Now you've seen that you can set the width of an element with jQuery but we could use CSS to do that.  
@@ -1382,8 +1440,8 @@ We'll be going through an example together but you can also view the documentati
         </script>
 </section>
 
-        <section class="slide" data-markdown>
-  <script type="text/template">
+    <section class="slide" data-markdown>
+      <script type="text/template">
 #Testing with `console.log();`
 
 Let's test the click event and make sure we've selected the correct object.  Remember `console.log()`?  This method if very handy for testing and debugging. 
@@ -1402,8 +1460,8 @@ Refresh your page, open the console on your page and click an image.  You should
         </script>
 </section>
 
-        <section class="slide" data-markdown>
-  <script type="text/template">
+    <section class="slide" data-markdown>
+      <script type="text/template">
 #Click & Hide
 
 Now that we know the click event works, you can delete the `console.log` test or comment it out. Next, let's make the click event hide the picture. Use `$(this)` as the selector (more on this soon).  
@@ -1422,8 +1480,8 @@ Let's add this to our project and **inspect the element** to see how jQuery adds
         </script>
 </section>
 
-        <section class="slide" data-markdown>
-  <script type="text/template">
+    <section class="slide" data-markdown>
+      <script type="text/template">
 #Click & Hide: Adding parameters
 
 The `hide()` **method** also accepts a **parameter** for how long it should take for this effect to to occur.  Add a number, in milliseconds, in the parentheses.
@@ -1441,8 +1499,8 @@ In jQuery, any time you can provide a duration to an animation, you can either u
 Add it to your project to see it in action.  Try experimenting with different numbers or use the keywords.
         </script>
 </section>
-        <section class="slide" data-markdown>
-  <script type="text/template">
+    <section class="slide" data-markdown>
+      <script type="text/template">
 #Click & Chain events
 
 What if we just want to hide it for a bit, then show it again?  We can by **chaining** our methods.
@@ -1463,8 +1521,8 @@ $(".fav-img").click(function(){
 Let's add it to our project and see what happens.
         </script>
 </section>
-        <section class="slide" data-markdown>
-  <script type="text/template">
+    <section class="slide" data-markdown>
+      <script type="text/template">
 # What the heck is ```$(this)```?!?!
 
 Why have we been using `$(this)` as a selector for the previous exercises? What is it and what does it do?  
@@ -1495,8 +1553,8 @@ $(".fav-img").click(function(){
         </script>
 </section>
 
-        <section class="slide" data-markdown>
-  <script type="text/template">
+    <section class="slide" data-markdown>
+      <script type="text/template">
 #Exercise: Active Menu
 
 Let's use the jQuery `click()`, `addClass()` and `removeClass()` methods to create an `.active` class to style the menu item differently when clicked.  Here are the instructions  we'll create with jQuery:
