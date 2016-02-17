@@ -98,6 +98,9 @@ p {
     margin-top: 10px;
   }
 }
+iframe {
+  margin-top: 15px;
+}
 .cursive {
   font-family: $cursive;
   color: $llc-pink;
@@ -419,6 +422,15 @@ a.highlight {
   margin-bottom: -25px;
   text-transform: uppercase;
   font-weight: bold;
+}
+p {
+  textarea.snippet {
+    margin-top: -15px;
+    margin-bottom: -10px;
+  }
+  .edit {
+    margin-top: -34px;
+  }
 }
 textarea.snippet {
   width: 100%;

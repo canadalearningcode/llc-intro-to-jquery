@@ -2,7 +2,7 @@
 
 ##Intro to jQuery
 
-A full day introductory to jQuery workshop.
+A full day introductory to jQuery workshop. Students should have basic understanding of HTML & CSS.
 
 Created by [Arron Gibson](https://github.com/infn8/) & [Christina Truong](http://twitter.com/christinatruong) for Ladies Learning Code.
 

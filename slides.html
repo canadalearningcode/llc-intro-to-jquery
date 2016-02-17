@@ -82,22 +82,12 @@
       </script>
     </section>
     
-    <!-- <section class="slide" data-markdown>
+    <section class="slide title" data-markdown>
       <script type="text/template">
-        # Getting Started
-
-        You will need:
-
-        1. **[Sublime Text](http://www.sublimetext.com)** - a text editor with colour highlighting and other helpful features. If you are unable to install Sublime Text, try installing: [Notepad++](http://notepad-plus-plus.org/) (Windows), [Atom](https://atom.io/) (Mac) or [Text Wrangler](http://www.barebones.com/products/textwrangler/) (Mac).
-
-        1. **[Google Chrome](https://www.google.com/intl/en-CA/chrome/browser/)** - Choose a modern web browser that supports current web standards and has good development tools. To set Chrome as your default browser, follow [these instructions](https://support.google.com/chrome/answer/95417?hl=en). Visit [browsehappy.com](http://browsehappy.com) for more info about modern browsers.
-
-        1. A sense of adventure!!!
-            
-        **Bonus:** One of the great things about Sublime Text it that you can add extra functionality to it with *plugins*. [Go here](https://github.com/infn8/LLC-Intro-To-jQuery/blob/master/sublime-text-setup.md) to learn more about adding some cool functionality to your Sublime Text editor.
+        # Part One
+        ## Programming Basics
       </script>
-    </section> -->
-    
+    </section>    
     
     <section class="slide basic-web-page" data-markdown>
       <script type="text/template">
@@ -437,7 +427,7 @@ var fails = 'This string's value is not going to work!';
       <script type="text/template">
         # Variable Types: Strings and Quotes
 
-        There's two ways to fix it.  
+        There are two ways to fix it.  
 
         Use double quotes!
         ```javascript
@@ -542,15 +532,15 @@ var fails = 'This string's value is not going to work!';
         # Exercise: Create a JavaScript Program! (10-15 mins)
 
         Using variables & arithmetic operators, calculate how many seconds there are in a day.
+        
+        (You can choose your own variable names. Just make sure to adhere to best practices.)<!-- .element: class="note" -->
 
-        1. Declare variables for: `secondsPerMinute`, `minutesPerHour` and `hoursPerDay`.  
+        1. Declare variables & values for: 
+          * `secondsPerMinute` 
+          * `minutesPerHour`
+          * `hoursPerDay`
         1. Declare a `secondsPerDay` variable and use arithmetic operators to calculate the value.
-
-        Feel free to use your own variable names. Just make sure to adhere to best practices.
-
-        **Bonus!** Use concatenation to output "There are x seconds per day."
-
-        (Advance to the next slide to see the solution but only if you're stuck! Talk to your mentors and neighbors first.)<!-- .element: class="note" -->
+        1. **Bonus!** Use concatenation to output "There are x seconds per day."
       </script>
     </section>
     
@@ -586,12 +576,16 @@ var fails = 'This string's value is not going to work!';
       <script type="text/template">
         # Variable Types: Booleans
 
-        Variables that only contain a `true` or `false` value are called **booleans**
+        Variables that only contain a `true` or `false` value are called **booleans**.  You can set values to true or false.
         
         ```javascript
         var isTenGreaterThanZero = true;
         var isTwoLessThanOne = false;
         ```
+        
+        Values can also be returned as true or false.  
+        
+        > Try typing `2 > 4` in the console.  What value gets returned?
       </script>
     </section>
     
@@ -682,7 +676,7 @@ var fails = 'This string's value is not going to work!';
       <script type="text/template">
         # Accessing an Object
         
-        Since objects hold multiple values, it can't be accessed just by using the variable name. Object values are accessed using **dot notation**. 
+        Since objects hold multiple values, it can't be accessed by using the variable name. Object values are accessed using **dot notation**. 
         
         To access the value for the `drinkType` property, it would look like this:
 
@@ -692,6 +686,8 @@ var fails = 'This string's value is not going to work!';
           milk: "almond",
           flavor: "caramel"
         }
+        ```
+        ```
         coffeeOrder.drinkType
         ```
         
@@ -713,7 +709,7 @@ var fails = 'This string's value is not going to work!';
         }
         ```
         
-        > How would you access the value for `milk` and `flavor`?
+        > How would you access the value for `milk` and `flavor`? Try it out in the console.
       </script>
     </section>
     
@@ -775,9 +771,9 @@ var fails = 'This string's value is not going to work!';
       <script type="text/template">
         # Make your own functions!
 
-        You can create your own functions that can contain any number of instructions that you need, including other functions. Use the `function` keyword to declare a new function.
-
-        Let's look at this example: 
+        You can create your own functions that can contain any number of instructions that you need, including other functions. 
+        
+        Use the `function` keyword to declare a new function.
 
         ```javascript
         function sayAnything(){
@@ -842,6 +838,23 @@ var fails = 'This string's value is not going to work!';
         It's library of functions/methods used to simplify your program. You can download it and use in your projects.  There's a lot more to JavaScript but this intro will help to get up and running with jQuery!<!-- .element: class="delayed" -->
       </script>
     </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Shortcut: The Dollar Sign
+
+        If jQuery is the only JavaScript library you are using in your project, it is convention to use the `$` shortcut. (And it's less typing!)
+
+        ```javascript
+        jQuery();
+        
+        // same as 
+        
+        $();
+
+        ```
+      </script>
+    </section>
 
     <section class="slide centered">
       <img src="http://33.media.tumblr.com/2466ab981143fb18653f8f09bce061c7/tumblr_n982qbvyFQ1s5lf2ro1_400.gif" alt="">     
@@ -849,14 +862,16 @@ var fails = 'This string's value is not going to work!';
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #HTML, CSS & JavaScript/jQuery
+        #HTML, CSS & JavaScript
         
-        So far we've been using the console tool to run the JavaScript commands but in web projects, browsers need HTML & CSS to display the *content* and *style*.
+        So far we've been using the console tool to practice running JavaScript commands.
+        
+        In web based projects, browsers need HTML & CSS to display the *content* and *style*.
 
       </script>
     </section>
     
-    <section class="slide" data-markdown>
+    <section class="slide title" data-markdown>
       <script type="text/template">
         #HTML & CSS
         ##Overview
@@ -888,10 +903,10 @@ var fails = 'This string's value is not going to work!';
         
         ##Links
         ```xml
-        <a href="http://ladieslearningcode.com">ladieslearningcode.com</a>
+        <a href="http://ladieslearningcode.com">Ladies Learning Code</a>
         ```
         <div class="example">
-            <a href="http://ladieslearningcode.com">ladieslearningcode.com</a> 
+            <a href="http://ladieslearningcode.com">Ladies Learning Code</a> 
         </div>
         
         ##Images
@@ -901,21 +916,6 @@ var fails = 'This string's value is not going to work!';
         <img src="http://www.fillmurray.com/300/300" alt="Placeholder Image">
       </script>
     </section>
-
-    <!-- <section class="slide" data-markdown>
-      <script type="text/template">
-        # HTML tags & the browser
-        
-        By placing these items together on a page we get something that looks like this in the browser:
-        
-        <div class="example">
-          <p>Paragraph.</p>
-          <p>Another paragraph.</p>
-          <a href="http://ladieslearningcode.com">ladieslearningcode.com</a> 
-          <p><img src="http://www.fillmurray.com/300/300" alt="Placeholder Image"></p>
-        </div>
-      </script>
-    </section> -->
 
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -949,286 +949,323 @@ var fails = 'This string's value is not going to work!';
       </script>
     </section> 
 
-    <section class="slide">
-      <h1>CSS selectors: Element selector</h1>
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #CSS: Element selector
+        There are many different ways to select HTML elements. 
+        To select `any` HTML tag, use just the tag `name`, without the angled brackets.
       
-      <p>There are many different ways to select HTML elements.</p> 
-      <p>To select <em>any</em> HTML tag, use just the tag <em>name</em>, without the angled brackets.</p>
-      
-    <textarea class="snippet" data-subject="#element">div {
-    color: red;
-    }</textarea>
+<textarea class="snippet" data-subject="#element">div {
+  color: red;
+}</textarea>
         <aside class="example" id="#element">
-          <div>Selects all div elements.</div>
+          <div>This is a div.</div>
           <div>Another div.</div>
           <p>Paragraph element.</p>
         </aside>
+      </script>
+    </section> 
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #CSS: class selector
+        
+        For classes, an `attribute` must be added to the HTML and denoted by a leading period in the CSS.
+        
+        ```xml
+        <div class="special">Select ANY element with the "special" class.</div>
+        ```
+<textarea class="snippet" data-subject="#class">.special {
+  color: blue;
+}</textarea>
+        <div class="example" id="#class">
+          <div class="special">Select ANY element with the "special" class.</div>
+        </div>
+      </script>
     </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
-      <h1>CSS selectors: class selector</h1>
-      <p>For classes, an <em>attribute</em> must be added to the HTML and denoted by a leading period in the CSS.</p>
-      
-      ```xml
-      <div class="special">Select ANY element with the "special" class.</div>
-      ```
-      <textarea class="snippet" data-subject="#class">.special {
-    color: blue;
-    }</textarea>
-      <div class="example" id="#class">
-        <div class="special">Select ANY element with the "special" class.</div>
-      </div>
-      
-      <p>For an id, the attribute is also added to the HTML but is denoted by a leading number symbol. Note that ids can only be used <strong>once</strong> per page.</p>
-      <pre class="xml"><code><div id="special">Select ANY element with this id.</div></code></pre>
-      <textarea class="snippet" data-subject="#id">#special {
-    color: green;
-    }</textarea>
-      <div class="example" id="#id">
+        #CSS: ID selector
+        
+        For an `id`, the attribute is also added to the HTML but is denoted by a leading number symbol. Note that an `id` can only be used <strong>once</strong> per page.
+        
+        ```xml
+        <div id="special">Select ANY element with this id.</div>
+        ```
+        
+<textarea class="snippet" data-subject="#id">#special {
+  color: green;
+}</textarea>
+        <div class="example" id="#id">
           <div id="special">Select ANY element with this id.</div>
-      </div>
-      <div class="presenter-notes">
-          <p>Change the values with the students to give them a small hands-on exercise.</p>
-      </div>
-    </script>
+        </div>
+      </script>
     </section>
-
     
     <section class="slide title" data-markdown>
       <script type="text/template">
-        #Guess what? 
-        ##You already know how to use jQuery.
+        # Selecting elements<br> in jQuery
       </script>
     </section>
-
+    
     <section class="slide" data-markdown>
       <script type="text/template">
-# Using jQuery
-                    
-You know how to use jQuery because you know how to select **HTML elements** with **CSS selectors**.
-
-```css
-.menu-item { color: blue; }
-/*   |        |      |
-     |        |      └ The value of the CSS property.
-     |        └ The CSS property. 
-     └ HTML elements with a class of 'menu-item' are selected.   
-*/
-```
-
-That same code in jQuery is done like this:
-
-```javascript
-jQuery('.menu-item').css('color', 'blue');
-/* ^         ^        ^     ^        ^
-   |         |        |     |        └ The second parameter sets the css value.  
-   |         |        |     |   
-   |         |        |     └ The first parameter sets the css property.
-   |         |        |     
-   |         |        └ The jQuery 'css' method is called and will change  
-   |         |          the css of the element selected in the previous step.
-   |         |
-   |         └ The argument sent to the jQuery function is a 'string' value
-   |           that takes the form of a css selector.
-   | 
-   └ The jQuery function. This is super important because this makes everything else work.
-*/
-```
+        #Selecting elements
+        
+        A common use for jQuery is selecting an HTML object and applying an effect or action to it.
+        
+        The `$()` function takes a single value. 
+        
+        ```
+        $("p"); // selects all paragraphs
+        ```
+        
+        To select an element in jQuery, use the same syntax as CSS! The only difference is the selector is contained in quotes because it is a string.
       </script>
     </section>
-    <section class="slide" data-markdown>
-      <script type="text/template"> 
-# Shortcut: The Dollar Sign
-
-```javascript
-var $ = jQuery;
-```
-Anytime you want to write ```jQuery```, just use ```$``` instead.  It saves time and is the convention in most cases.
-
-```javascript
-jQuery('.myClass');
-```
-is the same as:
-```
-$('.myClass');
-```
-That's what we'll be doing going forward.
-      </script>
-    </section>
+    
     <section class="slide" data-markdown>
       <script type="text/template">
-# What else can jQuery do?
+        #Selecting elements
+        
+        To select an HTML element, use the tag name.
+        ```
+        $("a");
+        ```
 
-* Animate items
-* Perform interactions with your users
-* Create rich user experiences with components like:
-    * Tabs
-    * Accordions
-    * Draggable & droppable items
-    * Image Rotators
-* Serve a random background image each time a page loads.
-* Create an 'infinite scroll' effect by loading more items when a user reaches the bottom of the page
-* Create complex layouts that are not possible with CSS alone.
-* Detect the capabilities of a browser before serving up functionality like CSS Animations.
+        To select a class name, use the leading period, just like CSS.
+        ```
+        $(".about");
+        ```            
+        To select an id name, use the number/hash symbol, just like CSS.
+        ```
+        $("#about");
+        ```
+        
+        > What element will be selected in this example?
+        > `$(".about p");`
+      </script>
+    </section>
+    
+    
+    
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # What can jQuery do?
 
-The library contains many, many built-in functions and methods. View the documentation here: [http://api.jquery.com](http://api.jquery.com).
+        * animate items
+        * perform interactions with your users
+        * create rich user experiences with components like draggable & droppable items and image rotators
+        * and much more!
+
+        The library contains many, many built-in functions and methods. View the documentation here: [http://api.jquery.com](http://api.jquery.com).
       </script>
     </section>
 
-        <section class="slide">
-            <h1>jQuery Examples:</h1>
+    <section class="slide">
+      <h1>jQuery Examples</h1>
 
-            <p>Here is an example of a single animation and a <em>chained</em> animation (they run one after another).</p>
+      <p>Here is an example of a single animation and a <em>chained</em> animation.<br>
+      <span class="note">In the Results tab, hover over the example to show the &quot;RERUN&quot; button.</p>
 
-            <p data-height="268" data-theme-id="0" data-slug-hash="dcmxw" data-default-tab="result" data-user="learningcode" class='codepen'>See the Pen <a href='http://codepen.io/learningcode/pen/dcmxw/'>jQuery Animation Example</a> by Ladies Learning Code (<a href='http://codepen.io/learningcode'>@learningcode</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-            <script async src="http://codepen.io/assets/embed/ei.js"></script>
+      <p data-height="268" data-theme-id="0" data-slug-hash="dcmxw" data-default-tab="result" data-user="learningcode" class='codepen'>See the Pen <a href='http://codepen.io/learningcode/pen/dcmxw/'>jQuery Animation Example</a> by Ladies Learning Code (<a href='http://codepen.io/learningcode'>@learningcode</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+      <script async src="http://codepen.io/assets/embed/ei.js"></script>
+        
+      
+      <br>
+      <img src="framework/img/workshop/codepen.png" width="400" class="left">
+      <p class="note">CodePen is basically a “sandbox” to try out code without switching back and forth between a text editor and browser. Click the "Edit on Codepen" link to try out the code. When you save your pen, a unique URL is created for you OR sign up for a (free) account to save your pens.</p>
+      <p class="note">When editing jQuery in Codepen, select the gear icon in the JS box and it will show you if/what library it's using.</p>
+    </section>
+    
+    <section class="slide">
+      <h1>jQuery Examples</h1>
 
-            <p>Have a look at the HTML, CSS, &amp; JS tabs as well as the Result tab.</p>
-            <p>You can rerun the animations, when in the Results tab, by hovering over the example and clicking the &quot;RERUN&quot; button in the bottom right corner.</p>
+      <p>Each button below has been given a different jQuery effect when clicked. Give each a try!</p>
 
-            <div class="presenter-notes">
-                <p>Get the learners to change a couple values so they can see how things change but just give a high level overview about the concepts. They will be discussed in more detail in the next few slides.</p>
-            </div>
-      </script>
+      <p data-height="350" data-theme-id="0" data-slug-hash="sgaEh" data-default-tab="result" data-user="learningcode" class='codepen'>See the Pen <a href='http://codepen.io/learningcode/pen/sgaEh/'>jQuery Event and Method Examples</a> by Ladies Learning Code (<a href='http://codepen.io/learningcode'>@learningcode</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+      <script async src="http://codepen.io/assets/embed/ei.js"></script>
+    </section>
+    
+    <section class="slide">
+      <h1>jQuery Examples</h1>
+
+      <p>You can even <em>extend</em> the capabilities of jQuery with <strong>plugins</strong> like the jQuery UI plugin used below. You can drag and re-order the items using the jQuery UI sortable plugin.</p>
+      
+      <p data-height="268" data-theme-id="0" data-slug-hash="fAmbJ" data-default-tab="result" data-user="learningcode" class='codepen'>See the Pen <a href='http://codepen.io/learningcode/pen/fAmbJ/'>jQuery UI Draggable Sortable Example</a> by Ladies Learning Code (<a href='http://codepen.io/learningcode'>@learningcode</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+      <script async src="http://codepen.io/assets/embed/ei.js"></script>
     </section>
         
-        <section class="slide">
-            <h1>jQuery Examples</h1>
-
-            <p>Each button below has been given different instructions to follow when clicked.</p>
-
-            <p data-height="425" data-theme-id="0" data-slug-hash="sgaEh" data-default-tab="result" data-user="learningcode" class='codepen'>See the Pen <a href='http://codepen.io/learningcode/pen/sgaEh/'>jQuery Event and Method Examples</a> by Ladies Learning Code (<a href='http://codepen.io/learningcode'>@learningcode</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-            <script async src="http://codepen.io/assets/embed/ei.js"></script>
-
-            <p>The <strong>HTML</strong> consists of several <code><button></code> elements, to click and add the jQuery action to.  The <code><div class="stage"></div></code> is being used as the <em>selector</em>. The <code><div class="player"></div></code> is the square.</p>
-            <p>The <strong>CSS</strong> sets the colour and size of the squares and floats them so they sit side by side.
-            </p>
-            <p>The jQuery is where all the cool stuff is happening.</p>
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #Write some jQuery!
+        ##Setting up a project
       </script>
     </section>
     
-        <section class="slide">
-            <h1>jQuery Examples</h1>
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Setting up your project files
 
-            <p>You can even <em>extend</em> the capabilities of jQuery with <strong>plugins</strong> like the jQuery UI plugin used below. You can drag and re-order the items using the jQuery UI sortable plugin.</p>
-            
-            <p data-height="268" data-theme-id="0" data-slug-hash="fAmbJ" data-default-tab="result" data-user="learningcode" class='codepen'>See the Pen <a href='http://codepen.io/learningcode/pen/fAmbJ/'>jQuery UI Draggable Sortable Example</a> by Ladies Learning Code (<a href='http://codepen.io/learningcode'>@learningcode</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-            <script async src="http://codepen.io/assets/embed/ei.js"></script>
-
-            <p>When editing a Codepen, you can select the gear icon in the JS box and it will show you if/what library it's using.  In the example above, you can see it's using jQuery & jQuery UI.</p>
-
-            <img src="framework/img/workshop/codepen.png">
-      </script>
-    </section>
+        Inside of the folder you downloaded today, there are many folders that contain different files.
         
-        <section class="slide title" data-markdown>
-            #Let's write some jQuery!
-      </script>
-    </section>
+        ```xml
+        llc-intro-to-jquery-master
+          |-- framework // Contains files for this slide presentation. Do not edit!
+          |-- project // Contains project files for this workshop.
+          |-- slides.html // This is the file you are viewing right now!
+        ```
 
-    <section class="slide" data-markdown>
-      <script type="text/template">
-#Setting up our work flow
-
-For the rest of the day, you'll be working with the files included in the <strong>project</strong> folder.  Let's take a moment to set up the work flow.
-Inside of the folder you downloaded today (**llc-intro-to-jquery-master**), there are many folders and files that contain different content.
-
-    llc-intro-to-jquery-master
-        |-- framework // Contains files needed for slide presentation. Do not edit!
-        |-- project // Contains files for today's workshop.
-            |-- css // Only CSS files here.
-            |-- final // A complete example of today's project for your reference.
-            |-- images // Images for your project. You can also add your images here.
-            |-- js // All your js files go here.
-            |-- index.html // The homepage of your site.
-        |-- index.html // This is the file you're viewing right now (slides)!
-      </script>
-    </section>
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-#Setting up our work flow
-
-Let's open the project files in the browser and text editor.
-
-* Open Sublime Text, then go to **File > Open**.
-* Navigate to the **project** folder (inside the folder you downloaded with today's slides).
-* With the entire folder selected, select **Open**.
-* The folder will appear in the side bar. Double click on **index.html** in the sidebar to open it in the editor.
-* Right click or two finger tap in Sublime and select Open in Browser. This will open the HTML file in your default browser.
-    * If Chrome is not your default browser, go to your Window/Finder and navigate to the **project** folder, right-click/two-finger tap on **index.html** and choose **Open With > Chrome**
-
-You should see this in Sublime Text:
-
-![open project](framework/img/workshop/open-project.png)
+        Open the `project` folder in the text editor to edit your project.  
+        Go to **File** > ** Add Project Folder**. A popup will appear.
+        
+        ![](framework/img/workshop/editor-add-project-1.jpg)
+        
+        * navigate to the **llc-intro-to-jquery-master** folder
+        * select the **project** folder & click **Open**
+        
+        The files will now appear in the sidebar.
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-            <h1>Using jQuery</h1>
-            <p>To use jQuery on your HTML page, you'll have to link to the jQuery file.  There are two ways to do that.</p>
-
-            <p>1. <strong>Include the jQuery files with your project files:</strong></p>
-
-            <ul>
-                <li><a href="http://jquery.com/download/">Download the latest version of jQuery</a> and use the latest, compressed version. </li>
-                <li>Save it within your projects files.  It’s common to create a separate <strong>js</strong> folder for all JavaScript files for organization (similar to how there are separate images and css folders.)</li>
-                <li>Link it to your HTML document using a script tag.  The <code>src</code> should point to the path to where the file is saved in your project’s folder structure.<br>
-                Your project folder already has the jQuery file included so no need to download anything today.
-                </li>
-            </ul>
-
-            <!-- <pre><code class="xml">< cript src="js/jquery-1.11.1.min.js"></script></code></pre> -->
-
-            <p><strong>Important</strong>:  Unlike CSS, which always has to be included within the <code><head&gt;</code> tags, JavaScript can be included pretty much anywhere on the page, in the <code><head&gt;</code> or the <code><body&gt;</code>.  Often, it is included just before the closing <code></body&gt;</code> to allow the page document to load first.</p>
-
-            <p>2. <strong>Use a CDN:</strong></p>
-            <p>CDNs can offer a performance benefit by hosting jQuery on servers spread across the globe.</p>
-
-            <p>To use the jQuery CDN (also listed on the download page), reference the file directly from the hosted file, rather than pointed to a file in your directory. Be sure to include the "http://" when viewing the site locally (on your computer).</p>
-            <pre><code class="xml"><script src="http://code.jquery.com/jquery-1.11.0.min.js"></script></code></pre>
-
-            <p>Insert it into your <strong>index.html</strong> page now.</p>
-
-            <div class="presenter-notes">
-                <p>The examples in jQuery's Learning Center uses the script at the bottom so use it this way to be consistent.</p>
-            </div> 
+        #Setting up your project files
+        
+        Your project folder structure will look like this:
+        
+        ```html
+        |-- project
+          |-- css // CSS files.
+          |-- final // A complete example of today's project for reference.
+          |-- images // Images files. You can also add your own images here.
+          |-- js // Javascript files.
+          |-- index.html // The homepage of your site.
+        ```
+        
+        Open **index.html** in your browser.
       </script>
     </section>
     
     <section class="slide" data-markdown>
-      <!-- <script type="text/template">  -->
-            <h1>What did we just do?</h1>
+      <script type="text/template">
+        #Getting to know Atom
+        
+        Having a good text editor and learning how to use it to its full potential will help your work flow. Today, let's update the text wrapping option to make it easier to read long blocks of code and text.
+        
+        Go to **Preferences** to open the customization options.
 
-            <p>Let's have a look.</p>
-<!-- <pre><code class="javascript"><s cript src="js/jquery-1.11.1.min.js"&gt;<&#47;&#115;cript&gt; -->
-</code></pre>
-<pre><code class="javascript">/* |    |                 |              └ The closing 'script' tag.
-   |    |                 └ The location of the JS file.
-   |    └ The 'src' attribute of the 'script' tag expects a file location.
-   |
-   └ The 'script' tag.  In HTML this tells the document that it's about to get JS commands.
-*/
-</code></pre>
-            <p>Now that we've linked the jQuery file, we can access all the commands written in that document and be able to access all of the features available.</p>
+        ![](framework/img/workshop/atom-preferences.jpg)<!-- .element: width="70%" -->
 
-            <p>Great! Now, open <strong>index.html</strong> in Chrome, or refresh the page if you have it open already and see what jQuery does when you include it in an HTML file.</p>
-      <!-- </script> -->
-    </section>
-    <section class="slide" data-markdown>
-      <script type="text/template"> 
-        # Notice any difference in your project?
-        ## No?
+        The **Settings** tab will show by default. Scroll down to **Soft Wrap** option.
 
-        That's because the jQuery library on its own doesn't DO anything, it simply gives you the tools to do something. What we do is up to us.
-
-        Now that jQuery is on the page we can use the `$();` function which is the real magic of jQuery.
-
-        A popular use for jQuery is to target an item on the page and add or change the behavior of that item.
+        ![](framework/img/workshop/atom-settings.jpg)<!-- .element: width="70%" -->
+          
+        Make sure the **Soft Wrap** option is checked.
+        
+        ![](framework/img/workshop/atom-soft-wrap.jpg)<!-- .element: width="70%" -->
+        
+        ---
+        ###Resources
+        
+        *   [Atom documentation](https://atom.io/docs)
+        *   [Atom Shortcuts cheat sheet](https://bugsnag.com/blog/atom-editor-cheat-sheet)
+        *   [Customizing Atom](https://atom.io/docs/v0.61.0/customizing-atom)
+        *   [Themes](https://atom.io/themes) for Atom
+        *   [Snippets](https://github.com/atom/snippets) - create your own code snippet shortcuts
       </script>
     </section>
+
+    <!-- <section class="slide" data-markdown>
+      <script type="text/template">
+        #Setting up your work flow
+
+        Let's open the project files in the browser and text editor.
+
+        * Open Sublime Text, then go to **File > Open**.
+        * Navigate to the **project** folder (inside the folder you downloaded with today's slides).
+        * With the entire folder selected, select **Open**.
+        * The folder will appear in the side bar. Double click on **index.html** in the sidebar to open it in the editor.
+        * Right click or two finger tap in Sublime and select Open in Browser. This will open the HTML file in your default browser.
+            * If Chrome is not your default browser, go to your Window/Finder and navigate to the **project** folder, right-click/two-finger tap on **index.html** and choose **Open With > Chrome**
+
+        You should see this in Sublime Text:
+
+        ![open project](framework/img/workshop/open-project.png)
+      </script>
+    </section> -->
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Using jQuery, Option 1: Download the file
+
+        1. [Download](http://jquery.com/download/) the latest version and use the *compressed* file.
+        1. Save the file within your projects files (i.e. in a "js" folder).
+        1. Link it to your HTML document using a <code>&lt;script&gt;</code> tag.
+          * The `src` points to where the file is saved in your project folder.
+        1. JavaScript can be included anywhere on the page but often, it is included before the *closing* `</body>` tag to allow the page document to load first.
+
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    ... page content
+    ...
+    ...
+  &lt;script src=&quot;js/jquery-1.12.0.min.js&quot;&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </script>
+    </section>
+      
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Using jQuery, Option 2: Use a CDN
+
+        CDNs (Content Delivery Network) can offer a performance benefit by hosting jQuery on a web servers.
+
+        To use the jQuery CDN (also listed on the [download page](http://jquery.com/download/#using-jquery-with-a-cdn), reference the file directly from the *hosted file* in the `src`. 
+        
+        <pre><code>&lt;script src=&quot;//code.jquery.com/jquery-1.12.0.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+        
+        **Pro tip!** Be sure to include the `http://` when viewing the site locally (on your computer).
+        
+        <pre><code>&lt;script src=&quot;http://code.jquery.com/jquery-1.12.0.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Using jQuery
+        
+        Now that the jQuery file is linked, all of the features can be accessed. However, one more thing needs to be added.
+
+        ##Enter Document Ready
+
+        `$(document).ready()` is an **event**, it's when the browser has downloaded enough of the web page, to be able to match the elements selected in your jQuery code.
+
+        It only needs to be added once but all jQuery code *must* be contained within this code snippet. Read more about it [here](http://learn.jquery.com/using-jquery-core/document-ready/).
+        
+        ```
+        $(document).ready(function(){
+          // all jQuery code here
+        });
+        ```
+        
+        > Add this to your **index.html** file. Now you're ready to go!
+      </script>
+    </section>
+
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        # Part Two
+        ## Writing jQuery & Using Plugins
+      </script>
+    </section>
+      
     <section class="slide" data-markdown>
       <script type="text/template"> 
 # How to select an item with $(); 
@@ -1286,21 +1323,6 @@ before you add this:
 The JavaScript code will run BEFORE the browser sees the paragraph tag.  jQuery won't be able to match the element and won't change the background colour to yellow!
       </script>
     </section>
-
-        <section class="slide"> 
-            <h1>Enter Document Ready</h1>
-
-            <p><code>$( document ).ready()</code> is an <strong>event</strong>.  It’s a <em>point in time</em> when the browser has downloaded enough of the web page to see all the tags and will able to match the elements selected in your jQuery code.</p>
-            <p>Running that same code in the <strong>document ready</strong> event looks like this:</p>
-
-<pre><code>$(document).ready(function(){
-    $("p.highlight").css("background-color", "yellow");
-});
-</code></pre>
-
-            <p>Document Ready is a little bit of a complex idea and has a lot of syntax to get used to. Just know that it's <strong>required</strong> to make jQuery code work. Read more about it <a href="http://learn.jquery.com/using-jquery-core/document-ready/">here</a>.</p>
-      </script>
-    </section>
         
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -1328,19 +1350,12 @@ Multi-line comments are great for "hiding" large blocks of code so you can try s
         <section class="slide"> 
             <h1> Let's DO something already!!!</h1>
             <p>Go back to Sublime and <strong>index.html</strong>. Under the jQuery script tag, add another script tag to actually write your own jQuery code.</p>
-<!-- <pre><code class="xml"><script src="js/jquery-1.11.1.min.js"&gt;<&#47;&#115;cript&gt; -->
-<script&gt;
-    
-<&#47;&#115;cript&gt;
-</code></pre>
+<pre><code>&lt;script src=&quot;//code.jquery.com/jquery-1.12.0.min.js&quot;&gt;&lt;/script&gt;</code></pre>
             <p> Then add the <code>$( document ).ready()</code> like this:</p>
-<<pre><code class="xml"><scrip src="js/jquery-1.11.1.min.js"&gt;<&#47;&#115;cript&gt;
-<script&gt;
+<pre><code>&lt;script src=&quot;//code.jquery.com/jquery-1.12.0.min.js&quot;&gt;&lt;/script&gt;</code></pre>
     $(document).ready(function(){
         // Add all jQuery code here.
     });
-<&#47;&#115;cript&gt;
-</code></pre>
             
             <p>In the favorites section, there are 4 pictures of an adorable dog.</p>
             <img src="framework/img/workshop/Screen-Shot-1.png" alt="">
