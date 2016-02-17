@@ -569,6 +569,32 @@ var fails = 'This string's value is not going to work!';
         ```
       </script>
     </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Comments!
+
+        Just like HTML and CSS, you can also leave comments in JavaScript.
+        
+        ```
+        // This is how you leave a single line comment.
+
+        // You can write many single line comments.
+        // Just make sure to add the double slash
+        // for every new line.
+        ```
+
+        Here's another way to comment larger blocks of text.
+
+        ```javascript
+        /* This is how you leave
+        multi-line comments for when you
+        want to write a longer message */
+        ```
+
+        Multi-line comments are great for "hiding" large blocks of code so you can try something new without erasing your old code.
+      </script>
+    </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -858,7 +884,7 @@ var fails = 'This string's value is not going to work!';
       <img src="http://33.media.tumblr.com/2466ab981143fb18653f8f09bce061c7/tumblr_n982qbvyFQ1s5lf2ro1_400.gif" alt="">     
     </section>
 
-        <section class="slide" data-markdown>
+    <section class="slide" data-markdown>
       <script type="text/template">
         # What can jQuery do?
 
@@ -1089,14 +1115,7 @@ var fails = 'This string's value is not going to work!';
 
       </script>
     </section>
-    
-    <section class="slide title" data-markdown>
-      <script type="text/template">
-        #HTML & CSS
-        ##Overview
-      </script>
-    </section>
-    
+        
     <section class="slide" data-markdown>
       <script type="text/template">
         # HTML overview
@@ -1222,15 +1241,9 @@ var fails = 'This string's value is not going to work!';
       </script>
     </section>
     
-    <section class="slide title" data-markdown>
-      <script type="text/template">
-        # Selecting elements<br> in jQuery
-      </script>
-    </section>
-    
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Selecting elements
+        #Selecting elements in jQuery
         
         A common use for jQuery is selecting an HTML object and applying an effect or action to it.
         
@@ -1246,7 +1259,7 @@ var fails = 'This string's value is not going to work!';
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Selecting elements
+        #Selecting elements in jQuery
         
         To select an HTML element, use the tag name.
         ```
@@ -1268,275 +1281,252 @@ var fails = 'This string's value is not going to work!';
     </section>
       
     <section class="slide" data-markdown>
-      <script type="text/template"> 
-# How to select an item with $(); 
+      <script type="text/template">
+        # jQuery Methods
 
-The ```$();``` function takes a single parameter:  A string containing either a CSS selector or HTML element indicating what item(s) on the page to select.
+        In the next couple of exercises, we will be using these methods: 
 
-In the example below, this will select all list items, with a class of "even" in an any unordered list.
+        *   the `width()` method sets the width of an element, in pixels.
+        *   the `hide()` method will hide all the selected matched elements.
+        *   the `show()` method will show all the selected matched elements.
+        *   the `css()` method alters the look of the elements by *dynamically* adding CSS.
 
-```javascript
-$("ul li.even");
-```
-This will select the first item with a class of "slide" inside the item with an id of "rotator".
-```javascript
-$("#rotator .slide:first");
-```
+        ---
+        ###Resource
 
-The HTML items that match the selector are added into something called the **wrapped set**.  This is a special grouping of items that jQuery uses to know what items to alter or add behavior to.
-
-When you run a jQuery **method**, only the items in the **wrapped set** will be altered or affected.
+        jQuery documentation here: [api.jquery.com](http://api.jquery.com)
       </script>
     </section>
-
-        <section class="slide"> 
-            <h1> jQuery Methods </h1>
-            <p> The jQuery library comes with many many MANY different methods.  We won't be able to discuss all of them today but to see what methods are available, and how to use them, go to <a href="http://api.jquery.com">api.jquery.com</a>.</p>
-            <p>We will discuss a few methods here and a few more once we start making our image rotator.</p>
-            <ul>
-                <li>the <code>.hide();</code> method will hide all elements in the wrapped set.</li>
-                <li>the <code>.show();</code> method will show all elements in the wrapped set.</li>
-                <li>the <code>.css();</code> method alters the look of the elements in the wrapped set by passing two parameters.
-                    <ul>
-                        <li>The CSS property you want to edit</li>
-                        <li>and the new value of that property</li>
-                    </ul>
-                </li>
-                <li>the <code>.addClass();</code> method allows you to add a CSS class to the elements in the wrapped set.</li>
-            </ul>
-      </script>
-    </section>
-       
+           
     <section class="slide" data-markdown>
-      <script type="text/template"> 
-# Timing
+      <script type="text/template">
+        # HTML & jQuery
 
-The browser downloads all web pages from top to bottom and when it see any JavaScript, it runs it.  Right then and there.  So if you add this:
+        Let's make a change to the images in the sample project. 
+ 
+        ![](framework/img/workshop/exercise-fav-1.png) <!-- .element: width="50%" -->
 
-```javascript 
-$("p.highlight").css("background-color", "yellow");
-```
-before you add this:
+        The HTML for this section looks like this:
 
-```xml
-<p class="highlight">This is an important highlighted paragraph</p>
-```
-The JavaScript code will run BEFORE the browser sees the paragraph tag.  jQuery won't be able to match the element and won't change the background colour to yellow!
-      </script>
-    </section>
+        ```
+        <section id="favs">
+          <h1>My Favourite Things</h1>
+          <img src="images/puppy.jpg" alt="dog">
+          <img src="images/puppy.jpg" alt="dog">
+          <img src="images/puppy.jpg" alt="dog">
+        </section>
+        ```
         
-    <section class="slide" data-markdown>
-      <script type="text/template">
-#Comments!
-
-Just like HTML and CSS, you can also leave comments in JavaScript/jQuery.  You've already seen them throughout this presentation.  You may want to write notes to yourself (or others) to organize blocks of code or leave explanations. JavaScript will ignore comments and not execute them.
-
-    // This is how you leave a single line comment.
-
-    // You can write many single line comments.
-    // Just make sure to add the double slash
-    // for every new line.
-
-Here's another way to comment larger blocks of text.
-
-```javascript
-/* This is how you leave
-multi-line comments for when you
-want to write a longer message */
-```
-
-Multi-line comments are great for "hiding" large blocks of code so you can try something new without erasing your old code.
+        Just like CSS, there's a couple ways to select the elements.
+        
+        ```
+        $("img") // Will work but will target ALL images on the page.
+        $('#favs img') // Works better! Only targets images contained within id="favs".
+        ```
       </script>
     </section>
-        <section class="slide"> 
-            <h1> Let's DO something already!!!</h1>
-            <p>Go back to Sublime and <strong>index.html</strong>. Under the jQuery script tag, add another script tag to actually write your own jQuery code.</p>
-<pre><code>&lt;script src=&quot;//code.jquery.com/jquery-1.12.0.min.js&quot;&gt;&lt;/script&gt;</code></pre>
-            <p> Then add the <code>$( document ).ready()</code> like this:</p>
-<pre><code>&lt;script src=&quot;//code.jquery.com/jquery-1.12.0.min.js&quot;&gt;&lt;/script&gt;</code></pre>
-    $(document).ready(function(){
-        // Add all jQuery code here.
-    });
-            
-            <p>In the favorites section, there are 4 pictures of an adorable dog.</p>
-            <img src="framework/img/workshop/Screen-Shot-1.png" alt="">
-            <p>Let's have some fun with those!</p>
+
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise: `width()`
+
+        Let's change the size of the image using the `.width()` jQuery method. 
+
+        You can pass a size argument (number value) into the parentheses to set the width size. Using the dot notation syntax, append it to the selected images.
+
+        ```javascript
+        $(document).ready(function(){
+          $('#favs img').width(100);
+        });
+        ```
       </script>
     </section>
-        <section class="slide">
-            <h1>CLASS EXERCISE</h1>
 
-            <p>The HTML for the favorites section looks like this:</p>
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise: `width()`
 
-<pre class="xml"><code><section id="favourites" class="favourites container"&gt;
-    <h2&gt;My Favourite Things</h2&gt;
-    <h3&gt;Here are a few things I really love</h3&gt;
-    <img class="fav-img" src="images/puppy_rest.jpg"&gt;
-    <img class="fav-img" src="images/puppy_rest.jpg"&gt;
-    <img class="fav-img" src="images/puppy_rest.jpg"&gt;
-    <img class="fav-img" src="images/puppy_rest.jpg"&gt;
-</section&gt;
-</code></pre>
+        What about bigger?  Pass in a new argument and choose a larger number.
 
-            <p>How would we select those images with jQuery?</p>
-            <div class="delayed">
-<pre><code>$(".fav-img");</code></pre>
-            </div>
+        ```javascript
+        $(document).ready(function(){
+          $('#favs img').width(400);
+        });
+        ```
+
+        Now you've seen that you can set the width of an element with jQuery. But we could use CSS to do that!  
+
+        Let's try something CSS can't do. Make effects and interactions happen on a **click event**.
       </script>
     </section>
-    <section class="slide" data-markdown>
-      <script type="text/template">
-# Class Exercise
-
-Let's change the size of the image using the `.width()` jQuery method. You can pass a size argument into the parentheses. Update your `.fav-img` object by using **dot notation** to apply the `.width()` method.
-
-```javascript
-$(document).ready(function(){
-    $(".fav-img").width(100);
-});
-```
-Save the file in Sublime, go to Chrome and refresh the page.  If you've done it right it should look like this:
-
-![That's a Tiny Toller](framework/img/workshop/Screen-Shot-2.png)
-
-        </script>
-</section>
-    <section class="slide" data-markdown>
-      <script type="text/template">
-# Class Exercise
-What about BIGGER?  Pass in a new argument and choose a larger number.
-```javascript
-$(document).ready(function(){
-    $(".fav-img").width(400);
-});
-```
-Your page should look something like this:
-
-![That's a HUGE Toller](framework/img/workshop/Screen-Shot-3.png)
-
-        </script>
-</section>
-    <section class="slide" data-markdown>
-      <script type="text/template">
-#Click Events
-
-Now you've seen that you can set the width of an element with jQuery but we could use CSS to do that.  
-
-Let's try something only JavaScript could help us with, the **click event**.
-
-Like the document ready **event**, a click event is a moment in time when we want to trigger some code to run.  But instead of the browser running the event right away, it only runs when an item is actually clicked by the user.
-
-Adding a function to a **user triggered event** is called an **event listener**.  The code just sits around waiting and listening for the event to happen.  When someone finally clicks the item, it triggers the function to run. 
-
-We'll be going through an example together but you can also view the documentation here: [http://api.jquery.com/click/](http://api.jquery.com/click/)
-        </script>
-</section>
-
-        <section class="slide">
-            <h1>Click Events</h1>
-            <p>To add an event listener, select the target item just like anything else with jQuery.</p>
-<pre><code>$(".fav-img");
-</code></pre>
-
-            <p class="delayed">Then add the <code>.click()</code> method.</p>
-
-<pre class="delayed"><code>$(".fav-img").click();
-</code></pre>
-
-            <p class="delayed">Then pass a single parameter to the <code>click()</code> method. That parameter is itself a function. Add <code>function(){}</code> into the parentheses.</p>
-
-<pre class="delayed"><code>$(".fav-img").click(function(){});
-</code></pre>
-
-            <p class="delayed">Inside of that function, in between the curly braces <code>{}</code>, this is where we'll add the instructions for what to do when the image is clicked.</p>
-<pre class="delayed"><code>$(".fav-img").click(function(){
-    // The changes that occur when object is clicked.
-});
-</code></pre>
-        </script>
-</section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
-#Testing with `console.log();`
+        #Click Events
 
-Let's test the click event and make sure we've selected the correct object.  Remember `console.log()`?  This method if very handy for testing and debugging. 
+        Instead of the browser running an event right away, using a click event will make it trigger only when an item is actually clicked by the user.
 
-Testing the click even will let you know this step is working before you move onto the next step.
+        Adding a function to a **user triggered event** is called an **event listener**.  The code just sits around waiting and listening for the event to happen.
 
-```javascript
-$(".fav-img").click(function(){ 
-    console.log("It works!");
-});
-```
-
-Refresh your page, open the console on your page and click an image.  You should see the message you passed into the `console.log()` method like this:
-
-![console.log example](framework/img/workshop/console-log.gif)
-        </script>
-</section>
+        We'll be going through an example together but you can also view the documentation here: [http://api.jquery.com/click/](http://api.jquery.com/click/)
+      </script>
+    </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
-#Click & Hide
+        # Click Events
 
-Now that we know the click event works, you can delete the `console.log` test or comment it out. Next, let's make the click event hide the picture. Use `$(this)` as the selector (more on this soon).  
-Then add the `.hide()` method.
-```javascript
-$(".fav-img").click(function(){ 
-    //console.log("It works!");
-    $(this).hide();
-});
-```
-The code above will take the clicked image and *dynamically* add inline CSS to the HTML element.  It will add  `style="display:none;"` to the element to hide it, though the item is still in the HTML. 
+        First, select the target item.
+        
+        ```
+        $('#favs img')
+        ```
 
-Let's add this to our project and **inspect the element** to see how jQuery adds these changes. You should see something like the below screen shot in your console.
+        Then add the `.click()` method.
+        ```
+        $('#favs img').click();
+        ```
 
-![show hide console example](framework/img/workshop/console-show-hide.png)
-        </script>
-</section>
+        Now things will switch up a bit.  We'll have to pass a *function* into the parentheses,
+        `function(){}`.
+        ```
+        $('#favs img').click( function(){} );
+        ```
+
+         </script>
+    </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
-#Click & Hide: Adding parameters
+        # Click Events
 
-The `hide()` **method** also accepts a **parameter** for how long it should take for this effect to to occur.  Add a number, in milliseconds, in the parentheses.
+        Inside of that function, in between the curly brackets `{}`, add some space to add additional instructions. 
 
-```javascript
-$(".fav-img").click(function(){ 
-    $(this).hide(1000);
-});
-```
+        Whatever effect that should happen, only on click, goes here.
 
-This will make the act of hiding the image take 1000 milliseconds, or 1 second.
+        ```
+        $('#favs img').click(function(){
+          // The changes that occur when object is clicked.
+        });
+        ```
+      </script>
+    </section>
 
-In jQuery, any time you can provide a duration to an animation, you can either use a number in milliseconds, or a string value of either "fast" or "slow" which mean 200 and 600 milliseconds respectively. If you do not supply a value, jQuery will use the default value of 400 milliseconds.
-
-Add it to your project to see it in action.  Try experimenting with different numbers or use the keywords.
-        </script>
-</section>
     <section class="slide" data-markdown>
       <script type="text/template">
-#Click & Chain events
+        #Testing with `console.log();`
 
-What if we just want to hide it for a bit, then show it again?  We can by **chaining** our methods.
+        Let's test the click event and make sure we've selected the correct object.  Remember `console.log()`?  This method is very handy for testing and debugging. 
+        
+        ```javascript
+        $('#favs img').click(function(){ 
+          console.log("It works!");
+        });
+        ```
 
-```javascript
-$(".fav-img").click(function(){ 
-    $(this).hide(1000).show('fast');
-});
-```
+        Testing the click event here will let you know this step is working, before you move onto the next step.
 
-jQuery methods are chained together with a dot (.) in between them.  That means that the below example is perfectly valid and will work just fine. Though this example is kinda silly, it's fun to just experiment sometimes! 
-
-```javascript
-$(".fav-img").click(function(){ 
-    $(this).hide(1000).show('fast').fadeOut('slow').fadeIn(5000).slideUp(800).slideDown(10000);
-});
-```
-Let's add it to our project and see what happens.
         </script>
-</section>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Testing with `console.log();`
+
+        Let's add the `console.log` test and refresh the browser.
+
+        Open the console tool and click an image.  You should see the message you passed into the `console.log()` method like this:
+
+        ![console.log example](framework/img/workshop/console-log.gif)
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Click & Hide
+
+        Now that we know the click event works, you can delete the `console.log` test or comment it out. 
+
+        Next, let's try adding the `hide()` method to make the image "hide" on click. Use `$(this)` as the selector (more on this soon).  
+
+
+        ```javascript
+        $('#favs img').click(function(){ 
+            //console.log("It works!");
+            $(this).hide();
+        });
+        ```
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Click & Hide: How does this work?
+
+        jQuery will *dynamically* add inline CSS to the HTML element when the element is clicked.  It will add  `style="display:none;"` to the element to hide it, though the item is still in the HTML. 
+
+        Let's **inspect the element** in the browser to see how jQuery adds these changes. It will look similar to this:
+
+        ![show hide console example](framework/img/workshop/console-show-hide.png)
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Click & Hide: Timing
+
+        Add a number value to the `hide()` **method** to set the timing for how long it should take for this effect to to occur.  Add a number, in milliseconds, in the parentheses.
+
+        ```javascript
+        $('#favs img').click(function(){ 
+          $(this).hide(1000);
+        });
+        ```
+
+        This will make the act of hiding the image take 1000 milliseconds, or 1 second.  Try it!
+        
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #jQuery Timing & Duration
+
+        In jQuery, any time a method has the option of adding a duration value, you can use a number in milliseconds.  
+
+        You can also use a string value of either "fast" or "slow" which equal 200 and 600 milliseconds respectively. 
+
+        If you do not supply a value, the default duration is 400 milliseconds.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Chain events
+
+        What if we just want to hide the element, then show it again?  We can by **chaining** the methods.
+
+        ```javascript
+        $('#favs img').click(function(){ 
+          $(this).hide(1000).show('fast');
+        });
+        ```
+
+        Chain as many jQuery methods as you need.  That means that the below example is perfectly valid. Though this example is kinda silly, it's fun to experiment! 
+
+        ```javascript
+        $('#favs img').click(function(){ 
+          $(this).hide(1000).show('fast').fadeOut('slow').fadeIn(5000).slideUp(800)
+          .slideDown(10000);
+        });
+        ```
+
+        Add it to your project and see what happens!
+      </script>
+    </section>
+
     <section class="slide" data-markdown>
       <script type="text/template">
 # What the heck is ```$(this)```?!?!
@@ -1548,23 +1538,23 @@ Why have we been using `$(this)` as a selector for the previous exercises? What 
 jQuery gives us a special variable called ```this``` as a helper.  Though we want to select the image, we want to select **only the specific image** that is being clicked at that moment. The below example would make all the matched images hide on click.
 
 ```javascript
-$(".fav-img").click(function(){ 
-    $(".fav-img").hide(1000);
+$('#favs img').click(function(){ 
+    $('#favs img').hide(1000);
 });
 ```
 
-`$(".fav-img").click()` will watch for *any* image being clicked.   
-`$(".fav-img").hide(1000);` will add the hide effect to **all** the matched elements.
+`$('#favs img').click()` will watch for *any* image being clicked.   
+`$('#favs img').hide(1000);` will add the hide effect to **all** the matched elements.
 
 The below code, will ensure that only the clicked item will have the hide action applied to it.
 
 ```javascript
-$(".fav-img").click(function(){ 
+$('#favs img').click(function(){ 
     $(this).hide(1000);
 });
 ```
 
-`$(".fav-img").click()` will watch for *any* image being clicked.   
+`$('#favs img').click()` will watch for *any* image being clicked.   
 `$(this).hide(1000);` will add the hide effect to only the matched element that was clicked, so only the clicked image will be hidden.
         </script>
 </section>
