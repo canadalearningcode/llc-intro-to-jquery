@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -547,8 +547,6 @@ var fails = 'This string's value is not going to work!';
     <section class="slide" data-markdown>
       <script type="text/template">
         # Exercise Solution
-
-        <!-- ![exercise 1 solution](framework/img/workshop/console-exercise-1.gif) -->
         
         ```javascript
         var secondsPerMinute = 60;
@@ -859,10 +857,231 @@ var fails = 'This string's value is not going to work!';
     <section class="slide centered">
       <img src="http://33.media.tumblr.com/2466ab981143fb18653f8f09bce061c7/tumblr_n982qbvyFQ1s5lf2ro1_400.gif" alt="">     
     </section>
+
+        <section class="slide" data-markdown>
+      <script type="text/template">
+        # What can jQuery do?
+
+        * animate items
+        * perform interactions with your users
+        * create rich user experiences with components like draggable & droppable items and image rotators
+        * and much more!
+
+        The library contains many, many built-in functions and methods. 
+
+        View the documentation here: [http://api.jquery.com](http://api.jquery.com).
+      </script>
+    </section>
+
+    <section class="slide">
+      <h1>jQuery Examples</h1>
+
+      <p>Here is an example of a single animation and a <em>chained</em> animation.<br>
+      <span class="note">In the Results tab, hover over the example to show the &quot;RERUN&quot; button.</p>
+
+      <p data-height="268" data-theme-id="0" data-slug-hash="dcmxw" data-default-tab="result" data-user="learningcode" class='codepen'>See the Pen <a href='http://codepen.io/learningcode/pen/dcmxw/'>jQuery Animation Example</a> by Ladies Learning Code (<a href='http://codepen.io/learningcode'>@learningcode</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+      <script async src="http://codepen.io/assets/embed/ei.js"></script>
+      
+      <p class="note">CodePen is basically a “sandbox” to try out code without switching back and forth between a text editor and browser. Click the "Edit on Codepen" link to try out the code. When you save your pen, a unique URL is created for you OR sign up for a (free) account to save your pens.</p>
+      <p class="note"><img src="framework/img/workshop/codepen.png" width="400" class="left"> When editing jQuery in Codepen, select the gear icon in the JS box and it will show you if/what library it's using.</p>
+    </section>
+    
+    <section class="slide">
+      <h1>jQuery Examples</h1>
+
+      <p>Each button below has been given a different jQuery effect when clicked. Give each a try!</p>
+
+      <p data-height="350" data-theme-id="0" data-slug-hash="sgaEh" data-default-tab="result" data-user="learningcode" class='codepen'>See the Pen <a href='http://codepen.io/learningcode/pen/sgaEh/'>jQuery Event and Method Examples</a> by Ladies Learning Code (<a href='http://codepen.io/learningcode'>@learningcode</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+      <script async src="http://codepen.io/assets/embed/ei.js"></script>
+    </section>
+    
+    <section class="slide">
+      <h1>jQuery Examples</h1>
+
+      <p>You can even <em>extend</em> the capabilities of jQuery with <strong>plugins</strong> like the jQuery UI plugin used below. You can drag and re-order the items using the jQuery UI sortable plugin.</p>
+      
+      <p data-height="268" data-theme-id="0" data-slug-hash="fAmbJ" data-default-tab="result" data-user="learningcode" class='codepen'>See the Pen <a href='http://codepen.io/learningcode/pen/fAmbJ/'>jQuery UI Draggable Sortable Example</a> by Ladies Learning Code (<a href='http://codepen.io/learningcode'>@learningcode</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+      <script async src="http://codepen.io/assets/embed/ei.js"></script>
+    </section>
+        
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #Setting up a project
+      </script>
+    </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #HTML, CSS & JavaScript
+        #Setting up your project files
+
+        Inside of the folder you downloaded today, there are many folders that contain different files.
+        
+        ```xml
+        llc-intro-to-jquery-master
+          |-- framework // Contains files for this slide presentation. Do not edit!
+          |-- project // Contains project files for this workshop.
+          |-- slides.html // This is the file you are viewing right now!
+        ```
+
+        Open the `project` folder in the text editor to edit your project.  
+        Go to **File** > ** Add Project Folder**. A popup will appear.
+        
+        ![](framework/img/workshop/editor-add-project-1.jpg)
+        
+        * navigate to the **llc-intro-to-jquery-master** folder
+        * select the **project** folder & click **Open**
+        
+        The files will now appear in the sidebar.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Setting up your project files
+        
+        Your project folder structure will look like this:
+        
+        ```html
+        |-- project
+          |-- css // CSS files.
+          |-- final // A complete example of today's project for reference.
+          |-- images // Images files. You can also add your own images here.
+          |-- js // Javascript files.
+          |-- index.html // The homepage of your site.
+        ```
+        
+        Open **index.html** in your browser and editor.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Getting to know Atom
+        
+        Having a good text editor and learning how to use it to its full potential will help your work flow. Today, let's update the text wrapping option to make it easier to read long blocks of code and text.
+        
+        Go to **Preferences** to open the customization options.
+
+        ![](framework/img/workshop/atom-preferences.jpg)<!-- .element: width="70%" -->
+
+        The **Settings** tab will show by default. Scroll down to **Soft Wrap** option.
+
+        ![](framework/img/workshop/atom-settings.jpg)<!-- .element: width="70%" -->
+          
+        Make sure the **Soft Wrap** option is checked.
+        
+        ![](framework/img/workshop/atom-soft-wrap.jpg)<!-- .element: width="70%" -->
+        
+        ---
+        ###Resources
+        
+        *   [Atom documentation](https://atom.io/docs)
+        *   [Atom Shortcuts cheat sheet](https://bugsnag.com/blog/atom-editor-cheat-sheet)
+        *   [Customizing Atom](https://atom.io/docs/v0.61.0/customizing-atom)
+        *   [Themes](https://atom.io/themes) for Atom
+        *   [Snippets](https://github.com/atom/snippets) - create your own code snippet shortcuts
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Using jQuery, Option 1: Download the file
+
+        1. [Download](http://jquery.com/download/) the latest version and use the *compressed* file.
+        1. Save the file within your projects files (i.e. in a "js" folder).
+        1. Link it to your HTML document using a <code>&lt;script&gt;</code> tag.
+          * The `src` points to where the file is saved in your project folder.
+          * Make sure you use the *exact* same file name. (e.g. `jquery-version-number.js`)
+        1. JavaScript can be included anywhere on the page but often, it is included before the *closing* `</body>` tag to allow the page document to load first.
+
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    ... page content
+    ...
+    ...
+  &lt;script src=&quot;js/jquery-1.12.0.min.js&quot;&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </script>
+    </section>
+      
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Using jQuery, Option 2: Use a CDN
+
+        CDNs (Content Delivery Network) can offer a performance benefit by hosting jQuery on a web servers. In the `src`, reference the *hosted* file directly, also listed on the [download page](http://jquery.com/download/#using-jquery-with-a-cdn).
+        
+        
+        Be sure to include the `http://` when viewing the site locally (on your computer).
+        
+        <pre><code>&lt;script src=&quot;http://code.jquery.com/jquery-1.12.0.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+        
+        **Note**:  
+        If you're working on your project where you have no internet connection, the file will not load and any jQuery code will not work.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Using jQuery
+        
+        Now that the jQuery file is linked, all of the features can be accessed. However, one more thing needs to be added.
+
+        ##Enter Document Ready
+
+        `$(document).ready()` is an *event*. It's when the browser has downloaded enough of the web page, to be able to match the elements selected in your jQuery code.
+
+        It only needs to be added once but all jQuery code *must* be contained within this code snippet. Read more about it [here](http://learn.jquery.com/using-jquery-core/document-ready/).
+        
+        ```
+        $(document).ready(function(){
+          // all jQuery code here
+        });
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Getting jQuery Ready
+
+        1. [Download](http://jquery.com/download/) the jQuery file or use the [CDN](http://jquery.com/download/#using-jquery-with-a-cdn) and reference it in your **index.html** file. 
+        1. Add the "document ready" to **index.html**. This will need to be contained *within* its own pair of <code>&lt;script&gt;&lt;/script&gt;</code> tags.
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    ... page content
+    ...
+    ...
+
+  &lt;script src=&quot;js/jquery-1.12.0.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+    $(document).ready(function(){
+      // all jQuery code here
+    });
+  &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+      </script>
+    </section>
+
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        # Part Two
+        ## Writing jQuery & Using Plugins
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #HTML, CSS & jQuery
         
         So far we've been using the console tool to practice running JavaScript commands.
         
@@ -1045,224 +1264,6 @@ var fails = 'This string's value is not going to work!';
         
         > What element will be selected in this example?
         > `$(".about p");`
-      </script>
-    </section>
-    
-    
-    
-    
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        # What can jQuery do?
-
-        * animate items
-        * perform interactions with your users
-        * create rich user experiences with components like draggable & droppable items and image rotators
-        * and much more!
-
-        The library contains many, many built-in functions and methods. View the documentation here: [http://api.jquery.com](http://api.jquery.com).
-      </script>
-    </section>
-
-    <section class="slide">
-      <h1>jQuery Examples</h1>
-
-      <p>Here is an example of a single animation and a <em>chained</em> animation.<br>
-      <span class="note">In the Results tab, hover over the example to show the &quot;RERUN&quot; button.</p>
-
-      <p data-height="268" data-theme-id="0" data-slug-hash="dcmxw" data-default-tab="result" data-user="learningcode" class='codepen'>See the Pen <a href='http://codepen.io/learningcode/pen/dcmxw/'>jQuery Animation Example</a> by Ladies Learning Code (<a href='http://codepen.io/learningcode'>@learningcode</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-      <script async src="http://codepen.io/assets/embed/ei.js"></script>
-        
-      
-      <br>
-      <img src="framework/img/workshop/codepen.png" width="400" class="left">
-      <p class="note">CodePen is basically a “sandbox” to try out code without switching back and forth between a text editor and browser. Click the "Edit on Codepen" link to try out the code. When you save your pen, a unique URL is created for you OR sign up for a (free) account to save your pens.</p>
-      <p class="note">When editing jQuery in Codepen, select the gear icon in the JS box and it will show you if/what library it's using.</p>
-    </section>
-    
-    <section class="slide">
-      <h1>jQuery Examples</h1>
-
-      <p>Each button below has been given a different jQuery effect when clicked. Give each a try!</p>
-
-      <p data-height="350" data-theme-id="0" data-slug-hash="sgaEh" data-default-tab="result" data-user="learningcode" class='codepen'>See the Pen <a href='http://codepen.io/learningcode/pen/sgaEh/'>jQuery Event and Method Examples</a> by Ladies Learning Code (<a href='http://codepen.io/learningcode'>@learningcode</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-      <script async src="http://codepen.io/assets/embed/ei.js"></script>
-    </section>
-    
-    <section class="slide">
-      <h1>jQuery Examples</h1>
-
-      <p>You can even <em>extend</em> the capabilities of jQuery with <strong>plugins</strong> like the jQuery UI plugin used below. You can drag and re-order the items using the jQuery UI sortable plugin.</p>
-      
-      <p data-height="268" data-theme-id="0" data-slug-hash="fAmbJ" data-default-tab="result" data-user="learningcode" class='codepen'>See the Pen <a href='http://codepen.io/learningcode/pen/fAmbJ/'>jQuery UI Draggable Sortable Example</a> by Ladies Learning Code (<a href='http://codepen.io/learningcode'>@learningcode</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-      <script async src="http://codepen.io/assets/embed/ei.js"></script>
-    </section>
-        
-    <section class="slide title" data-markdown>
-      <script type="text/template">
-        #Write some jQuery!
-        ##Setting up a project
-      </script>
-    </section>
-    
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        #Setting up your project files
-
-        Inside of the folder you downloaded today, there are many folders that contain different files.
-        
-        ```xml
-        llc-intro-to-jquery-master
-          |-- framework // Contains files for this slide presentation. Do not edit!
-          |-- project // Contains project files for this workshop.
-          |-- slides.html // This is the file you are viewing right now!
-        ```
-
-        Open the `project` folder in the text editor to edit your project.  
-        Go to **File** > ** Add Project Folder**. A popup will appear.
-        
-        ![](framework/img/workshop/editor-add-project-1.jpg)
-        
-        * navigate to the **llc-intro-to-jquery-master** folder
-        * select the **project** folder & click **Open**
-        
-        The files will now appear in the sidebar.
-      </script>
-    </section>
-    
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        #Setting up your project files
-        
-        Your project folder structure will look like this:
-        
-        ```html
-        |-- project
-          |-- css // CSS files.
-          |-- final // A complete example of today's project for reference.
-          |-- images // Images files. You can also add your own images here.
-          |-- js // Javascript files.
-          |-- index.html // The homepage of your site.
-        ```
-        
-        Open **index.html** in your browser.
-      </script>
-    </section>
-    
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        #Getting to know Atom
-        
-        Having a good text editor and learning how to use it to its full potential will help your work flow. Today, let's update the text wrapping option to make it easier to read long blocks of code and text.
-        
-        Go to **Preferences** to open the customization options.
-
-        ![](framework/img/workshop/atom-preferences.jpg)<!-- .element: width="70%" -->
-
-        The **Settings** tab will show by default. Scroll down to **Soft Wrap** option.
-
-        ![](framework/img/workshop/atom-settings.jpg)<!-- .element: width="70%" -->
-          
-        Make sure the **Soft Wrap** option is checked.
-        
-        ![](framework/img/workshop/atom-soft-wrap.jpg)<!-- .element: width="70%" -->
-        
-        ---
-        ###Resources
-        
-        *   [Atom documentation](https://atom.io/docs)
-        *   [Atom Shortcuts cheat sheet](https://bugsnag.com/blog/atom-editor-cheat-sheet)
-        *   [Customizing Atom](https://atom.io/docs/v0.61.0/customizing-atom)
-        *   [Themes](https://atom.io/themes) for Atom
-        *   [Snippets](https://github.com/atom/snippets) - create your own code snippet shortcuts
-      </script>
-    </section>
-
-    <!-- <section class="slide" data-markdown>
-      <script type="text/template">
-        #Setting up your work flow
-
-        Let's open the project files in the browser and text editor.
-
-        * Open Sublime Text, then go to **File > Open**.
-        * Navigate to the **project** folder (inside the folder you downloaded with today's slides).
-        * With the entire folder selected, select **Open**.
-        * The folder will appear in the side bar. Double click on **index.html** in the sidebar to open it in the editor.
-        * Right click or two finger tap in Sublime and select Open in Browser. This will open the HTML file in your default browser.
-            * If Chrome is not your default browser, go to your Window/Finder and navigate to the **project** folder, right-click/two-finger tap on **index.html** and choose **Open With > Chrome**
-
-        You should see this in Sublime Text:
-
-        ![open project](framework/img/workshop/open-project.png)
-      </script>
-    </section> -->
-    
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        # Using jQuery, Option 1: Download the file
-
-        1. [Download](http://jquery.com/download/) the latest version and use the *compressed* file.
-        1. Save the file within your projects files (i.e. in a "js" folder).
-        1. Link it to your HTML document using a <code>&lt;script&gt;</code> tag.
-          * The `src` points to where the file is saved in your project folder.
-        1. JavaScript can be included anywhere on the page but often, it is included before the *closing* `</body>` tag to allow the page document to load first.
-
-        <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-  &lt;head&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    ... page content
-    ...
-    ...
-  &lt;script src=&quot;js/jquery-1.12.0.min.js&quot;&gt;&lt;/script&gt;
-  &lt;/body&gt;
-&lt;/html&gt;</code></pre>
-      </script>
-    </section>
-      
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        # Using jQuery, Option 2: Use a CDN
-
-        CDNs (Content Delivery Network) can offer a performance benefit by hosting jQuery on a web servers.
-
-        To use the jQuery CDN (also listed on the [download page](http://jquery.com/download/#using-jquery-with-a-cdn), reference the file directly from the *hosted file* in the `src`. 
-        
-        <pre><code>&lt;script src=&quot;//code.jquery.com/jquery-1.12.0.min.js&quot;&gt;&lt;/script&gt;</code></pre>
-        
-        **Pro tip!** Be sure to include the `http://` when viewing the site locally (on your computer).
-        
-        <pre><code>&lt;script src=&quot;http://code.jquery.com/jquery-1.12.0.min.js&quot;&gt;&lt;/script&gt;</code></pre>
-      </script>
-    </section>
-    
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        # Using jQuery
-        
-        Now that the jQuery file is linked, all of the features can be accessed. However, one more thing needs to be added.
-
-        ##Enter Document Ready
-
-        `$(document).ready()` is an **event**, it's when the browser has downloaded enough of the web page, to be able to match the elements selected in your jQuery code.
-
-        It only needs to be added once but all jQuery code *must* be contained within this code snippet. Read more about it [here](http://learn.jquery.com/using-jquery-core/document-ready/).
-        
-        ```
-        $(document).ready(function(){
-          // all jQuery code here
-        });
-        ```
-        
-        > Add this to your **index.html** file. Now you're ready to go!
-      </script>
-    </section>
-
-    <section class="slide title" data-markdown>
-      <script type="text/template">
-        # Part Two
-        ## Writing jQuery & Using Plugins
       </script>
     </section>
       
