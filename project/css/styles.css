@@ -48,16 +48,16 @@ section {
 	top: 0;
 	left: 0;
 	width: 100%;
-	z-index: 5;
 }
 .menu li {
 	display: inline-block;
-	padding: 20px 35px;
 }
 .menu a {
+	display: block;
 	text-decoration: none;
 	color: white;
 	text-transform: uppercase;
+	padding: 20px 35px;
 }
 
 

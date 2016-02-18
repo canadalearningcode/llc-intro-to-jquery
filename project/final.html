@@ -1,9 +1,9 @@
 <!doctype html>
 <html>
 <head>
-	<title>Page Title</title>
+	<title>Ladies Learning Code</title>
 	<link href='http://fonts.googleapis.com/css?family=Sacramento' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/final.css">
 </head>
 <body>
 	<ul class="menu">
@@ -41,6 +41,22 @@
 	</section>
 	
 	<!-- ADD JQUERY HERE -->
-	
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      // all jQuery code here
+
+      $('.fav').click(function(){ // will watch for any images to be clicked
+			  $(this).hide(1000); // will hide *all* the images
+			});
+
+
+      $(".menu a").click(function(){
+		    //console.log("It works!");
+		    $(".active").removeClass("active");
+		    $(this).addClass("active");
+			});
+    });
+  </script>
 </body>
 </html>

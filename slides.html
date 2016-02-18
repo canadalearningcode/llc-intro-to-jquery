@@ -1311,17 +1311,17 @@ var fails = 'This string's value is not going to work!';
         ```
         <section id="favs">
           <h1>My Favourite Things</h1>
-          <img src="images/puppy.jpg" alt="dog">
-          <img src="images/puppy.jpg" alt="dog">
-          <img src="images/puppy.jpg" alt="dog">
+          <img class="fav" src="images/puppy.jpg" alt="dog">
+          <img class="fav" src="images/puppy.jpg" alt="dog">
+          <img class="fav" src="images/puppy.jpg" alt="dog">
         </section>
         ```
         
-        Just like CSS, there's a couple ways to select the elements.
+        Just like CSS, there are a couple ways to target the elements.
         
         ```
-        $("img") // Will work but will target ALL images on the page.
-        $('#favs img') // Works better! Only targets images contained within id="favs".
+        $("img") // will work but will target ALL images on the page
+        $(".fav") // works better, only targets images with the class of "fav"
         ```
       </script>
     </section>
@@ -1333,13 +1333,17 @@ var fails = 'This string's value is not going to work!';
 
         Let's change the size of the image using the `.width()` jQuery method. 
 
-        You can pass a size argument (number value) into the parentheses to set the width size. Using the dot notation syntax, append it to the selected images.
+        You can pass a size value into the parentheses to set the width size, represented in pixels. Using the dot notation syntax, append it to the selected images.
 
         ```javascript
         $(document).ready(function(){
-          $('#favs img').width(100);
+          $(".fav").width(100);
         });
         ```
+
+        ---
+        ###Resource
+        http://api.jquery.com/width/
       </script>
     </section>
 
@@ -1347,17 +1351,17 @@ var fails = 'This string's value is not going to work!';
       <script type="text/template">
         # Class Exercise: `width()`
 
-        What about bigger?  Pass in a new argument and choose a larger number.
+        What about bigger? Use a larger number value.
 
         ```javascript
         $(document).ready(function(){
-          $('#favs img').width(400);
+          $(".fav").width(400);
         });
         ```
 
         Now you've seen that you can set the width of an element with jQuery. But we could use CSS to do that!  
 
-        Let's try something CSS can't do. Make effects and interactions happen on a **click event**.
+        Let's try something CSS can't do; make effects and interactions happen on a **click event**.
       </script>
     </section>
 
@@ -1369,7 +1373,9 @@ var fails = 'This string's value is not going to work!';
 
         Adding a function to a **user triggered event** is called an **event listener**.  The code just sits around waiting and listening for the event to happen.
 
-        We'll be going through an example together but you can also view the documentation here: [http://api.jquery.com/click/](http://api.jquery.com/click/)
+        ---
+        ### Resource
+        http://api.jquery.com/click/
       </script>
     </section>
 
@@ -1380,18 +1386,18 @@ var fails = 'This string's value is not going to work!';
         First, select the target item.
         
         ```
-        $('#favs img')
+        $(".fav")
         ```
 
         Then add the `.click()` method.
         ```
-        $('#favs img').click();
+        $(".fav").click();
         ```
 
-        Now things will switch up a bit.  We'll have to pass a *function* into the parentheses,
-        `function(){}`.
+        Next, pass a *function* into the parentheses,
+        `function(){}`, to execute each time the event is triggered.
         ```
-        $('#favs img').click( function(){} );
+        $(".fav").click( function(){} );
         ```
 
          </script>
@@ -1406,7 +1412,7 @@ var fails = 'This string's value is not going to work!';
         Whatever effect that should happen, only on click, goes here.
 
         ```
-        $('#favs img').click(function(){
+        $(".fav").click(function(){
           // The changes that occur when object is clicked.
         });
         ```
@@ -1420,7 +1426,7 @@ var fails = 'This string's value is not going to work!';
         Let's test the click event and make sure we've selected the correct object.  Remember `console.log()`?  This method is very handy for testing and debugging. 
         
         ```javascript
-        $('#favs img').click(function(){ 
+        $(".fav").click(function(){ 
           console.log("It works!");
         });
         ```
@@ -1452,7 +1458,7 @@ var fails = 'This string's value is not going to work!';
 
 
         ```javascript
-        $('#favs img').click(function(){ 
+        $(".fav").click(function(){ 
             //console.log("It works!");
             $(this).hide();
         });
@@ -1475,30 +1481,19 @@ var fails = 'This string's value is not going to work!';
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Click & Hide: Timing
+        #Click & Hide: Duration
 
-        Add a number value to the `hide()` **method** to set the timing for how long it should take for this effect to to occur.  Add a number, in milliseconds, in the parentheses.
+        Add a number value to the `hide()` **method** to set the duration of the effect.  Add a number, in milliseconds, in the parentheses.
 
         ```javascript
-        $('#favs img').click(function(){ 
+        $(".fav").click(function(){ 
           $(this).hide(1000);
         });
-        ```
+        ```  
 
-        This will make the act of hiding the image take 1000 milliseconds, or 1 second.  Try it!
-        
-      </script>
-    </section>
+        In jQuery, any method that has the option of adding a duration value, you can use a number in milliseconds.  
 
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        #jQuery Timing & Duration
-
-        In jQuery, any time a method has the option of adding a duration value, you can use a number in milliseconds.  
-
-        You can also use a string value of either "fast" or "slow" which equal 200 and 600 milliseconds respectively. 
-
-        If you do not supply a value, the default duration is 400 milliseconds.
+        You can also use a string value of either "fast" or "slow" which equal 200 and 600 milliseconds respectively. If you do not supply a value, the default duration is 400 milliseconds.      
       </script>
     </section>
 
@@ -1506,156 +1501,183 @@ var fails = 'This string's value is not going to work!';
       <script type="text/template">
         #Class Exercise: Chain events
 
-        What if we just want to hide the element, then show it again?  We can by **chaining** the methods.
+        Methods can also be **chained** meaning different effects can execute one after another.
 
         ```javascript
-        $('#favs img').click(function(){ 
+        $(".fav").click(function(){ 
           $(this).hide(1000).show('fast');
         });
         ```
 
-        Chain as many jQuery methods as you need.  That means that the below example is perfectly valid. Though this example is kinda silly, it's fun to experiment! 
+        Chain as many jQuery methods as you need.  The below example is perfectly valid. Though this example is kinda silly, it's fun to experiment! Add it to your project and see what happens!
 
         ```javascript
-        $('#favs img').click(function(){ 
+        $(".fav").click(function(){ 
           $(this).hide(1000).show('fast').fadeOut('slow').fadeIn(5000).slideUp(800)
           .slideDown(10000);
         });
         ```
-
-        Add it to your project and see what happens!
       </script>
     </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
-# What the heck is ```$(this)```?!?!
+        # What is `$(this)`?!
 
-Why have we been using `$(this)` as a selector for the previous exercises? What is it and what does it do?  
+        jQuery has a special variable called `this`. 
 
-## Good question!
+        `$(".fav")` will find *all* the of `.fav` images and put them in a collection of matched elements.  
 
-jQuery gives us a special variable called ```this``` as a helper.  Though we want to select the image, we want to select **only the specific image** that is being clicked at that moment. The below example would make all the matched images hide on click.
+        `$(this)` refers to the *current* element from the collection. It is also a variable, not a string, so no quotes are needed.
 
-```javascript
-$('#favs img').click(function(){ 
-    $('#favs img').hide(1000);
-});
-```
 
-`$('#favs img').click()` will watch for *any* image being clicked.   
-`$('#favs img').hide(1000);` will add the hide effect to **all** the matched elements.
+        Let's look at an example without using `this`.
 
-The below code, will ensure that only the clicked item will have the hide action applied to it.
+        ```javascript
+        $(".fav").click(function(){ // will watch for any images to be clicked
+          $(".fav").hide(1000); // will hide *all* the images
+        });
+        ```
 
-```javascript
-$('#favs img').click(function(){ 
-    $(this).hide(1000);
-});
-```
 
-`$('#favs img').click()` will watch for *any* image being clicked.   
-`$(this).hide(1000);` will add the hide effect to only the matched element that was clicked, so only the clicked image will be hidden.
-        </script>
-</section>
+        The below code, will ensure that only the clicked item will have the hide action applied to it.
+
+        ```javascript
+        $(".fav").click(function(){ // will watch for *any* image being clicked
+          $(this).hide(1000); // will hide to the specific clicked image, in the collection
+        });
+        ```
+      </script>
+    </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
-#Exercise: Active Menu
+        #"Active" Menu
 
-Let's use the jQuery `click()`, `addClass()` and `removeClass()` methods to create an `.active` class to style the menu item differently when clicked.  Here are the instructions  we'll create with jQuery:
+        Let's use the jQuery `click()`, `addClass()` and `removeClass()` methods to create an `.active` class to style the menu item differently when clicked.  [See example](project/final.html).
 
-1. Select the elements to be clicked.
-1. Add a class of "active" to invoke a new style.
-1. Add the "active" class style to the CSS file.
-1. When the user clicks on another menu item, add the "active" class to the new item and remove the active class from non-active items.
+        Here are the instructions broken down into steps:
 
-Let's get started.
+        1. Select the elements to be clicked.
+        1. Add a class of "active" to invoke a new style.
+        1. Add the "active" class style to the CSS file.
+        1. When the user clicks on another menu item, add the "active" class to the new item and remove the active class from non-active items.
+
+        Let's get started!
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: "Active" Menu, Step 1
+                
+        ##Select the elements to be clicked.  
+
+        ```
+        <ul class="menu">
+          <li><a href="#about">About</a></li>
+          <li><a href="#favs">Favourites</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        ```
+        What selector should be used?
+
+        <pre class="delayed"><code>$(".menu a")</code></pre>
         </script>
-</section>
+    </section>
 
-        <section class="slide">
-            <h1>Exercise: Active Menu - Click Event</h1>
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: "Active" Menu, Step 1
 
-            <p>Select the elements to be clicked.  Here’s what the menu markup looks like:</p>
-
-<pre class="xml"><code><ul class="menu"&gt;
-    <li&gt;<a href="#about"&gt;About</a&gt;</li&gt;
-    <li&gt;<a href="#favourites"&gt;Favourites</a&gt;</li&gt;
-    <li&gt;<a href="#contact"&gt;Contact</a&gt;</li&gt;
-</ul&gt;
+        Then apply the .click() method.
+        ```
+        $(".menu a").click();
+        ```
+        <p class="delayed">Then pass a function into to the click() method. Add <code>function(){}</code> into the parentheses.</p>
+<pre class="delayed"><code>$(".menu a").click( function(){} );
 </code></pre>
-
-            <p>Which selector should we use?</p>
-<pre class="delayed"><code>$(".menu a")
-</code></pre>
-
-            <p class="delayed">Then apply the .click() method.</p>
-<pre class="delayed"><code>$(".menu a").click();
-</code></pre>
-
-            <p class="delayed">Then pass a single parameter to the click() method. Remember, that parameter is itself a function. Add <code>function(){}</code> into the parentheses.</p>
-<pre class="delayed"><code>$(".menu a").click(function(){});
-</code></pre>
-            <div class="delayed">
-            <p>Test the click action.  Do we have the right element? Check if you see the message in your console.</p>
-
+        <div class="delayed">
+          <p>Test the click action.</p>
 <pre><code>$(".menu a").click(function(){
     console.log("It works!");
 });
 </code></pre>
-            </div>
-        </script>
-</section>
-        <section class="slide">
-            <h1>Exercise: Active Menu - <code>addClass()</code> method</h1>
+            <p>Check if you see the message in your console.</p>
+        </div>
+      </script>
+    </section>
 
-            <p>Great! It works! Now, add the <code>addClass</code> method.</p>
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: "Active" Menu, Step 2
+
+        Now, add the `addClass()` method. In the parentheses, add the CSS class name to be added.
 
 <pre class="javascript"><code>$(".menu a").click(function(){
     //console.log("It works!");
     $(this).addClass("active");
 });
 </code></pre>
-            <div class="delayed">
-                <p>Wait? Nothing happened?</p>
+        <div class="delayed">
+          <p>Wait? Nothing happened?</p>
 
-                <p>That’s because we haven’t added the style in the CSS file yet.  You can still check if it’s been added to the HTML.  If your console is still open, just click on the “Elements” tab.</p>
+          <p>That’s because the style hasn't been added to the CSS file yet.  You can still check if the class was added to the HTML.  In your console, just click on the “Elements” tab.</p>
 
-                <p><img src="framework/img/workshop/console-menu-active.gif" alt="" title=""> </p>
+          <p><img src="framework/img/workshop/console-menu-active.gif" alt="" title=""> </p>
+        </div>
+      </script>
+    </section>
 
-                <p>Now go to <strong>style.css</strong> to create a new CSS style for the active state. This will change the color (but you can apply whatever style you like). Since the color has been added to <code>.menu a</code>, create a selector using the new <code>active</code> class</p>
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Active Menu, Step 3
+        
+        ##Add the CSS active style
 
-<pre><code>.menu a.active {
-    color: #A8258D;
-}
-</code></pre>
-                <p>Now test your page again.</p> 
-            </div>     
-        </script>
-</section>
+        In **styles.css**, create a new CSS style for the active state. 
 
-        <section class="slide" data-markdown>
-  <script type="text/template">
-#Exercise: Active Menu - `removeClass()` method
+        This example below will change the text color and background colour (but you can apply whatever style you like). Since the color has been added to `.menu a`, create a selector using the new `active` class
+                
+        ```       
+        .menu a.active {
+          background: #ccc;
+          color: #222;
+        }
+        ```
 
-Almost there.  We were able to add the class to the clicked item but now we need to remove the class from the non-active items.  Remember, JavaScript/jQuery executes commands from top to bottom.  One way to fix this issue is to remove the class **first**, *then* add the class to the clicked item.
+        Test the menu clicks again to test for the new CSS styles.
+      </script>
+    </section>
 
-In this case, we won't use the `$(this)` selector since we are looking for any element with the `active` class to remove it. That means `.active` will be our selector.
-    
-```javascript  
-$(".menu a").click(function(){
-    //console.log("It works!");
-    $(".active").removeClass("active");
-    $(this).addClass("active");
-});
-```
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: "Active" Menu, Step 4
 
-Now try it!
+        The `.active` class is now added to the clicked item. But when a new item is clicked, the class should be removed from the non-active items, then added to the newly clicked item.
 
-**Note**: if the class of `active` is used anywhere else on the page, it will be affected as well.  Another option is to use a selector more specific to the menu such as `$(".menu a.active")`.
-</script>
-</section>
+        Reminder, JavaScript/jQuery executes commands from top to bottom.  
+
+        One way to update this program is to remove the class **first**, *then* add the class to the clicked item.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: "Active" Menu, Step 4
+
+        In this case, the `$(this)` selector won't be used since we are looking for *any* menu link with the `active` class to remove it. So `.active` should be the targeted selector.
+            
+        ```javascript  
+        $(".menu a").click(function(){
+            $(".active").removeClass("active"); // remove the class from any menu link
+            $(this).addClass("active"); // add the class to the specific menu link that is clicked
+        });
+        ```
+
+        <p class="note">**Note**: if the class of `active` is used anywhere else on the page, it will be affected as well.  Another option is to use a selector more specific to the menu such as `$(".menu a.active")`.</p>
+      </script>
+    </section>
 
         <section class="slide" data-markdown>
   <script type="text/template">
