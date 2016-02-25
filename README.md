@@ -4,7 +4,7 @@
 
 A full day introductory to jQuery workshop. Students should have basic understanding of HTML & CSS.
 
-Created by Christina Truong](http://twitter.com/christinatruong) for Ladies Learning Code based on original by [Arron Gibson](https://github.com/infn8/).
+Created by [Christina Truong](http://twitter.com/christinatruong) for Ladies Learning Code based on original by [Arron Gibson](https://github.com/infn8/).
 
 ### Contributing
 
