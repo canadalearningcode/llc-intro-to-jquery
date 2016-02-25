@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+  <title>Ladies Learning Code</title>
+  <link href='http://fonts.googleapis.com/css?family=Sacramento' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/flexslider.css">
+  <link rel="stylesheet" href="css/final.css">
+</head>
+<body>
+  <ul class="menu">
+    <li><a href="#about">About</a></li>
+    <li><a href="#favs">Favourites</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <header>
+    <img class="logo" src="images/logo.png">
+    <h1>Your name here</h1>
+  </header>
+
+  <section id="about">
+    <h1>About Me</h1>
+
+    <img class="profile" src="images/profile.jpg">
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur libero voluptate eligendi quae impedit quos quia esse error mollitia velit. Necessitatibus distinctio a quis expedita ipsam ad facere natus nemo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur libero voluptate eligendi quae impedit quos quia esse error mollitia velit. Necessitatibus distinctio a quis expedita ipsam ad facere natus nemo. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <p>Consequuntur libero voluptate eligendi quae impedit quos quia esse error mollitia velit. Necessitatibus distinctio a quis expedita ipsam ad facere natus nemo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur libero voluptate eligendi quae impedit quos quia esse error mollitia velit. Necessitatibus distinctio a quis expedita ipsam ad facere natus nemo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur libero voluptate eligendi quae impedit quos quia esse error mollitia velit. Necessitatibus distinctio a quis expedita ipsam ad facere natus nemo.</p>
+  </section>
+
+  <section id="favs">
+    <h1>My Favourite Things</h1>
+    <img class="fav" src="images/puppy.jpg" alt="dog">
+    <img class="fav" src="images/puppy.jpg" alt="dog">
+    <img class="fav" src="images/puppy.jpg" alt="dog">
+
+    <div class="flexslider">
+      <ul class="slides">
+        <li><img src="images/rotator/image1.jpg"></li>
+        <li><img src="images/rotator/image2.jpg"></li>
+        <li><img src="images/rotator/image3.jpg"></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h1>Contact Me</h1>
+    <a href="http://twitter.com/llcodedotcom"><img src="images/twitter.png"></a>
+    <a href="http://www.facebook.com/ladieslearningcode"><img src="images/facebook.png"></a>
+    <a href="http://www.linkedin.com/company/ladies-learning-code"><img src="images/linkedin.png"></a>
+  </section>
+  
+  <!-- ADD JQUERY HERE -->
+  <script src="js/jquery-1.12.0.min.js"></script>
+  <script src="js/jquery.flexslider-min.js"></script>
+  <script>
+    $(document).ready(function(){
+      // all jQuery code here
+
+      // Just some experimental code
+      $('.fav').click(function(){ // will watch for any images to be clicked
+        $(this).hide(1000); // will hide *all* the images
+      });
+
+      // Active menu
+      $(".menu a").click(function(){
+        //console.log("It works!");
+        $(".active").removeClass("active");
+        $(this).addClass("active");
+      });
+
+      // Flexslider plugin
+      $('.flexslider').flexslider();
+
+      $(function() {
+        $('a[href*="#"]:not([href="#"])').click(function() {
+          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+          && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            if (target.length) {
+              $('html, body').animate({
+                scrollTop: target.offset().top
+              }, 1000);
+              return false;
+            }
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

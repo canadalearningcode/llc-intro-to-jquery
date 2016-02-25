@@ -1,0 +1,2101 @@
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Ladies Learning Code</title>
+  <link rel="stylesheet" href="framework/css/slideshow.css" data-noprefix>
+  <link rel="stylesheet" href="framework/css/fonts.css" data-noprefix>
+  <link rel="stylesheet" href="framework/css/highlightjs/github.css" data-noprefix>
+  <link rel="stylesheet" href="framework/css/styles.css" data-noprefix>
+  <link rel="shortcut icon" href="framework/img/favicon.ico">
+  
+  <!-- opens all links in a new window -->
+  <base target="_blank">
+</head>
+
+<!-- Timer/progress bar: Define the presentation duration using "data-duration" in minutes. -->
+<body data-duration="360"> 
+  <main>
+    <section class="slide welcome highlight">
+      <h1><img class="logo-stacked" src="framework/img/llc-logo-stacked-white.png" alt="Ladies Learning Code logo">Welcome!</h1>
+      
+      <div class="instructions">
+        <!-- ADD WIFI INFO HERE -->
+        <!-- <h2>Get Connected</h2>
+        <p><strong>Wifi:</strong> wifi network</p>
+        <p><strong>Password:</strong> wifi password</p>
+        <hr> -->
+        
+        <h2>Download<br> & Install</h2>
+        <ol class="downloads">
+          <li>Learner files (zip file): <a href="https://github.com/ladieslearningcode/llc-intro-to-jquery/archive/master.zip">http://bit.ly/llc-jquery-intro</a>
+            <ul>
+              <li>unzip the learner file (<em>extract all</em> if you’re on a PC)</li>
+              <li>open <em>slides.html</em> in the browser to view the slides</li>
+            </ul>
+          </li>
+          <li>Atom Editor: <a href="http://atom.io">http://atom.io</a></li>
+          <li>Chrome Browser: <a href="https://www.google.ca/chrome/browser/desktop/">https://www.google.ca/chrome</a></li>
+          </li>
+        </ol>
+      </div>
+      <footer>
+        <a class="left" rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.png" /></a>
+        <p class="left">Content created by <a href="http://christinatruong.com">Christina Truong</a> for <a prefix="cc: http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
+        <p class="right">Use the left <span class="arrow">&#8592;</span> and right <span class="arrow">&#8594;</span> arrow keys to navigate</p>
+      </footer>
+    </section> 
+    
+    <section class="slide intro">
+      <img class="logo" src="framework/img/llc-logo-white.png" alt="Ladies Learning Code logo">
+      <h1 class="heading-bg">
+        <span>jQuery<br> For Beginners</span>
+      </h1>
+      
+      <!-- FILL IN INSTRUCTOR DETAILS -->
+      <!-- <img class="instructor" src="http://placehold.it/225x225" alt="Instructor Name">
+      <h2><span class="cursive">with</span> Instructor name</h2>  
+      <ul>
+        <li><a href="mailto:">hello@email.com</a></li>
+        <li><a href="http://website.com">website.com</a></li>
+        <li><a href="http://twitter.com/">@twitter</a></li>
+      </ul> -->
+      
+      <div class="sponsor">
+        <p>In partnership with<br> <img src="framework/img/telus-logo-white.svg" alt="Telus"></p>
+      </div>
+      <footer>
+        <a class="left" rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.png" /></a>
+        <p class="left">Content created by <a href="http://christinatruong.com">Christina Truong</a> for <a prefix="cc: http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
+        <p class="right">Use the left <span class="arrow">&#8592;</span> and right <span class="arrow">&#8594;</span> arrow keys to navigate</p>
+      </footer>
+    </section> 
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Today's project
+
+        Today we'll be taking a static one page website and adding dynamic effects to it such as a "smoothscroll", changing the styles of navigation links on click and adding a photo slider!
+
+
+        View the sample project [here](project/final.html).
+      </script>
+    </section>
+
+    <section class="slide basic-web-page" data-markdown>
+      <script type="text/template">
+        #HTML + CSS + JavaScript = Basic web page
+
+        **HTML (Hypertext Markup Language)** is a _markup_ language used to define the content.
+
+        <p class="example">I'm just a paragraph.</p>
+
+        **CSS (Cascading Style Sheets)** is a _style sheet_ language used to create the presentation and look of a site.
+
+        <p class="example css">I'm a paragraph with <span>style</span>.</p>
+
+        **JavaScript** is a _programming_ language used to define the behavior and used to add functionality to a website.
+
+        <p class="example" onclick="alert('Clicked!');">I'm a paragraph that can be clicked. Try it!</p>
+      </script>
+    </section>
+    
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        # Part One
+        ## Programming Basics
+      </script>
+    </section>    
+    
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #JavaScript vs jQuery
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # What Is JavaScript?
+        
+        * controls the *behavior* of HTML documents
+        * used to animate, hide or show items
+        * react to user input
+        * process data and more! 
+        
+        Here's what JavaScript looks like:
+        
+        ```
+        var myVariable = "Hello World";
+        function sayHello(){
+          alert(myVariable);
+        }
+        sayHello();
+        ```
+      </script>
+    </section>
+
+    <section class="slide highlight" data-markdown>
+      <script type="text/template">
+        # JavaScript is a Programming Language
+        
+        Because JavaScript is a programming language, the structure and syntax includes more complexities than HTML or CSS.  
+        
+        The basic building blocks of programming includes features such as *variables*, *functions*, *objects* or control structures such as *if* statements or *loops*.
+      </script>
+    </section>
+      
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #What is jQuery?
+        
+        * it is a cross-browser JavaScript *library*
+        * designed to simplify your program
+        * has its own syntax
+        * is still JavaScript at its core 
+        
+        jQuery ***is*** JavaScript so it's important to have an understanding of some basic JavaScript principles first.
+        
+        Also, note that programming languages often require a little bit more code than HTML & CSS to see results in the browser.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #The Console
+        
+        Before we get into the nitty-gritty details of these JavaScript principles, let’s take a look at a tool called the console.
+        
+        We'll be using this tool in the upcoming exercises to focus on getting used to the programming syntax. 
+        
+        This way, we can write programs without relying on HTML & CSS and learn some of the fundamental programming concepts first.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # The Console
+        
+        * interactive browser tool
+        * enter commands and interact directly with a web page
+        * can also log diagnostic information and check for errors
+        
+        The console in Chrome looks like this:
+        ![The Console](framework/img/workshop/the_console_x.jpg)
+
+        **Important!** The blue `>` symbol represents a space to enter your input but you don't have to actually type the symbol.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Accessing the Console
+
+        You can open the console when viewing _any_ HTML page. In Chrome, there are different ways to open the Console tab.
+
+        Keyboard shortcut:  
+        `COMMAND + OPTION + J` (MAC)  / `CONTROL + SHIFT + J` (WINDOWS)
+
+        OR
+
+        Select: `View > Developer > JavaScript Console`.
+
+        Open the console in this slide presentation. Take a moment to practice opening and closing the console until you’re comfortable with it.
+        
+        ---
+        ###Pro tip! 
+        The console also shows any errors on the page so if you open the console on any web page other than this slide deck, you *may* see some error messages.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise: Working with Numbers
+
+        In the console, after the `>` symbol, type your favorite number and press the enter/return key. You will see something like this:
+
+        ![console number](framework/img/workshop/console-number.gif) <!-- .element: width="85%" -->
+
+        The ```>``` symbol represents a space for your input.    
+        The ```<``` symbol represents the **returned value** of your input.  
+        
+        ---
+        ###Pro tip!
+        To increase the font size of the console, use `Command/Control +`.  
+        Use  `Command/Control 0` to return it back to the default size.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise: Working with Text
+        
+        You can also input text BUT when using text, make sure you include it between quotes (more on this soon).
+
+        ![console string](framework/img/workshop/console-string.gif)<!-- .element: width="85%" -->
+
+        The command you input into the console gets *evaluated* and a value is returned back to you.
+      </script>
+    </section>
+    
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #The Building Blocks
+        ##JavaScript Variables & Functions
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # What *is* a variable?
+
+        Variables are like containers or a box. 
+        
+        * used to *store* values 
+        * can be used any time, whenever you need them
+        * gives a *name* to a *value*. 
+        
+        A variable is a named memory location which contains information, to be used at a later time.
+        
+        For example, a variable could be used to store a customer's email address.  Then, the variable can be used to send a confirmation email.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Declaring (creating) a variable
+        
+        * use the keyword `var`
+        * name the variable anything you want*
+        * end the command with a semi-colon (`;`)
+
+        ```javascript
+        var myVariable = "Hello!";
+        ```
+
+        The value `Hello` is given to the name `myVariable` and is declared using the keyword `var`. This is *assigning* a value to the *variable*. 
+        
+        Evaluate everything to the right of the equals sign, then assign the value to the variable on the left of the equals sign.
+        
+        *See next slide for info about naming conventions <!-- .element: class="note" -->
+      </script>
+    </section>
+    
+    <section class="slide nested-list" data-markdown>
+      <script type="text/template">
+        #Variables: Naming conventions
+
+        * Cannot contain spaces:
+          * use camelCase for names with multiple words. 
+          * every new word is capitalized
+          * the result looks kind of like `camelHumps` 
+        * JavaScript is case sensitive
+          * so variable names are also case sensitive
+        * Use a descriptive names:  
+        `var firstName;` ← Clear that first name will go here.   
+        `var fn;`        ← Not as obvious as firstName.   
+        `var x; `        ← Not clear at all.
+      </script>
+    </section>
+    
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #Variable Types
+        ##Strings, Numbers, Booleans
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Variable Types: Strings
+
+        When storing text values, like words or sentences, the variable type is a *string* value.
+        
+        Strings must be contained in quotes.
+
+        ```javascript
+        var greeting = "Hello!";
+        ```
+        
+        ```javascript
+        var greeting = "Good morning!";
+        ```
+        
+        ```javascript
+        var greeting = "Good evening!";
+        ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Variable Types: Strings & Concatenation
+        
+        You can *add* strings together to join multiple values. This is called **concatenation**.
+
+        ```javascript
+        var greeting = "Good";
+        var greetingTime = "morning";
+        var greetingFull = greeting + " " + greetingTime + "!";
+        ```
+
+        The JavaScript above **concatenates** the three items together like so:
+        
+        ```
+        var greetingFull = greeting + " " + greetingTime + "!";
+        var greetingFull = Good + space + morning + exclamation mark
+        var greetingFull = Good morning!
+        ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class exercise: Declare a Variable
+
+        Let's create a variable called `favFood` and give it a value. 
+        
+        >What is the syntax for creating a variable and assigning a string value?
+
+        <pre class="delayed"><code>var favFood = "pizza";</code></pre>
+
+        <blockquote class="delayed"><p>Add the above code into the console. What value gets returned?<p></blockquote>
+        
+        <pre class="delayed"><code>undefined</code></pre>
+
+        <p class="delayed">That is perfectly fine. Remember, variables are used to <em>store</em> values until you're ready to use them. Let's break it down in the next slide.</p>
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class exercise: Using Variables
+        
+        When using the console tool, it will automatically return a value when you input an instruction. Declaring a variable just *stores* the value until you're ready to use it. 
+        
+        `var favFood` is just holding on to the value, so it returns nothing (undefined). But now, JavaScript knows it exists. 
+        
+        To actually **use** the variable, just type `favFood` into the console. It will now **return** the value that it was storing and look something like this:
+        
+        ```javascript
+        > var favFood = "pizza";
+        < undefined
+        > favFood;
+        < "pizza"
+        ```
+        <!-- ![](framework/img/workshop/console-fav-food.gif) -->
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class exercise: Concatenate
+
+        Let’s try **concatenating** some strings with the `favFood` variable. In the console, try typing this command:
+        
+        ```
+        "My favorite food is " + favFood;
+        ```
+
+        ![concatenate example](framework/img/workshop/console-concatenate.gif)
+
+        > **Challenge!** How would you add a period to the end of the sentence?
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+# Variable Types: Strings and Quotes
+
+Strings values can be wrapped in either 'single quotes'  or "double quotes."  You can use either style but you must start and end the string with the same mark.
+
+But be careful! In the example below, this will cause an error.
+
+```javascript
+var fails = 'This string's value is not going to work!'; 
+/*          ^           ^
+            |___________| 
+            |
+            Javascript thinks the second apostrophe closes the first.
+            It then expects the command to end with a semicolon (;) 
+            right after and returns an error.
+*/
+```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Variable Types: Strings and Quotes
+
+        There are two ways to fix it.  
+
+        Use double quotes!
+        ```javascript
+        var works = "This string's value is going to work!";                                 
+        ```
+
+        Or *escape* it by using a backslash.
+
+        ```javascript
+        var alsoWorks = 'This string\'s value is not going to work!'; 
+        ```
+
+        > Try adding each line into your console to check for errors.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Variable Types: Numbers
+
+        Variable **values** can also be numbers.
+        
+        ```
+        var meaningOfLife = 42;
+        ```
+
+        JavaScript can also do math.  
+        
+        `+` addition, `-` subtraction, `*` multiplication, `/` division
+
+        ```javascript
+        var addition = 5 + 2;
+        ```
+        
+        This will return the value of 7.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Variable Types: Numbers
+        
+        These operations work whether the values are numbers, or the values are stored in a variable.
+
+        ```javascript
+         var startingValue = 5;
+         var multiplier = 2;
+         var endingValue = startingValue * multiplier;
+        ```
+         
+        This will return a value of 10.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise: Numbers & operators
+
+        In the console, let's try using the various math operations.
+        
+        `+` addition, `-` subtraction, `*` multiplication and `/` division.
+        
+        Examples:
+        ```javascript
+        > 2 + 2;
+        > 199 * 42;
+        ```
+        
+        Remember BEDMAS? (Brackets, Exponents, Division, Multiplication, Addition, Subtraction) This also applies in JavaScript.
+        
+        ```javascript
+        > 2 + 2 * 4;
+        > (2 + 2) * 4;
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise: numbers & operators
+        
+        Let's create a program for finding a person's age. 
+        
+        1. Create two variables, one for `currentYear` and one for `birthYear`.
+        1. Subtract the two values.
+        
+        It will look something like this:
+        
+        ```javascript
+        var currentYear = "2016";
+        var birthYear = "1979";
+        var age = currentYear - birthYear;
+        
+        ```
+        
+        <!-- ![doing math with variables in the console](framework/img/workshop/console-math-variables.gif) -->
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Exercise: Create a JavaScript Program! (10-15 mins)
+
+        Using variables & arithmetic operators, calculate how many seconds there are in a day.
+        
+        (You can choose your own variable names. Just make sure to adhere to best practices.)<!-- .element: class="note" -->
+
+        1. Declare variables & values for: 
+          * `secondsPerMinute` 
+          * `minutesPerHour`
+          * `hoursPerDay`
+        1. Declare a `secondsPerDay` variable and use arithmetic operators to calculate the value.
+        1. **Bonus!** Use concatenation to output "There are x seconds per day."
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Exercise Solution
+        
+        ```javascript
+        var secondsPerMinute = 60;
+        var minutesPerHour = 60;
+        var hoursPerDay = 24;
+        var secondsPerDay = secondsPerMinute * minutesPerHour * hoursPerDay;
+
+        // This command will output the value of secondsPerDay
+        secondsPerDay;
+
+        // Concatenating strings with the secondsPerDay variable.
+        var sentence = "There are " + secondsPerDay + " seconds per day.";
+
+        // This command will output the value of sentence.
+        sentence;
+        ```
+        
+        ```
+        // This is a JavaScript comment by the way :) Use it to leave notes.
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Comments!
+
+        Just like HTML and CSS, you can also leave comments in JavaScript.
+        
+        ```
+        // This is how you leave a single line comment.
+
+        // You can write many single line comments.
+        // Just make sure to add the double slash
+        // for every new line.
+        ```
+
+        Here's another way to comment larger blocks of text.
+
+        ```javascript
+        /* This is how you leave
+        multi-line comments for when you
+        want to write a longer message */
+        ```
+
+        Multi-line comments are great for "hiding" large blocks of code so you can try something new without erasing your old code.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Variable Types: Booleans
+
+        Variables that only contain a `true` or `false` value are called **booleans**.  You can set values to true or false.
+        
+        ```javascript
+        var isTenGreaterThanZero = true;
+        var isTwoLessThanOne = false;
+        ```
+        
+        Values can also be returned as true or false.  
+        
+        > Try typing `2 > 4` in the console.  What value gets returned?
+      </script>
+    </section>
+    
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #Variable Types
+        ##Objects
+      </script>
+    </section>
+    
+    <section id="objects" class="slide" data-markdown>
+      <script type="text/template">
+        # Variable Types: Objects
+
+        **Objects** can be thought of as a variable that can hold *multiple* values. To *declare* an object, use the curly brackets `{}`. 
+        
+        The values are written in `property: value` pairs. Each pair is separated by a comma, except for the last one.
+
+        ```javascript
+        var myObject = {
+          propertyName: propertyValue,
+          anotherPropertyName: anotherPropertyValue
+        }
+        ```
+
+        ```javascript
+        var coffeeOrder = {
+          drinkType: "latte",
+          milk: "almond",
+          flavor: "caramel"
+        }
+        ```
+        
+        Let's take a closer look at the syntax.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Declare the Object
+
+        ```javascript
+        var coffeeOrder = { }
+        ```
+
+        * Declare the object with `var`.  
+        * The object name is `coffeeOrder`. 
+        * The curly bracket starts and ends the object.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Add the Properties to the Object
+        
+        ```javascript
+        drinkType: "latte",
+        milk: "almond",
+        flavor: "caramel"
+        ```
+
+        * the property name must start with a letter and contain no spaces
+        * a colon (:) is used to separate name from value
+        * a comma (,) separates properties
+        * can be repeated for as many properties as you like
+        * the last pair of `property:value` does not end with a comma
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Objects: Putting it all together!
+        
+        
+        ```javascript
+        var coffeeOrder = {
+          drinkType: "latte",
+          milk: "almond",
+          flavor: "caramel"
+        }
+        ```
+        
+        Reminder, objects are similar to variables because it can be used to hold values. But it can hold *multiple* values!
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Accessing an Object
+        
+        Since objects hold multiple values, it can't be accessed by using the variable name. Object values are accessed using **dot notation**. 
+        
+        To access the value for the `drinkType` property, it would look like this:
+
+        ```javascript
+        var coffeeOrder = {
+          drinkType: "latte",
+          milk: "almond",
+          flavor: "caramel"
+        }
+        ```
+        ```
+        coffeeOrder.drinkType
+        ```
+        
+        > What value would `coffeeOrder.drinkType` return?
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class exercise: Objects
+
+        Using the object below, let's add this entire code block into our console and practice accessing various property values.
+
+        ```javascript
+        var coffeeOrder = {
+          drinkType: "latte",
+          milk: "almond",
+          flavor: "caramel"
+        }
+        ```
+        
+        > How would you access the value for `milk` and `flavor`? Try it out in the console.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Variable Types
+
+        As you've just seen, there are *many* different variable types in JavaScript and many rules about how to write them. 
+        
+        There are actually a few more. You can read all about them [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures).
+
+        It will take practice getting used to the different rules. But, in a nutshell, *variables* are used to hold values and the values themselves have different *types*.
+      </script>
+    </section>
+      
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #Functions
+        ## Repeating instructions
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Functions
+
+        A `function` is a name for a **set** of commands or instructions.  
+        
+        When using a function, it executes all the commands contained within, making it easier to make the code repeat repetitive steps.  
+
+        Let's look at two functions, `alert()` and `prompt()`.  These come built into JavaScript, for free! Note the syntax, the parentheses `()`, must be included.
+
+        > Go back to the console and type both functions in, one at a time, and see what happens. 
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Functions and Arguments
+
+        We've seen now that `alert()` and `prompt()` create a pop-ups in the browser but the pop-ups are blank.  An *argument* can be *passed* into the functions by adding a value within the parentheses `()`.  
+        
+        Try this in the console:
+
+        ```javascript
+        alert("Hello!");
+        ```
+        ```javascript
+        prompt("What day is it today?");
+        ```
+
+        It will look similar to this:
+
+        ![console function example](framework/img/workshop/console-alert-prompt.gif)
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Make your own functions!
+
+        You can create your own functions that can contain any number of instructions that you need, including other functions. 
+        
+        Use the `function` keyword to declare a new function.
+
+        ```javascript
+        function sayAnything(){
+          alert("Hello!");
+          prompt("What day is it today?");
+        }
+        ```
+        The above example creates a new **function** called `sayAnything` but similar to variables, nothing will happen until the function is **called**.  
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Calling a function
+        
+        To **call** a function, use the function name plus parentheses `()`.  Remember `alert();` and `prompt();`?  
+        
+        Let's add this whole function declaration into the console and then execute it by *calling* it.
+        
+        ```javascript
+        function sayAnything(){
+          alert("Hello!");
+          prompt("What day is it today?");
+        }
+        ```
+        ```
+        sayAnything();
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Objects, Functions and Methods
+
+        What's the difference between these two?  The second one kind of looks like a function right?
+        ``` javascript
+        alert();
+        console.log();
+        ```
+
+        `alert()` is a **function**, it works on its own.
+
+        `log()` is a **method** because it's attached to an **object**, `console`. It will log a message only into the console tool. 
+
+        This is much easier for testing and debugging than using `alert()`. No more pesky pop-ups!
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Functions & jQuery
+
+        A function is one of the most powerful tools in JavaScript and one of the most powerful functions you will ever use is this one:
+        
+        ```
+        jQuery();
+        ```
+
+        Remember, jQuery is a <!-- .element: class="delayed" -->**JavaScript library**. 
+        
+        It's library of functions/methods used to simplify your program. You can download it and use in your projects.  There's a lot more to JavaScript but this intro will help to get up and running with jQuery!<!-- .element: class="delayed" -->
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Shortcut: The Dollar Sign
+
+        If jQuery is the only JavaScript library you are using in your project, it is convention to use the `$` shortcut. (And it's less typing!)
+
+        ```javascript
+        jQuery();
+        
+        // same as 
+        
+        $();
+
+        ```
+      </script>
+    </section>
+
+    <section class="slide centered">
+      <img src="http://33.media.tumblr.com/2466ab981143fb18653f8f09bce061c7/tumblr_n982qbvyFQ1s5lf2ro1_400.gif" alt="">     
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # What can jQuery do?
+
+        * animate items
+        * perform interactions with your users
+        * create rich user experiences with components like draggable & droppable items and image rotators
+        * and much more!
+
+        The library contains many, many built-in functions and methods. 
+
+        View the documentation here: [http://api.jquery.com](http://api.jquery.com).
+      </script>
+    </section>
+
+    <section class="slide">
+      <h1>jQuery Examples</h1>
+
+      <p>Here is an example of a single animation and a <em>chained</em> animation.<br>
+      <span class="note">In the Results tab, hover over the example to show the &quot;RERUN&quot; button.</p>
+
+      <p data-height="268" data-theme-id="0" data-slug-hash="dcmxw" data-default-tab="result" data-user="learningcode" class='codepen'>See the Pen <a href='http://codepen.io/learningcode/pen/dcmxw/'>jQuery Animation Example</a> by Ladies Learning Code (<a href='http://codepen.io/learningcode'>@learningcode</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+      <script async src="http://codepen.io/assets/embed/ei.js"></script>
+      
+      <p class="note">CodePen is basically a “sandbox” to try out code without switching back and forth between a text editor and browser. Click the "Edit on Codepen" link to try out the code. When you save your pen, a unique URL is created for you OR sign up for a (free) account to save your pens.</p>
+      <p class="note"><img src="framework/img/workshop/codepen.png" width="400" class="left"> When editing jQuery in Codepen, select the gear icon in the JS box and it will show you if/what library it's using.</p>
+    </section>
+    
+    <section class="slide">
+      <h1>jQuery Examples</h1>
+
+      <p>Each button below has been given a different jQuery effect when clicked. Give each a try!</p>
+
+      <p data-height="350" data-theme-id="0" data-slug-hash="sgaEh" data-default-tab="result" data-user="learningcode" class='codepen'>See the Pen <a href='http://codepen.io/learningcode/pen/sgaEh/'>jQuery Event and Method Examples</a> by Ladies Learning Code (<a href='http://codepen.io/learningcode'>@learningcode</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+      <script async src="http://codepen.io/assets/embed/ei.js"></script>
+    </section>
+    
+    <section class="slide">
+      <h1>jQuery Examples</h1>
+
+      <p>You can even <em>extend</em> the capabilities of jQuery with <strong>plugins</strong> like the jQuery UI plugin used below. You can drag and re-order the items using the jQuery UI sortable plugin.</p>
+      
+      <p data-height="268" data-theme-id="0" data-slug-hash="fAmbJ" data-default-tab="result" data-user="learningcode" class='codepen'>See the Pen <a href='http://codepen.io/learningcode/pen/fAmbJ/'>jQuery UI Draggable Sortable Example</a> by Ladies Learning Code (<a href='http://codepen.io/learningcode'>@learningcode</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+      <script async src="http://codepen.io/assets/embed/ei.js"></script>
+    </section>
+        
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #Setting up a project
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Setting up your project files
+
+        Inside of the folder you downloaded today, there are many folders that contain different files.
+        
+        ```xml
+        llc-intro-to-jquery-master
+          |-- framework // Contains files for this slide presentation. Do not edit!
+          |-- project // Contains project files for this workshop.
+          |-- slides.html // This is the file you are viewing right now!
+        ```
+
+        Open the `project` folder in the text editor to edit your project.  
+        Go to **File** > ** Add Project Folder**. A popup will appear.
+        
+        ![](framework/img/workshop/editor-add-project-1.jpg)
+        
+        * navigate to the **llc-intro-to-jquery-master** folder
+        * select the **project** folder & click **Open**
+        
+        The files will now appear in the sidebar.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Setting up your project files
+        
+        Your project folder structure will look like this:
+        
+        ```html
+        |-- project
+          |-- css // CSS files.
+          |-- images // Images files. You can also add your own images here.
+          |-- js // Javascript files.
+          |-- final.html // The sample project for your reference.
+          |-- index.html // The HTML homepage of your site.
+        ```
+        
+        Open **index.html** in your browser and editor.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Getting to know Atom
+        
+        Having a good text editor and learning how to use it to its full potential will help your work flow. Today, let's update the text wrapping option to make it easier to read long blocks of code and text.
+        
+        Go to **Preferences** to open the customization options.
+
+        ![](framework/img/workshop/atom-preferences.jpg)<!-- .element: width="70%" -->
+
+        The **Settings** tab will show by default. Scroll down to **Soft Wrap** option.
+
+        ![](framework/img/workshop/atom-settings.jpg)<!-- .element: width="70%" -->
+          
+        Make sure the **Soft Wrap** option is checked.
+        
+        ![](framework/img/workshop/atom-soft-wrap.jpg)<!-- .element: width="70%" -->
+        
+        ---
+        ###Resources
+        
+        *   [Atom documentation](https://atom.io/docs)
+        *   [Atom Shortcuts cheat sheet](https://bugsnag.com/blog/atom-editor-cheat-sheet)
+        *   [Customizing Atom](https://atom.io/docs/v0.61.0/customizing-atom)
+        *   [Themes](https://atom.io/themes) for Atom
+        *   [Snippets](https://github.com/atom/snippets) - create your own code snippet shortcuts
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Using jQuery, Option 1: Download the file
+
+        1. [Download](http://jquery.com/download/) the latest version and use the *compressed* file.
+        1. Save the file within your projects files (i.e. in a "js" folder).
+        1. Link it to your HTML document using a <code>&lt;script&gt;</code> tag.
+          * The `src` points to where the file is saved in your project folder.
+          * Make sure you use the *exact* same file name. (e.g. `jquery-version-number.js`)
+        1. JavaScript can be included anywhere on the page but often, it is included before the *closing* `</body>` tag to allow the page document to load first.
+
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    ... page content
+    ...
+    ...
+  &lt;script src=&quot;js/jquery-1.12.0.min.js&quot;&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </script>
+    </section>
+      
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Using jQuery, Option 2: Use a CDN
+
+        CDNs (Content Delivery Network) can offer a performance benefit by hosting jQuery on a web servers. In the `src`, reference the *hosted* file directly, also listed on the [download page](http://jquery.com/download/#using-jquery-with-a-cdn).
+        
+        
+        Be sure to include the `http://` when viewing the site locally (on your computer).
+        
+        <pre><code>&lt;script src=&quot;http://code.jquery.com/jquery-1.12.0.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+        
+        **Note**:  
+        If you're working on your project where you have no internet connection, the file will not load and any jQuery code will not work.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Using jQuery
+        
+        Now that the jQuery file is linked, all of the features can be accessed. However, one more thing needs to be added.
+
+        ##Enter Document Ready
+
+        `$(document).ready()` is an *event*. It's when the browser has downloaded enough of the web page, to be able to match the elements selected in your jQuery code.
+
+        It only needs to be added once but all jQuery code *must* be contained within this code snippet. Read more about it [here](http://learn.jquery.com/using-jquery-core/document-ready/).
+        
+        ```
+        $(document).ready(function(){
+          // all jQuery code here
+        });
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Getting jQuery Ready
+
+        1. [Download](http://jquery.com/download/) the jQuery file or use the [CDN](http://jquery.com/download/#using-jquery-with-a-cdn) and reference it in your **index.html** file. 
+        1. Add the "document ready" to **index.html**. This will need to be contained *within* its own pair of <code>&lt;script&gt;&lt;/script&gt;</code> tags.
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    ... page content
+    ...
+    ...
+
+  &lt;script src=&quot;js/jquery-1.12.0.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+    $(document).ready(function(){
+      // all jQuery code here
+    });
+  &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+      </script>
+    </section>
+
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        # Part Two
+        ## Writing jQuery & Using Plugins
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #HTML, CSS & jQuery
+        
+        So far we've been using the console tool to practice running JavaScript commands.
+        
+        In web based projects, browsers need HTML & CSS to display the *content* and *style*.
+
+      </script>
+    </section>
+        
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # HTML overview
+
+        HTML (HyperText Markup Language) is use to define the **content** on a document/web page. Use `<tags>` to create HTML **elements** that represent items on the page. Let's look at some common tags.
+
+        ##Paragraphs
+        ```xml
+        <p>Paragraph.</p>
+        <p>Another paragraph.</p>
+        ```
+        <div class="example">
+          <p>Paragraph.</p>
+          <p>Another paragraph.</p>
+        </div>
+        
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # HTML overview
+        
+        ##Links
+        ```xml
+        <a href="http://ladieslearningcode.com">Ladies Learning Code</a>
+        ```
+        <div class="example">
+            <a href="http://ladieslearningcode.com">Ladies Learning Code</a> 
+        </div>
+        
+        ##Images
+        ```xml
+        <img src="http://www.fillmurray.com/300/300" alt="Placeholder Image">
+        ```
+        <img src="http://www.fillmurray.com/300/300" alt="Placeholder Image">
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #CSS overview
+
+        CSS (Cascading Style Sheets) defines the *style* and controls the look and feel of the HTML document. 
+        
+        **Selectors** are used to determine which *HTML elements* to apply the style to.
+        
+        **Declarations** are style rules specified in the form of `property: value;` pairs and wrapped in curly braces `{}`.
+
+        ```css
+        selector {
+          property: value;
+        }
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #CSS overview
+        
+        **Properties** determine the *type* of style to be applied to the element (e.g. color). 
+        
+        **Values** are specific to the property. 
+        
+        Declarations must end with a semi-colon (`;`) to indicate that the instruction is complete.
+
+        ![](framework/img/workshop/css.png)
+      </script>
+    </section> 
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #CSS: Element selector
+        There are many different ways to select HTML elements. 
+        To select `any` HTML tag, use just the tag `name`, without the angled brackets.
+      
+<textarea class="snippet" data-subject="#element">div {
+  color: red;
+}</textarea>
+        <aside class="example" id="#element">
+          <div>This is a div.</div>
+          <div>Another div.</div>
+          <p>Paragraph element.</p>
+        </aside>
+      </script>
+    </section> 
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #CSS: class selector
+        
+        For classes, an `attribute` must be added to the HTML and denoted by a leading period in the CSS.
+        
+        ```xml
+        <div class="special">Select ANY element with the "special" class.</div>
+        ```
+<textarea class="snippet" data-subject="#class">.special {
+  color: blue;
+}</textarea>
+        <div class="example" id="#class">
+          <div class="special">Select ANY element with the "special" class.</div>
+        </div>
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #CSS: ID selector
+        
+        For an `id`, the attribute is also added to the HTML but is denoted by a leading number symbol. Note that an `id` can only be used <strong>once</strong> per page.
+        
+        ```xml
+        <div id="special">Select ANY element with this id.</div>
+        ```
+        
+<textarea class="snippet" data-subject="#id">#special {
+  color: green;
+}</textarea>
+        <div class="example" id="#id">
+          <div id="special">Select ANY element with this id.</div>
+        </div>
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Selecting elements in jQuery
+        
+        A common use for jQuery is selecting an HTML object and applying an effect or action to it.
+        
+        The `$()` function takes a single value. 
+        
+        ```
+        $("p"); // selects all paragraphs
+        ```
+        
+        To select an element in jQuery, use the same syntax as CSS! The only difference is the selector is contained in quotes because it is a string.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Selecting elements in jQuery
+        
+        To select an HTML element, use the tag name.
+        ```
+        $("a");
+        ```
+
+        To select a class name, use the leading period, just like CSS.
+        ```
+        $(".about");
+        ```            
+        To select an id name, use the number/hash symbol, just like CSS.
+        ```
+        $("#about");
+        ```
+        
+        > What element will be selected in this example?
+        > `$(".about p");`
+      </script>
+    </section>
+      
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # jQuery Methods
+
+        In the next couple of exercises, we will be using these methods: 
+
+        *   the `width()` method sets the width of an element, in pixels.
+        *   the `hide()` method will hide all the selected matched elements.
+        *   the `show()` method will show all the selected matched elements.
+        *   the `css()` method alters the look of the elements by *dynamically* adding CSS.
+
+        ---
+        ###Resource
+
+        jQuery documentation here: [api.jquery.com](http://api.jquery.com)
+      </script>
+    </section>
+           
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # HTML & jQuery
+
+        Let's make a change to the images in the sample project. 
+ 
+        ![](framework/img/workshop/exercise-fav-1.png) <!-- .element: width="50%" -->
+
+        The HTML for this section looks like this:
+
+        ```
+        <section id="favs">
+          <h1>My Favourite Things</h1>
+          <img class="fav" src="images/puppy.jpg" alt="dog">
+          <img class="fav" src="images/puppy.jpg" alt="dog">
+          <img class="fav" src="images/puppy.jpg" alt="dog">
+        </section>
+        ```
+        
+        Just like CSS, there are a couple ways to target the elements.
+        
+        ```
+        $("img") // will work but will target ALL images on the page
+        $(".fav") // works better, only targets images with the class of "fav"
+        ```
+      </script>
+    </section>
+
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise: `width()`
+
+        Let's change the size of the image using the `.width()` jQuery method. 
+
+        You can pass a size value into the parentheses to set the width size, represented in pixels. Using the dot notation syntax, append it to the selected images.
+
+        ```javascript
+        $(document).ready(function(){
+          $(".fav").width(100);
+        });
+        ```
+
+        ---
+        ###Resource
+        http://api.jquery.com/width/
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise: `width()`
+
+        What about bigger? Use a larger number value.
+
+        ```javascript
+        $(document).ready(function(){
+          $(".fav").width(400);
+        });
+        ```
+
+        Now you've seen that you can set the width of an element with jQuery. But we could use CSS to do that!  
+
+        Let's try something CSS can't do; make effects and interactions happen on a **click event**.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Click Events
+
+        Instead of the browser running an event right away, using a click event will make it trigger only when an item is actually clicked by the user.
+
+        Adding a function to a **user triggered event** is called an **event listener**.  The code just sits around waiting and listening for the event to happen.
+
+        ---
+        ### Resource
+        http://api.jquery.com/click/
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Click Events
+
+        First, select the target item.
+        
+        ```
+        $(".fav")
+        ```
+
+        Then add the `.click()` method.
+        ```
+        $(".fav").click();
+        ```
+
+        Next, pass a *function* into the parentheses,
+        `function(){}`, to execute each time the event is triggered.
+        ```
+        $(".fav").click( function(){} );
+        ```
+
+         </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Click Events
+
+        Inside of that function, in between the curly brackets `{}`, add some space to add additional instructions. 
+
+        Whatever effect that should happen, only on click, goes here.
+
+        ```
+        $(".fav").click(function(){
+          // The changes that occur when object is clicked.
+        });
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Testing with `console.log();`
+
+        Let's test the click event and make sure we've selected the correct object.  Remember `console.log()`?  This method is very handy for testing and debugging. 
+        
+        ```javascript
+        $(".fav").click(function(){ 
+          console.log("It works!");
+        });
+        ```
+
+        Testing the click event here will let you know this step is working, before you move onto the next step.
+
+        </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Testing with `console.log();`
+
+        Let's add the `console.log` test and refresh the browser.
+
+        Open the console tool and click an image.  You should see the message you passed into the `console.log()` method like this:
+
+        ![console.log example](framework/img/workshop/console-log.gif)
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Click & Hide
+
+        Now that we know the click event works, you can delete the `console.log` test or comment it out. 
+
+        Next, let's try adding the `hide()` method to make the image "hide" on click. Use `$(this)` as the selector (more on this soon).  
+
+
+        ```javascript
+        $(".fav").click(function(){ 
+            //console.log("It works!");
+            $(this).hide();
+        });
+        ```
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Click & Hide: How does this work?
+
+        jQuery will *dynamically* add inline CSS to the HTML element when the element is clicked.  It will add  `style="display:none;"` to the element to hide it, though the item is still in the HTML. 
+
+        Let's **inspect the element** in the browser to see how jQuery adds these changes. It will look similar to this:
+
+        ![show hide console example](framework/img/workshop/console-show-hide.png)
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Click & Hide: Duration
+
+        Add a number value to the `hide()` **method** to set the duration of the effect.  Add a number, in milliseconds, in the parentheses.
+
+        ```javascript
+        $(".fav").click(function(){ 
+          $(this).hide(1000);
+        });
+        ```  
+
+        In jQuery, any method that has the option of adding a duration value, you can use a number in milliseconds.  
+
+        You can also use a string value of either "fast" or "slow" which equal 200 and 600 milliseconds respectively. If you do not supply a value, the default duration is 400 milliseconds.      
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Chain events
+
+        Methods can also be **chained** meaning different effects can execute one after another.
+
+        ```javascript
+        $(".fav").click(function(){ 
+          $(this).hide(1000).show('fast');
+        });
+        ```
+
+        Chain as many jQuery methods as you need.  The below example is perfectly valid. Though this example is kinda silly, it's fun to experiment! Add it to your project and see what happens!
+
+        ```javascript
+        $(".fav").click(function(){ 
+          $(this).hide(1000).show('fast').fadeOut('slow').fadeIn(5000).slideUp(800)
+          .slideDown(10000);
+        });
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # What is `$(this)`?!
+
+        jQuery has a special variable called `this`. 
+
+        `$(".fav")` will find *all* the of `.fav` images and put them in a collection of matched elements.  
+
+        `$(this)` refers to the *current* element from the collection. It is also a variable, not a string, so no quotes are needed.
+
+
+        Let's look at an example without using `this`.
+
+        ```javascript
+        $(".fav").click(function(){ // will watch for any images to be clicked
+          $(".fav").hide(1000); // will hide *all* the images
+        });
+        ```
+
+
+        The below code, will ensure that only the clicked item will have the hide action applied to it.
+
+        ```javascript
+        $(".fav").click(function(){ // will watch for *any* image being clicked
+          $(this).hide(1000); // will hide to the specific clicked image, in the collection
+        });
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #"Active" Menu
+
+        Let's use the jQuery `click()`, `addClass()` and `removeClass()` methods to create an `.active` class to style the menu item differently when clicked.  [See example](project/final.html).
+
+        Here are the instructions broken down into steps:
+
+        1. Select the elements to be clicked.
+        1. Add a class of "active" to invoke a new style.
+        1. Add the "active" class style to the CSS file.
+        1. When the user clicks on another menu item, add the "active" class to the new item and remove the active class from non-active items.
+
+        Let's get started!
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: "Active" Menu, Step 1
+                
+        ##Select the elements to be clicked.  
+
+        ```
+        <ul class="menu">
+          <li><a href="#about">About</a></li>
+          <li><a href="#favs">Favourites</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        ```
+        What selector should be used?
+
+        <pre class="delayed"><code>$(".menu a")</code></pre>
+        </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: "Active" Menu, Step 1
+
+        Then apply the .click() method.
+        ```
+        $(".menu a").click();
+        ```
+        <p class="delayed">Then pass a function into to the click() method. Add <code>function(){}</code> into the parentheses.</p>
+<pre class="delayed"><code>$(".menu a").click( function(){} );
+</code></pre>
+        <div class="delayed">
+          <p>Test the click action.</p>
+<pre><code>$(".menu a").click(function(){
+    console.log("It works!");
+});
+</code></pre>
+            <p>Check if you see the message in your console.</p>
+        </div>
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: "Active" Menu, Step 2
+
+        Now, add the `addClass()` method. In the parentheses, add the CSS class name to be added.
+
+<pre class="javascript"><code>$(".menu a").click(function(){
+    //console.log("It works!");
+    $(this).addClass("active");
+});
+</code></pre>
+
+        <div class="delayed">
+          <p>Wait? Nothing happened?</p>
+
+          <p>That’s because the style hasn't been added to the CSS file yet.  You can still check if the class was added to the HTML.  In your console, just click on the “Elements” tab.</p>
+
+          <p><img src="framework/img/workshop/console-menu-active.gif" alt="" title=""> </p>
+        </div>
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Active Menu, Step 3
+        
+        ##Add the CSS active style
+
+        In **styles.css**, create a new CSS style for the active state. 
+
+        This example below will change the text color and background colour (but you can apply whatever style you like). Since the color has been added to `.menu a`, create a selector using the new `active` class
+                
+        ```       
+        .menu a.active {
+          background: #ccc;
+          color: #222;
+        }
+        ```
+
+        Test the menu clicks again to test for the new CSS styles.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: "Active" Menu, Step 4
+
+        The `.active` class is now added to the clicked item. But when a new item is clicked, the class should be removed from the non-active items, then added to the newly clicked item.
+
+        Reminder, JavaScript/jQuery executes commands from top to bottom.  
+
+        One way to update this program is to remove the class **first**, *then* add the class to the clicked item.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: "Active" Menu, Step 4
+
+        In this case, the `$(this)` selector won't be used since we are looking for *any* menu link with the `active` class to remove it. So `.active` should be the targeted selector.
+            
+        ```javascript  
+        $(".menu a").click(function(){
+            $(".active").removeClass("active"); // remove the class from any menu link
+            $(this).addClass("active"); // add the class to the specific menu link that is clicked
+        });
+        ```
+
+        <p class="note">**Note**: if the class of `active` is used anywhere else on the page, it will be affected as well.  Another option is to use a selector more specific to the menu such as `$(".menu a.active")`.</p>
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Exercise: Personalize Your Page (15-20mins)
+
+        Now that you've had a chance to write some JavaScript & jQuery, take some time to personalize your page. Here are some suggestions: 
+
+        1. Update the page `<title>`.
+        1. Updated the header text.
+        2. Add your profile image.
+        3. Update your favorite things images.
+
+        **Bonus**: Prepare for the next exercise.
+
+        1.  We will be creating an image rotator.  Find 3-4 images and just add them to your **images > rotator** folder for now.  You don't need to add it to your HTML page just yet. (There are sample images included in the images folder as well.)
+        
+        See below for free image resources.
+
+        ---
+        ###Resources
+        * [List of image placeholder sites](http://www.hanselman.com/blog/TheInternetsBestPlaceholderImageSitesForWebDevelopment.aspx)!
+        * http://superfamous.com/
+        * http://www.gratisography.com/
+        * http://littlevisuals.co/
+        * http://nos.twnsnd.co/
+        * http://unsplash.com/
+      </script>
+    </section>
+
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        # jQuery Plugins
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # jQuery Plugins
+
+        jQuery is a capable library on its own. But jQuery doesn't & can't do everything.  
+
+        If the library contained all the methods to handle everything any user would ever want to do, it would make the file larger and would slow down page load.  
+
+        ## Use plugins!
+
+        Plugins can be used to *extend* the library, but just with the specific extra functionalities that you need.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # jQuery Plugins
+
+        * [Scroll Magic](http://janpaepke.github.io/ScrollMagic/) - adds effects based scroll position
+        * [ToolTipster](http://iamceege.github.io/tooltipster/#demos) - customize tool tips
+        * [jQuery UI](http://jqueryui.com/themeroller/) - collection of UI (user interactions) widgets
+        * [FlexSlider](http://flexslider.woothemes.com/) - responsive photo slider
+        * and many more!
+         
+        Let's take a look at the FlexSlider plugin and add a photo slider to our project.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Using the Flexslider plugin
+        
+        For today, the necessary files have already been included in your project folders. But let's go through the steps together, for reference.
+
+        First, the plugin files need to be downloaded [here](http://www.woothemes.com/flexslider/). Click the green button to download the zip file. Unzip it (**extract all** if on a PC).
+
+        Included in the download are files that are needed to make the plugin work (highlighted in red) and other files that are just for demo purposes. (Files are already included in your project folder).
+
+        ![Flexslider in the project directory](framework/img/workshop/flexslider-files.jpg)
+      </script>
+    </section>
+
+    <!-- <section class="slide" data-markdown>
+      <script type="text/template">
+        # Using the Flexslider plugin
+        
+        These are the files you will need to *copy*/*add* into your project folder, into the appropriate directory.
+
+        *   entire **fonts** folder into the **project** folder
+        *   flexslider.css into the **css** folder
+        *   images > bg_play_pause.png into your **project > images** folder
+
+        Your project folder should now look like this:
+
+        ![](framework/img/workshop/folders-with-flexslider.png)
+
+        Your images files may vary but just ensure that **bg_play_pause.png** is included.
+      </script>
+    </section> -->
+
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise: Add the Flexslider files
+        
+        The plugin files are saved within your directory but these files now need to be referenced and pulled into your HTML page.
+
+        Back in **index.html**, add the Flexslider `.js` file. It must be included *after* the jQuery library because remember, a plugin is an *extension* of jQuery so it needs to load first.
+
+        Also, add all library files *before* your custom JS code.
+
+<pre><code>&lt;script src=&quot;js/jquery-1.12.0.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/jquery.flexslider-min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  $(document).ready(function(){
+    // all your jQuery code here
+  });
+&lt;/script&gt;
+        </code></pre>
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise: Add the Flexslider files
+
+        Flexslider also includes a CSS file to handle the styling of the image rotator. The .js file only handles the functionality.
+
+        In **index.html**, in the `<head>` section at the top of the page, link to the CSS file. Just like the .js files, add library CSS files *before* your custom styles, in case you need to add or override the CSS.
+
+        ```xml
+        <!doctype html>
+        <html>
+          <head>
+            <title>Ladies Learning Code</title>
+            <link href='http://fonts.googleapis.com/css?family=Sacramento' rel='stylesheet' type='text/css'>
+            <link rel="stylesheet" href="css/flexslider.css">
+            <link rel="stylesheet" href="css/styles.css">
+          </head>
+        <body>
+        ...
+        ```    
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Add Flexslider HTML
+
+        In the Flexslider [documentation](https://www.woothemes.com/flexslider/), the HTML markup is provided. Use the same markup as documented because most of the time, plugins are created to match that specific chunk of code.  
+
+        You can update the `src` value to point to your folder structure & images files. If you do not have any images at this time, there are some samples in your project folder under **images > rotator**.
+
+        ```xml
+        <div class="flexslider">
+          <ul class="slides">
+            <li><img src="images/rotator/image1.jpg"></li>
+            <li><img src="images/rotator/image2.jpg"></li>
+            <li><img src="images/rotator/image3.jpg"></li>
+          </ul>
+        </div>
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Add Flexslider HTML
+
+        You can put this code anywhere you want it to show on the page. 
+
+        Save the file and check your page.  You won't see any images of a photo slider yet!  That's because the plugin still needs to be activated with a little jQuery.
+
+        **Initialize** the plugin by adding this line of code into your `$(document).ready()` function:
+
+        ```javascript
+        $('.flexslider').flexslider();
+        ``` 
+
+        (This snippet is included in the documentation.)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #It works! Sort of...
+
+        By default, the slider will be as wide as its *containing element*, because it's responsive! So depending where on the page you added the HTML, it might bigger or smaller than what you intended.
+
+        Also, it looks like the left & right arrow is missing. If yours looks something like the below screen shot, it's okay. We can update that. 
+
+        ![flexslider default](framework/img/workshop/flexslider-default.png)
+
+        Let's fix the arrows first, then the sizing.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Where are the arrows?
+
+        Usually, when you see a broken image or something is not loading properly, a good thing to check for is "Are all my files where they need to be?" In this plugin, the arrow is actually coming from the font file.
+
+        In **flexslider.css**, the source location for the fonts look like this:
+        
+        ```
+        @font-face {
+          font-family: 'flexslider-icon';
+          src: url('fonts/flexslider-icon.eot');
+          src: url('fonts/flexslider-icon.eot?#iefix') format('embedded-opentype'), url('fonts/flexslider-icon.woff') format('woff'), url('fonts/flexslider-icon.ttf') format('truetype'), url('fonts/flexslider-icon.svg#flexslider-icon') format('svg');
+          font-weight: normal;
+          font-style: normal;
+        }
+        ```
+        </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Update the arrows
+
+        In the previous step, we put our **fonts** folder *outside* of the **css** folder.  This CSS source needs to be updated to point to where the font files are in *our* project directory.
+
+        Your starting point is **flexslider.css**.  The `../` means "Go up and out of a folder", then go into the **fonts** folder. Update this to:
+        
+        ```
+        @font-face {
+          font-family: 'flexslider-icon';
+          src: url('../fonts/flexslider-icon.eot');
+          src: url('../fonts/flexslider-icon.eot?#iefix') format('embedded-opentype'), url('../fonts/flexslider-icon.woff') format('woff'), url('../fonts/flexslider-icon.ttf') format('truetype'), url('../fonts/flexslider-icon.svg#flexslider-icon') format('svg');
+          font-weight: normal;
+          font-style: normal;
+        }
+        ```
+
+        Another option is to just move the font folder *inside* the css folder.  The source in the CSS file just needs to match the current directory location.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+# Responsive Flexslider
+
+Flexslider was built to be responsive. That's why, by default, it's stretching to 100% width of its container. Try resizing your browser and see how the image rotator scales.
+
+To update the size, just use a little CSS. Here's the HTML:
+
+```
+<div class="flexslider">
+  <ul class="slides">
+    <li><img src="images/rotator/image1.jpg"></li>
+    <li><img src="images/rotator/image2.jpg"></li>
+    <li><img src="images/rotator/image3.jpg"></li>
+  </ul>
+</div>
+```
+
+`<div class="flexslider">` wraps all of the plugin content. Let's use that as the selector for the CSS.
+        
+```
+.flexslider {
+  width: 75%; /* makes the slider 75% of its container. */
+  margin: 0 auto; 
+/*        |   | 
+          |  Auto aligns the left & right of the element, making it
+          |  center aligned on the page.
+          |
+        Choose a positive number to add space to the top & bottom 
+        of the flexslider. Leave it at 0 for no space.
+*/
+}
+```
+      
+For the width value, choose whatever number you want! Just make sure it's a **percentage** value so the plugin can be responsive.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Customizations
+
+        Though this is a pre-written plugin, many plugin authors will provide ways to add various options for further customizations. 
+
+        Some Flexslider available options are:
+
+        * Animation Type: **fade** or **slide**
+        * Animation Speed: Set the speed of animations, in milliseconds.
+        
+        Let's look at how to set these two options.
+
+        ---
+        ###Resource
+        * See all the options [here](http://www.woothemes.com/flexslider/#gist9481310). 
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Using A Configuration Object with Flexslider
+
+        Go to this line of code in your document: 
+
+        ```javascript
+        $('.flexslider').flexslider();
+        ```  
+        And change it to the below example. Does that syntax look familiar? [Remember objects](#objects)?
+
+        ```javascript
+        $('.flexslider').flexslider({ animation : "slide" });
+        ```  
+        
+        Then refresh your page.  The flexslider will now animate new slides in from the right to the left instead of dissolving between the two images. 
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Using A Configuration Object with Flexslider
+
+        If you want to use multiple options, just separate them with a comma like this:
+
+        ```javascript
+        $('.flexslider').flexslider({ 
+            animation : "slide",
+            animationSpeed : 2000 
+        });
+        ```
+
+        Note that the last property: value pair does not have a comma. 
+
+        Also, a keyword value like `slide` is a string so it must be contained in quotes, until the speed number value.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+#Smoothscroll snippet
+
+Luckily we have wonderful community of developers that create and share code snippets. The main goal is to be able to write our own code from scratch, but why not use tried–and–true methods that have already been created by the experts?
+
+There are many plugins that can handle more advanced scrolling techniques but to add a simple smooth scroll to your one page site, use this snippet created by [css-tricks.com](http://css-tricks.com/snippets/jquery/smooth-scrolling/).
+
+```javascript
+$(function() {
+  $('a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+    && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
+```
+      </script>
+    </section>
+      
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Next steps & resources
+
+        **Exciting!** You now have a responsive image rotator on your project page full of the images that you want to show to people.  But why stop there?  
+
+        Check out the [these bonus lessons](framework/bonus-flexslider.html) for further customization of the Flexslider.
+        Here's a [link to the slide](index.html#slide79) with other available plugins to try as well.
+
+        Here are a couple of online resources to try out: 
+
+        * http://learn.jquery.com/
+        * http://try.jquery.com/
+
+        Also check out this book: http://javascriptbook.com/
+      </script>
+    </section>
+
+    <section class="slide last">
+      <h1>Thank you!</h1>
+      <h2 class="heading-bg">
+        <span>Intro to jQuery</span>
+      </h2>  
+
+      <!-- <img class="instructor" src="http://cl.ly/image/0r3Q3H110G36/profile-generic.jpg" alt="instructor name">
+      <h2><span class="cursive">with</span> Instructor Name</h2>
+      <ul>
+        <li><a href="mailto:">hello@email.com</a></li>
+        <li><a href="#">mywebsite.com</a></li>
+        <li><a href="http://twitter.com/">@twitter</a></li>
+      </ul> -->
+
+      <p class="attribution">Slide presentation created by <a href="http://christinatruong.com">Christina Truong</a> based on <a href="https://github.com/LeaVerou/csss">Lea Verou's SlideShow</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
+    </section>
+
+  </main><!-- cls main section -->
+  
+  <script src="framework/scripts/jquery-1.11.0.min.js"></script>
+  <script src="framework/scripts/slideshow.js"></script>
+
+  <!-- Uncomment the plugins you need -->
+  <script src="framework/scripts/prefixfree.min.js"></script>
+  <script src="framework/scripts/plugins/css-edit.js"></script>
+  <script src="framework/scripts/plugins/css-snippets.js"></script>
+  <script src="framework/scripts/plugins/css-controls.js"></script>
+
+  <script src="framework/scripts/plugins/markdown/marked.js"></script>
+  <script src="framework/scripts/plugins/markdown/markdown.js"></script>
+  <script src="framework/scripts/plugins/highlight/highlight-8.4.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="framework/scripts/llc.js"></script>
+  <script>
+    var slideshow = new SlideShow();
+
+    // Grabs all the .snippet elements
+    var snippets = document.querySelectorAll('.snippet');
+    for(var i=0; i<snippets.length; i++) {
+      new CSSSnippet(snippets[i]);
+    }
+  </script>
+  </body>
+</html>
