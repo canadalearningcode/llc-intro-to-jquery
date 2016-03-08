@@ -22,7 +22,7 @@
       
       <div class="instructions">
         <!-- ADD WIFI INFO HERE -->
-        <!-- <h2>Get Connected</h2>
+        <!-- <h2>Get <br> Connected</h2>
         <p><strong>Wifi:</strong> wifi network</p>
         <p><strong>Password:</strong> wifi password</p>
         <hr> -->
@@ -76,13 +76,31 @@
       <script type="text/template">
         # Today's project
 
-        Today we'll be taking a static one page website and adding dynamic effects to it such as a "smoothscroll", changing the styles of navigation links on click and adding a photo slider!
-
+        Today we'll be taking a static one page website and adding:
+        
+        * effects such as a "smoothscroll"
+        * changing the style of the clicked navigation links
+        * and adding a photo slider!
 
         View the sample project [here](project/final.html).
       </script>
     </section>
-
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Course Outline
+        
+        <div class="table-of-contents"></div> 
+      </script>
+    </section>
+    
+    <section class="slide title" data-markdown data-toc>
+      <script type="text/template">
+        # Programming Fundamentals
+        ## Part One
+      </script>
+    </section>  
+    
     <section class="slide basic-web-page" data-markdown>
       <script type="text/template">
         #HTML + CSS + JavaScript = Basic web page
@@ -99,16 +117,9 @@
 
         <p class="example" onclick="alert('Clicked!');">I'm a paragraph that can be clicked. Try it!</p>
       </script>
-    </section>
+    </section>  
     
-    <section class="slide title" data-markdown>
-      <script type="text/template">
-        # Part One
-        ## Programming Basics
-      </script>
-    </section>    
-    
-    <section class="slide title" data-markdown>
+    <section class="slide title" data-markdown data-toc>
       <script type="text/template">
         #JavaScript vs jQuery
       </script>
@@ -160,7 +171,7 @@
       </script>
     </section>
 
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown data-toc>
       <script type="text/template">
         #The Console
         
@@ -238,10 +249,10 @@
       </script>
     </section>
     
-    <section class="slide title" data-markdown>
+    <section class="slide title" data-markdown data-toc>
       <script type="text/template">
-        #The Building Blocks
-        ##JavaScript Variables & Functions
+        # Variables & Functions
+        ## The Building Blocks of JavaScript
       </script>
     </section>
     
@@ -530,7 +541,7 @@ var fails = 'This string's value is not going to work!';
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        # Exercise: Create a JavaScript Program! (10-15 mins)
+        # Exercise: Create a JavaScript Program! (~10 mins)
 
         Using variables & arithmetic operators, calculate how many seconds there are in a day.
         
@@ -900,7 +911,7 @@ var fails = 'This string's value is not going to work!';
       </script>
     </section>
 
-    <section class="slide">
+    <section class="slide" data-toc>
       <h1>jQuery Examples</h1>
 
       <p>Here is an example of a single animation and a <em>chained</em> animation.<br>
@@ -931,7 +942,7 @@ var fails = 'This string's value is not going to work!';
       <script async src="http://codepen.io/assets/embed/ei.js"></script>
     </section>
         
-    <section class="slide title" data-markdown>
+    <section class="slide title" data-markdown data-toc>
       <script type="text/template">
         #Setting up a project
       </script>
@@ -1101,12 +1112,12 @@ var fails = 'This string's value is not going to work!';
 
     <section class="slide title" data-markdown>
       <script type="text/template">
-        # Part Two
-        ## Writing jQuery & Using Plugins
+        # Writing jQuery <br>& Using Plugins
+        ## Part Two
       </script>
     </section>
     
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown data-toc>
       <script type="text/template">
         #HTML, CSS & jQuery
         
@@ -1366,7 +1377,7 @@ var fails = 'This string's value is not going to work!';
       </script>
     </section>
 
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown data-toc>
       <script type="text/template">
         #Click Events
 
@@ -1683,7 +1694,7 @@ var fails = 'This string's value is not going to work!';
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Exercise: Personalize Your Page (15-20mins)
+        #Exercise: Personalize Your Page (~15-20mins)
 
         Now that you've had a chance to write some JavaScript & jQuery, take some time to personalize your page. Here are some suggestions: 
 
@@ -1709,7 +1720,7 @@ var fails = 'This string's value is not going to work!';
       </script>
     </section>
 
-    <section class="slide title" data-markdown>
+    <section class="slide title" data-markdown data-toc>
       <script type="text/template">
         # jQuery Plugins
       </script>
@@ -1729,7 +1740,7 @@ var fails = 'This string's value is not going to work!';
       </script>
     </section>
 
-    <section class="slide" data-markdown>
+    <section id="plugins" class="slide" data-markdown>
       <script type="text/template">
         # jQuery Plugins
 
@@ -2037,13 +2048,13 @@ $(function() {
       </script>
     </section>
       
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown data-toc>
       <script type="text/template">
         # Next steps & resources
 
         **Exciting!** You now have a responsive image rotator on your project page full of the images that you want to show to people.  But why stop there?  
 
-        Here's a [link to the slide](slides.html#slide99) with other available plugins to try.
+        Here's a [link to the slide](slides.html#plugins) with other available plugins to try.
 
         Here are a couple of online resources to try out: 
 
