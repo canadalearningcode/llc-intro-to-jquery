@@ -150,9 +150,10 @@
       <script type="text/template">
         # JavaScript is a Programming Language
 
-        Because JavaScript is a programming language, the structure and syntax includes more complexities than HTML or CSS.
+        Because JavaScript is a programming language, the structure and syntax include more complexities than HTML or CSS.
 
-        The basic building blocks of programming includes features such as *variables*, *functions*, *objects* or control structures such as *if* statements or *loops*.
+        The basic building blocks of programming include features such as *variables*, *functions*, *objects* or control structures such as *if* statements or *loops*.
+
       </script>
     </section>
 
@@ -214,8 +215,10 @@
         Open the console in this slide presentation. Take a moment to practice opening and closing the console until you’re comfortable with it.
 
         ---
+
         ###Pro tip!
-        The console also shows any errors on the page so if you open the console on any web page other than this slide deck, you *may* see some error messages.
+        The console also shows any errors on the page so if you open the console on any existing web page, you *may* see some error messages.
+
       </script>
     </section>
 
@@ -300,6 +303,11 @@
           * use camelCase for names with multiple words.
           * every new word is capitalized
           * the result looks kind of like `camelHumps`
+        * Cannot contain reserved symbols:
+          * math symbols (+, -, =, etc...)
+          * javascript-specific symbols ({, }, :, etc...)
+        * Cannot begin with:
+          * a digit (0 - 9)
         * JavaScript is case sensitive
           * so variable names are also case sensitive
         * Use a descriptive names:
@@ -473,8 +481,8 @@ var fails = 'This string's value is not going to work!';
         ```javascript
         var addition = 5 + 2;
         ```
+        This will return a value of `7`.
 
-        This will return the value of 7.
       </script>
     </section>
 
@@ -490,7 +498,8 @@ var fails = 'This string's value is not going to work!';
          var endingValue = startingValue * multiplier;
         ```
 
-        This will return a value of 10.
+        This will return a value of `10`.
+
       </script>
     </section>
 
@@ -605,6 +614,7 @@ var fails = 'This string's value is not going to work!';
         ```
 
         Multi-line comments are great for "hiding" large blocks of code so you can try something new without erasing your old code.
+        >**Careful:** Multi-line comments do not **nest**. That means you cannot place a multi-line comment inside another!
       </script>
     </section>
 
@@ -612,14 +622,14 @@ var fails = 'This string's value is not going to work!';
       <script type="text/template">
         # Variable Types: Booleans
 
-        Variables that only contain a `true` or `false` value are called **booleans**.  You can set values to true or false.
+        Variables that only contain a `true` or `false` value are called **booleans**.  You can set values to `true` or `false`.
 
         ```javascript
         var isTenGreaterThanZero = true;
         var isTwoLessThanOne = false;
         ```
 
-        Values can also be returned as true or false.
+        Values can also be returned as `true` or `false`.
 
         > Try typing `2 > 4` in the console.  What value gets returned?
       </script>
@@ -704,15 +714,17 @@ var fails = 'This string's value is not going to work!';
         }
         ```
 
-        Reminder, objects are similar to variables because it can be used to hold values. But it can hold *multiple* values!
+        Reminder, objects are similar to variables because they can be used to hold values. But they can hold *multiple* values!
+
       </script>
     </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        # Accessing an Object
 
-        Since objects hold multiple values, it can't be accessed by using the variable name. Object values are accessed using **dot notation**.
+        # Accessing an Object Member
+
+        Since objects hold multiple values, they can't be accessed by using the variable name. Object values are accessed using **dot notation**.
 
         To access the value for the `drinkType` property, it would look like this:
 
