@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="framework/css/slideshow.css" data-noprefix>
   <link rel="stylesheet" href="framework/css/fonts.css" data-noprefix>
   <link rel="stylesheet" href="framework/css/highlightjs/github.css" data-noprefix>
+  <link rel="stylesheet" href="framework/css/a11y/plugin.css">
   <link rel="stylesheet" href="framework/css/styles.css" data-noprefix>
   <link rel="shortcut icon" href="framework/img/favicon.ico">
 
@@ -23,24 +24,26 @@
       <div class="instructions">
         <!-- ADD WIFI INFO HERE -->
         <!-- <h2>Get <br> Connected</h2>
-        <p><strong>Wifi:</strong> wifi network</p>
-        <p><strong>Password:</strong> wifi password</p>
+        <ul>
+          <li><strong>Wifi:</strong> wifi network</li>
+          <li><strong>Password:</strong> wifi password</li>
+        </ul>
         <hr> -->
 
         <h2>Download<br> & Install</h2>
         <ol class="downloads">
-          <li>Learner files (zip file): <a href="https://github.com/ladieslearningcode/llc-intro-to-jquery/archive/master.zip">http://bit.ly/llc-jquery-intro</a>
+          <li>Learner files (zip file): <a href="https://github.com/ladieslearningcode/llc-intro-to-jquery/archive/master.zip">bit.ly/llc-jquery-intro</a>
             <ul>
               <li>unzip the learner file (<em>extract all</em> if you’re on a PC)</li>
               <li>open <em>slides.html</em> in the browser to view the slides</li>
             </ul>
           </li>
-          <li>Atom Editor: <a href="http://atom.io">http://atom.io</a>
+          <li>Atom Editor: <a href="http://atom.io">atom.io</a>
             <ul>
               <li>Chromebook users can use <a href="https://chrome.google.com/webstore/detail/caret/fljalecfjciodhpcledpamjachpmelml?hl=en" target="_blank">Caret</a></li>
             </ul>
           </li>
-          <li>Chrome Browser: <a href="https://www.google.ca/chrome/browser/desktop/">https://www.google.ca/chrome</a></li>
+          <li>Chrome Browser: <a href="https://www.google.ca/chrome/browser/desktop/">google.ca/chrome</a></li>
           </li>
         </ol>
       </div>
@@ -99,7 +102,7 @@
         * changing the style of the clicked navigation links
         * and adding a photo slider!
 
-        View the sample project [here](project/final.html).
+        [View the sample project](project/final.html).
       </script>
     </section>
 
@@ -122,17 +125,12 @@
       <script type="text/template">
         #HTML + CSS + JavaScript = Basic web page
 
-        **HTML (Hypertext Markup Language)** is a _markup_ language used to define the content.
-
-        <p class="example">I'm just a paragraph.</p>
-
-        **CSS (Cascading Style Sheets)** is a _style sheet_ language used to create the presentation and look of a site.
-
-        <p class="example css">I'm a paragraph with <span>style</span>.</p>
-
-        **JavaScript** is a _programming_ language used to define the behavior and used to add functionality to a website.
-
-        <p class="example" onclick="alert('Clicked!');">I'm a paragraph that can be clicked. Try it!</p>
+        - **HTML (Hypertext Markup Language)** is a _markup_ language used to define the content.
+          <p class="example">I'm just a paragraph.</p>
+        - **CSS (Cascading Style Sheets)** is a _style sheet_ language used to create the presentation and look of a site.
+          <p class="example css">I'm a paragraph with <span>style</span>.</p>
+        - **JavaScript** is a _programming_ language used to define the behavior and used to add functionality to a website.
+          <p class="example" onclick="alert('Clicked!');">I'm a paragraph that can be clicked. Try it!</p>
       </script>
     </section>
 
@@ -153,7 +151,7 @@
 
         Here's what JavaScript looks like:
 
-        ```
+        ```javascript
         var myVariable = "Hello World";
         function sayHello(){
           alert(myVariable);
@@ -210,7 +208,7 @@
         * can also log diagnostic information and check for errors
 
         The console in Chrome looks like this:
-        ![The Console](framework/img/workshop/the_console_x.jpg)
+        ![The Chrome developer tools; inspector and device emulator controls, various controls such as Elements, Console, Network, etc. Close control is available. Content is entered into the console following a blue right angle arrow.](framework/img/workshop/the_console_x.jpg)
 
         **Important!** The blue `>` symbol represents a space to enter your input but you don't have to actually type the symbol.
       </script>
@@ -223,17 +221,17 @@
         You can open the console when viewing _any_ HTML page. In Chrome, there are different ways to open the Console tab.
 
         Keyboard shortcut:
-        `COMMAND + OPTION + J` (MAC)  / `CONTROL + SHIFT + J` (WINDOWS)
+        <kbd>COMMAND</kbd> + <kbd>OPTION</kbd> + <kbd>J</kbd> (MAC)  / <kbd>CONTROL</kbd> + <kbd>SHIFT</kbd> + <kbd>J</kbd> (WINDOWS)
 
         OR
 
-        Select: `View > Developer > JavaScript Console`.
+        Select: **View > Developer > JavaScript Console**.
 
         Open the console in this slide presentation. Take a moment to practice opening and closing the console until you’re comfortable with it.
 
         ---
 
-        ###Pro tip!
+        ## Pro tip!
         The console also shows any errors on the page so if you open the console on any existing web page, you *may* see some error messages.
 
       </script>
@@ -245,15 +243,15 @@
 
         In the console, after the `>` symbol, type your favorite number and press the enter/return key. You will see something like this:
 
-        ![console number](framework/img/workshop/console-number.gif) <!-- .element: width="85%" -->
+        ![User typing in console the value '30' – console returns 30 on the next line.](framework/img/workshop/console-number.gif) <!-- .element: width="85%" -->
 
         The ```>``` symbol represents a space for your input.
         The ```<``` symbol represents the **returned value** of your input.
 
         ---
-        ###Pro tip!
-        To increase the font size of the console, use `Command/Control +`.
-        Use  `Command/Control 0` to return it back to the default size.
+        ## Pro tip!
+        To increase the font size of the console, use <kbd>Command</kbd>/<kbd>Control</kbd> + <kbd>+</kbd>.
+        Use <kbd>Command</kbd>/<kbd>Control</kbd> + <kbd>0</kbd> to return it back to the default size.
       </script>
     </section>
 
@@ -263,7 +261,7 @@
 
         You can also input text BUT when using text, make sure you include it between quotes (more on this soon).
 
-        ![console string](framework/img/workshop/console-string.gif)<!-- .element: width="85%" -->
+        ![User typing in console the value 'hello' – console returns 'hello' on the next line.](framework/img/workshop/console-string.gif)<!-- .element: width="85%" -->
 
         The command you input into the console gets *evaluated* and a value is returned back to you.
       </script>
@@ -328,9 +326,9 @@
         * JavaScript is case sensitive
           * so variable names are also case sensitive
         * Use a descriptive names:
-        `var firstName;` ← Clear that first name will go here.
-        `var fn;`        ← Not as obvious as firstName.
-        `var x; `        ← Not clear at all.
+         * `var firstName;` ← Clear that first name will go here.
+         * `var fn;`        ← Not as obvious as `firstName`.
+         * `var x; `        ← Not clear at all.
       </script>
     </section>
 
@@ -377,7 +375,7 @@
 
         The JavaScript above **concatenates** the three items together like so:
 
-        ```
+        ```javascript
         var greetingFull = greeting + " " + greetingTime + "!";
         var greetingFull = Good + space + morning + exclamation mark
         var greetingFull = Good morning!
@@ -429,11 +427,11 @@
 
         Let’s try **concatenating** some strings with the `favFood` variable. In the console, try typing this command:
 
-        ```
+        ```javascript
         "My favorite food is " + favFood;
         ```
 
-        ![concatenate example](framework/img/workshop/console-concatenate.gif)
+        ![Console output: var favFood = 'pizza'. User types: 'My favourite food is' + favFood](framework/img/workshop/console-concatenate.gif)
 
         > **Challenge!** How would you add a period to the end of the sentence?
       </script>
@@ -487,7 +485,7 @@ var fails = 'This string's value is not going to work!';
 
         Variable **values** can also be numbers.
 
-        ```
+        ```javascript
         var meaningOfLife = 42;
         ```
 
@@ -602,7 +600,7 @@ var fails = 'This string's value is not going to work!';
         sentence;
         ```
 
-        ```
+        ```javascript
         // This is a JavaScript comment by the way :) Use it to leave notes.
         ```
       </script>
@@ -614,7 +612,7 @@ var fails = 'This string's value is not going to work!';
 
         Just like HTML and CSS, you can also leave comments in JavaScript.
 
-        ```
+        ```javascript
         // This is how you leave a single line comment.
 
         // You can write many single line comments.
@@ -783,7 +781,7 @@ coffeeOrder.drinkType
 
         As you've just seen, there are *many* different variable types in JavaScript and many rules about how to write them.
 
-        There are actually a few more. You can read all about them [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures).
+        There are actually a few more. You can read all about them at [MDN: Data structures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures).
 
         It will take practice getting used to the different rules. But, in a nutshell, *variables* are used to hold values and the values themselves have different *types*.
       </script>
@@ -827,7 +825,7 @@ coffeeOrder.drinkType
 
         It will look similar to this:
 
-        ![console function example](framework/img/workshop/console-alert-prompt.gif)
+        ![Console, user types: alert('Hello!') – a browser popup window appears with 'Hello!'.](framework/img/workshop/console-alert-prompt.gif)
       </script>
     </section>
 
@@ -863,7 +861,7 @@ coffeeOrder.drinkType
           prompt("What day is it today?");
         }
         ```
-        ```
+        ```javascript
         sayAnything();
         ```
       </script>
@@ -893,7 +891,7 @@ coffeeOrder.drinkType
 
         A function is one of the most powerful tools in JavaScript and one of the most powerful functions you will ever use is this one:
 
-        ```
+        ```javascript
         jQuery();
         ```
 
@@ -921,7 +919,7 @@ coffeeOrder.drinkType
     </section>
 
     <section class="slide centered">
-      <img src="http://33.media.tumblr.com/2466ab981143fb18653f8f09bce061c7/tumblr_n982qbvyFQ1s5lf2ro1_400.gif" alt="">
+      <img src="http://33.media.tumblr.com/2466ab981143fb18653f8f09bce061c7/tumblr_n982qbvyFQ1s5lf2ro1_400.gif" alt="Little girl wipes her brow in exhaustion.">
     </section>
 
     <section class="slide" data-markdown>
@@ -935,7 +933,7 @@ coffeeOrder.drinkType
 
         The library contains many, many built-in functions and methods.
 
-        View the documentation here: [http://api.jquery.com](http://api.jquery.com).
+        View the documentation here: [api.jquery.com](http://api.jquery.com).
       </script>
     </section>
 
@@ -949,7 +947,7 @@ coffeeOrder.drinkType
       <script async src="http://codepen.io/assets/embed/ei.js"></script>
 
       <p class="note">CodePen is basically a “sandbox” to try out code without switching back and forth between a text editor and browser. Click the "Edit on Codepen" link to try out the code. When you save your pen, a unique URL is created for you OR sign up for a (free) account to save your pens.</p>
-      <p class="note"><img src="framework/img/workshop/codepen.png" width="400" class="left"> When editing jQuery in Codepen, select the gear icon in the JS box and it will show you if/what library it's using.</p>
+      <p class="note"><img src="framework/img/workshop/codepen.png" width="400" class="left" alt=""> When editing jQuery in Codepen, select the gear icon in the JS box and it will show you if/what library it's using.</p>
     </section>
 
     <section class="slide">
@@ -989,13 +987,13 @@ coffeeOrder.drinkType
           |-- slides.html // This is the file you are viewing right now!
         ```
 
-        Open the `project` folder in the text editor to edit your project.
+        1. Open the `project` folder in the text editor to edit your project.
         Go to **File** > ** Add Project Folder**. A popup will appear.
 
-        ![](framework/img/workshop/editor-add-project-1.jpg)
+          ![](framework/img/workshop/editor-add-project-1.jpg)
 
-        * navigate to the **llc-intro-to-jquery-master** folder
-        * select the **project** folder & click **Open**
+        2. navigate to the `llc-intro-to-jquery-master` folder
+        3. select the `project` folder & click **Open**
 
         The files will now appear in the sidebar.
       </script>
@@ -1007,7 +1005,7 @@ coffeeOrder.drinkType
 
         Your project folder structure will look like this:
 
-        ```html
+        ```xml
         |-- project
           |-- css // CSS files.
           |-- images // Images files. You can also add your own images here.
@@ -1016,7 +1014,7 @@ coffeeOrder.drinkType
           |-- index.html // The HTML homepage of your site.
         ```
 
-        Open **index.html** in your browser and editor.
+        Open `index.html` in your browser and editor.
       </script>
     </section>
 
@@ -1026,20 +1024,18 @@ coffeeOrder.drinkType
 
         Having a good text editor and learning how to use it to its full potential will help your work flow. Today, let's update the text wrapping option to make it easier to read long blocks of code and text.
 
-        Go to **Preferences** to open the customization options.
+        1. Go to **Preferences** to open the customization options. For those using Windows, you will go to **File > Settings**.
 
-        For those using Windows, you will go to File > Settings.
+          ![](framework/img/workshop/atom-preferences.jpg)<!-- .element: width="70%" -->
 
-        ![](framework/img/workshop/atom-preferences.jpg)<!-- .element: width="70%" -->
+        2. In the left menu, select **Editor**. Scroll down to **Soft Wrap** option.
 
-        In the left menu, select **Editor**. Scroll down to **Soft Wrap** option.
+        3. Make sure the **Soft Wrap** option is checked.
 
-        Make sure the **Soft Wrap** option is checked.
-
-        ![](framework/img/workshop/atom-soft-wrap.jpg)<!-- .element: width="70%" -->
+          ![](framework/img/workshop/atom-soft-wrap.jpg)<!-- .element: width="70%" -->
 
         ---
-        ###Resources
+        ## Resources
 
         *   [Atom documentation](https://atom.io/docs)
         *   [Atom Shortcuts cheat sheet](https://bugsnag.com/blog/atom-editor-cheat-sheet)
@@ -1054,9 +1050,9 @@ coffeeOrder.drinkType
         # Using jQuery, Option 1: Download the file
 
         1. [Download](http://jquery.com/download/) the latest version and use the *compressed* file.
-        1. Save the file within your projects files (i.e. in a "js" folder).
+        1. Save the file within your projects files (i.e. in a `js` folder).
         1. Link it to your HTML document using a <code>&lt;script&gt;</code> tag.
-          * The `src` points to where the file is saved in your project folder.
+          * The `src` points to where the file is saved in your `project` folder.
           * Make sure you use the *exact* same file name. (e.g. `jquery-version-number.js`)
         1. JavaScript can be included anywhere on the page but often, it is included before the *closing* `</body>` tag to allow the document to load first.
 
@@ -1100,9 +1096,9 @@ coffeeOrder.drinkType
 
         `$(document).ready()` is an *event*. It's when the browser has downloaded enough of the web page to be able to find the elements selected in your jQuery code.
 
-        It only needs to be added once but all jQuery code *must* be contained within this code snippet. Read more about it [here](http://learn.jquery.com/using-jquery-core/document-ready/).
+        It only needs to be added once but all jQuery code *must* be contained within this code snippet. [Read more about "document ready" here](http://learn.jquery.com/using-jquery-core/document-ready/).
 
-        ```
+        ```javascript
         $(document).ready(function(){
           // all jQuery code here
         });
@@ -1114,8 +1110,8 @@ coffeeOrder.drinkType
       <script type="text/template">
         #Class Exercise: Getting jQuery Ready
 
-        1. [Download](http://jquery.com/download/) the jQuery file or use the [CDN](http://jquery.com/download/#using-jquery-with-a-cdn) and reference it in your **index.html** file.
-        1. Add the "document ready" to **index.html**. This will need to be contained *within* its own pair of <code>&lt;script&gt;&lt;/script&gt;</code> tags.
+        1. [Download](http://jquery.com/download/) the jQuery file or use the [CDN](http://jquery.com/download/#using-jquery-with-a-cdn) and reference it in your `index.html` file.
+        1. Add the "document ready" to `index.html`. This will need to be contained *within* its own pair of <code>&lt;script&gt;&lt;/script&gt;</code> tags.
         1. Add a <code>console.log()</code> to check that everything is working.
 
 <pre><code>&lt;!DOCTYPE html&gt;
@@ -1165,7 +1161,7 @@ coffeeOrder.drinkType
         HTML (HyperText Markup Language) is used to define the **content** on a document/web page. Use `<tags>` to create HTML **elements** that represent items on the page. Let's look at some common tags:
 
         ##Paragraphs
-        ```xml
+        ```html
         <p>Paragraph.</p>
         <p>Another paragraph.</p>
         ```
@@ -1182,7 +1178,7 @@ coffeeOrder.drinkType
         # HTML overview
 
         ##Links
-        ```xml
+        ```html
         <a href="http://ladieslearningcode.com">Ladies Learning Code</a>
         ```
         <div class="example">
@@ -1190,7 +1186,7 @@ coffeeOrder.drinkType
         </div>
 
         ##Images
-        ```xml
+        ```html
         <img src="http://www.fillmurray.com/300/300" alt="Placeholder Image">
         ```
         <img src="http://www.fillmurray.com/300/300" alt="Placeholder Image">
@@ -1203,9 +1199,8 @@ coffeeOrder.drinkType
 
         CSS (Cascading Style Sheets) defines the *style* and controls the look and feel of the HTML document.
 
-        **Selectors** are used to determine which *HTML elements* to apply the style to.
-
-        **Declarations** are style rules specified in the form of `property: value;` pairs and wrapped in curly braces `{}`.
+        - **Selectors** are used to determine which *HTML elements* to apply the style to.
+        - **Declarations** are style rules specified in the form of `property: value;` pairs and wrapped in curly braces `{}`.
 
         ```css
         selector {
@@ -1219,11 +1214,9 @@ coffeeOrder.drinkType
       <script type="text/template">
         #CSS overview
 
-        **Properties** determine the *type* of style to be applied to the element (e.g. color).
-
-        **Values** are specific to the property.
-
-        Declarations must end with a semi-colon (`;`) to indicate that the instruction is complete.
+        - **Properties** determine the *type* of style to be applied to the element (e.g. `color`).
+        - **Values** are specific to the property (e.g. `blue`).
+        - **Declarations** must end with a semi-colon (`;`) to indicate that the instruction is complete.
 
         ![](framework/img/workshop/css.png)
       </script>
@@ -1252,7 +1245,7 @@ coffeeOrder.drinkType
 
         For classes, an `attribute` must be added to the HTML and denoted by a leading period in the CSS.
 
-        ```xml
+        ```html
         <div class="special">Select ANY element with the "special" class.</div>
         ```
 <textarea class="snippet" data-subject="#class">.special {
@@ -1270,7 +1263,7 @@ coffeeOrder.drinkType
 
         For an `id`, the attribute is also added to the HTML but is denoted by a leading number symbol. Note that an `id` can only be used <strong>once</strong> per page.
 
-        ```xml
+        ```html
         <div id="special">Select ANY element with this id.</div>
         ```
 
@@ -1291,7 +1284,7 @@ coffeeOrder.drinkType
 
         The `$()` function takes a single value.
 
-        ```
+        ```javascript
         $("p"); // selects all paragraphs
         ```
 
@@ -1304,16 +1297,16 @@ coffeeOrder.drinkType
         #Selecting elements in jQuery
 
         To select an HTML element, use the tag name.
-        ```
+        ```javascript
         $("a");
         ```
 
         To select a class name, use the leading period, just like CSS.
-        ```
+        ```javascript
         $(".about");
         ```
         To select an id name, use the number/hash symbol, just like CSS.
-        ```
+        ```javascript
         $("#about");
         ```
 
@@ -1334,7 +1327,7 @@ coffeeOrder.drinkType
         *   the `css()` method alters the look of the elements by *dynamically* adding CSS.
 
         ---
-        ###Resource
+        ## Resource
 
         jQuery documentation here: [api.jquery.com](http://api.jquery.com)
       </script>
@@ -1346,11 +1339,11 @@ coffeeOrder.drinkType
 
         Let's make a change to the images in the sample project.
 
-        ![](framework/img/workshop/exercise-fav-1.png) <!-- .element: width="50%" -->
+        !['My Favourite Things' section with three, horizontal images.](framework/img/workshop/exercise-fav-1.png) <!-- .element: width="50%" -->
 
         The HTML for this section looks like this:
 
-        ```
+        ```html
         <section id="favs">
           <h1>My Favourite Things</h1>
           <img class="fav" src="images/puppy.jpg" alt="dog">
@@ -1361,7 +1354,7 @@ coffeeOrder.drinkType
 
         Just like CSS, there are a couple ways to target the elements.
 
-        ```
+        ```javascript
         $("img") // will work but will target ALL images on the page
         $(".fav") // works better, only targets images with the class of "fav"
         ```
@@ -1384,8 +1377,8 @@ coffeeOrder.drinkType
         ```
 
         ---
-        ###Resource
-        http://api.jquery.com/width/
+        ## Resource
+        - [api.jquery.com/width](http://api.jquery.com/width/)
       </script>
     </section>
 
@@ -1416,8 +1409,8 @@ coffeeOrder.drinkType
         Adding a function to a **user triggered event** is called an **event listener**.  The code just sits around waiting and listening for the event to happen.
 
         ---
-        ### Resource
-        http://api.jquery.com/click/
+        ## Resource
+        - [api.jquery.com/click](http://api.jquery.com/click/)
       </script>
     </section>
 
@@ -1427,18 +1420,18 @@ coffeeOrder.drinkType
 
         First, select the target item.
 
-        ```
+        ```javascript
         $(".fav")
         ```
 
         Then add the `.click()` method.
-        ```
+        ```javascript
         $(".fav").click();
         ```
 
         Next, pass a *function* into the parentheses,
         `function(){}`, to execute each time the event is triggered.
-        ```
+        ```javascript
         $(".fav").click( function(){} );
         ```
 
@@ -1453,7 +1446,7 @@ coffeeOrder.drinkType
 
         Whatever effect that should happen, only on click, goes here.
 
-        ```
+        ```javascript
         $(".fav").click(function(){
           // The changes that occur when object is clicked.
         });
@@ -1486,7 +1479,7 @@ coffeeOrder.drinkType
 
         Open the console tool and click an image.  You should see the message you passed into the `console.log()` method like this:
 
-        ![console.log example](framework/img/workshop/console-log.gif)
+        ![Mouse clicks an image, console outputs, 'It works!'](framework/img/workshop/console-log.gif)
       </script>
     </section>
 
@@ -1517,7 +1510,7 @@ coffeeOrder.drinkType
 
         Let's **inspect the element** in the browser to see how jQuery adds these changes. It will look similar to this:
 
-        ![show hide console example](framework/img/workshop/console-show-hide.png)
+        ![Chrome dev tools, element insector: image element features, 'style = display: none;'.](framework/img/workshop/console-show-hide.png)
       </script>
     </section>
 
@@ -1616,7 +1609,7 @@ coffeeOrder.drinkType
 
         ##Select the elements to be clicked.
 
-        ```
+        ```html
         <ul class="menu">
           <li><a href="#about">About</a></li>
           <li><a href="#favs">Favourites</a></li>
@@ -1634,7 +1627,7 @@ coffeeOrder.drinkType
         #Class Exercise: "Active" Menu, Step 1
 
         Then apply the .click() method.
-        ```
+        ```javascript
         $(".menu a").click();
         ```
         <p class="delayed">Then pass a function into to the click() method. Add <code>function(){}</code> into the parentheses.</p>
@@ -1679,11 +1672,11 @@ coffeeOrder.drinkType
 
         ##Add the CSS active style
 
-        In **styles.css**, create a new CSS style for the active state.
+        In `styles.css`, create a new CSS style for the active state.
 
         This example below will change the text color and background colour (but you can apply whatever style you like). Since the color has been added to `.menu a`, create a selector using the new `active` class
 
-        ```
+        ```css
         .menu a.active {
           background: #ccc;
           color: #222;
@@ -1741,7 +1734,7 @@ coffeeOrder.drinkType
         See below for free image resources.
 
         ---
-        ###Resources
+        ## Resources
         * [List of image placeholder sites](http://www.hanselman.com/blog/TheInternetsBestPlaceholderImageSitesForWebDevelopment.aspx)!
         * http://superfamous.com/
         * http://www.gratisography.com/
@@ -1795,7 +1788,7 @@ coffeeOrder.drinkType
 
         Included in the download are files that are needed to make the plugin work (highlighted in red) and other files that are just for demo purposes.
 
-        ![Flexslider in the project directory](framework/img/workshop/flexslider-files.jpg)
+        ![Highlighted files: flexslider.css, fonts directory, images/bg_play_pause.png, jquery.flexslider-min.js](framework/img/workshop/flexslider-files.jpg)
       </script>
     </section>
 
@@ -1824,7 +1817,7 @@ coffeeOrder.drinkType
 
         The plugin files are saved within your directory, but these files now need to be referenced and pulled into your HTML page.
 
-        Back in **index.html**, add the Flexslider `.js` file. It must be included *after* the jQuery library. Remember, a plugin is an *extension* of jQuery, so jQuery needs to load first.
+        Back in `index.html`, add the Flexslider `.js` file. It must be included *after* the jQuery library. Remember, a plugin is an *extension* of jQuery, so jQuery needs to load first.
 
         Also, add all library files *before* your custom JS code.
 
@@ -1843,11 +1836,11 @@ coffeeOrder.drinkType
       <script type="text/template">
         # Class Exercise: Add the Flexslider files
 
-        Flexslider also includes a CSS file to handle the styling of the image rotator. The .js file only handles the functionality.
+        Flexslider also includes a CSS file to handle the styling of the image rotator. The `.js` file only handles the functionality.
 
-        In **index.html**, in the `<head>` section at the top of the page, link to the CSS file. Just like the .js files, add library CSS files *before* your custom styles, in case you need to add or override the CSS.
+        In `index.html`, in the `<head>` section at the top of the page, link to the CSS file. Just like the `.js` files, add library CSS files *before* your custom styles, in case you need to add or override the CSS.
 
-        ```xml
+        ```html
         <!doctype html>
         <html>
           <head>
@@ -1870,12 +1863,12 @@ coffeeOrder.drinkType
 
         You can update the `src` value to point to your folder structure & images files. If you do not have any images at this time, there are some samples in your project folder under **images > rotator**.
 
-        ```xml
+        ```html
         <div class="flexslider">
           <ul class="slides">
-            <li><img src="images/rotator/image1.jpg"></li>
-            <li><img src="images/rotator/image2.jpg"></li>
-            <li><img src="images/rotator/image3.jpg"></li>
+            <li><img src="images/rotator/image1.jpg" alt="descriptive text alternative"></li>
+            <li><img src="images/rotator/image2.jpg" alt="descriptive text alternative"></li>
+            <li><img src="images/rotator/image3.jpg" alt="descriptive text alternative"></li>
           </ul>
         </div>
         ```
@@ -1908,7 +1901,7 @@ coffeeOrder.drinkType
 
         Also, it looks like the left & right arrow is missing. If yours looks something like the below screen shot, it's okay. We can update that.
 
-        ![flexslider default](framework/img/workshop/flexslider-default.png)
+        ![Flexslider with broken arrow icons.](framework/img/workshop/flexslider-default.png)
 
         Let's fix the arrows first, then the sizing.
       </script>
@@ -1920,9 +1913,9 @@ coffeeOrder.drinkType
 
         Usually, when you see a broken image or something is not loading properly, ask yourself "Are all my files where they need to be?" In this plugin, the arrows are actually coming from a font file.
 
-        In **flexslider.css**, the source location for the fonts look like this:
+        In `flexslider.css`, the source location for the fonts look like this:
 
-        ```
+        ```css
         @font-face {
           font-family: 'flexslider-icon';
           src: url('fonts/flexslider-icon.eot');
@@ -1938,11 +1931,11 @@ coffeeOrder.drinkType
       <script type="text/template">
         #Class Exercise: Update the arrows
 
-        In the previous step, we put our **fonts** folder *outside* of the **css** folder.  This CSS source needs to be updated to point to where the font files are in *our* project directory.
+        In the previous step, we put our `fonts` folder *outside* of the **css** folder.  This CSS source needs to be updated to point to where the font files are in *our* project directory.
 
-        Your starting point is **flexslider.css**.  The `../` means "Go up and out of a folder", then go into the **fonts** folder. Update this to:
+        Your starting point is `flexslider.css`.  The `../` means "Go up and out of a folder", then go into the `fonts` folder. Update this to:
 
-        ```
+        ```css
         @font-face {
           font-family: 'flexslider-icon';
           src: url('../fonts/flexslider-icon.eot');
@@ -1952,7 +1945,7 @@ coffeeOrder.drinkType
         }
         ```
 
-        Another option is to just move the font folder *inside* the css folder.  The source in the CSS file just needs to match the current directory location.
+        Another option is to just move the `font` folder *inside* the `css` folder.  The source in the CSS file just needs to match the current directory location.
       </script>
     </section>
 
@@ -1964,19 +1957,19 @@ Flexslider was built to be responsive. That's why, by default, it's stretching t
 
 To update the size, just use a little CSS. Here's the HTML:
 
-```
+```html
 <div class="flexslider">
   <ul class="slides">
-    <li><img src="images/rotator/image1.jpg"></li>
-    <li><img src="images/rotator/image2.jpg"></li>
-    <li><img src="images/rotator/image3.jpg"></li>
+    <li><img src="images/rotator/image1.jpg" alt="descriptive text alternative"></li>
+    <li><img src="images/rotator/image2.jpg" alt="descriptive text alternative"></li>
+    <li><img src="images/rotator/image3.jpg" alt="descriptive text alternative"></li>
   </ul>
 </div>
 ```
 
 `<div class="flexslider">` wraps all of the plugin content. Let's use that as the selector for the CSS.
 
-```
+```css
 .flexslider {
   width: 75%; /* makes the slider 75% of its container. */
   margin: 0 auto;
@@ -2008,8 +2001,8 @@ For the width value, choose whatever number you want! Just make sure it's a **pe
         Let's look at how to set these two options.
 
         ---
-        ###Resource
-        * See all the options [here](http://www.woothemes.com/flexslider/#gist9481310).
+        ## Resource
+        * [Review all options](http://www.woothemes.com/flexslider/#gist9481310).
       </script>
     </section>
 
@@ -2112,10 +2105,10 @@ $(function() {
 
         Here are a couple of online resources to try out:
 
-        * http://learn.jquery.com/
-        * http://try.jquery.com/
+        * [learn.jquery.com](http://learn.jquery.com/)
+        * [try.jquery.com](http://try.jquery.com/)
 
-        Also check out this book: http://javascriptbook.com/
+        Also check out this book: [javascriptbook.com](http://javascriptbook.com/)
 
         * [Explore more Ladies Learning Code workshops](http://canadalearningcode.ca/learn/)!
       </script>
@@ -2152,6 +2145,7 @@ $(function() {
   <script src="framework/scripts/plugins/markdown/marked.js"></script>
   <script src="framework/scripts/plugins/markdown/markdown.js"></script>
   <script src="framework/scripts/plugins/highlight/highlight-8.4.min.js"></script>
+  <script src="framework/scripts/plugins/a11y/plugin.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
   <script src="framework/scripts/llc.js"></script>
   <script>
